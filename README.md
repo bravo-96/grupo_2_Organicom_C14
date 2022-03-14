@@ -23,3 +23,6 @@ Nos orientamos a un público comprometido con el medio ambiente y la salud. O a 
 -  [Frávega](https://www.fravega.com/): Nos guiamos de la estructura del sitio web, para tener una base sobre la estructura UI y estética de un e-commerce completo como Frávega.
 
 -  [TemplateMonster - Organy template](https://www.templatemonsterpreview.com/demo/220942.html): Esta plantilla nos dio nocion de los conceptos generales que deberia tener un e-commerce de productos orgánicos y de como presentarlo al consumidor/usuario.
+
+## Integrantes del GRUPO 2
+-  José Luis Bravo
