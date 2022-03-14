@@ -25,4 +25,5 @@ Nos orientamos a un público comprometido con el medio ambiente y la salud. O a 
 -  [TemplateMonster - Organy template](https://www.templatemonsterpreview.com/demo/220942.html): Esta plantilla nos dio nocion de los conceptos generales que deberia tener un e-commerce de productos orgánicos y de como presentarlo al consumidor/usuario.
 
 ## Integrantes del GRUPO 2
--  José Luis Bravo
+
+-  José Luis Bravo: Actualmente, estudiando Full-Stack con Node en Fundacion formar. Semi-gamer desde la niñez, autodidacta y curioso por la programación ✌🤓.
