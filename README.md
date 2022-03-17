@@ -29,4 +29,6 @@ Nos orientamos a un público comprometido con el medio ambiente y la salud. O a 
 -  José Luis Bravo: Actualmente, estudiando Full-Stack con Node en Fundacion formar. Semi-gamer desde la niñez, autodidacta y curioso por la programación ✌🤓.
 
 - Pablo Andrés Rey:
-                   Autodidacta, estudiante de desarrollo web Full-Stack en el curso que facilita la  Fundacion Formar y Oracle-ONE en simultaneo. 37 años, padre de familia, apasionado por la tecnología y amante del futbol.    
+                   Autodidacta, estudiante de desarrollo web Full-Stack en el curso que facilita la  Fundacion Formar y Oracle-ONE en simultaneo. 37 años, padre de familia, apasionado por la tecnología y amante del futbol.   
+
+- Alexander Anibal Benitez: Tengo 19 años, estudiante Full-Stack en la fundacion Formar. Gamer desde que tengo acceso a la tecnologia, interesado en la computacion y programacion, ademas de ser amante del voley. 
