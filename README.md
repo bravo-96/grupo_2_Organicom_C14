@@ -33,4 +33,4 @@ Nos orientamos a un público comprometido con el medio ambiente y la salud. O a 
 
 - Alexander Anibal Benitez: Tengo 19 años, estudiante Full-Stack en la fundacion Formar. Gamer desde que tengo acceso a la tecnologia, interesado en la computacion y programacion, ademas de ser amante del voley. 
 
-- Suzanne Iris Jaime Santillán: Tengo 19 años; actualmente estoy estudiando programacion en Fundacion Formar/Dgital House. 
+- Suzanne Iris Jaime Santillán: Tengo 19 años; actualmente estoy estudiando programacion en Fundacion Formar/Digital House. 
