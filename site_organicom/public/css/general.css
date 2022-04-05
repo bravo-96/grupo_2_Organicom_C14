@@ -1,0 +1,29 @@
+html {
+   box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+}
+
+body {
+   font-family: var(--fuente-principal);
+   background-color: var(--color-fondo);
+}
+
+a {
+   color: #00b7ff;
+}
+
+ul,
+ol {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+::selection {
+   color: #fff;
+   background-color: #000;
+}

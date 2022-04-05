@@ -1,0 +1,13 @@
+:root {
+   --fuente-principal: sans-serif;
+   --color-fondo: #fff;
+
+   /* fs -> font-size */
+   --fs-cuerpo: 0.875rem; /* cuerpo: tamaño general de la fuente*/
+   --fs-precio: 1rem;
+
+   --fs-subtitulo: 1.25rem;
+   --fs-titulo-1: 2rem;
+   --fs-titulo-2: 1.5rem;
+   --fs-titulo-3: 1.25rem;
+}
