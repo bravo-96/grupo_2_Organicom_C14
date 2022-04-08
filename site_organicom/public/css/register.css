@@ -1,0 +1,63 @@
+body.register main{
+    width: 90%;
+    margin: 20px auto;
+}
+.register main form div.register-main{
+    margin: 0 auto;
+    padding-top: 15px;
+}
+.register .register-main .register_input-main{
+    width: 100%;
+    padding: 10px;
+}
+
+.register button{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--colorGrisCB);
+    color: white;
+}
+.register{
+    display: inline;
+}
+
+@media (min-width:768px){
+    .div-r-p{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+@media (min-width:1024px){
+    body.register main{
+        width: 100%;
+        background-color: aquamarine;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+    .div-r-p{
+        background-color: aqua;
+        width: 420px;
+        height: 420;
+        border: solid 1px white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+
+        
+    }
+    .register main form div.register-main{
+        
+        padding-top: 15px;
+        width: 90%;
+    }
+    .register .register-form{
+        margin: 0;
+        padding: 0;
+    }
+   
+   
+}
