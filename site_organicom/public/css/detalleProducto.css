@@ -129,6 +129,167 @@ nav.categorias-contenedor a {
    outline: none;
    box-shadow: 0 0 0.1rem 0.2rem var(--verde);
 }
+/* ------------ */
+
+/* ------ Footer ------ */
+
+footer {
+   background-color: var(--verde-fondo);
+   color: var(--texto-blanco);
+
+   padding: 1rem 1rem 0.5rem;
+}
+
+footer .max-width-container {
+   width: 100%;
+   max-width: 550px;
+
+   margin: 0 auto;
+}
+
+.suscripcion-contenedor h4 {
+   /* font-size: 1.6rem; */
+   font-size: calc(0.5rem + 4.5vw);
+   margin: 1rem 0;
+}
+.suscripcion-contenedor p {
+   font-size: 0.9rem;
+   margin: 0;
+}
+.suscripcion-contenedor form {
+   margin: 1rem 0;
+   background-color: var(--fondo-input);
+   border-radius: 0.2rem;
+   padding: 0.3rem;
+
+   max-width: 400px;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.suscripcion-contenedor form input {
+   padding: 0 0.2rem;
+   border: none;
+   background-color: transparent;
+   font-size: 0.85rem;
+}
+.suscripcion-contenedor form input:focus-within {
+   outline: none;
+}
+.suscripcion-contenedor form button {
+   padding: 0.3rem;
+   background-color: var(--amarilo);
+   font-size: 0.75rem;
+   border-radius: 0.2rem;
+   border: none;
+   color: var(--verde);
+   font-weight: bolder;
+}
+
+.contenido {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 1rem;
+
+   padding: 0.5rem 0;
+}
+
+.contenido h4 {
+   margin: 0 0 0.3rem;
+   font-size: 0.8rem;
+   color: var(--amarilo);
+}
+
+.lista-categorias {
+   grid-column: 2/ 3;
+   grid-row: 1 / 2;
+
+   text-align: right;
+}
+.lista-categorias a,
+.lista-mapa-sitio a {
+   font-size: 0.8rem;
+   color: var(--texto-blanco);
+   text-decoration: none;
+   font-weight: normal;
+   line-height: 1.7;
+}
+
+.lista-mapa-sitio {
+   grid-column: 1 / 2;
+}
+
+.logo-redes-contenedor {
+   grid-column: 1 / -1;
+}
+
+.logo-redes-contenedor .logo {
+   display: block;
+   width: 90%;
+   margin: 0 auto 1rem;
+   max-width: 200px;
+}
+
+.logo-redes-contenedor .lista-redes {
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+}
+
+.lista-redes a.facebook,
+.lista-redes a.instagram,
+.lista-redes a.twitter {
+   display: block;
+   width: 1.5rem;
+   height: 1.5rem;
+
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+.lista-redes a.facebook {
+   background-image: url(/assets/img/facebook-logo.svg);
+}
+.lista-redes a.instagram {
+   background-image: url(/assets/img/instagram-logo.svg);
+}
+.lista-redes a.twitter {
+   background-image: url(/assets/img/twitter-logo.svg);
+}
+
+footer .copyright {
+   font-size: 0.6rem;
+   text-align: center;
+   margin-top: 2rem;
+}
+
+/* ------- MOBILE XL ------- */
+
+@media screen and (min-width: 480px) {
+   footer {
+      padding-top: 4rem;
+   }
+
+   footer .contenido {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      margin: 3rem auto 1rem;
+   }
+
+   .logo-redes-contenedor {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+   }
+   .lista-mapa-sitio {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+   }
+   .lista-categorias {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+   }
+}
 
 /* ------- TABLET ------- */
 @media screen and (min-width: 768px) {
@@ -238,6 +399,13 @@ nav.categorias-contenedor a {
    nav.categorias-contenedor a:hover::after {
       width: 150%;
    }
+   /* -------------- */
+
+   /* ------- Footer ------- */
+
+   .suscripcion-contenedor h4 {
+      font-size: 2.8rem;
+   }
 }
 
 /* ------- DESKTOP ------- */
@@ -289,5 +457,63 @@ nav.categorias-contenedor a {
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+   }
+
+   /* ------- Footer ------- */
+
+   footer {
+      padding-top: 2rem;
+   }
+
+   footer .max-width-container {
+      max-width: 1000px;
+
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+
+   footer .suscripcion-contenedor {
+      width: 35%;
+   }
+
+   footer .contenido {
+      width: 55%;
+      margin: 0;
+   }
+
+   footer .copyright {
+      width: 100%;
+
+      margin-top: 4rem;
+   }
+
+   .suscripcion-contenedor h4 {
+      font-size: 2rem;
+      margin-top: 0;
+   }
+
+   .logo-redes-contenedor {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+   }
+   .lista-mapa-sitio {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+   }
+   .lista-categorias {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+
+      text-align: left;
+   }
+   .contenido h4,
+   .lista-categorias a,
+   .lista-mapa-sitio a {
+      font-size: 1rem;
+   }
+
+   .logo-redes-contenedor .logo {
+      width: 150px;
    }
 }
