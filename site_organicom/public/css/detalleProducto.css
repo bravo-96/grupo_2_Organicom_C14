@@ -76,9 +76,15 @@ nav.categorias-contenedor {
    top: 100%;
    left: 0;
 
+   opacity: 0;
+   visibility: hidden;
+
    width: 100%;
    padding: 0 8%;
    background-color: var(--verde-fondo);
+
+   transition: 0.3s ease;
+   transition-property: opacity, visibility;
 }
 
 nav.categorias-contenedor ul {
@@ -95,6 +101,11 @@ nav.categorias-contenedor a {
    text-decoration: none;
 
    padding: 1rem 0;
+}
+
+.btn-menu:hover ~ nav.categorias-contenedor {
+   opacity: 1;
+   visibility: visible;
 }
 
 .barra-busqueda {
