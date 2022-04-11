@@ -3,6 +3,21 @@
    --color-fondo: #fff;
    /* color de gris claro para el boton */
    --colorGrisCB: #9c9c9c;
+  
+   --amarilo: #ffcc1d;
+   --verde: #116530;
+   --verde-fondo: #0b4619;
+   --crema: #e8e8cc;
+      
+   --texto-blanco: #fff;
+   --texto-gris: #888;
+      
+   --borde-gris-claro: #ccc;
+      
+   --fondo-pagina: #fff;
+   --fondo-input: #f5f5f5;
+   --rojo-error: #de2121;
+      
 
    /* fs -> font-size */
    --fs-cuerpo: 0.875rem; /* cuerpo: tamaño general de la fuente*/

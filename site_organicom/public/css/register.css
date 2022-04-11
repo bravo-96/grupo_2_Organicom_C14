@@ -1,3 +1,14 @@
+body {
+    background-color: var(--fondo-pagina);
+ }
+ 
+ a {
+    color: var(--verde);
+    font-weight: bold;
+ }
+
+ 
+ 
 body.register main{
     width: 90%;
     margin: 20px auto;
