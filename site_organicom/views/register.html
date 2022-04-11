@@ -15,8 +15,32 @@
 
 <body class="register">
    <header>
-      <h1>register</h1>
+      <a href="/" class="logo-link">
+         <img class="logo" src="/assets/img/logo-verde.svg" alt="Logo principal">
+      </a>
+      <button type="button" class="btn-menu"><img src="/assets/img/menu-icono.svg"
+            class="menu-icono" /><span>Categorias</span></button>
+      <button type="button" class="btn-buscar active"><img src="/assets/img/lupa-icono.svg"
+            class="lupa-icono" /></button>
+      <button type="button" class="btn-cuenta"><img src="/assets/img/usuario-icono.svg" class="usuario-icono" /><span>Mi
+            Cuenta</span></button>
+      <button type="button" class="btn-carrito"><img src="/assets/img/carrito-icono.svg"
+            class="carrito-icono" /></button>
+
+      <nav class="categorias-contenedor">
+         <div class="imagen-fondo frutos-secos"></div>
+         <ul>
+            <li><a href="./">Fideos / Cereales</a></li>
+            <li><a href="./" data-nombre-categoria="frutos-secos">Frutos secos</a></li>
+            <li><a href="./">Jugos y bebidas</a></li>
+            <li><a href="./">Infusiones</a></li>
+         </ul>
+      </nav>
+      <form action="/" method="GET" class="barra-busqueda">
+         <input type="text" placeholder="Buscar producto">
+      </form>
    </header>
+
    <main>
       <form class="register-form" action="">
          
@@ -63,8 +87,49 @@
       </form>
    </main>
    <footer>
-      <p>Hola soy el footer</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe animi inventore magni delectus molestias quisquam laborum vero incidunt error a est aspernatur nobis hic quos, consequatur velit deleniti sit, dolore natus optio reiciendis. Corrupti ullam harum quasi distinctio ea numquam, similique pariatur est suscipit atque, in eum quam! Esse earum accusantium omnis cupiditate quasi iusto odit inventore molestiae iure magnam!</p>
+      <div class="max-width-container">
+         <div class="suscripcion-contenedor">
+            <h4>¡Suscribite totalmente <br /> gratis!</h4>
+            <p>Y recibi nuestras ofertas y promociones todas las semanas</p>
+            <form action="/">
+               <input type="text" placeholder="Dejanos tu Email">
+               <button type="submit">Suscribirse</button>
+            </form>
+         </div>
+         <div class="contenido">
+            <ul class="lista-categorias">
+               <h4>Categorias</h4>
+               <li><a href="/">Fideos / Cereales</a></li>
+               <li><a href="/">Frutos secos</a></li>
+               <li><a href="/">Jugos y bebidas</a></li>
+               <li><a href="/">Infusiones</a></li>
+            </ul>
+
+            <ul class="lista-mapa-sitio">
+               <h4>Explora</h4>
+               <li><a href="/">Inicio</a></li>
+               <li><a href="/">Categorias</a></li>
+               <li><a href="/">Login</a></li>
+               <li><a href="/">Registrate</a></li>
+               <li><a href="/">Carrito</a></li>
+            </ul>
+
+            <div class="logo-redes-contenedor">
+               <img class="logo" src="/assets/img/logo-amarillo.svg" alt>
+               <ul class="lista-redes">
+                  <li><a href="/" class="facebook"></a></li>
+                  <li><a href="/" class="instagram"></a></li>
+                  <li><a href="/" class="twitter"></a></li>
+               </ul>
+            </div>
+         </div>
+
+         <p class="copyright">
+            Copyright 2022 | Todos los derechos reservados Organicom S.A. | Av. Calle Street 321 |
+            Capital Federal |
+            Argentina
+         </p>
+      </div>
    </footer>
 </body>
 
