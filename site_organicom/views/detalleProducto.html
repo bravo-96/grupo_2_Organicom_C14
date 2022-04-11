@@ -8,38 +8,226 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" href="/css/detalleProducto.css">
+   <link rel="stylesheet" href="/css/detalleProducto.css">
 
    <title>Detalle del producto</title>
 </head>
-<header>
-   <a href="/" class="logo-link">
-      <img class="logo" src="/assets/img/logo-verde.svg" alt="Logo principal">
-   </a>
-   <button type="button" class="btn-menu"><img src="/assets/img/menu-icono.svg"
-         class="menu-icono" /><span>Categorias</span></button>
-   <button type="button" class="btn-buscar active"><img src="/assets/img/lupa-icono.svg"
-         class="lupa-icono" /></button>
-   <button type="button" class="btn-cuenta"><img src="/assets/img/usuario-icono.svg" class="usuario-icono" /><span>Mi
-         Cuenta</span></button>
-   <button type="button" class="btn-carrito"><img src="/assets/img/carrito-icono.svg"
-         class="carrito-icono" /></button>
 
-   <nav class="categorias-contenedor">
-      <div class="imagen-fondo frutos-secos"></div>
-      <ul>
-         <li><a href="./">Fideos / Cereales</a></li>
-         <li><a href="./" data-nombre-categoria="frutos-secos">Frutos secos</a></li>
-         <li><a href="./">Jugos y bebidas</a></li>
-         <li><a href="./">Infusiones</a></li>
-      </ul>
-   </nav>
-   <form action="/" method="GET" class="barra-busqueda">
-      <input type="text" placeholder="Buscar producto">
-   </form>
-</header>
 <body>
-   <h1>Detalle del producto</h1>
+   <header>
+      <a href="/" class="logo-link">
+         <img class="logo" src="/assets/img/logo-verde.svg" alt="Logo principal">
+      </a>
+      <button type="button" class="btn-menu"><img src="/assets/img/menu-icono.svg"
+            class="menu-icono" /><span>Categorias</span></button>
+      <button type="button" class="btn-buscar active"><img src="/assets/img/lupa-icono.svg"
+            class="lupa-icono" /></button>
+      <button type="button" class="btn-cuenta"><img src="/assets/img/usuario-icono.svg" class="usuario-icono" /><span>Mi
+            Cuenta</span></button>
+      <button type="button" class="btn-carrito"><img src="/assets/img/carrito-icono.svg"
+            class="carrito-icono" /></button>
+
+      <nav class="categorias-contenedor">
+         <div class="imagen-fondo frutos-secos"></div>
+         <ul>
+            <li><a href="./">Fideos / Cereales</a></li>
+            <li><a href="./" data-nombre-categoria="frutos-secos">Frutos secos</a></li>
+            <li><a href="./">Jugos y bebidas</a></li>
+            <li><a href="./">Infusiones</a></li>
+         </ul>
+      </nav>
+      <form action="/" method="GET" class="barra-busqueda">
+         <input type="text" placeholder="Buscar producto">
+      </form>
+   </header>
+
+   <main class="grid-princpial">
+      <section class="slider">
+         <div class="flecha-izq"></div>
+         <div class="flecha-der"></div>
+         <img class="producto-imagen-portada" src="/assets/img/producto-imagen-1.jpg" alt="">
+      </section>
+
+      <section class="detalle-producto">
+         <p class="categoria">Categorias: <a href="/">Bebidas</a></p>
+         <h1 class="titulo-producto">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h1>
+         <div class="favorito-contenedor">
+            <p class="estrellas"><span class="icono"></span>4.0</p>
+            <p class="favorito">Agregar a favoritos<span class="icono"></span></p>
+         </div>
+         <div class="precio-contenedor">
+            <p class="precio-final">$ 716,00</p>
+            <p class="precio-inicial"><span>$ 895,00</span> <span class="descuento">20% OFF!</span></p>
+         </div>
+         <div class="cantidad">
+            <label for="input-cantidad">¿Cuantos queres llevar?</label>
+            <div class="cantidad-input-contenedor">
+               <button type="button">-</button>
+               <input type="text" max="100" id="input-cantidad" name="input-cantidad" value="1">
+               <button type="button">+</button>
+            </div>
+            <!-- <select name="contidad-select" id="contidad-select">
+               <option value="1">1</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="10">10</option>
+               <option value="20">20</option>
+            </select> -->
+         </div>
+         <ul class="lista-metodos-pago">
+            <p>Métodos de pagos: </p>
+            <li><img title="Efectivo" src="/assets/img/efectivo.png" alt></li>
+            <li><img title="Mercado Pago" src="/assets/img/merc-pago.png" alt></li>
+            <li><img title="Visa" src="/assets/img/visa.png" alt></li>
+            <li><img title="Master Card" src="/assets/img/mast-card.png" alt></li>
+            <li><img title="American Express" src="/assets/img/amer-express.png" alt></li>
+         </ul>
+         <div class="btns-contenedor">
+            <button type="button" class="btn-agregar-carrito">Agregar <span class="icono"></span></button>
+            <button type="button" class="btn-comprar-ahora">Comprar ahora</button>
+         </div>
+      </section>
+
+      <section class="detalles-texto">
+         <h3>Detalles del producto</h3>
+         <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ipsa est in eligendi earum nam itaque,
+            voluptatem reprehenderit quibusdam enim.
+         </p>
+         <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ipsa est in eligendi earum nam itaque.
+         </p>
+         <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+            <li>Lorem ipsum, dolor sit </li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+         </ul>
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores laudantium omnis, nam maxime eos sed
+            inventore aliquid saepe blanditiis odit est suscipit amet accusantium, ex accusamus repellendus. Molestias
+            labore molestiae nulla, in, maxime veritatis aut enim asperiores iure, repellat quasi.
+         </p>
+      </section>
+      <section class="descripcion-texto">
+         <h3>Descripcion del producto</h3>
+         <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus
+            magna fringilla urna, porttitor rhoncus.
+         </p>
+         <ul>
+            <li>
+               Lorem ipsum dolor sit amet.
+            </li>
+            <li>
+               Lorem ipsum dolor sit amet.
+            </li>
+            <li>
+               Lorem ipsum dolor sit amet.
+            </li>
+         </ul>
+         <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus
+            magna fringilla urna, porttitor rhoncus.
+            Aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus.
+         </p>
+         <p>
+            Ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna
+            fringilla urna, porttitor rhoncus.
+            Aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus
+         </p>
+      </section>
+      <section class="comentarios">
+         <h3>Reseñas</h3>
+         <article class="comentario">
+            <img src="/assets/img/" alt>
+            <p class="nombre-usuario">Usuario_2242</p>
+            <p class="estrellas"><span class="icono"></span>4.0</p>
+            <p class="comentario-texto">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit
+               praesentium! Culpa, quasi quod? Optio corporis voluptates in ea blanditiis eum a tempore recusandae? Eius
+               beatae quisquam tempora quas perspiciatis.
+            </p>
+         </article>
+         <article class="comentario">
+            <img src="/assets/img/" alt>
+            <p class="nombre-usuario">Usuario_2242</p>
+            <p class="estrellas"><span class="icono"></span>4.0</p>
+            <p class="comentario-texto">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit
+               praesentium! Culpa, quasi quod? Optio corporis voluptates in ea blanditiis eum a tempore recusandae? Eius
+               beatae quisquam tempora quas perspiciatis.
+            </p>
+         </article>
+         <button type="button">Mostrar más</button>
+      </section>
+      <section class="slider-otros-productos">
+         <article class="card">
+            <div class="card-header">
+               <img src="/assets/img/producto-imagen-1.jpg" alt>
+            </div>
+            <div class="card-body">
+               <h3>Titulo del producto</h3>
+               <p class="precio-inicial">$ 716,00 <span class="descuento">20% OFF!</span></p>
+               <p class="precio-final">$ 895,00</p>
+               <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+               <div class="botones">
+                  <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+               </div>
+            </div>
+         </article>
+      </section>
+   </main>
+
+   <footer>
+      <div class="max-width-container">
+         <div class="suscripcion-contenedor">
+            <h4>¡Suscribite totalmente <br /> gratis!</h4>
+            <p>Y recibi nuestras ofertas y promociones todas las semanas</p>
+            <form action="/">
+               <input type="text" placeholder="Dejanos tu Email">
+               <button type="submit">Suscribirse</button>
+            </form>
+         </div>
+         <div class="contenido">
+            <ul class="lista-categorias">
+               <h4>Categorias</h4>
+               <li><a href="/">Fideos / Cereales</a></li>
+               <li><a href="/">Frutos secos</a></li>
+               <li><a href="/">Jugos y bebidas</a></li>
+               <li><a href="/">Infusiones</a></li>
+            </ul>
+
+            <ul class="lista-mapa-sitio">
+               <h4>Explora</h4>
+               <li><a href="/">Inicio</a></li>
+               <li><a href="/">Categorias</a></li>
+               <li><a href="/">Login</a></li>
+               <li><a href="/">Registrate</a></li>
+               <li><a href="/">Carrito</a></li>
+            </ul>
+
+            <div class="logo-redes-contenedor">
+               <img class="logo" src="/assets/img/logo-amarillo.svg" alt>
+               <ul class="lista-redes">
+                  <li><a href="/" class="facebook"></a></li>
+                  <li><a href="/" class="instagram"></a></li>
+                  <li><a href="/" class="twitter"></a></li>
+               </ul>
+            </div>
+         </div>
+
+         <p class="copyright">
+            Copyright 2022 | Todos los derechos reservados Organicom S.A. | Av. Calle Street 321 |
+            Capital Federal |
+            Argentina
+         </p>
+      </div>
+   </footer>
+
 </body>
+
 
 </html>
