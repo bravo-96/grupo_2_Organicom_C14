@@ -6,204 +6,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OrganiCom-Home</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/2086e27e93.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/public/css/home.css">
 </head>
 
 <body>
 
 
-    <header class="header-box">
-        <img class="tomate" src="/public/img/tomate.png" alt="">
+    <header class="header">
 
-        <nav class="nav-container">
-            <div class="btn_box">
-                <div class="btn-menu">
-                    <div class="line line1"></div>
-                    <div class="line line2"></div>
-                    <div class="line line3"></div>
-                </div>
-                <button id="animate"></button>
-            </div>
-            <p>Organi<span>Com</span></p>
-            <div class="user-cart">
-                <button class="btn-nav"><img class="user" src="/public/img/user.png" alt=""></button>
-                <button class="btn-nav"><img class="cart" src="/public/img/cart.png" alt=""> </button>
-            </div>
-        </nav>
-        <input type="search" placeholder="Busca tu producto">
-        <h1 class="title"> 100% <p>Organicos</p>
-        </h1>
-
-
-
-        <div class="menu-box">
-            <h3>Menu</h3>
-            <ul class="options ">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Pastas </a></li>
-                <li><a href="#"> Cereales</a></li>
-                <li><a href="#">Bebidas</a></li>
-                <li><a href="#">Infusiones</a></li>
+        <nav class="header--nav">
+           
+            <a href="#" class="logo ">OrganiCom</a>
+       
+            <ul class="nav--list ">
+                <li><a class="nav--link" href="#">Home</a></li>
+                <li><a class="nav--link" href="#">Nosotros</a></li>
+                <li><a class="nav--link" href="#">Contacto</a></li>
+                <li><a class="nav--link" href="#">Pastas </a></li>
+                <li><a class="nav--link" href="#">Bebidas</a></li>
+                <li><a class="nav--link" href="#">Infusiones</a></li>
             </ul>
-        </div>
+         <div class="nav--icons">
+            <a class="nav--link" href="#"><i class=" fa-solid fa-user"></i></a>
+            <a class="nav--link" href="#"><i class="fa-solid fa-cart-arrow-down"></i></a>
+            <a class="nav--link burger" href="#"><i class="fa-solid fa-burger "></i></a>
+            
+         </div>
+            
+        </nav>
+     
     </header>
 
     <main>
-        <section>
-            <!-- Slider main container -->
-            <div class="swiper carousel1 ">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide slide1">
-                        <div class="insideBox">
-                            <p class="desc20">20% </p>
-                            <p class="desc">Descuento</p>
-                            <p class="desc-juice">en todos nuestros jugos</p>
-                            <button class="comprar-ahora">Comprar ahora</button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide slide2"> 
-                      <p class="p1">Descubrí!! </p>
-                      <p class="p2">Una gran variedad de frutos secos</p>
-                    </div>
-                    <div class="swiper-slide">
-                        Slide 3
-                    </div>
-                </div>
-                
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>           
-            </div>
-
+        <section class="banner">
+            <h1 class="banner--title">OrganiCom</h1>
+            <img class="banner--mockup" src="/public/img/mockup.png" alt="">
         </section>
-        <section class="masVendido">
-            <h3>Lo mas vendido</h3>
-            <!-- Slider main container -->
-            <div class="swiper carousel2">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide card">  
-                            <div class="imgBox">
-                                <img src="/public/img/hierbas.jpeg" alt="">      
-                            </div>                
-                            <p class="cardText">Té negro en hebras x 400grs  </p>
-                            <p class="precio">$670-</p>
-                            
-                            <button class="agregar1">Agregar</button>                   
-                    </div>
-                    <div class="swiper-slide card "> 
-                        <div class="imgBox">
-                            <img src="/public/img/pastaseca.jpeg" alt="">      
-                        </div>       
-                      <p class="cardText">Pastas secas varias x 500grs </p>
-                      <p class="">$120-</p>
-                      <button class="agregar1">Agregar</button>     
-                    </div>
-                    <div class="swiper-slide card "> 
-                        <div class="imgBox">
-                            <img src="/public/img/frutasVerduras.jpg" alt="">      
-                        </div>       
-                      <p class="cardText">Pastas secas varias x 500grs </p>
-                      <p class="">$120-</p>
-                      <button class="agregar1">Agregar</button>     
-                    </div>
-                    <div class="swiper-slide card">  
-                        <div class="imgBox">
-                            <img src="/public/img/hierbas.jpeg" alt="">      
-                        </div>                
-                        <p class="cardText">Té negro en hebras x 400grs  </p>
-                        <p class="precio">$670-</p>
-                        
-                        <button class="agregar1">Agregar</button>                   
-                </div>
-                <div class="swiper-slide card "> 
-                    <div class="imgBox">
-                        <img src="/public/img/pastaseca.jpeg" alt="">      
-                    </div>       
-                  <p class="cardText">Pastas secas varias x 500grs </p>
-                  <p class="">$120-</p>
-                  <button class="agregar1">Agregar</button>     
-                </div>
-                <div class="swiper-slide card "> 
-                    <div class="imgBox">
-                        <img src="/public/img/frutasVerduras.jpg" alt="">      
-                    </div>       
-                  <p class="cardText">Pastas secas varias x 500grs </p>
-                  <p class="">$120-</p>
-                  <button class="agregar1">Agregar</button>     
-                </div>
-                    
-                </div>
-                
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev arrow"></div>
-                <div class="swiper-button-next arrow"></div>           
-            </div>
+        <section class="carousel">
+            <div class="carousel--container  " >
+       
+                <div class="a uno"></div>
+                <div class="a dos"></div>
+                <div  class="a tres"></div>
+                <div class="a cuatro"></div>
+              </div>   
 
         </section>
 
-        <section>
-            <!-- Slider main container -->
-            <div class="swiper carousel2">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide card">  
-                            <div class="imgBox">
-                                <img src="/public/img/hierbas.jpeg" alt="">      
-                            </div>                
-                            <p class="teText">Té negro en hebras x 400grs  </p>
-                            <p class="precio">$670-</p>
-                            
-                            <button class="agregar1">Agregar</button>                   
-                    </div>
-                    <div class="swiper-slide card "> 
-                        <div class="imgBox">
-                            <img src="/public/img/pastaseca.jpeg" alt="">      
-                        </div>       
-                      <p class="">Descubrí!! </p>
-                      <p class="">Una gran variedad de frutos secos</p>
-                    </div>
-                    <div class="swiper-slide card">
-                        Slide 3
-                    </div>
-                    <div class="swiper-slide card">
-                        Slide 3
-                    </div>
-                   <div class="swiper-slide card">
-                        Slide 3
-                    </div>
-                    <div class="swiper-slide card">
-                        Slide 3
-                    </div>  
-                </div>
-                
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev arrow"></div>
-                <div class="swiper-button-next arrow"></div>           
-            </div>
-
+        <h3>Lo mas vendido</h3>
+        <section class="masVendido ">
+            
+            <div class="carousel--container  card" >       
+                <div class="a uno"></div>
+                <div class="a dos"></div>
+                <div  class="a tres"></div>
+                <div class="a cuatro"></div>
+            </div>             
         </section>
-        <div class="seguinos">
+
+        <section class="seguinos">
            
             <p>Atencion al cliente : 0800-organic</p>
             <p>Seguinos en </p>
-           
-        </div>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </section>
 
+
+        
+
+        <section class="descuento">
+            <article class="descuento--card">
+                    <p>Descuento de algo</p>
+            </article>
+            <article class="descuento--card">
+                <p>Descuento de algo</p>
+            </article>
+        </section>
+
+        <section class="masVendido">
+
+            <h3>Ofertas</h3>
+            <div class="carousel--container  card" >       
+                <div class="a uno"></div>
+                <div class="a dos"></div>
+                <div  class="a tres"></div>
+                <div class="a cuatro"></div>
+            </div>            
+              
+        </section>
+  
     </main>
 
     <footer>
 
     </footer>
-    <script src="/script/home.js"></script>
+    
 </body>
 
 </html>
