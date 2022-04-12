@@ -64,6 +64,57 @@ header button {
    justify-content: center;
 }
 
+header .btn-cuenta {
+   position: relative;
+}
+.btn-cuenta .contendor-login-register {
+   width: 200px;
+   padding: 1rem;
+   text-align: left;
+   cursor: default;
+
+   position: absolute;
+   top: 150%;
+   right: 0;
+   z-index: 500;
+   opacity: 0;
+   visibility: hidden;
+   background-color: #fff;
+   border: 1px solid var(--borde-gris-claro);
+   border-radius: 0.3rem;
+   box-shadow: 0 0 0.3rem #eee;
+
+   transition: 0.3s ease;
+   transition-property: opacity, visibility;
+}
+.contendor-login-register.show {
+   opacity: 1;
+   visibility: visible;
+}
+.btn-cuenta .contendor-login-register p {
+   font-size: 0.9rem;
+   margin: 0;
+}
+.btn-cuenta .contendor-login-register a {
+   margin: 0.5rem 0;
+   display: block;
+   font-size: 1rem;
+   background-color: var(--verde);
+   color: var(--texto-blanco);
+   font-weight: bolder;
+   text-decoration: none;
+   padding: 0.5rem 1rem;
+   text-align: center;
+   border-radius: 0.3rem;
+}
+.btn-cuenta .contendor-login-register a:first-of-type {
+   margin-bottom: 1rem;
+}
+.btn-cuenta .contendor-login-register a:last-of-type {
+   background-color: var(--amarilo);
+   color: var(--verde);
+}
+
 header button.active {
    background-color: #eee;
 }
@@ -112,20 +163,30 @@ nav.categorias-contenedor a {
    padding: 1rem 0;
 }
 
-.btn-menu:hover ~ nav.categorias-contenedor {
+nav.categorias-contenedor.show {
    opacity: 1;
    visibility: visible;
 }
 
 .barra-busqueda {
+   overflow: hidden;
+   padding: 0;
+   height: 0;
    width: 100%;
-   padding: 1rem 0 0;
 
    grid-column: 1 / -1;
+
+   transition: padding 0.5s ease;
+}
+
+.barra-busqueda.show {
+   padding: 1rem 0 0;
+   height: max-content;
 }
 
 .barra-busqueda input {
-   width: 100%;
+   margin: 0.3rem;
+   width: 97%;
    border: none;
    border-radius: 0.2rem;
    background-color: var(--fondo-input);
@@ -381,6 +442,10 @@ main.grid-princpial {
    background: url(/assets/img/favorito-outline-icono.svg) no-repeat center;
    background-size: contain;
 }
+.favorito-contenedor p.favorito .icono.active {
+   background-image: url(/assets/img/favorito-solid-icono.svg);
+}
+
 .favorito-contenedor p.estrellas .icono {
    margin-right: 0.5rem;
    display: block;
@@ -446,6 +511,10 @@ main.grid-princpial {
    font-weight: bolder;
    color: var(--verde);
    font-family: monospace;
+}
+.cantidad-input-contenedor .disabled {
+   cursor: not-allowed;
+   filter: saturate(0);
 }
 .cantidad #input-cantidad {
    font-size: 1.2rem;
@@ -640,8 +709,12 @@ main.grid-princpial {
    max-width: 350px;
    margin: 2rem auto;
 }
-.recomendados h3 {
-   position: relative;
+
+.recomendados .card h3 {
+   font-size: 0.9rem;
+   letter-spacing: 0.5px;
+   margin-bottom: 0.5rem;
+   word-spacing: 2px;
 }
 .recomendados .flecha-izq,
 .recomendados .flecha-der {
@@ -684,6 +757,7 @@ main.grid-princpial {
 }
 .recomendados .card {
    width: 80%;
+   /* max-width: 200px; */
    margin: 0 auto;
    box-shadow: 0 0 0.3rem var(--borde-gris-claro);
    border-radius: 0.5rem;
@@ -939,7 +1013,7 @@ main.grid-princpial {
       flex-direction: column;
       justify-content: space-between;
    }
-   .slider .producto-imagen-portada{
+   .slider .producto-imagen-portada {
       padding: 2.5rem 0;
    }
    .slider .lista-imgs {
@@ -966,8 +1040,14 @@ main.grid-princpial {
       flex-direction: column;
       justify-content: space-between;
    }
-   .detalle-producto .btns-contenedor{
-      margin-bottom: .2rem;
+   .detalle-producto .btns-contenedor {
+      margin-bottom: 0.2rem;
+   }
+   .detalle-producto .btns-contenedor button {
+      transition: box-shadow 0.3s ease;
+   }
+   .detalle-producto .btns-contenedor button:hover {
+      box-shadow: 0 0 0.3rem #666;
    }
    .detalle-producto .precio-final {
       font-size: 1.9rem;
@@ -1042,7 +1122,7 @@ main.grid-princpial {
    }
 
    .barra-busqueda {
-      padding: 0;
+      height: auto;
       max-width: 600px;
 
       margin: 0 auto;
@@ -1165,7 +1245,7 @@ main.grid-princpial {
    .descripcion-texto h3,
    .comentarios h3,
    .recomendados h3 {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       margin-bottom: 1.5rem;
    }
    .comentarios .comentario {

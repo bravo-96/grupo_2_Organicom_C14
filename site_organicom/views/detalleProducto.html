@@ -18,14 +18,28 @@
       <a href="/" class="logo-link">
          <img class="logo" src="/assets/img/logo-verde.svg" alt="Logo principal">
       </a>
-      <button type="button" class="btn-menu"><img src="/assets/img/menu-icono.svg"
-            class="menu-icono" /><span>Categorias</span></button>
-      <button type="button" class="btn-buscar active"><img src="/assets/img/lupa-icono.svg"
-            class="lupa-icono" /></button>
-      <button type="button" class="btn-cuenta"><img src="/assets/img/usuario-icono.svg" class="usuario-icono" /><span>Mi
-            Cuenta</span></button>
-      <button type="button" class="btn-carrito"><img src="/assets/img/carrito-icono.svg"
-            class="carrito-icono" /></button>
+      <button type="button" class="btn-menu">
+         <img src="/assets/img/menu-icono.svg" class="menu-icono" />
+         <span>Categorias</span>
+      </button>
+      <button type="button" class="btn-buscar">
+         <img src="/assets/img/lupa-icono.svg" class="lupa-icono" />
+      </button>
+      <button type="button" class="btn-cuenta">
+         <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
+         <span>Mi Cuenta</span>
+         <div class="contendor-login-register">
+            <p>Si ya tenes una cuenta, inicia sesion!</p>
+            <a href="/login">Iniciar sesión</a>
+            <p>Si aún no tenes una cuenta, registrate!</p>
+            <a href="/register">Registrarse</a>
+         </div>
+      </button>
+      <a href="/carrito">
+         <button type="button" class="btn-carrito">
+            <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
+         </button>
+      </a>
 
       <nav class="categorias-contenedor">
          <div class="imagen-fondo frutos-secos"></div>
@@ -59,7 +73,7 @@
          <h1 class="titulo-producto">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h1>
          <div class="favorito-contenedor">
             <p class="estrellas"><span class="icono"></span>4.0</p>
-            <p class="favorito">Agregar a favoritos<span class="icono"></span></p>
+            <p class="favorito"><span>Agregar a favoritos</span><span class="icono"></span></p>
          </div>
          <div class="precio-contenedor">
             <p class="precio-final">$ 716,00</p>
@@ -68,9 +82,9 @@
          <div class="cantidad">
             <label for="input-cantidad">¿Cuantos queres llevar?</label>
             <div class="cantidad-input-contenedor">
-               <button type="button">-</button>
+               <button type="button" class="resta">-</button>
                <input type="text" max="100" id="input-cantidad" name="input-cantidad" value="1">
-               <button type="button">+</button>
+               <button type="button" class="suma">+</button>
             </div>
             <!-- <select name="contidad-select" id="contidad-select">
                <option value="1">1</option>
@@ -187,7 +201,7 @@
             <div class="slider">
                <div class="flecha-izq"></div>
                <div class="flecha-der"></div>
-            
+
                <article class="card">
                   <div class="card-header">
                      <img src="/assets/img/producto-imagen-1.jpg" alt>
@@ -203,7 +217,7 @@
                      </div>
                   </div>
                </article>
-            
+
                <article class="card">
                   <div class="card-header">
                      <img src="/assets/img/producto-imagen-1.jpg" alt>
@@ -219,7 +233,7 @@
                      </div>
                   </div>
                </article>
-            
+
                <article class="card">
                   <div class="card-header">
                      <img src="/assets/img/producto-imagen-1.jpg" alt>
@@ -235,7 +249,7 @@
                      </div>
                   </div>
                </article>
-            
+
                <article class="card">
                   <div class="card-header">
                      <img src="/assets/img/producto-imagen-1.jpg" alt>
@@ -301,7 +315,7 @@
          </p>
       </div>
    </footer>
-
+   <script src="/js/detalleProducto.js"></script>
 </body>
 
 
