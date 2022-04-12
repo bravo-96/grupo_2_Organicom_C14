@@ -51,3 +51,27 @@ listaLinksCategorias.forEach((elm) => {
 });
 
 // ------------
+
+const cantidadInput = document.querySelector(
+   '.cantidad-input-contenedor input'
+);
+const cantidadBtnResta = document.querySelector(
+   '.cantidad-input-contenedor .resta'
+);
+const cantidadBtnSuma = document.querySelector(
+   '.cantidad-input-contenedor .suma'
+);
+
+cantidadBtnResta.addEventListener('click', () => {
+   modificarCantidad('resta');
+});
+cantidadBtnSuma.addEventListener('click', () => modificarCantidad('suma'));
+
+function modificarCantidad(op) {
+   if (op === 'resta') {
+      cantidadInput.value = +cantidadInput.value - 1;
+   } else {
+      cantidadInput.value = +cantidadInput.value + 1;
+   }
+   cantidadInput.value = +cantidadInput.value < 1 ? 1 : cantidadInput.value;
+}

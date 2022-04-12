@@ -89,5 +89,5 @@ function modificarCantidad(op) {
    } else {
       cantidadInput.value = +cantidadInput.value + 1;
    }
-   cantidadInput.value = +cantidadInput.value < 0 ? 0 : cantidadInput.value;
+   cantidadInput.value = +cantidadInput.value < 1 ? 1 : cantidadInput.value;
 }
