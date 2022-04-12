@@ -1,3 +1,4 @@
+// ------ Heder & Footer ------
 const btnMenu = document.querySelector('.btn-menu');
 const navContenedor = document.querySelector('.categorias-contenedor');
 const btnCuenta = document.querySelector('.btn-cuenta');
@@ -6,6 +7,22 @@ const contendorLoginRegister = document.querySelector(
 );
 const btnBuscar = document.querySelector('.btn-buscar');
 const barraBusqueda = document.querySelector('.barra-busqueda');
+
+btnMenu.addEventListener('click', () => {
+   navContenedor.classList.toggle('show');
+   btnMenu.classList.toggle('active');
+});
+
+btnCuenta.addEventListener('click', () => {
+   contendorLoginRegister.classList.toggle('show');
+   btnCuenta.classList.toggle('active');
+});
+btnBuscar.addEventListener('click', () => {
+   barraBusqueda.classList.toggle('show');
+   btnBuscar.classList.toggle('active');
+});
+
+// ------------
 
 const cantidadInput = document.querySelector(
    '.cantidad-input-contenedor input'
@@ -25,10 +42,11 @@ const iconoFavorito = document.querySelector(
 btnFavorito.addEventListener('click', () => {
    iconoFavorito.classList.toggle('active');
    if (iconoFavorito.classList.contains('active')) {
-      btnFavorito.querySelector('span:first-child').textContent = "Quitar de favoritos"
-   } else{
-      btnFavorito.querySelector('span:first-child').textContent = "Agregar a favoritos"
-
+      btnFavorito.querySelector('span:first-child').textContent =
+         'Quitar de favoritos';
+   } else {
+      btnFavorito.querySelector('span:first-child').textContent =
+         'Agregar a favoritos';
    }
 });
 
@@ -48,17 +66,3 @@ function modificarCantidad(op) {
    }
    cantidadInput.value = +cantidadInput.value < 0 ? 0 : cantidadInput.value;
 }
-
-btnMenu.addEventListener('click', () => {
-   navContenedor.classList.toggle('show');
-   btnMenu.classList.toggle('active');
-});
-
-btnCuenta.addEventListener('click', () => {
-   contendorLoginRegister.classList.toggle('show');
-   btnCuenta.classList.toggle('active');
-});
-btnBuscar.addEventListener('click', () => {
-   barraBusqueda.classList.toggle('show');
-   btnBuscar.classList.toggle('active');
-});

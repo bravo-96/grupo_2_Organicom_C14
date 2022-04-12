@@ -12,36 +12,53 @@
    <title>Carrito</title>
 </head>
 
-<body>
+<body class="carrito">
    <header>
       <a href="/" class="logo-link">
          <img class="logo" src="/assets/img/logo-verde.svg" alt="Logo principal">
       </a>
-      <button type="button" class="btn-menu"><img src="/assets/img/menu-icono.svg"
-            class="menu-icono" /><span>Categorias</span></button>
-      <button type="button" class="btn-buscar active"><img src="/assets/img/lupa-icono.svg"
-            class="lupa-icono" /></button>
-      <button type="button" class="btn-cuenta"><img src="/assets/img/usuario-icono.svg" class="usuario-icono" /><span>Mi
-            Cuenta</span></button>
-      <button type="button" class="btn-carrito"><img src="/assets/img/carrito-icono.svg"
-            class="carrito-icono" /></button>
+      <button type="button" class="btn-menu">
+         <img src="/assets/img/menu-icono.svg" class="menu-icono" />
+         <span>Categorias</span>
+      </button>
+      <button type="button" class="btn-buscar">
+         <img src="/assets/img/lupa-icono.svg" class="lupa-icono" />
+      </button>
+      <button type="button" class="btn-cuenta">
+         <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
+         <span>Mi Cuenta</span>
+         <div class="contendor-login-register">
+            <p>Si ya tenes una cuenta, inicia sesion!</p>
+            <a href="/login">Iniciar sesión</a>
+            <p>Si aún no tenes una cuenta, registrate!</p>
+            <a href="/register">Registrarse</a>
+         </div>
+      </button>
+      <a href="/carrito">
+         <button type="button" class="btn-carrito">
+            <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
+         </button>
+      </a>
 
       <nav class="categorias-contenedor">
-         <div class="imagen-fondo frutos-secos"></div>
+         <div class="imagen-fondo xxx ccc ddd"></div>
          <ul>
-            <li><a href="./">Fideos / Cereales</a></li>
-            <li><a href="./" data-nombre-categoria="frutos-secos">Frutos secos</a></li>
-            <li><a href="./">Jugos y bebidas</a></li>
-            <li><a href="./">Infusiones</a></li>
+            <li><a class="link-categoria" href="./" data-nombre_categoria="cereales">Fideos / Cereales</a></li>
+            <li><a class="link-categoria" href="./" data-nombre_categoria="frutos-secos">Frutos secos</a></li>
+            <li><a class="link-categoria" href="./" data-nombre_categoria="jugos">Jugos y bebidas</a></li>
+            <li><a class="link-categoria" href="./" data-nombre_categoria="infusiones">Infusiones</a></li>
          </ul>
       </nav>
       <form action="/" method="GET" class="barra-busqueda">
          <input type="text" placeholder="Buscar producto">
       </form>
    </header>
-
    <main>
-      MAIN
+
+      <section class="">
+
+      </section>
+
    </main>
 
    <footer>
@@ -67,9 +84,9 @@
                <h4>Explora</h4>
                <li><a href="/">Inicio</a></li>
                <li><a href="/">Categorias</a></li>
-               <li><a href="/">Login</a></li>
-               <li><a href="/">Registrate</a></li>
-               <li><a href="/">Carrito</a></li>
+               <li><a href="/login">Login</a></li>
+               <li><a href="/register">Registrate</a></li>
+               <li><a href="/carrito">Carrito</a></li>
             </ul>
 
             <div class="logo-redes-contenedor">
@@ -89,6 +106,7 @@
          </p>
       </div>
    </footer>
+   <script src="/js/carrito.js"></script>
 </body>
 
 </html>

@@ -64,6 +64,56 @@ header button {
    justify-content: center;
 }
 
+header .btn-cuenta {
+   position: relative;
+}
+.btn-cuenta .contendor-login-register {
+   width: 200px;
+   padding: 1rem;
+   text-align: left;
+   cursor: default;
+
+   position: absolute;
+   top: 150%;
+   right: 0;
+   z-index: 500;
+   opacity: 0;
+   visibility: hidden;
+   background-color: #fff;
+   border-radius: 0.3rem;
+   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3);
+
+   transition: 0.3s ease;
+   transition-property: opacity, visibility;
+}
+.contendor-login-register.show {
+   opacity: 1;
+   visibility: visible;
+}
+.btn-cuenta .contendor-login-register p {
+   font-size: 0.9rem;
+   margin: 0;
+}
+.btn-cuenta .contendor-login-register a {
+   margin: 0.5rem 0;
+   display: block;
+   font-size: 1rem;
+   background-color: var(--verde);
+   color: var(--texto-blanco);
+   font-weight: bolder;
+   text-decoration: none;
+   padding: 0.5rem 1rem;
+   text-align: center;
+   border-radius: 0.3rem;
+}
+.btn-cuenta .contendor-login-register a:first-of-type {
+   margin-bottom: 1rem;
+}
+.btn-cuenta .contendor-login-register a:last-of-type {
+   background-color: var(--amarilo);
+   color: var(--verde);
+}
+
 header button.active {
    background-color: #eee;
 }
@@ -112,20 +162,30 @@ nav.categorias-contenedor a {
    padding: 1rem 0;
 }
 
-.btn-menu:hover ~ nav.categorias-contenedor {
+nav.categorias-contenedor.show {
    opacity: 1;
    visibility: visible;
 }
 
 .barra-busqueda {
+   overflow: hidden;
+   padding: 0;
+   height: 0;
    width: 100%;
-   padding: 1rem 0 0;
 
    grid-column: 1 / -1;
+
+   transition: padding 0.5s ease;
+}
+
+.barra-busqueda.show {
+   padding: 1rem 0 0;
+   height: max-content;
 }
 
 .barra-busqueda input {
-   width: 100%;
+   margin: 0.3rem;
+   width: 97%;
    border: none;
    border-radius: 0.2rem;
    background-color: var(--fondo-input);
@@ -138,6 +198,7 @@ nav.categorias-contenedor a {
    outline: none;
    box-shadow: 0 0 0.1rem 0.2rem var(--verde);
 }
+/* ------------ */
 
 /* ------ Footer ------ */
 
@@ -271,8 +332,9 @@ footer .copyright {
    text-align: center;
    margin-top: 2rem;
 }
-
 /* ------------ */
+
+/* ------ Main ------ */
 
 /* ------- MOBILE XL ------- */
 
@@ -331,6 +393,8 @@ footer .copyright {
 
    nav.categorias-contenedor {
       overflow: hidden;
+      padding: 2rem 0;
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
    }
 
    .imagen-fondo {
@@ -338,13 +402,27 @@ footer .copyright {
       right: 0;
       top: 0;
 
-      background-image: url(/assets/img/cat-frutos-secos.jpg);
-      background-position: 3rem 5%;
+      background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
 
       width: 70%;
+      max-width: 1000px;
       height: 100%;
+   }
+   .imagen-fondo.cereales {
+      background-image: url(/assets/img/cat-cereales.jpg);
+   }
+   .imagen-fondo.frutos-secos {
+      background-position: 3rem 5%;
+      background-image: url(/assets/img/cat-frutos-secos.jpg);
+   }
+   .imagen-fondo.jugos {
+      background-image: url(/assets/img/cat-jugos.jpg);
+   }
+   .imagen-fondo.infusiones {
+      background-position: 0 10%;
+      background-image: url(/assets/img/cat-infusiones.jpg);
    }
 
    .imagen-fondo::before {
@@ -362,7 +440,7 @@ footer .copyright {
    nav.categorias-contenedor ul {
       display: flex;
       flex-direction: column;
-      margin: 1rem 0 1rem 10%;
+      margin: 1rem 0 1rem 15%;
    }
 
    nav.categorias-contenedor a {
@@ -385,7 +463,7 @@ footer .copyright {
       width: 2rem;
       height: 1.1rem;
 
-      transition: 0.3s ease;
+      transition: 0.5s ease;
       transition-property: right opacity;
    }
 
@@ -411,6 +489,7 @@ footer .copyright {
    nav.categorias-contenedor a:hover::after {
       width: 150%;
    }
+   /* -------------- */
 
    /* ------- Footer ------- */
 
@@ -442,7 +521,7 @@ footer .copyright {
    }
 
    .barra-busqueda {
-      padding: 0;
+      height: auto;
       max-width: 600px;
 
       margin: 0 auto;
@@ -479,6 +558,7 @@ footer .copyright {
 
    footer .max-width-container {
       max-width: 1200px;
+
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
