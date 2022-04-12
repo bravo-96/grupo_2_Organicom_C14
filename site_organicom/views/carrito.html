@@ -53,10 +53,169 @@
          <input type="text" placeholder="Buscar producto">
       </form>
    </header>
-   <main>
+   <main class="grid-principal">
+      <section class="lista-carrito">
+         <h2>Mis productos</h2>
+         <article class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            <h3 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h3>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </article>
+         <article class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            <h3 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h3>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </article>
+         <article class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            <h3 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h3>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </article>
+      </section>
 
-      <section class="">
+      <section class="resumen-compra">
+         <h2>Resumen de compra</h2>
+         <div class="resumen">
+            <p>Subtotal <span class="precio-subtotal">$ 750,00</span></p>
+            <p>Costo de envío <span class="precio-envio">$ 300,00</span></p>
+            <p class="precio-total"></p>
+            <button type="buttom">Realizar compra</button>
+         </div>
 
+         <div class="codigo-descuento-contenedor">
+            <p>¿Tenés algun código de descuento?</p>
+            <form action="/">
+               <input type="text" placeholder="Ingresa el código">
+               <input type="submit" value="Aplicar">
+            </form>
+         </div>
+
+         <div class="metodos-pago">
+            <p>Métodos de pago:</p>
+            <ul class="lista-metodos-pago">
+               <li><img title="Efectivo" src="/assets/img/efectivo.png" alt></li>
+               <li><img title="Mercado Pago" src="/assets/img/merc-pago.png" alt></li>
+               <li><img title="Visa" src="/assets/img/visa.png" alt></li>
+               <li><img title="Master Card" src="/assets/img/mast-card.png" alt></li>
+               <li><img title="American Express" src="/assets/img/amer-express.png" alt></li>
+            </ul>
+         </div>
+      </section>
+
+      <section class="recomendados">
+         <div class="sticky-contenedor">
+            <h3>Tambien te pueden interesar</h3>
+            <div class="slider">
+               <div class="flecha-izq"></div>
+               <div class="flecha-der"></div>
+
+               <article class="card">
+                  <div class="card-header">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt>
+                     <div class="favorito"></div>
+                  </div>
+                  <div class="card-body">
+                     <h3>Titulo del producto</h3>
+                     <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
+                     <p class="precio-final">$ 895,00</p>
+                     <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     <div class="botones">
+                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="card">
+                  <div class="card-header">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt>
+                     <div class="favorito"></div>
+                  </div>
+                  <div class="card-body">
+                     <h3>Titulo del producto</h3>
+                     <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
+                     <p class="precio-final">$ 895,00</p>
+                     <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     <div class="botones">
+                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="card">
+                  <div class="card-header">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt>
+                     <div class="favorito"></div>
+                  </div>
+                  <div class="card-body">
+                     <h3>Titulo del producto</h3>
+                     <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
+                     <p class="precio-final">$ 895,00</p>
+                     <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     <div class="botones">
+                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="card">
+                  <div class="card-header">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt>
+                     <div class="favorito"></div>
+                  </div>
+                  <div class="card-body">
+                     <h3>Titulo del producto</h3>
+                     <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
+                     <p class="precio-final">$ 895,00</p>
+                     <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     <div class="botones">
+                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                     </div>
+                  </div>
+               </article>
+            </div>
+         </div>
       </section>
 
    </main>

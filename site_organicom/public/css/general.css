@@ -25,6 +25,10 @@ ol {
    list-style: none;
 }
 
+img{
+   width: 100%;
+}
+
 ::selection {
    color: #fff;
    background-color: #000;

@@ -74,7 +74,7 @@ header .btn-cuenta {
    cursor: default;
 
    position: absolute;
-   top: 150%;
+   top: 0;
    right: 0;
    z-index: 500;
    opacity: 0;
@@ -84,11 +84,12 @@ header .btn-cuenta {
    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3);
 
    transition: 0.3s ease;
-   transition-property: opacity, visibility;
+   transition-property: opacity, visibility, transform;
 }
 .contendor-login-register.show {
    opacity: 1;
    visibility: visible;
+   transform: translateY(30%);
 }
 .btn-cuenta .contendor-login-register p {
    font-size: 0.9rem;
@@ -335,6 +336,92 @@ footer .copyright {
 /* ------------ */
 
 /* ------ Main ------ */
+
+.lista-carrito {
+   padding: 1rem;
+}
+.lista-carrito .producto-card {
+   margin: 1rem 0;
+   max-width: 430px;
+   padding: 0.5rem;
+   position: relative;
+   display: grid;
+   grid-template-columns: max-content 1fr 1fr;
+   gap: 0.5rem;
+   row-gap: 1rem;
+   border-radius: 0.4rem;
+   box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+}
+.producto-card > .btn-cerrar {
+   border: none;
+   position: absolute;
+   width: 1rem;
+   height: 1rem;
+
+   top: 0.5rem;
+   right: 0.5rem;
+
+   background: url('/assets/img/cerrar-icono.svg') no-repeat center;
+   background-size: contain;
+}
+
+.producto-card > img {
+   align-self: center;
+   width: 5rem;
+   grid-column: 1/2;
+   grid-row: 1/3;
+}
+.producto-card > .titulo {
+   font-size: 0.9rem;
+   margin: 0.5rem 1.7rem 0 0;
+   grid-column: 2/4;
+   grid-row: 1/2;
+}
+.producto-card .cantidad-contenedor p,
+.producto-card .precio-contenedor p {
+   margin: 0 0 0.5rem;
+   text-align: center;
+   font-size: 0.9rem;
+   color: var(--texto-gris);
+}
+
+.producto-card .precio-contenedor .precio-total {
+   font-size: 0.9rem;
+   color: var(--verde);
+   font-weight: bolder;
+   margin: 0;
+   /* padding: 0.5rem 0; */
+   vertical-align: middle;
+}
+
+.producto-card .cantidad-input-contenedor {
+   display: flex;
+   align-items: center;
+   gap: 0.2rem;
+   background-color: var(--fondo-input);
+   width: max-content;
+   border-radius: 0.2rem;
+   margin: 0 auto;
+}
+.producto-card .cantidad-input-contenedor button {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   font-size: 1rem;
+   font-weight: bolder;
+   color: var(--verde);
+   font-family: monospace;
+}
+.producto-card .input-cantidad {
+   font-size: 1rem;
+   background-color: transparent;
+   border: none;
+   width: 1.7rem;
+   text-align: center;
+}
+.producto-card .input-cantidad:focus-within {
+   outline-color: var(--verde);
+}
 
 /* ------- MOBILE XL ------- */
 

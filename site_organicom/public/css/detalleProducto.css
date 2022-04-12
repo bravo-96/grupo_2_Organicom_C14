@@ -512,10 +512,6 @@ main.grid-princpial {
    color: var(--verde);
    font-family: monospace;
 }
-.cantidad-input-contenedor .disabled {
-   cursor: not-allowed;
-   filter: saturate(0);
-}
 .cantidad #input-cantidad {
    font-size: 1.2rem;
    background-color: transparent;

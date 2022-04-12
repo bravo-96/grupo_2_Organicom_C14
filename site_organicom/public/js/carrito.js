@@ -8,6 +8,9 @@ const contendorLoginRegister = document.querySelector(
 const btnBuscar = document.querySelector('.btn-buscar');
 const barraBusqueda = document.querySelector('.barra-busqueda');
 
+const listaLinksCategorias = document.querySelectorAll('.link-categoria');
+const imgFondo = document.querySelector('.categorias-contenedor .imagen-fondo');
+
 btnMenu.addEventListener('click', () => {
    navContenedor.classList.toggle('show');
    btnMenu.classList.toggle('active');
@@ -22,14 +25,9 @@ btnBuscar.addEventListener('click', () => {
    btnBuscar.classList.toggle('active');
 });
 
-// ------------
-
-const listaLinksCategorias = document.querySelectorAll('.link-categoria');
-const imgFondo = document.querySelector('.categorias-contenedor .imagen-fondo');
-
 listaLinksCategorias.forEach((elm) => {
    elm.addEventListener('mouseenter', (e) => {
-         setTimeout(() => {
+      setTimeout(() => {
          const categoria = e.target.dataset.nombre_categoria;
 
          imgFondo.classList = imgFondo.classList[0];
@@ -49,5 +47,7 @@ listaLinksCategorias.forEach((elm) => {
                break;
          }
       }, 250);
-      });
+   });
 });
+
+// ------------
