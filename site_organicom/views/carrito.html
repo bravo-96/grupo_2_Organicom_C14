@@ -53,6 +53,7 @@
          <input type="text" placeholder="Buscar producto">
       </form>
    </header>
+
    <main class="grid-principal">
       <section class="lista-carrito">
          <h2>Mis productos</h2>
@@ -115,33 +116,33 @@
          </article>
       </section>
 
+      <section class="codigo-descuento">
+         <p>¿Tenés algun código de descuento?</p>
+         <form action="/">
+            <input type="text" placeholder="Ingresa el código">
+            <input type="submit" value="Aplicar">
+         </form>
+      </section>
+
       <section class="resumen-compra">
          <h2>Resumen de compra</h2>
          <div class="resumen">
             <p>Subtotal <span class="precio-subtotal">$ 750,00</span></p>
             <p>Costo de envío <span class="precio-envio">$ 300,00</span></p>
-            <p class="precio-total"></p>
+            <p class="precio-total"><span>Total</span> <span>$ 1.050,00</span></p>
             <button type="buttom">Realizar compra</button>
          </div>
+      </section>
 
-         <div class="codigo-descuento-contenedor">
-            <p>¿Tenés algun código de descuento?</p>
-            <form action="/">
-               <input type="text" placeholder="Ingresa el código">
-               <input type="submit" value="Aplicar">
-            </form>
-         </div>
-
-         <div class="metodos-pago">
-            <p>Métodos de pago:</p>
-            <ul class="lista-metodos-pago">
-               <li><img title="Efectivo" src="/assets/img/efectivo.png" alt></li>
-               <li><img title="Mercado Pago" src="/assets/img/merc-pago.png" alt></li>
-               <li><img title="Visa" src="/assets/img/visa.png" alt></li>
-               <li><img title="Master Card" src="/assets/img/mast-card.png" alt></li>
-               <li><img title="American Express" src="/assets/img/amer-express.png" alt></li>
-            </ul>
-         </div>
+      <section class="metodos-pago">
+         <p>Métodos de pago:</p>
+         <ul class="lista-metodos-pago">
+            <li><img title="Efectivo" src="/assets/img/efectivo.png" alt></li>
+            <li><img title="Mercado Pago" src="/assets/img/merc-pago.png" alt></li>
+            <li><img title="Visa" src="/assets/img/visa.png" alt></li>
+            <li><img title="Master Card" src="/assets/img/mast-card.png" alt></li>
+            <li><img title="American Express" src="/assets/img/amer-express.png" alt></li>
+         </ul>
       </section>
 
       <section class="recomendados">

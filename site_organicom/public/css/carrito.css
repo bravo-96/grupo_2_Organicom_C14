@@ -337,9 +337,10 @@ footer .copyright {
 
 /* ------ Main ------ */
 
-.lista-carrito {
+main.grid-principal {
    padding: 1rem;
 }
+/* ------------ */
 .lista-carrito .producto-card {
    margin: 1rem 0;
    max-width: 430px;
@@ -390,7 +391,6 @@ footer .copyright {
    color: var(--verde);
    font-weight: bolder;
    margin: 0;
-   /* padding: 0.5rem 0; */
    vertical-align: middle;
 }
 
@@ -421,6 +421,77 @@ footer .copyright {
 }
 .producto-card .input-cantidad:focus-within {
    outline-color: var(--verde);
+}
+/* -------------- */
+
+/* ------- codigo descuento ------- */
+
+.codigo-descuento {
+   max-width: 400px;
+   width: 90%;
+   margin: 0 auto;
+}
+.codigo-descuento p {
+   text-align: center;
+}
+.codigo-descuento form {
+   display: flex;
+   gap: 0.5rem;
+   justify-content: space-between;
+}
+.codigo-descuento form > input[type='text'] {
+   background-color: var(--fondo-input);
+   border: none;
+   border-radius: 0.3rem;
+   padding: 0.5rem;
+   width: 100%;
+}
+.codigo-descuento form > input[type='submit'] {
+   width: 40%;
+   border: none;
+   background-color: #fff;
+   border: 2px solid var(--amarilo);
+   border-radius: 0.3rem;
+   color: var(--verde);
+   font-weight: bolder;
+   font-size: 0.9rem;
+}
+
+/* ------- resumen ------- */
+
+.resumen-compra h2 {
+   font-size: 1.1rem;
+}
+.resumen-compra .resumen {
+   background-color: #eee;
+   padding: 1rem;
+   border-radius: 0.5rem;
+}
+.resumen-compra .resumen p {
+   margin: 0 0 0.5rem;
+   line-height: 1.5;
+   display: flex;
+   justify-content: space-between;
+   font-size: 0.9rem;
+   color: #999;
+}
+.resumen-compra .resumen .precio-total {
+   font-size: 1.1rem;
+   border-top: 1px solid var(--borde-gris-claro);
+   padding: 0.5rem 0 0;
+   font-weight: bolder;
+   color: var(--verde);
+}
+.resumen-compra .resumen > button {
+   width: 100%;
+   padding: 1rem 0;
+   text-align: center;
+   font-weight: bolder;
+   color: var(--texto-blanco);
+   background-color: var(--verde-fondo);
+   border: none;
+   margin-top: 1rem;
+   border-radius: .2rem;
 }
 
 /* ------- MOBILE XL ------- */
