@@ -9,7 +9,9 @@ const btnBuscar = document.querySelector('.btn-buscar');
 const barraBusqueda = document.querySelector('.barra-busqueda');
 
 const listaLinksCategorias = document.querySelectorAll('.link-categoria');
-const imgFondo = document.querySelector('.categorias-contenedor .imagen-fondo');
+const imgFondo = document.querySelectorAll(
+   '.categorias-contenedor .imagen-fondo'
+);
 
 btnMenu.addEventListener('click', () => {
    navContenedor.classList.toggle('show');
@@ -28,25 +30,19 @@ btnBuscar.addEventListener('click', () => {
 listaLinksCategorias.forEach((elm) => {
    elm.addEventListener('mouseenter', (e) => {
       setTimeout(() => {
+         imgFondo[0].style.opacity = '0';
+         imgFondo[1].style.opacity = '0';
+         imgFondo[2].style.opacity = '0';
+         imgFondo[3].style.opacity = '0';
+         
          const categoria = e.target.dataset.nombre_categoria;
 
-         imgFondo.classList = imgFondo.classList[0];
-
-         switch (categoria) {
-            case 'cereales':
-               imgFondo.classList.add('cereales');
-               break;
-            case 'frutos-secos':
-               imgFondo.classList.add('frutos-secos');
-               break;
-            case 'jugos':
-               imgFondo.classList.add('jugos');
-               break;
-            case 'infusiones':
-               imgFondo.classList.add('infusiones');
-               break;
-         }
-      }, 250);
+         imgFondo.forEach((elm) => {
+            if (elm.classList.contains(categoria)) {
+               elm.style.opacity = '1';
+            }
+         });
+      }, 300);
    });
 });
 
