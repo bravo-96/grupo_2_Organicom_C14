@@ -41,7 +41,7 @@ header {
    gap: 2%;
 
    padding: 1rem 5%;
-   border-bottom: 2px solid #eee;
+   box-shadow: 0 0.2rem 0.5rem #eee;
 }
 
 .logo {
@@ -145,7 +145,7 @@ nav.categorias-contenedor {
    padding: 0 8%;
    background-color: var(--verde-fondo);
 
-   transition: 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+   /* transition: 0.5s cubic-bezier(0.7, 0, 0.3, 1); */
    transition-property: opacity, visibility, transform;
 }
 
@@ -174,18 +174,18 @@ nav.categorias-contenedor.show {
 
 .barra-busqueda {
    overflow: hidden;
-   padding: 0;
-   height: 0;
+   max-height: 0;
    width: 100%;
 
    grid-column: 1 / -1;
 
-   transition: padding 0.5s ease;
+   transition: 0.5s ease;
+   transition-property: padding, max-height;
 }
 
 .barra-busqueda.show {
    padding: 1rem 0 0;
-   height: max-content;
+   max-height: 60px;
 }
 
 .barra-busqueda input {
@@ -216,7 +216,7 @@ footer {
 
 footer .max-width-container {
    width: 100%;
-   max-width: 550px;
+   max-width: 750px;
 
    margin: 0 auto;
 }
@@ -947,9 +947,8 @@ main.grid-principal {
    }
 
    .barra-busqueda {
-      height: auto;
+      max-height: initial;
       max-width: 600px;
-
       margin: 0 auto;
 
       grid-column: 3 / 4;
@@ -962,12 +961,13 @@ main.grid-principal {
 
    .barra-busqueda input {
       padding-right: 2rem;
+      height: 100%;
    }
 
    .barra-busqueda::after {
       content: '';
       position: absolute;
-      right: 0.7rem;
+      right: 1rem;
       width: 1.1rem;
       height: 1.1rem;
       background-image: url(/assets/img/lupa-icono.svg);
@@ -979,11 +979,13 @@ main.grid-principal {
    /* ------- Footer ------- */
 
    footer {
-      padding-top: 2rem;
+      margin-top: 1rem;
+      padding-top: 6rem;
+      box-shadow: inset 0 0.5rem 3rem rgba(0, 0, 0, 0.3);
    }
 
    footer .max-width-container {
-      max-width: 1200px;
+      max-width: 1100px;
 
       display: flex;
       justify-content: space-between;
@@ -1030,8 +1032,46 @@ main.grid-principal {
       font-size: 1rem;
    }
 
+   .contenido h4 {
+      margin-bottom: 0.7rem;
+   }
+
+   .lista-categorias a,
+   .lista-mapa-sitio a {
+      display: block;
+      width: max-content;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+   }
+   .lista-categorias a:hover,
+   .lista-mapa-sitio a:hover {
+      color: var(--amarilo);
+   }
+
+   .lista-categorias a::after,
+   .lista-mapa-sitio a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0.2rem;
+      border-radius: 0.3rem;
+      background-color: var(--amarilo);
+      transition: width 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+   }
+   .lista-categorias a:hover::after,
+   .lista-mapa-sitio a:hover::after {
+      width: 100%;
+      height: 0.2rem;
+      color: var(--amarilo);
+   }
+
    .logo-redes-contenedor .logo {
       width: 150px;
+   }
+
+   footer .copyright{
+      font-size: .8rem;
    }
    /* ------------ */
    main.grid-principal {
@@ -1078,6 +1118,8 @@ main.grid-principal {
    .recomendados .card:last-of-type {
       display: block;
    }
+
+
 }
 
 @media screen and (min-width: 1400px) {

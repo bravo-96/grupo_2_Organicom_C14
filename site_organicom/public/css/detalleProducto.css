@@ -629,7 +629,7 @@ main.grid-princpial {
    grid-template-columns: max-content 110px auto;
    row-gap: 0.5rem;
    font-size: 0.9rem;
-   align-items: center;
+   /* align-items: center; */
 }
 .comentario img {
    width: 2.5rem;
