@@ -18,7 +18,6 @@ header {
     padding: 1rem 5%;
     border-bottom: 2px solid #eee;
  }
- 
  .logo {
     width: 100%;
  }
@@ -115,7 +114,26 @@ header {
  }
  
  
- 
+ .banner{
+  height: 50vh ;
+  background: #121212;
+  display: flex;
+  color: #eee;
+  overflow: hidden;
+}
+.banner h1{
+  margin: 2rem 2rem;
+}
+.banner h4{
+ margin-top: 50%;
+}
+ .banner .mockup{
+    height: 15rem;
+    width: 15rem;
+    
+    
+    
+ }
 
 .masVendido {
   display: -webkit-box;
@@ -213,28 +231,28 @@ header {
 }
 
 .carousel--container .uno {
-  background-image: url("/public/img/frutasVerduras.jpg");
+  background-image: url("/assets/img/frutasVerduras.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 10px;
 }
 
 .carousel--container .dos {
-  background-image: url(/public/img/penne.jpg);
+  background-image: url(/assets/img/frutosSecos.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 10px;
 }
 
 .carousel--container .tres {
-  background-image: url("/public/img/jugos.jpg");
+  background-image: url("/assets/img/jugos.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 10px;
 }
 
 .carousel--container .cuatro {
-  background-image: url("/public/img/nueces.jpg");
+  background-image: url("/assets/img/pastaseca.jpeg");
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 10px;
@@ -255,10 +273,12 @@ header {
   border-radius: 50px;
   background: #2eced1;
   -webkit-box-shadow: inset -23px -23px 46px #27afb2, inset 23px 23px 46px #35edf0;
-          box-shadow: inset -23px -23px 46px #27afb2, inset 23px 23px 46px #35edf0;
+  box-shadow: inset -23px -23px 46px #27afb2, inset 23px 23px 46px #35edf0;
+  
   height: 200px;
   width: 300px;
   margin-top: 10px;
+  text-align: center;
 }
 
 @media (min-width: 720px) {
@@ -289,7 +309,6 @@ header {
     height: 300px;
     width: 400px;
     margin: 10px 10px;
-    text-align: center;
     font-size: 34px;
     padding: 30px;
   }
@@ -301,7 +320,7 @@ header {
 footer .max-width-container {
   width: 100%;
   max-width: 550px;
-
+  background: #116530;
   margin: 0 auto;
 }
 
@@ -350,20 +369,22 @@ footer .max-width-container {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 
-  padding: 0.5rem 0;
+  padding: 0.5rem 2rem;
 }
 
 .contenido h4 {
   margin: 0 0 0.3rem;
   font-size: 0.8rem;
   color: var(--amarilo);
+
 }
 
 .lista-categorias {
   grid-column: 2/ 3;
   grid-row: 1 / 2;
-
+  list-style: none;
   text-align: right;
+  
 }
 .lista-categorias a,
 .lista-mapa-sitio a {
@@ -376,6 +397,7 @@ footer .max-width-container {
 
 .lista-mapa-sitio {
   grid-column: 1 / 2;
+  list-style: none;
 }
 
 .logo-redes-contenedor {
