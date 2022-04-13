@@ -44,12 +44,18 @@ body.register main{
 @media (min-width:1024px){
     body.register main{
         width: 100%;
-        background-color: aquamarine;
+        height: 800px;
+        background-color: var(--borde-gris-claro);
+        margin: 0px;
         margin-right: 0px;
         padding-right: 0px;
+        
+    }
+    .div-r-p-p{
+        padding-top: 40px;
     }
     .div-r-p{
-        background-color: aqua;
+        background-color: white;
         width: 420px;
         height: 420;
         border: solid 1px white;
@@ -57,7 +63,6 @@ body.register main{
         display: flex;
         flex-direction: column;
         margin-right: 20px;
-
         
     }
     .register main form div.register-main{

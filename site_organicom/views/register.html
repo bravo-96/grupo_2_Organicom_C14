@@ -16,15 +16,15 @@
 <body class="register">
    <header>
       <a href="/" class="logo-link">
-         <img class="logo" src="/assets/img/logo-verde.svg" alt="Logo principal">
+         <img class="logo" src="/img/logo-verde.svg" alt="Logo principal">
       </a>
-      <button type="button" class="btn-menu"><img src="/assets/img/menu-icono.svg"
+      <button type="button" class="btn-menu"><img src="/img/menu-icono.svg"
             class="menu-icono" /><span>Categorias</span></button>
-      <button type="button" class="btn-buscar active"><img src="/assets/img/lupa-icono.svg"
+      <button type="button" class="btn-buscar active"><img src="/img/lupa-icono.svg"
             class="lupa-icono" /></button>
-      <button type="button" class="btn-cuenta"><img src="/assets/img/usuario-icono.svg" class="usuario-icono" /><span>Mi
+      <button type="button" class="btn-cuenta"><img src="/img/user.svg" class="usuario-icono" /><span>Mi
             Cuenta</span></button>
-      <button type="button" class="btn-carrito"><img src="/assets/img/carrito-icono.svg"
+      <button type="button" class="btn-carrito"><img src="/img/carrito-icono.svg"
             class="carrito-icono" /></button>
 
       <nav class="categorias-contenedor">
@@ -43,47 +43,50 @@
 
    <main>
       <form class="register-form" action="">
-         
-         <div class="div-r-p">
-            <div>
-               <h2>Crear cuenta</h2>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi est aliquam voluptatibus molestiae impedit.</p>
+         <div class="div-r-p-p">
+            <div class="div-r-p">
+               <div>
+                  <h2>Crear cuenta</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi est aliquam voluptatibus molestiae impedit.</p>
+               </div>
+               <div class="register-main">
+                  <label for="nombre">Nombre</label>
+                  <input class="register_input-main" type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre">
+                  <span class="register__text-error">Escriba su de usuario</span>
             </div>
             <div class="register-main">
-               <label for="nombre">Nombre</label>
-               <input class="register_input-main" type="text" id="nombre" name="nombre" placeholder="Escribi tu nombre">
-               <span class="register__text-error">Escriba su de usuario</span>
+                  <label for="email">Email</label>
+                  <input class="register_input-main" type="email" id="email" name="email" placeholder="Escribi tu email">
+                  <span class="register__text-error">Ingrese un Email valido/Asegurese de que este bien escrito</span>
+            </div>
+            <div class="register-main">
+               <label for="numer">Telefono/celular</label>
+               <input class="register_input-main" type="number" id="number" name="number" placeholder="Escriba su numero(opcional).">
+            </div>
+            <div class="register-main">
+                  <label for="password">Password</label>
+                  <input class="register_input-main" type="password" id="password" name="password" placeholder="Escribi tu password">
+                  <span class="reregister-main">Obligatorio</span>
+            </div>
+            <div class="register-main outbox_reg-main">
+               <input type="checkbox" name="terminos" id="terminos">
+               <label for="terminos">Acepto los terminos y condiciones</label>
+            </div>
+            <div class="register-main outbox_reg-main">
+               <input type="checkbox" name="publicidad" id="publicidad">
+               <label for="publicidad">Quiero recibir Ofertas y Promociones por mi Email</label>
+            </div>
+            <div class="register-main button-register">
+               <button type="submit">
+                  Crear cuenta
+               </button>
+            </div>
+   
+            <p>¿ya tenes una cuenta?</p><a href="">Inicia secion aqui</a>
+   
+         <div>
          </div>
-         <div class="register-main">
-               <label for="email">Email</label>
-               <input class="register_input-main" type="email" id="email" name="email" placeholder="Escribi tu email">
-               <span class="register__text-error">Ingrese un Email valido/Asegurese de que este bien escrito</span>
-         </div>
-         <div class="register-main">
-            <label for="numer">Telefono/celular</label>
-            <input class="register_input-main" type="number" id="number" name="number" placeholder="Escriba su numero(opcional).">
-         </div>
-         <div class="register-main">
-               <label for="password">Password</label>
-               <input class="register_input-main" type="password" id="password" name="password" placeholder="Escribi tu password">
-               <span class="reregister-main">Obligatorio</span>
-         </div>
-         <div class="register-main outbox_reg-main">
-            <input type="checkbox" name="terminos" id="terminos">
-            <label for="terminos">Acepto los terminos y condiciones</label>
-         </div>
-         <div class="register-main outbox_reg-main">
-            <input type="checkbox" name="publicidad" id="publicidad">
-            <label for="publicidad">Quiero recibir Ofertas y Promociones por mi Email</label>
-         </div>
-         <div class="register-main button-register">
-            <button type="submit">
-               Crear cuenta
-            </button>
-         </div>
-         <p>¿ya tenes una cuenta?</p><a href="">Inicia secion aqui</a>
-
-      <div>
+         
       </form>
    </main>
    <footer>
@@ -115,7 +118,7 @@
             </ul>
 
             <div class="logo-redes-contenedor">
-               <img class="logo" src="/assets/img/logo-amarillo.svg" alt>
+               <img class="logo" src="/img/logo-amarillo.svg" alt>
                <ul class="lista-redes">
                   <li><a href="/" class="facebook"></a></li>
                   <li><a href="/" class="instagram"></a></li>
