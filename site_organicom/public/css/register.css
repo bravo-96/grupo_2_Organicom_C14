@@ -9,7 +9,7 @@ body {
 
  
  
-body.register main{
+body.register main, .div-titulo{
     width: 90%;
     margin: 20px auto;
 }
