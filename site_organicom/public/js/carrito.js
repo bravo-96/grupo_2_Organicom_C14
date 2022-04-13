@@ -29,20 +29,25 @@ btnBuscar.addEventListener('click', () => {
 
 listaLinksCategorias.forEach((elm) => {
    elm.addEventListener('mouseenter', (e) => {
-      setTimeout(() => {
-         imgFondo[0].style.opacity = '0';
-         imgFondo[1].style.opacity = '0';
-         imgFondo[2].style.opacity = '0';
-         imgFondo[3].style.opacity = '0';
-         
+         imgFondo[0].classList.remove('show');
+         imgFondo[1].classList.remove('show');
+         imgFondo[2].classList.remove('show');
+         imgFondo[3].classList.remove('show');
+
          const categoria = e.target.dataset.nombre_categoria;
 
          imgFondo.forEach((elm) => {
             if (elm.classList.contains(categoria)) {
-               elm.style.opacity = '1';
+               elm.classList.add('show');
             }
          });
-      }, 300);
+   });
+
+   elm.addEventListener('mouseleave', () => {
+         imgFondo[0].classList.remove('show');
+         imgFondo[1].classList.remove('show');
+         imgFondo[2].classList.remove('show');
+         imgFondo[3].classList.remove('show');
    });
 });
 
