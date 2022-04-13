@@ -120,13 +120,13 @@ footer .max-width-container {
    background-repeat: no-repeat;
 }
 .lista-redes a.facebook {
-   background-image: url(/assets/img/facebook-logo.svg);
+   background-image: url(/img/facebook-logo.svg);
 }
 .lista-redes a.instagram {
-   background-image: url(/assets/img/instagram-logo.svg);
+   background-image: url(/img/instagram-logo.svg);
 }
 .lista-redes a.twitter {
-   background-image: url(/assets/img/twitter-logo.svg);
+   background-image: url(/img/twitter-logo.svg);
 }
 
 footer .copyright {

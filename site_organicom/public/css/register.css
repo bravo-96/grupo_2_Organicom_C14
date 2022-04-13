@@ -20,6 +20,8 @@ body.register main, .div-titulo{
 .register .register-main .register_input-main{
     width: 100%;
     padding: 10px;
+    border-color: var(--colorGrisCB);
+    border-radius: 5px;
 }
 
 .register button{
