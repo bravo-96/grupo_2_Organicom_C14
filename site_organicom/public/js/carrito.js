@@ -51,7 +51,7 @@ listaLinksCategorias.forEach((elm) => {
    });
 });
 
-// ------------
+// ------ carrito-lateral ------
 
 const btnCarrito = document.querySelector('.btn-carrito');
 const carritoLateralContenedor = document.querySelector('.carrito-lateral');
@@ -71,6 +71,11 @@ btnCerrarCarrito.addEventListener('click', () => {
    document.body.classList.remove('modal-open');
    carritoLateralContenedor.classList.remove('show');
    modalBg.style.display = 'none';
+});
+modalBg.addEventListener('click', () => {
+   document.body.classList.remove('modal-open');
+   modalBg.style.display = 'none';
+   carritoLateralContenedor.classList.remove('show');
 });
 
 // ------------
