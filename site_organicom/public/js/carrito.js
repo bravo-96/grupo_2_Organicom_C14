@@ -29,26 +29,48 @@ btnBuscar.addEventListener('click', () => {
 
 listaLinksCategorias.forEach((elm) => {
    elm.addEventListener('mouseenter', (e) => {
-         imgFondo[0].classList.remove('show');
-         imgFondo[1].classList.remove('show');
-         imgFondo[2].classList.remove('show');
-         imgFondo[3].classList.remove('show');
+      imgFondo[0].classList.remove('show');
+      imgFondo[1].classList.remove('show');
+      imgFondo[2].classList.remove('show');
+      imgFondo[3].classList.remove('show');
 
-         const categoria = e.target.dataset.nombre_categoria;
+      const categoria = e.target.dataset.nombre_categoria;
 
-         imgFondo.forEach((elm) => {
-            if (elm.classList.contains(categoria)) {
-               elm.classList.add('show');
-            }
-         });
+      imgFondo.forEach((elm) => {
+         if (elm.classList.contains(categoria)) {
+            elm.classList.add('show');
+         }
+      });
    });
 
    elm.addEventListener('mouseleave', () => {
-         imgFondo[0].classList.remove('show');
-         imgFondo[1].classList.remove('show');
-         imgFondo[2].classList.remove('show');
-         imgFondo[3].classList.remove('show');
+      imgFondo[0].classList.remove('show');
+      imgFondo[1].classList.remove('show');
+      imgFondo[2].classList.remove('show');
+      imgFondo[3].classList.remove('show');
    });
+});
+
+// ------------
+
+const btnCarrito = document.querySelector('.btn-carrito');
+const carritoLateralContenedor = document.querySelector('.carrito-lateral');
+const modalBg = document.querySelector('body > .modalBg');
+const btnCerrarCarrito = document.querySelector(
+   '.carrito-lateral > button.cerrar'
+);
+
+btnCarrito.addEventListener('click', () => {
+   document.body.classList.add('modal-open');
+   carritoLateralContenedor.classList.add('show');
+   modalBg.style.display = 'block';
+   modalBg.style.position = 'fixed';
+});
+
+btnCerrarCarrito.addEventListener('click', () => {
+   document.body.classList.remove('modal-open');
+   carritoLateralContenedor.classList.remove('show');
+   modalBg.style.display = 'none';
 });
 
 // ------------

@@ -13,8 +13,24 @@
    --borde-gris-claro: #ccc;
 
    --fondo-pagina: #fff;
+   --fondo-blanco: #fff;
    --fondo-input: #f5f5f5;
    --rojo-error: #de2121;
+}
+
+body::-webkit-scrollbar {
+   width: 0.8rem;
+   padding: 0.3rem;
+}
+body::-webkit-scrollbar-track {
+   background: transparent;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+body::-webkit-scrollbar-thumb {
+   background-color: var(--amarilo);
+}
+body::-webkit-scrollbar-thumb:hover {
+   background-color: var(--verde);
 }
 
 button {
@@ -23,11 +39,213 @@ button {
 
 body {
    background-color: var(--fondo-pagina);
+   overflow-x: hidden;
+}
+body.modal-open {
+   overflow: hidden;
 }
 
 a {
    color: var(--verde);
    font-weight: bold;
+}
+
+/* ------ carrito-lateral ------ */
+.modalBg {
+   position: absolute;
+   background-color: rgba(0, 0, 0, 0.7);
+   inset: 0;
+   z-index: 900;
+   display: none;
+}
+
+.carrito-lateral {
+   position: fixed;
+   right: 0;
+   top: 0;
+   bottom: 0;
+
+   padding: 0 1rem;
+   max-width: 320px;
+
+   background-color: var(--fondo-blanco);
+   box-shadow: -1rem 0 1rem 0.5rem rgba(34, 34, 34, 0.2);
+   z-index: 1000;
+
+   height: 100%;
+
+   overflow-y: scroll;
+   transform: translateX(120%);
+
+   transition: transform 0.5s ease;
+}
+.carrito-lateral.show {
+   transform: translateX(0);
+}
+
+/* .carrito-lateral .contenedor::-webkit-scrollbar {
+   width: 0.4rem;
+}
+.carrito-lateral .contenedor::-webkit-scrollbar-track {
+   background: transparent;
+}
+.carrito-lateral .contenedor::-webkit-scrollbar-thumb {
+   background-color: var(--amarilo);
+}
+.carrito-lateral .contenedor::-webkit-scrollbar-thumb:hover {
+   background-color: var(--verde);
+} */
+.carrito-lateral > h3 {
+   font-size: 1rem;
+   text-align: center;
+   margin: 1.5rem 0;
+}
+.carrito-lateral .producto-card {
+   margin: 1rem auto;
+   width: 95%;
+   padding: 0.5rem;
+   position: relative;
+   display: grid;
+   grid-template-columns: max-content 1fr 1fr;
+   gap: 0.5rem;
+   row-gap: 1rem;
+   border-radius: 0.4rem;
+   box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+}
+.carrito-lateral .producto-card > .btn-cerrar {
+   border: none;
+   position: absolute;
+   width: 1rem;
+   height: 1rem;
+
+   top: 0.5rem;
+   right: 0.5rem;
+
+   background: url('/assets/img/cerrar-icono.svg') no-repeat center;
+   background-size: contain;
+}
+
+.carrito-lateral .producto-card > a {
+   align-self: center;
+   width: 5rem;
+   grid-column: 1/2;
+   grid-row: 1/3;
+}
+.carrito-lateral .producto-card > .titulo {
+   grid-column: 2/4;
+   grid-row: 1/2;
+
+   margin: 0.5rem 1.7rem 0 0;
+   font-size: 0.8rem;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+}
+.carrito-lateral .producto-card .cantidad-contenedor p,
+.carrito-lateral .producto-card .precio-contenedor p {
+   margin: 0 0 0.5rem;
+   text-align: center;
+   font-size: 0.9rem;
+   color: var(--texto-gris);
+}
+
+.carrito-lateral .producto-card .precio-contenedor .precio-total {
+   font-size: 0.9rem;
+   color: var(--verde);
+   font-weight: bolder;
+   margin: 0;
+   vertical-align: middle;
+}
+
+.carrito-lateral .producto-card .cantidad-input-contenedor {
+   display: flex;
+   align-items: center;
+   gap: 0.2rem;
+   background-color: var(--fondo-input);
+   width: max-content;
+   border-radius: 0.2rem;
+   margin: 0 auto;
+}
+.carrito-lateral .producto-card .cantidad-input-contenedor button {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   font-size: 1rem;
+   font-weight: bolder;
+   color: var(--verde);
+   font-family: monospace;
+}
+.carrito-lateral .producto-card .input-cantidad {
+   font-size: 1rem;
+   background-color: transparent;
+   border: none;
+   width: 1.7rem;
+   text-align: center;
+}
+.carrito-lateral .producto-card .input-cantidad:focus-within {
+   outline-color: var(--verde);
+}
+
+.carrito-lateral .costo-total {
+   font-size: 1rem;
+   font-weight: bolder;
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+   padding: 0.5rem 1rem;
+   border-top: 1px solid #ccc;
+   margin: 1rem 0 0;
+}
+.carrito-lateral .costo-total p:last-of-type {
+   font-size: 1.2rem;
+   color: var(--verde);
+}
+
+.carrito-lateral .codigo-descuento {
+   font-size: 0.8rem;
+   color: var(--texto-gris);
+   margin: 0.5rem auto;
+}
+.carrito-lateral .codigo-descuento input[type='submit'] {
+   font-size: 0.6rem;
+   letter-spacing: 0.2px;
+   text-transform: uppercase;
+}
+
+.carrito-lateral .btn-comprar {
+   text-decoration: none;
+   color: var(--verde);
+   font-weight: bolder;
+   background-color: var(--amarilo);
+   border-radius: 0.3rem;
+   display: block;
+   width: 100%;
+   margin: 0 0 1rem;
+   text-align: center;
+   padding: 1rem 0;
+   letter-spacing: 0.2px;
+   text-transform: uppercase;
+}
+
+.carrito-lateral button.cerrar {
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+
+   background-color: #fff;
+   width: 1.5rem;
+   height: 1.5rem;
+   padding: 0.25rem;
+   border-radius: 50%;
+   border: 2px solid #000;
+}
+.carrito-lateral button.cerrar > .icono {
+   width: 100%;
+   height: 100%;
+   background: url('/assets/img/cerrar-icono.svg') no-repeat center;
+   background-size: contain;
 }
 
 /* ------ Header ------ */
@@ -145,8 +363,13 @@ nav.categorias-contenedor {
    padding: 0 8%;
    background-color: var(--verde-fondo);
 
-   /* transition: 0.5s cubic-bezier(0.7, 0, 0.3, 1); */
+   transition: 0.5s cubic-bezier(0.7, 0, 0.3, 1);
    transition-property: opacity, visibility, transform;
+}
+nav.categorias-contenedor.show {
+   opacity: 1;
+   visibility: visible;
+   transform: translateY(0);
 }
 
 nav.categorias-contenedor ul {
@@ -164,12 +387,6 @@ nav.categorias-contenedor a {
 
    padding: 0.5rem 0 1rem;
    margin: 0.5rem 0;
-}
-
-nav.categorias-contenedor.show {
-   opacity: 1;
-   visibility: visible;
-   transform: translateY(0);
 }
 
 .barra-busqueda {
@@ -1070,8 +1287,8 @@ main.grid-principal {
       width: 150px;
    }
 
-   footer .copyright{
-      font-size: .8rem;
+   footer .copyright {
+      font-size: 0.8rem;
    }
    /* ------------ */
    main.grid-principal {
@@ -1118,8 +1335,6 @@ main.grid-principal {
    .recomendados .card:last-of-type {
       display: block;
    }
-
-
 }
 
 @media screen and (min-width: 1400px) {
