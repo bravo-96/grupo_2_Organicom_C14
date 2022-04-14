@@ -22,11 +22,11 @@
               class="menu-icono" /><span>Categorias</span></button>
         <button type="button" class="btn-buscar active"><img src="/assets/img/lupa-icono.svg"
               class="lupa-icono" /></button>
-        <button type="button" class="btn-cuenta"><img src="/assets/img/usuario-icono.svg" class="usuario-icono" /><span>Mi
+        <button type="button" class="btn-cuenta"><img src="/assets/img/user.svg" class="usuario-icono" /><span>Mi
               Cuenta</span></button>
         <button type="button" class="btn-carrito"><img src="/assets/img/carrito-icono.svg"
               class="carrito-icono" /></button>
-  
+          
         <nav class="categorias-contenedor">
            <div class="imagen-fondo frutos-secos"></div>
            <ul>
@@ -45,23 +45,20 @@
     <main>
          <section class="banner">
             <h1>Comsume organico</h1>
-            
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat cumque quae vel atque labore quam reiciendis, ad mollitia enim, aut dolore quidem animi. Enim, amet error dolorem rem necessitatibus perferendis?</p>
             <img class="mockup" src="/assets/img/mockup.png" alt="">
          </section>
         <section class="carousel">
-            <div class="carousel--container  " >
-       
+            <div class="carousel--container  " >       
                 <div class="a uno"></div>
                 <div class="a dos"></div>
                 <div  class="a tres"></div>
                 <div class="a cuatro"></div>
               </div>   
-
         </section>
-
-        <h3>Lo mas vendido</h3>
-        <section class="masVendido ">
-            
+       
+        <section class="masVendido ">  
+         <h3>Lo mas vendido</h3>          
             <div class="carousel--container  card" >       
                 <div class="a uno"></div>
                 <div class="a dos"></div>
@@ -69,19 +66,13 @@
                 <div class="a cuatro"></div>
             </div>             
         </section>
-
-        <section class="seguinos">
-           
+        <section class="seguinos">           
             <p>Atencion al cliente : 0800-organic</p>
             <p>Seguinos en </p>
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-twitter"></i>
         </section>
-
-
-        
-
         <section class="descuento">
             <article class="descuento--card">
                     <p>Descuento de algo</p>
@@ -90,17 +81,46 @@
                 <p>Descuento de algo</p>
             </article>
         </section>
-
         <section class="masVendido">
-
             <h3>Ofertas</h3>
             <div class="carousel--container  card" >       
                 <div class="a uno"></div>
                 <div class="a dos"></div>
                 <div  class="a tres"></div>
                 <div class="a cuatro"></div>
-            </div>            
+            </div>                          
+        </section>
+
+        <section class="contactanos">
+           <article class="contactanos--article">
+            <h4>Contactanos</h4>
+            <p class="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. illum quibusdam .</p>
+            <div class="contactanos--contacto">
+               <p>Teléfono</p>
+               <p>contacto@organicom.com.ar</p>
+               <p>Direccion</p>
+               <ul class="lista-redes">
+                  <li><a href="/" class="facebook"></a></li>
+                  <li><a href="/" class="instagram"></a></li>
+                  <li><a href="/" class="twitter"></a></li>
+               </ul>
+            </div>
+           </article>
+            <form class="formulario" action="/" method="post">
+               <ul>
+                <li>
+                  <input type="text" placeholder="Nombre" name="user_name">
+                </li>
+                <li>                  
+                  <input type="email" placeholder="E-mail" name="user_mail">
+                </li>
+                <li>                  
+                  <textarea class="msg"placeholder="Deje su mensaje" name="user_message"></textarea>
+                </li>
+                 <button type="submit">Enviar</button>
+               </ul>
               
+              </form>
         </section>
   
     </main>
@@ -110,7 +130,7 @@
            <div class="suscripcion-contenedor">
               <h4>¡Suscribite totalmente <br /> gratis!</h4>
               <p>Y recibi nuestras ofertas y promociones todas las semanas</p>
-              <form action="/">
+              <form class="suscripcion--form" action="/">
                  <input type="text" placeholder="Dejanos tu Email">
                  <button type="submit">Suscribirse</button>
               </form>

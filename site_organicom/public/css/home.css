@@ -1,4 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:ital,wght@0,700;1,100&display=swap");
+@import './variables.css';
+@import './general.css';
+
+:root {
+   --amarilo: #ffcc1d;
+   --verde: #116530;
+   --verde-fondo: #0b4619;
+   --crema: #e8e8cc;
+
+   --texto-blanco: #fff;
+   --texto-gris: #888;
+
+   --borde-gris-claro: #ccc;
+
+   --fondo-pagina: #fff;
+   --fondo-input: #f5f5f5;
+   --rojo-error: #de2121;
+}
+
+
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -93,8 +116,7 @@ header {
  
  .barra-busqueda {
     width: 100%;
-    padding: 1rem 0 0;
- 
+    padding: 1rem 0 0; 
     grid-column: 1 / -1;
  }
  
@@ -103,8 +125,7 @@ header {
     border: none;
     border-radius: 0.2rem;
     background-color: var(--fondo-input);
-    padding: 0.5rem 1rem;
- 
+    padding: 0.5rem 1rem; 
     transition: box-shadow 0.3s ease;
  }
  
@@ -115,44 +136,42 @@ header {
  
  
  .banner{
-  height: 50vh ;
+  height: 75vh ;
   background: #121212;
-  display: flex;
-  color: #eee;
-  overflow: hidden;
+  display: block;
+  position: relative;
+  color: var(--texto-blanco);
+  justify-content: center;
 }
 .banner h1{
-  margin: 2rem 2rem;
+ margin: 0 ;
+ padding: 2rem;
+ color: var(--amarilo);
+
 }
-.banner h4{
- margin-top: 50%;
+.banner p{
+ padding: 0 2rem;
+ position: relative;
+ z-index: 10;
 }
  .banner .mockup{
-    height: 15rem;
-    width: 15rem;
-    
-    
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    bottom: .5rem; 
+    right: 0;
+    opacity: 0.5;
     
  }
 
-.masVendido {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .masVendido .card {
   height: 200px;
-  margin-top: 25px;
+  margin: 25px 10%;
   padding: 10px;
   width: 80%;
   border: 1px solid #88888886;
   border-radius: 10px;
-  -webkit-box-shadow: 5px 2px 10px 2px #888888bb;
-          box-shadow: 5px 2px 10px 2px #888888bb;
+  box-shadow: 5px 2px 10px 2px #888888bb;
 }
 
 .masVendido .card .imgBox {
@@ -184,18 +203,17 @@ header {
   display: flex;
   padding: 10px;
   margin-top: 20px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 80px;
-  background-color: #116530;
+  background-color: var(--verde);
   font-size: 14px;
 }
 
 .seguinos p {
   margin: 10px;
-  color: #E8E8CC;
+  color: var(--crema);
 }
 
 .seguinos i {
@@ -203,144 +221,165 @@ header {
   color: #E8E8CC;
 }
 
-.carousel--container {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.carousel--container { 
   display: flex;
   overflow: auto;
   width: 100%;
   height: 300px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  flex-flow: row nowrap;
+  margin-top: 20px;
+  scroll-snap-type: x mandatory;
 }
-
 .carousel--container .a {
   width: 100%;
   height: 100%;
   text-align: center;
   scroll-snap-align: center;
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  border-radius: 10px;
-  margin: 10px;
+  flex: none;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
-
 .carousel--container .uno {
-  background-image: url("/assets/img/frutasVerduras.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border-radius: 10px;
+  background-image: url("/assets/img/frutasVerduras.jpg");  
 }
-
 .carousel--container .dos {
-  background-image: url(/assets/img/frutosSecos.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border-radius: 10px;
+  background-image: url(/assets/img/cerealesfondo.jpg);  
 }
-
 .carousel--container .tres {
   background-image: url("/assets/img/jugos.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border-radius: 10px;
 }
-
 .carousel--container .cuatro {
   background-image: url("/assets/img/pastaseca.jpeg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border-radius: 10px;
 }
-
 .descuento {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+   justify-content: center;
 }
-
 .descuento--card {
-  border-radius: 50px;
-  background: #2eced1;
-  -webkit-box-shadow: inset -23px -23px 46px #27afb2, inset 23px 23px 46px #35edf0;
-  box-shadow: inset -23px -23px 46px #27afb2, inset 23px 23px 46px #35edf0;
-  
+  border-radius: 10px; 
+  border: 1px solid var(--texto-gris);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
   height: 200px;
   width: 300px;
-  margin-top: 10px;
-  text-align: center;
+  margin: 20px 10px;
+  padding: 20% 0;
+  text-align: center;   
+}
+.contactanos{
+  height: 300px;
+  background: url(/assets/img/cerealesfondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 130px 65px 35px rgba(0, 0, 0, 0.808) inset; 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+.contactanos h4{
+  color: var(--amarilo);
+  font-size: 1.5rem;
+}
+.contactanos .lorem{
+  width: 200px;
+  color: var(--texto-gris);
+}
+.contactanos .lista-redes{
+  display: flex;  
+}
+.contactanos .lista-redes li{
+  padding: 1rem;
+}
+.contactanos--contacto{
+  margin-top: 20px;
+color: var(--texto-blanco) ;
+  font-size: 14px;
+}
+.contactanos--article{
+  width: 250px;
+  padding: 1rem;
+  background: #12121254;
+  
+  
 }
 
-@media (min-width: 720px) {
-  .header .header--nav {
-    height: 60px;
-  }
-  .carousel {
-    height: 450px;
-  }
-  .carousel .carousel--container {
-    margin-top: 20px;
-    height: 100%;
-  }
-  h3 {
-    font-size: 34px;
-  }
-  .masVendido {
-    height: 500px;
-  }
-  .masVendido .card {
-    height: 450px;
-  }
-  .seguinos {
-    height: 150px;
-    font-size: 24px;
-  }
-  .descuento .descuento--card {
-    height: 300px;
-    width: 400px;
-    margin: 10px 10px;
-    font-size: 34px;
-    padding: 30px;
-  }
-}
-/*# sourceMappingURL=home.css.map */
+.formulario{
+  background: #e8e8cc7c;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  height: 200px;
+  font-size: .7rem; 
+  width: 150px;    
 
+}
+
+.formulario input{
+  width: 90%;  
+  margin:20px  5%;
+  border-radius: 5px;
+  border: none;  
+  border-bottom: 2px solid var(--texto-gris);
+  background: none;  
+}
+.formulario input:focus-within {
+  outline: none;
+}
+.formulario input::placeholder, .msg::placeholder{
+  color: var(--verde-fondo);
+}
+
+.formulario .msg{
+  width: 90%;
+  height: 2rem;
+  margin-left: 5%;
+  border-radius: 5px;
+  border: none;
+  background: none;
+  border-bottom: 2px solid var(--texto-gris);
+}
+.formulario .msg:focus-within {
+  outline: none;
+}
+.formulario button{
+  color: var(--verde-fondo);
+  width: 50%;
+  height: 1.5rem;
+  margin-left: 25%;
+  margin-top: 15px;
+  background: var(--amarilo);
+  border: none;
+  border-radius: 5px;
+  
+}
 
 
 footer .max-width-container {
   width: 100%;
-  max-width: 550px;
   background: #116530;
-  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
 }
 
 .suscripcion-contenedor h4 {
   /* font-size: 1.6rem; */
   font-size: calc(0.5rem + 4.5vw);
-  margin: 1rem 0;
+  color: var(--amarilo);
+  margin-bottom: 5px;
+ 
 }
 .suscripcion-contenedor p {
   font-size: 0.9rem;
-  margin: 0;
+  margin: 1rem;
+  color: var(--crema);
 }
 .suscripcion-contenedor form {
-  margin: 1rem 0;
+  margin-left: 10% ;
   background-color: var(--fondo-input);
   border-radius: 0.2rem;
   padding: 0.3rem;
-
-  max-width: 400px;
-
+  max-width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -368,15 +407,13 @@ footer .max-width-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-
-  padding: 0.5rem 2rem;
+  padding: 2rem;
 }
 
 .contenido h4 {
   margin: 0 0 0.3rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--amarilo);
-
 }
 
 .lista-categorias {
@@ -388,7 +425,7 @@ footer .max-width-container {
 }
 .lista-categorias a,
 .lista-mapa-sitio a {
-  font-size: 0.8rem;
+  font-size: 18px;
   color: var(--texto-blanco);
   text-decoration: none;
   font-weight: normal;
@@ -398,6 +435,7 @@ footer .max-width-container {
 .lista-mapa-sitio {
   grid-column: 1 / 2;
   list-style: none;
+  text-align: left;
 }
 
 .logo-redes-contenedor {
@@ -440,6 +478,97 @@ footer .max-width-container {
 
 footer .copyright {
   font-size: 0.6rem;
-  text-align: center;
-  margin-top: 2rem;
+  
+  
+}
+
+
+@media (min-width: 768px) {
+  .header .header--nav {
+    height: 60px;
+  }
+  .banner{
+    padding-left: 20%;
+  }
+  .banner h1{ 
+    font-size: 42px;
+  }
+  .banner p{
+    width: 300px;    
+  }
+  .banner .mockup{
+    height: 400px;
+    width: 100%;  
+  }
+  .carousel {
+    height: 400px;
+  }
+  .carousel .carousel--container {
+    margin-top: 20px;
+    
+  }
+  h3 {
+    font-size: 34px;
+  }
+  .masVendido {
+    height: 400px;
+  }
+  .masVendido .card {
+    height: 350px;
+  }
+  .seguinos {
+    height: 150px;
+    font-size: 24px;
+    
+  }
+  .descuento .descuento--card {
+    height: 300px;
+    width: 500px;
+    margin: 10px 10px;
+    font-size: 34px;
+    padding: 30px;
+  }
+
+  .formulario{
+    width: 200px;
+    height: 250px;
+    padding: 10px 0;
+  
+  }
+  .contactanos h4{
+    font-size: 38px;
+  }
+ 
+  .formulario input{
+    height: 30px;
+  }
+
+
+   .lista-mapa-sitio, .lista-categorias{
+    text-align: center;  
+    font-size: 18px;
+  }
+.suscripcion--form input{
+    height: 40px;
+   
+}
+.suscripcion--form button{
+  width: 80px;
+  height: 30px;
+  font-size: 24px;
+}
+  .lista-categorias h4 ,.lista-mapa-sitio h4{
+    font-size: 32px;
+  }
+}
+
+@media (min-width : 992px){
+
+
+.formulario{
+   
+   
+  
+  }
+
 }
