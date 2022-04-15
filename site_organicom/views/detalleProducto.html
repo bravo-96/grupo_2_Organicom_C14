@@ -35,25 +35,134 @@
             <a href="/register">Registrarse</a>
          </div>
       </button>
-      <a href="/carrito">
-         <button type="button" class="btn-carrito">
-            <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
-         </button>
-      </a>
+      <button type="button" class="btn-carrito">
+         <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
+      </button>
 
       <nav class="categorias-contenedor">
+         <div class="imagen-fondo cereales"></div>
          <div class="imagen-fondo frutos-secos"></div>
+         <div class="imagen-fondo jugos"></div>
+         <div class="imagen-fondo infusiones"></div>
          <ul>
-            <li><a href="./">Fideos / Cereales</a></li>
-            <li><a href="./" data-nombre-categoria="frutos-secos">Frutos secos</a></li>
-            <li><a href="./">Jugos y bebidas</a></li>
-            <li><a href="./">Infusiones</a></li>
+            <li><a class="link-categoria" href="./" data-nombre_categoria="cereales">Fideos / Cereales</a></li>
+            <li><a class="link-categoria" href="./" data-nombre_categoria="frutos-secos">Frutos secos</a></li>
+            <li><a class="link-categoria" href="./" data-nombre_categoria="jugos">Jugos y bebidas</a></li>
+            <li><a class="link-categoria" href="./" data-nombre_categoria="infusiones">Infusiones</a></li>
          </ul>
       </nav>
       <form action="/" method="GET" class="barra-busqueda">
          <input type="text" placeholder="Buscar producto">
       </form>
    </header>
+
+   <div class="modalBg"></div>
+
+   <div class="carrito-lateral">
+      <button type="button" class="cerrar">
+         <div class="icono"></div>
+      </button>
+      <h3>Mi lista de productos</h3>
+
+      <ul class="lista-productos">
+         <li class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <a href="/detalleProducto">
+               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            </a>
+            <h4 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h4>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </li>
+         <li class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <a href="/detalleProducto">
+               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            </a>
+            <h4 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h4>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </li>
+         <li class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <a href="/detalleProducto">
+               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            </a>
+            <h4 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h4>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </li>
+         <li class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <a href="/detalleProducto">
+               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            </a>
+            <h4 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h4>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </li>
+      </ul>
+      <div class="codigo-descuento">
+         <p>¿Tenés algun código de descuento?</p>
+         <form action="/">
+            <input type="text" placeholder="Ingresa el código">
+            <input type="submit" value="Aplicar">
+         </form>
+      </div>
+      <div class="costo-total">
+         <p>Total productos</p>
+         <p>$ 1.250,00</p>
+      </div>
+      <a href="/carrito" class="btn-comprar">Comprar</a>
+   </div>
 
    <main class="grid-princpial">
       <section class="slider">
@@ -293,9 +402,9 @@
                <h4>Explora</h4>
                <li><a href="/">Inicio</a></li>
                <li><a href="/">Categorias</a></li>
-               <li><a href="/">Login</a></li>
-               <li><a href="/">Registrate</a></li>
-               <li><a href="/">Carrito</a></li>
+               <li><a href="/login">Login</a></li>
+               <li><a href="/register">Registrate</a></li>
+               <li><a href="/carrito">Carrito</a></li>
             </ul>
 
             <div class="logo-redes-contenedor">
@@ -315,6 +424,7 @@
          </p>
       </div>
    </footer>
+   <script src="/js/general.js"></script>
    <script src="/js/detalleProducto.js"></script>
 </body>
 

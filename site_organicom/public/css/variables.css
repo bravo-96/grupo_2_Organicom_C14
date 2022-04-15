@@ -1,13 +1,27 @@
 :root {
    --fuente-principal: sans-serif;
-   --color-fondo: #fff;
 
    /* fs -> font-size */
-   --fs-cuerpo: 0.875rem; /* cuerpo: tamaño general de la fuente*/
+   --fs-cuerpo: 0.875rem; /* cuerpo = tamaño general de la fuente*/
    --fs-precio: 1rem;
 
    --fs-subtitulo: 1.25rem;
    --fs-titulo-1: 2rem;
    --fs-titulo-2: 1.5rem;
    --fs-titulo-3: 1.25rem;
+
+   --amarilo: #ffcc1d;
+   --verde: #116530;
+   --verde-fondo: #0b4619;
+   --crema: #e8e8cc;
+
+   --texto-blanco: #fff;
+   --texto-gris: #555;
+
+   --borde-gris-claro: #ccc;
+
+   --fondo-pagina: #fff;
+   --fondo-blanco: #fff;
+   --fondo-input: #f5f5f5;
+   --rojo-error: #de2121;
 }
