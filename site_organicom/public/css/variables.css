@@ -1,7 +1,7 @@
 :root {
-   --fuente-principal: sans-serif;
+   --fuente-principal: 'Open Sans', sans-serif;
 
-   /* fs -> font-size */
+   /* fs = font-size */
    --fs-cuerpo: 0.875rem; /* cuerpo = tamaño general de la fuente*/
    --fs-precio: 1rem;
 

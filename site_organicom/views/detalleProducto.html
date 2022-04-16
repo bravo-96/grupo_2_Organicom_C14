@@ -9,8 +9,9 @@
       integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link rel="stylesheet" href="/css/detalleProducto.css">
-
    <title>Detalle del producto</title>
+
+
 </head>
 
 <body>
@@ -164,6 +165,8 @@
       <a href="/carrito" class="btn-comprar">Comprar</a>
    </div>
 
+   <!-- ------ Main ------ -->
+
    <main class="grid-princpial">
       <section class="slider">
          <div class="flecha-izq"></div>
@@ -221,7 +224,7 @@
       </section>
       <!-- ------------- -->
       <section class="detalle-texto">
-         <h3>Detalles del producto</h3>
+         <h2>Detalles del producto</h2>
          <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ipsa est in eligendi earum nam itaque,
             voluptatem reprehenderit quibusdam enim.
@@ -242,7 +245,7 @@
       </section>
       <!-- ------------- -->
       <section class="descripcion-texto">
-         <h3>Descripcion del producto</h3>
+         <h2>Descripcion del producto</h2>
          <ul>
             <li>
                Lorem ipsum: dolor sit amet.
@@ -266,11 +269,12 @@
       </section>
       <!-- ------------- -->
       <section class="comentarios">
-         <h3>Reseñas</h3>
+         <h2>Reseñas</h2>
          <article class="comentario">
-            <img src="/assets/img/img-usuario-default.svg" alt>
-            <p class="nombre-usuario">Usuario_2242</p>
-            <p class="estrellas"><span class="icono"></span>4.0</p>
+            <div class="cabecera">
+               <p class="nombre-usuario">Usuario_2242</p>
+               <p class="estrellas"><span class="icono"></span>4.0</p>
+            </div>
             <p class="comentario-texto">
                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit
                praesentium! Culpa, quasi quod? Optio corporis voluptates in ea blanditiis eum a tempore recusanda.
@@ -278,25 +282,28 @@
          </article>
 
          <article class="comentario">
-            <img src="/assets/img/img-usuario-default.svg" alt>
-            <p class="nombre-usuario">Usuario_1342</p>
-            <p class="estrellas"><span class="icono"></span>4.0</p>
+            <div class="cabecera">
+               <p class="nombre-usuario">Usuario_1342</p>
+               <p class="estrellas"><span class="icono"></span>4.0</p>
+            </div>
             <p class="comentario-texto">
                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit perspiciatis.
             </p>
          </article>
          <article class="comentario">
-            <img src="/assets/img/img-usuario-default.svg" alt>
-            <p class="nombre-usuario">Usuario_1342</p>
-            <p class="estrellas"><span class="icono"></span>4.0</p>
+            <div class="cabecera">
+               <p class="nombre-usuario">Usuario_1342</p>
+               <p class="estrellas"><span class="icono"></span>4.0</p>
+            </div>
             <p class="comentario-texto">
                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit perspiciatis.
             </p>
          </article>
          <article class="comentario">
-            <img src="/assets/img/img-usuario-default.svg" alt>
-            <p class="nombre-usuario">Usuario_1342</p>
-            <p class="estrellas"><span class="icono"></span>4.0</p>
+            <div class="cabecera">
+               <p class="nombre-usuario">Usuario_1342</p>
+               <p class="estrellas"><span class="icono"></span>4.0</p>
+            </div>
             <p class="comentario-texto">
                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit perspiciatis.
             </p>
@@ -306,7 +313,7 @@
       <!-- ------------- -->
       <section class="recomendados">
          <div class="sticky-contenedor">
-            <h3>Tambien te pueden interesar</h3>
+            <h2>Tambien te pueden interesar</h2>
             <div class="slider">
                <div class="flecha-izq"></div>
                <div class="flecha-der"></div>
@@ -317,10 +324,12 @@
                      <div class="favorito"></div>
                   </div>
                   <div class="card-body">
-                     <h3>Titulo del producto</h3>
-                     <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                     <p class="precio-final">$ 895,00</p>
-                     <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     <a href="/detalleProducto">
+                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
+                        <p class="precio-final">$ 895,00</p>
+                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     </a>
                      <div class="botones">
                         <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
                      </div>
@@ -333,10 +342,12 @@
                      <div class="favorito"></div>
                   </div>
                   <div class="card-body">
-                     <h3>Titulo del producto</h3>
-                     <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                     <p class="precio-final">$ 895,00</p>
-                     <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     <a href="/detalleProducto">
+                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
+                        <p class="precio-final">$ 895,00</p>
+                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     </a>
                      <div class="botones">
                         <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
                      </div>
@@ -349,10 +360,12 @@
                      <div class="favorito"></div>
                   </div>
                   <div class="card-body">
-                     <h3>Titulo del producto</h3>
-                     <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                     <p class="precio-final">$ 895,00</p>
-                     <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     <a href="/detalleProducto">
+                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
+                        <p class="precio-final">$ 895,00</p>
+                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     </a>
                      <div class="botones">
                         <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
                      </div>
@@ -365,10 +378,12 @@
                      <div class="favorito"></div>
                   </div>
                   <div class="card-body">
-                     <h3>Titulo del producto</h3>
-                     <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                     <p class="precio-final">$ 895,00</p>
-                     <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     <a href="/detalleProducto">
+                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
+                        <p class="precio-final">$ 895,00</p>
+                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                     </a>
                      <div class="botones">
                         <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
                      </div>

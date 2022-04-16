@@ -73,15 +73,14 @@ main.grid-princpial {
    font-size: 0.9rem;
    color: var(--texto-gris);
 }
-
 .detalle-producto .categoria {
    font-size: 0.9rem;
-   margin: 0 0 0.3rem;
+   margin: 0;
 }
 .detalle-producto h1 {
    font-size: 1.1rem;
-   margin: 0.5rem 0;
-   line-height: 1.6;
+   margin: .5rem 0;
+   
    color: #000;
 }
 .detalle-producto .favorito-contenedor {
@@ -89,6 +88,7 @@ main.grid-princpial {
    justify-content: space-between;
 
    font-size: 0.85rem;
+   letter-spacing: -0.4px;
 }
 
 .favorito-contenedor p.favorito,
@@ -144,11 +144,11 @@ main.grid-princpial {
    text-decoration: line-through;
 }
 .precio-contenedor .precio-inicial .descuento {
-   font-size: 1rem;
+   font-size: 0.9rem;
    font-weight: bolder;
    line-height: 1;
    background-color: var(--verde);
-   padding: 0.3rem;
+   padding: 0.2rem;
    color: var(--texto-blanco);
 }
 
@@ -165,7 +165,7 @@ main.grid-princpial {
 .cantidad-input-contenedor {
    display: flex;
    align-items: center;
-   gap: 0.5rem;
+
    background-color: var(--fondo-input);
    width: max-content;
    border-radius: 0.2rem;
@@ -181,7 +181,7 @@ main.grid-princpial {
    font-family: monospace;
 }
 .cantidad #input-cantidad {
-   font-size: 1.2rem;
+   /* font-size: 1.1rem; */
    background-color: transparent;
    border: none;
    width: 2.5rem;
@@ -191,7 +191,7 @@ main.grid-princpial {
    outline-color: var(--verde);
 }
 
-.lista-metodos-pago {
+.detalle-producto > .lista-metodos-pago {
    display: flex;
    align-items: center;
    justify-content: space-between;
@@ -218,7 +218,7 @@ main.grid-princpial {
 }
 .btns-contenedor button {
    width: 50%;
-   padding: 0.9rem 1rem;
+   padding: 0.9rem 0;
    border: 0;
    border-radius: 0.3rem;
    color: white;
@@ -250,8 +250,8 @@ main.grid-princpial {
 
 /* ------- Detalle texto ------- */
 /* ------- Descripcion texto ------- */
-/* ------- Comentarios box, h3 ------- */
-/* ------- Recomendados box, h3 ------- */
+/* ------- Comentarios box, h2 ------- */
+/* ------- Recomendados box, h2 ------- */
 
 .detalle-texto,
 .descripcion-texto,
@@ -262,10 +262,10 @@ main.grid-princpial {
    font-size: 0.9rem;
    color: var(--texto-gris);
 }
-.detalle-texto h3,
-.descripcion-texto h3,
-.comentarios h3,
-.recomendados h3 {
+.detalle-texto h2,
+.descripcion-texto h2,
+.comentarios h2,
+.recomendados h2 {
    font-size: 1rem;
    margin: 0 0 0.5rem;
    color: #000;
@@ -295,33 +295,23 @@ main.grid-princpial {
    padding: 1rem 0;
    border-bottom: 1px solid var(--borde-gris-claro);
 
-   display: grid;
-   grid-template-columns: max-content 110px auto;
-   row-gap: 0.5rem;
    font-size: 0.9rem;
 }
-.comentario img {
-   width: 2.5rem;
-   margin-right: 0.5rem;
-   grid-column: 1/2;
-   grid-row: 1/3;
-}
-
 .comentario p {
    margin: 0;
 }
-
+.comentario .cabecera {
+   display: flex;
+   gap: 2rem;
+   margin-bottom: 0.5rem;
+}
 .comentario .nombre-usuario {
-   grid-column: 2/3;
-   grid-row: 1/2;
    width: max-content;
    font-weight: bolder;
    color: #000;
 }
-.comentario .estrellas {
-   grid-column: 3/4;
-   grid-row: 1/2;
 
+.comentario .estrellas {
    display: flex;
 }
 .comentario .estrellas .icono {
@@ -332,14 +322,10 @@ main.grid-princpial {
 
    background: url(/assets/img/estrellas-4.svg) no-repeat center;
    background-size: contain;
-   grid-column: 3/4;
-   grid-row: 1/2;
 }
 .comentario .comentario-texto {
-   grid-column: 2/-1;
-   grid-row: 2/3;
-
-   line-height: 1.5;
+   padding: 0 1rem;
+   max-width: 700px;
 }
 
 .comentarios > button {
@@ -378,9 +364,15 @@ main.grid-princpial {
 
 .recomendados .card h3 {
    font-size: 0.9rem;
-   letter-spacing: 0.5px;
-   margin-bottom: 0.5rem;
-   word-spacing: 2px;
+   letter-spacing: -0.3px;
+   margin-bottom: 1.5rem;
+
+   line-height: 1;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
 }
 .recomendados .flecha-izq,
 .recomendados .flecha-der {
@@ -426,6 +418,7 @@ main.grid-princpial {
    margin: 0 auto;
    box-shadow: 0 0 0.3rem var(--borde-gris-claro);
    border-radius: 0.5rem;
+   color: var(--texto-gris);
 }
 .recomendados .card-header {
    position: relative;
@@ -440,6 +433,9 @@ main.grid-princpial {
    background: url(/assets/img/favorito-outline-icono.svg) no-repeat center;
    background-size: contain;
 }
+.recomendados .card-header .favorito.active {
+   background-image: url(/assets/img/favorito-solid-icono.svg);
+}
 .recomendados .card-header img {
    display: block;
    margin: 0 auto;
@@ -451,11 +447,16 @@ main.grid-princpial {
    padding: 0.5rem;
    text-align: center;
 }
+.recomendados .card-body a {
+   font-weight: initial;
+   text-decoration: none;
+   color: var(--texto-gris);
+}
 
 .card-body .precio-inicial span:first-child {
    font-size: 0.8rem;
    margin-bottom: 0;
-   color: var(--texto-gris);
+
    text-decoration: line-through;
 }
 .card-body .precio-inicial .descuento {
@@ -468,7 +469,7 @@ main.grid-princpial {
 .recomendados .card-body .precio-final {
    font-size: 1.3rem;
    font-weight: bolder;
-   margin: 1rem 0 0.5rem;
+   margin: 0.5rem 0;
    color: var(--verde);
 }
 .recomendados .card-body .precio-secundario {
@@ -523,15 +524,17 @@ main.grid-princpial {
 
 /* ------- TABLET ------- */
 @media screen and (min-width: 768px) {
-   .grid-princpial {
+   main.grid-princpial {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 2rem;
       row-gap: 3rem;
       margin-top: 2rem;
+      padding: 0 2rem;
    }
    .grid-princpial > .slider {
-      margin: 0;
+      margin: 0 auto;
+      max-width: 370px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -617,6 +620,10 @@ main.grid-princpial {
    .recomendados .card {
       width: 45%;
       margin: 0;
+      transition: box-shadow 0.3s ease;
+   }
+   .recomendados .card:hover {
+      box-shadow: 0 0 0.4rem rgba(34, 34, 34, 0.4);
    }
    .recomendados .card:not(:first-of-type) {
       display: inline;
@@ -630,10 +637,6 @@ main.grid-princpial {
       margin: 3rem auto;
       grid-template-columns: 1.1fr 0.9fr;
       row-gap: 4rem;
-   }
-   main.grid-princpial > .slider {
-      max-width: 470px;
-      margin: 0 auto;
    }
 
    .recomendados {
@@ -656,10 +659,10 @@ main.grid-princpial {
    .comentarios .comentario-texto {
       font-size: 1rem;
    }
-   .detalle-texto h3,
-   .descripcion-texto h3,
-   .comentarios h3,
-   .recomendados h3 {
+   .detalle-texto h2,
+   .descripcion-texto h2,
+   .comentarios h2,
+   .recomendados h2 {
       font-size: 1rem;
       margin-bottom: 1.5rem;
    }
@@ -691,6 +694,9 @@ main.grid-princpial {
       transition: 0.2s ease;
       z-index: 100;
       transition-property: transform, visibility, opacity;
+   }
+   .recomendados .card-header .favorito.active::after {
+      content: 'Quitar favoritos';
    }
    .recomendados .card-header .favorito:hover::after {
       transform: translateX(0);
