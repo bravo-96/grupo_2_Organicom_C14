@@ -3,18 +3,124 @@
 /* ------ Main ------ */
 
 main {
-   padding: 1rem;
+   display: flex;
+   flex-direction: column;
+   font-size: 0.9rem;
+   gap: 3rem;
 }
 
 /* ------ INFORMACION ------ */
 .informacion {
-   width: 60%;
    padding: 1rem;
+}
+.informacion .encabezado-tags {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   line-height: 1;
+   margin: 1.5rem auto 1rem;
+   max-width: 380px;
+padding: 0;}
+.informacion .encabezado-tags > .flecha {
+   width: 0.5rem;
+   height: 1rem;
+   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
+   background-size: contain;
+   filter: brightness(0);
+}
+.informacion .encabezado-tags > .link {
+   color: #aaa;
+   font-size: clamp(0.8rem, 4vw, 1rem);
+   font-weight: 400;
+   width: max-content;
+}
+.informacion .encabezado-tags > .link.actual {
+   color: var(--verde);
+   font-weight: bolder;
+}
+.informacion .encabezado-tags a {
+   display: block;
+   width: max-content;
+   color: inherit;
+   font-weight: inherit;
+   text-decoration: none;
+}
+.datos-contacto-box > .iniciar-sesion{
+   margin: 2rem 0;
+}
+
+.datos-contacto-box > .iniciar-sesion > p {
+   margin: 0 auto;
+   max-width: 300px;
+   text-align: center;
+}
+.datos-contacto-box > .iniciar-sesion > a {
+   display: block;
+   background-color: var(--amarillo);
+   padding: 0.5rem 1.5rem;
+   text-align: center;
+   border-radius: 0.3rem;
+   margin: 1rem auto 0;
+   max-width: max-content;
+   text-decoration: none;
+   color: var(--verde);
+}
+.formulario-datos-contacto {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 1rem;
+}
+.formulario-datos-contacto > div > label {
+   display: block;
+   font-weight: bolder;
+   margin: 0 0 0.3rem 0.5rem;
+}
+.formulario-datos-contacto > div input:not([type='checkbox']) {
+   display: block;
+   width: 100%;
+   border: none;
+   border-radius: 0.3rem;
+   padding: 0.5rem;
+   background-color: var(--fondo-input);
+}
+.formulario-datos-contacto > div input:focus-within {
+   outline-color: var(--verde);
+}
+.formulario-datos-contacto > .email label[for='chbx-susbribirse'] {
+   display: flex;
+   align-items: center;
+   gap: 0.2rem;
+   line-height: 1;font-size: 0.67rem;
+   color: var(--texto-gris);
+   margin: 0.5rem 0 0;
+   font-weight: 400;
+}
+.formulario-datos-contacto .email,
+.formulario-datos-contacto .nombre,
+.formulario-datos-contacto .apellido,
+.formulario-datos-contacto .direccion,
+.formulario-datos-contacto .ciudad-barrio,
+.formulario-datos-contacto .codigo-postal,
+.formulario-datos-contacto .numero-cel,
+.formulario-datos-contacto .numero-tel-otro,
+.formulario-datos-contacto input[type='submit'] {
+   grid-column: 1/3;
+}
+.formulario-datos-contacto > input[type='submit'] {
+   background-color: var(--verde);
+   color: var(--texto-blanco);
+   padding: 0.7rem 1.7rem;
+   font-weight: bolder;
+   border: none;
+   margin-inline-start: auto;
+   display: block;
+   width: max-content;
+   max-width: 200px;
+   border-radius: 0.3rem;
 }
 
 /* ------ RESUMEN COMPRA ------ */
 .resumen-compra {
-   width: 40%;
    padding: 1rem;
    background-color: var(--fondo-input);
 }

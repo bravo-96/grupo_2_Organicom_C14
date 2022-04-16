@@ -166,61 +166,64 @@
    <main>
       <section class="informacion">
          <ul class="encabezado-tags">
-            <li class="link"><a href="">Datos de Contacto</a></li>
-            <li>&#62;</li>
+            <li class="link actual"><a href="">Datos de Contacto</a></li>
+            <li class="flecha"></li>
             <li class="link"><a href="">Datos de envío</a></li>
-            <li>&#62;</li>
+            <li class="flecha"></li>
             <li class="link"><a href="">Pago</a></li>
          </ul>
-         <div class="iniciar-sesion">
-            <p>Si ya te registraste, inicia sesion y carga toda tu informacion de contacto.</p>
-            <a href="/login">Iniciar sesion</a>
+         <div class="datos-contacto-box">
+            <div class="iniciar-sesion">
+               <p>Si ya te registraste, inicia sesion y carga toda tu informacion de contacto.</p>
+               <a href="/login">Iniciar sesion</a>
+            </div>
+            <form action="/" method="get" class="formulario-datos-contacto">
+               <div class="email">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" placeholder="Ingrese su Email">
+                  <label for="chbx-susbribirse"> <input type="checkbox" name="suscribirse" id="chbx-susbribirse"
+                        checked>
+                     Quiero recibir ofertas y promociones en mi Email</label>
+               </div>
+               <div class="nombre">
+                  <label for="nombre">Nombre/s</label>
+                  <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre/s">
+               </div>
+               <div class="apellido">
+                  <label for="apellido">Apellido/s</label>
+                  <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido/s">
+               </div>
+               <div class="direccion">
+                  <label for="direccion">Dirección</label>
+                  <input type="text" name="direccion" id="direccion" placeholder="Ej: Av. Calle 321">
+               </div>
+               <div class="piso">
+                  <label for="piso">Piso</label>
+                  <input type="text" name="piso" id="piso" placeholder="Ej: 2">
+               </div>
+               <div class="departamento">
+                  <label for="departamento">Depto.</label>
+                  <input type="text" name="departamento" id="departamento" placeholder="Ej: C">
+               </div>
+               <div class="ciudad-barrio">
+                  <label for="ciudad-barrio">Ciudad y/o barrio</label>
+                  <input type="text" name="ciudad-barrio" id="ciudad-barrio" placeholder="Ingrese su ciudad o barrio">
+               </div>
+               <div class="codigo-postal">
+                  <label for="codigo-postal">Cod. Postal</label>
+                  <input type="text" name="codigo-postal" id="codigo-postal" placeholder="Ej: 1229  ó  C1229ABA">
+               </div>
+               <div class="numero-cel">
+                  <label for="numero-cel">Número de celular</label>
+                  <input type="tel" name="numero-cel" id="numero-cel" placeholder="Ej: 11 1234 4567">
+               </div>
+               <div class="numero-tel-otro">
+                  <label for="numero-tel-otro">Número de teléfono u otro</label>
+                  <input type="tel" name="numero-tel-otro" id="numero-tel-otro" placeholder="Ej: 11 4912 3456">
+               </div>
+               <input type="submit" value="Continuar">
+            </form>
          </div>
-         <form action="/" method="get" class="formulario-datos-contacto">
-            <div class="email">
-               <label for="email">Email</label>
-               <input type="email" name="email" id="email" placeholder="Ingrese su Email">
-               <input type="checkbox" name="suscribirse" id="chbx-susbribirse">
-               <label for="chbx-susbribirse">Quiero recibir ofertas y promosiones en mi Email</label>
-            </div>
-            <div class="nombre">
-               <label for="nombre">Nombre/s</label>
-               <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre/s">
-            </div>
-            <div class="apellido">
-               <label for="apellido">Apellido/s</label>
-               <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido/s">
-            </div>
-            <div class="direccion">
-               <label for="direccion">Dirección</label>
-               <input type="text" name="direccion" id="direccion" placeholder="Ingrese su direccion">
-            </div>
-            <div class="piso">
-               <label for="piso">Piso</label>
-               <input type="text" name="piso" id="piso">
-            </div>
-            <div class="departamento">
-               <label for="departamento">Depto.</label>
-               <input type="text" name="departamento" id="departamento">
-            </div>
-            <div class="ciudad-barrio">
-               <label for="ciudad-barrio">Ciudad y/o barrio</label>
-               <input type="text" name="ciudad-barrio" id="ciudad-barrio" placeholder="Ingrese su ciudad o barrio">
-            </div>
-            <div class="codigo-postal">
-               <label for="codigo-postal">Cod. Postal</label>
-               <input type="text" name="codigo-postal" id="codigo-postal">
-            </div>
-            <div class="numero-cel">
-               <label for="numero-cel">Número de celular</label>
-               <input type="tel" name="numero-cel" id="numero-cel">
-            </div>
-            <div class="numero-tel-otro">
-               <label for="numero-tel-otro">Número de teléfono u otro</label>
-               <input type="tel" name="numero-tel-otro" id="numero-tel-otro">
-            </div>
-            <input type="submit" value="Continuar">
-         </form>
       </section>
 
       <section class="resumen-compra">

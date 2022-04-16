@@ -232,7 +232,7 @@ main.grid-princpial {
 }
 .btns-contenedor button:last-of-type {
    color: var(--verde);
-   background-color: var(--amarilo);
+   background-color: var(--amarillo);
 }
 
 .btns-contenedor .btn-agregar-carrito .icono {
@@ -478,7 +478,7 @@ main.grid-princpial {
 }
 
 .recomendados .card-body .btn-agregar {
-   background-color: var(--amarilo);
+   background-color: var(--amarillo);
    color: var(--verde);
    font-weight: bolder;
    padding: 0.6rem 0;
