@@ -2,6 +2,23 @@
 
 /* ------ Main ------ */
 
+main {
+   padding: 1rem;
+}
+
+/* ------ INFORMACION ------ */
+.informacion {
+   width: 60%;
+   padding: 1rem;
+}
+
+/* ------ RESUMEN COMPRA ------ */
+.resumen-compra {
+   width: 40%;
+   padding: 1rem;
+   background-color: var(--fondo-input);
+}
+
 /* ------- MOBILE XL ------- */
 
 @media screen and (min-width: 480px) {

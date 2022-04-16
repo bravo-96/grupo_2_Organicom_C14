@@ -46,15 +46,15 @@ img {
       width: 0.5rem;
    }
    body::-webkit-scrollbar-track {
-      background: transparent;
-      border: 2px solid rgba(180, 180, 180, 0.2);
+      background: rgba(0, 0, 0, 0.05);
+      border: 2px solid rgba(0, 0, 0, 0.1);
    }
    body::-webkit-scrollbar-thumb {
       border-radius: 2rem;
-      background-color: var(--verde-fondo);
+      background-color: var(--amarilo);
    }
    body::-webkit-scrollbar-thumb:hover {
-      background-color: var(--amarilo);
+      background-color: var(--verde-fondo);
    }
 }
 
@@ -133,7 +133,9 @@ img {
 
    background: url('/assets/img/cerrar-icono.svg') no-repeat center;
    background-size: contain;
-filter: invert(21%) sepia(68%) saturate(7012%) hue-rotate(354deg) brightness(92%) contrast(86%);}
+   filter: invert(21%) sepia(68%) saturate(7012%) hue-rotate(354deg)
+      brightness(92%) contrast(86%);
+}
 
 .carrito-lateral .producto-card > a {
    align-self: center;
@@ -403,7 +405,7 @@ nav.categorias-contenedor {
    padding: 0 8%;
    background-color: var(--verde-fondo);
 
-   transition: 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+   transition: 0.5s cubic-bezier(1, -0.03, 0.33, 0.87);
    transition-property: opacity, visibility, transform;
 }
 nav.categorias-contenedor.show {
@@ -694,7 +696,7 @@ footer .copyright {
       width: 2rem;
       height: 1.1rem;
 
-      transition: 0.3s cubic-bezier(0.7, 0, 0.3, 1) 0.1s;
+      transition: 0.3s cubic-bezier(0.81, 0.01, 0.3, 1) 0.1s;
       transition-property: right opacity;
    }
    nav.categorias-contenedor a:hover::before {

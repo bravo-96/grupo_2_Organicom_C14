@@ -44,17 +44,15 @@ main.grid-princpial {
 .slider .flecha-der::before {
    content: '';
    display: block;
-   width: 3rem;
-   height: 3rem;
+   width: 1.3rem;
+   height: 1.3rem;
    background-color: transparent;
-   border-left: 0.9rem solid #fff;
-   border-bottom: 0.9rem solid #fff;
-   border-radius: 0.7rem;
-   transform: rotate(45deg) scale(0.3) translate(10%, -10%);
+   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
+   background-size: contain;
+   transform: rotate(180deg) translate(10%, 0%);
 }
-
 .slider .flecha-der::before {
-   transform: rotate(225deg) scale(0.3) translate(10%, -10%);
+   transform: translate(10%, 0%);
 }
 
 .slider .producto-imagen-portada {
@@ -79,8 +77,8 @@ main.grid-princpial {
 }
 .detalle-producto h1 {
    font-size: 1.1rem;
-   margin: .5rem 0;
-   
+   margin: 0.5rem 0;
+
    color: #000;
 }
 .detalle-producto .favorito-contenedor {
@@ -324,7 +322,7 @@ main.grid-princpial {
    background-size: contain;
 }
 .comentario .comentario-texto {
-   padding: 0 1rem;
+   padding: 0 0 0 1rem;
    max-width: 700px;
 }
 
@@ -364,8 +362,8 @@ main.grid-princpial {
 
 .recomendados .card h3 {
    font-size: 0.9rem;
+   margin: 0 0.5rem 1rem;
    letter-spacing: -0.3px;
-   margin-bottom: 1.5rem;
 
    line-height: 1;
    overflow: hidden;
@@ -373,6 +371,7 @@ main.grid-princpial {
    display: -webkit-box;
    -webkit-line-clamp: 2;
    -webkit-box-orient: vertical;
+   color: #000;
 }
 .recomendados .flecha-izq,
 .recomendados .flecha-der {
@@ -399,16 +398,15 @@ main.grid-princpial {
 .recomendados .flecha-der::before {
    content: '';
    display: block;
-   width: 3rem;
-   height: 3rem;
+   width: 1.3rem;
+   height: 1.3rem;
    background-color: transparent;
-   border-left: 0.9rem solid #fff;
-   border-bottom: 0.9rem solid #fff;
-   border-radius: 0.7rem;
-   transform: rotate(45deg) scale(0.3) translate(10%, -10%);
+   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
+   background-size: contain;
+   transform: rotate(180deg) translate(10%, 0%);
 }
 .recomendados .flecha-der::before {
-   transform: rotate(225deg) scale(0.3) translate(10%, -10%);
+   transform: translate(10%, 0%);
 }
 .recomendados .card:not(:first-of-type) {
    display: none;
@@ -416,7 +414,7 @@ main.grid-princpial {
 .recomendados .card {
    width: 80%;
    margin: 0 auto;
-   box-shadow: 0 0 0.3rem var(--borde-gris-claro);
+   box-shadow: 0 0 0.2rem var(--borde-gris-claro);
    border-radius: 0.5rem;
    color: var(--texto-gris);
 }
@@ -465,22 +463,25 @@ main.grid-princpial {
    font-weight: bolder;
    color: var(--texto-blanco);
 }
-
+.recomendados .card-body .precio-inicial {
+   margin: 0;
+}
 .recomendados .card-body .precio-final {
    font-size: 1.3rem;
    font-weight: bolder;
    margin: 0.5rem 0;
    color: var(--verde);
+   line-height: 1;
 }
 .recomendados .card-body .precio-secundario {
-   margin: 0 0 1rem;
+   margin: 0 0 0.5rem;
 }
 
 .recomendados .card-body .btn-agregar {
    background-color: var(--amarilo);
    color: var(--verde);
    font-weight: bolder;
-   padding: 0.5rem;
+   padding: 0.6rem 0;
    display: block;
    margin: 0 auto;
    border: none;
@@ -527,7 +528,7 @@ main.grid-princpial {
    main.grid-princpial {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 2rem;
+      column-gap: 3rem;
       row-gap: 3rem;
       margin-top: 2rem;
       padding: 0 2rem;
