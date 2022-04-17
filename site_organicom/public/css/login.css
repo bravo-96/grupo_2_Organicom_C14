@@ -1,2 +1,88 @@
-@import './variables.css';
-@import './general.css';
+body {
+    background-color: var(--fondo-pagina);
+ }
+ 
+ a {
+    color: var(--verde);
+    font-weight: bold;
+ }
+
+ .div-titulo p{
+     color: #808080;
+ }
+
+ 
+ 
+body.login main, .div-titulo{
+    width: 90%;
+    margin: 20px auto;
+}
+.login main form div.login-main{
+    margin: 0 auto;
+    padding-top: 15px;
+}
+.login .login-main .login_input-main{
+    width: 100%;
+    padding: 10px;
+    border-color: var(--colorGrisCB);
+    border-radius: 5px;
+}
+
+.login button{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--verde);
+    color: white;
+
+}
+.login{
+    display: inline;
+}
+
+@media (min-width:768px){
+    .div-r-p{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+@media (min-width:1024px){
+    body.login main{
+        width: 100%;
+        height: 800px;
+        background-color: var(--borde-gris-claro);
+        margin: 0px;
+        margin-right: 0px;
+        padding-right: 0px;
+        
+    }
+    .div-r-p-p{
+        padding-top: 40px;
+    }
+    .div-r-p{
+        background-color: white;
+        width: 420px;
+        height: 420;
+        border: solid 1px white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        
+    }
+    .login main form div.login-main{
+        
+        padding-top: 15px;
+        width: 90%;
+    }
+    .login .login-form{
+        margin: 0;
+        padding: 0;
+    }
+   
+   
+}
+
+
