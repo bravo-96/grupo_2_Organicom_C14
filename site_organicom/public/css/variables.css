@@ -1,16 +1,11 @@
 :root {
+   /* --fuente-principal: sans-serif; */
    --fuente-principal: 'Open Sans', sans-serif;
+   --color-fondo: #fff;
+   /* color de gris claro para el boton */
+   --colorGrisCB: #9c9c9c;
 
-   /* fs = font-size */
-   --fs-cuerpo: 0.875rem; /* cuerpo = tamaño general de la fuente*/
-   --fs-precio: 1rem;
-
-   --fs-subtitulo: 1.25rem;
-   --fs-titulo-1: 2rem;
-   --fs-titulo-2: 1.5rem;
-   --fs-titulo-3: 1.25rem;
-
-   --amarillo: #ffcc1d;
+   --amarilo: #ffcc1d;
    --verde: #116530;
    --verde-fondo: #0b4619;
    --crema: #e8e8cc;
