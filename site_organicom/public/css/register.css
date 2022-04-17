@@ -1,13 +1,4 @@
-body {
-    background-color: var(--fondo-pagina);
- }
- 
- a {
-    color: var(--verde);
-    font-weight: bold;
- }
-
- 
+@import "./general.css";
  
 body.register main, .div-titulo{
     width: 90%;
@@ -24,7 +15,7 @@ body.register main, .div-titulo{
     border-radius: 5px;
 }
 
-.register button{
+.register main button{
     padding: 10px;
     width: 100%;
     border-radius: 5px;
@@ -59,7 +50,7 @@ body.register main, .div-titulo{
     .div-r-p{
         background-color: white;
         width: 420px;
-        height: 420;
+        
         border: solid 1px white;
         border-radius: 10px;
         display: flex;

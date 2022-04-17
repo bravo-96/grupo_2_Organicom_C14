@@ -310,9 +310,9 @@ header {
    box-shadow: 0 0.2rem 0.5rem #eee;
 }
 .logo-link {
-   
-width: 25vw;
-    max-width: 110px;}
+   width: 25vw;
+   max-width: 110px;
+}
 .logo {
    width: 100%;
 }
@@ -442,7 +442,6 @@ nav.categorias-contenedor a {
    transition-property: padding, max-height;
 }
 .barra-busqueda.show {
-   
    max-height: 60px;
 }
 .barra-busqueda input {
@@ -736,7 +735,8 @@ footer .copyright {
    header {
       grid-template-columns: auto auto 40% repeat(2, auto);
       gap: 0;
-   padding: 1rem 10%;}
+      padding: 1rem 10%;
+   }
 
    .menu-icono {
       grid-column: 2 / 3;
@@ -878,4 +878,3 @@ footer .copyright {
    }
    /* ------------ */
 }
-

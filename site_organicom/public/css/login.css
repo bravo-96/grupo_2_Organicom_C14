@@ -1,12 +1,5 @@
-body {
-    background-color: var(--fondo-pagina);
- }
+@import "./general.css";
  
- a {
-    color: var(--verde);
-    font-weight: bold;
- }
-
  .div-titulo p{
      color: #808080;
  }
@@ -28,7 +21,7 @@ body.login main, .div-titulo{
     border-radius: 5px;
 }
 
-.login button{
+.login main button{
     padding: 10px;
     width: 100%;
     border-radius: 5px;
