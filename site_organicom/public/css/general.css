@@ -301,14 +301,18 @@ img {
 header {
    position: relative;
    display: grid;
-   grid-template-columns: minmax(80px, 120px) repeat(4, auto);
+   grid-template-columns: repeat(5, auto);
    justify-content: space-between;
    align-items: center;
    gap: 2%;
 
-   padding: .5rem 5%;
+   padding: 0.5rem 5%;
    box-shadow: 0 0.2rem 0.5rem #eee;
 }
+.logo-link {
+   
+width: 25vw;
+    max-width: 110px;}
 .logo {
    width: 100%;
 }
@@ -438,7 +442,7 @@ nav.categorias-contenedor a {
    transition-property: padding, max-height;
 }
 .barra-busqueda.show {
-   /* padding: 0; */
+   
    max-height: 60px;
 }
 .barra-busqueda input {
@@ -483,7 +487,7 @@ footer .max-width-container {
    border-radius: 0.2rem;
    padding: 0.3rem;
 
-   max-width: 400px;
+   max-width: 350px;
 
    display: flex;
    justify-content: space-between;
@@ -543,7 +547,7 @@ footer .max-width-container {
    display: block;
    width: 90%;
    margin: 0 auto 1rem;
-   max-width: 200px;
+   max-width: 150px;
 }
 .logo-redes-contenedor .lista-redes {
    display: flex;
@@ -582,7 +586,7 @@ footer .copyright {
 @media screen and (min-width: 480px) {
    /* ------- FOOTER ------- */
    footer {
-      padding-top: 4rem;
+      padding-top: 3rem;
    }
 
    footer .contenido {
@@ -730,9 +734,9 @@ footer .copyright {
    /* ------- Header ------- */
 
    header {
-      grid-template-columns: minmax(80px, 140px) auto 40% repeat(2, auto);
+      grid-template-columns: auto auto 40% repeat(2, auto);
       gap: 0;
-   }
+   padding: 1rem 10%;}
 
    .menu-icono {
       grid-column: 2 / 3;

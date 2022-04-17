@@ -166,16 +166,17 @@
    <main>
       <section class="informacion">
          <ul class="encabezado-tags">
-            <li class="link actual"><a href="">Datos de Contacto</a></li>
+            <li class="link actual"><a href="">Datos</a></li>
             <li class="flecha"></li>
-            <li class="link"><a href="">Datos de envío</a></li>
+            <li class="link"><a href="">Envio</a></li>
             <li class="flecha"></li>
             <li class="link"><a href="">Pago</a></li>
          </ul>
          <div class="datos-contacto-box">
+            <h2>Datos de contacto</h2>
             <div class="iniciar-sesion">
-               <p>Si ya te registraste, inicia sesion y carga toda tu informacion de contacto.</p>
-               <a href="/login">Iniciar sesion</a>
+               <p>¿Ya tenes una cuenta? <a href="/login">Inicia sesion aqui</a> y carga automáticamente todos tus datos.
+               </p>
             </div>
             <form action="/" method="get" class="formulario-datos-contacto">
                <div class="email">
@@ -227,25 +228,52 @@
       </section>
 
       <section class="resumen-compra">
-         <button class="btn-editar-productos">Editar Productos</button>
-         <article class="producto">
-            <img src="/assets/img/producto-imagen-1.jpg" alt="/Titulo del producto/">
-            <p class="titulo">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</p>
-            <p class="cantidad">Cantidad x <span class="numero">2</span></p>
-            <p class="precio-unidad">$ 750,00</p>
-            <p class="precio-total">$ 750,00</p>
-         </article>
-         <article class="codigo-descuento">
-            <p>¿Tenés algun código de descuento?</p>
-            <form action="/">
-               <input type="text" placeholder="Ingresa el código">
-               <input type="submit" value="Aplicar">
-            </form>
-         </article>
-         <div class="resumen-costo">
-            <p class="subtotal">Subtotal <span class="precio">$ 2.600,00</span></p>
-            <p class="envio">Costo de Envío <span class="precio">en proceso...</span></p>
-            <p class="precio-total">Total <span class="precio">$ 2.600,00</span></p>
+         <div class="max-width-box">
+            <div class="encabezado">
+               <div class="icono-carrito"></div>
+               <p class="ver-ocultar">Ver resúmen</p>
+               <p class="precio-total">$ 2.600</p>
+            </div>
+            <div class="cuerpo">
+               <div class="cuerpo-height">
+                  <button type="button" class="btn-editar-productos">Editar pedido</button>
+                  <div class="lista-productos">
+                     <article class="producto">
+                        <img class="imagen" src="/assets/img/producto-imagen-1.jpg" alt="/Titulo del producto/">
+                        <p class="titulo">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</p>
+                        <p class="cantidad">Cantidad x <span class="numero">2</span></p>
+                        <p class="precio-unidad">$ 750 c/u</p>
+                        <p class="precio-total">$ 1.500</p>
+                     </article>
+                     <article class="producto">
+                        <img class="imagen" src="/assets/img/producto-imagen-1.jpg" alt="/Titulo del producto/">
+                        <p class="titulo">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</p>
+                        <p class="cantidad">Cantidad x <span class="numero">2</span></p>
+                        <p class="precio-unidad">$ 750 c/u</p>
+                        <p class="precio-total">$ 1.500</p>
+                     </article>
+                     <article class="producto">
+                        <img class="imagen" src="/assets/img/producto-imagen-1.jpg" alt="/Titulo del producto/">
+                        <p class="titulo">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</p>
+                        <p class="cantidad">Cantidad x <span class="numero">2</span></p>
+                        <p class="precio-unidad">$ 750 c/u</p>
+                        <p class="precio-total">$ 1.500</p>
+                     </article>
+                  </div>
+                  <article class="codigo-descuento">
+                     <p>¿Tenés algun código de descuento?</p>
+                     <form action="/">
+                        <input type="text" placeholder="Ingresa el código">
+                        <input type="submit" value="Aplicar">
+                     </form>
+                  </article>
+                  <div class="resumen-costo">
+                     <p class="subtotal">Subtotal <span class="precio">$ 2.600</span></p>
+                     <p class="envio">Costo de Envío <span class="precio">en proceso...</span></p>
+                     <p class="precio-total">Total <span class="precio">$ 2.600</span></p>
+                  </div>
+               </div>
+            </div>
          </div>
       </section>
    </main>

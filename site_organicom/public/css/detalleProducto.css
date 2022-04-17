@@ -361,11 +361,11 @@ main.grid-princpial {
 }
 
 .recomendados .card h3 {
-   font-size: 0.9rem;
-   margin: 0 0.5rem 1rem;
+   font-size: 0.75rem;
+   margin: 0 0 0.5rem;
    letter-spacing: -0.3px;
 
-   line-height: 1;
+   line-height: 1.2;
    overflow: hidden;
    text-overflow: ellipsis;
    display: -webkit-box;
@@ -389,10 +389,10 @@ main.grid-princpial {
    transform: translateY(-50%);
 }
 .recomendados .flecha-izq {
-   left: -0.5rem;
+   left: -1rem;
 }
 .recomendados .flecha-der {
-   right: -0.5rem;
+   right: -1rem;
 }
 .recomendados .flecha-izq::before,
 .recomendados .flecha-der::before {
@@ -437,7 +437,7 @@ main.grid-princpial {
 .recomendados .card-header img {
    display: block;
    margin: 0 auto;
-   width: 60%;
+   width: 50%;
    padding: 1rem 0;
 }
 
@@ -459,15 +459,16 @@ main.grid-princpial {
 }
 .card-body .precio-inicial .descuento {
    background-color: var(--verde-fondo);
-   padding: 0.2rem;
+   padding: 0.1rem .2rem;
    font-weight: bolder;
    color: var(--texto-blanco);
+   font-size: 0.7rem;
 }
 .recomendados .card-body .precio-inicial {
    margin: 0;
 }
 .recomendados .card-body .precio-final {
-   font-size: 1.3rem;
+   font-size: 1.2rem;
    font-weight: bolder;
    margin: 0.5rem 0;
    color: var(--verde);
@@ -475,6 +476,7 @@ main.grid-princpial {
 }
 .recomendados .card-body .precio-secundario {
    margin: 0 0 0.5rem;
+   font-size: 0.75rem;
 }
 
 .recomendados .card-body .btn-agregar {
@@ -612,6 +614,10 @@ main.grid-princpial {
       padding: 0;
       margin: 0 auto;
    }
+   .recomendados .sticky-contenedor {
+      position: sticky;
+      top: 20px;
+   }
    .recomendados .slider {
       display: flex;
       margin: 1rem 0 0;
@@ -641,12 +647,8 @@ main.grid-princpial {
    }
 
    .recomendados {
-      margin: 0 auto 1rem;
+      margin: 0 0 1rem;
       grid-row: 2/ 5;
-   }
-   .recomendados .sticky-contenedor {
-      position: sticky;
-      top: 20px;
    }
    .comentarios {
       grid-column: 1/2;
