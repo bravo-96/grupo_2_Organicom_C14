@@ -143,6 +143,27 @@ header {
   color: var(--texto-blanco);
   justify-content: center;
 }
+.banner .banner--button{
+  background: var(--amarilo);
+  border: none;
+  border-radius: 5px;
+  color: var(--verde);
+  cursor: pointer;
+  position: absolute;
+  left: 60%;
+  bottom: 40%;
+  width: 5em;
+  height: 2em;
+  z-index: 20;
+  transition: all 1.5s;
+}
+.banner .banner--button:hover{
+  background:  #ffca1d00;
+  border-right: 2px solid var(--verde);
+  border-bottom: 2px solid var(--verde);
+  color: var(--amarilo);
+
+}
 .banner h1{
  margin: 0 ;
  padding: 2rem;
@@ -216,9 +237,24 @@ header {
   color: var(--crema);
 }
 
-.seguinos i {
-  margin: 10px;
-  color: #E8E8CC;
+.seguinos--redes {
+ display: flex;
+ gap: 10px;
+ 
+}
+.seguinos--redes .facebook {
+  animation: redes 3s infinite;
+ }
+ .seguinos--redes .instagram{
+  animation: redes 3s .3s infinite;
+ }
+ .seguinos--redes .twitter{
+  animation: redes 3s .5s infinite;
+ }
+@keyframes redes{
+  0%{transform:translateY(0px) ; }
+  50%{transform: translateY(15px);}
+  100%{transform: translateY(0px);}
 }
 
 .carousel--container { 
@@ -343,7 +379,7 @@ color: var(--texto-blanco) ;
   outline: none;
 }
 .formulario button{
-  color: var(--verde-fondo);
+  color: var(--verde);
   width: 50%;
   height: 1.5rem;
   margin-left: 25%;
@@ -351,7 +387,16 @@ color: var(--texto-blanco) ;
   background: var(--amarilo);
   border: none;
   border-radius: 5px;
+  transition: all .5s;
   
+  
+}
+.formulario button:hover{
+  background:  #ffca1d00;
+  border-right: 2px solid var(--verde);
+  border-bottom: 2px solid var(--verde);
+  
+
 }
 
 
@@ -401,6 +446,14 @@ footer .max-width-container {
   border: none;
   color: var(--verde);
   font-weight: bolder;
+  transition: all .5s;
+}
+.suscripcion-contenedor form button:hover{
+  background:  #ffca1d00;
+  border-right: 2px solid var(--verde);
+  border-bottom: 2px solid var(--verde);
+  
+
 }
 
 .contenido {
