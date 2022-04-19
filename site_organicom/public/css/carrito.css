@@ -63,8 +63,8 @@ main {
 .formulario-datos-contacto {
    display: grid;
    grid-template-columns: 1fr 1fr;
-   gap: 1rem;
-}
+   column-gap: 1rem;
+row-gap: 2rem;}
 .formulario-datos-contacto > div > label {
    display: block;
    font-weight: bolder;
@@ -74,7 +74,7 @@ main {
    display: block;
    width: 100%;
    border: none;
-   border-radius: 0.3rem;
+   border-radius: 0.2rem;
    padding: 0.5rem;
    background-color: var(--fondo-input);
 }
@@ -90,6 +90,9 @@ main {
    color: var(--texto-gris);
    margin: 0.5rem 0 0;
    font-weight: 400;
+}
+.formulario-datos-contacto input[type="submit"]{
+   cursor: pointer;
 }
 .formulario-datos-contacto .email,
 .formulario-datos-contacto .nombre,

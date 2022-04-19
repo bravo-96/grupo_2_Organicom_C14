@@ -9,7 +9,7 @@ main.grid-princpial {
 
 .slider {
    position: relative;
-   max-width: 500px;
+   max-width: 450px;
    margin: 4rem auto;
 }
 
@@ -59,8 +59,8 @@ main.grid-princpial {
 .slider .producto-imagen-portada {
    display: block;
    margin: 0 auto;
-   padding: 1rem 0;
-   width: 80%;
+   padding: 1.3rem 0;
+   width: 70%;
    max-width: 300px;
    object-fit: contain;
    object-position: center;
@@ -363,7 +363,7 @@ main.grid-princpial {
    position: relative;
    max-width: 350px;
    margin: 2rem auto;
-}
+display: flex;}
 
 .recomendados .card h3 {
    font-size: 0.75rem;
@@ -382,8 +382,8 @@ main.grid-princpial {
 .recomendados .flecha-der {
    position: absolute;
    background-color: var(--verde);
-   width: 3rem;
-   height: 3rem;
+   width: 2rem;
+   height: 2rem;
    border-radius: 50%;
    box-shadow: 0 0 0.5rem #ccc;
    cursor: pointer;
@@ -403,8 +403,8 @@ main.grid-princpial {
 .recomendados .flecha-der::before {
    content: '';
    display: block;
-   width: 1.3rem;
-   height: 1.3rem;
+   width: 0.7rem;
+   height: 0.9rem;
    background-color: transparent;
    background: url(/assets/img/flecha-blanco.svg) no-repeat center;
    background-size: contain;
@@ -413,7 +413,8 @@ main.grid-princpial {
 .recomendados .flecha-der::before {
    transform: translate(10%, 0%);
 }
-.recomendados .card:not(:first-of-type) {
+.recomendados .card:nth-of-type(3),
+.recomendados .card:nth-of-type(4) {
    display: none;
 }
 .recomendados .card {
@@ -422,7 +423,7 @@ main.grid-princpial {
    box-shadow: 0 0 0.2rem var(--borde-gris-claro);
    border-radius: 0.5rem;
    color: var(--texto-gris);
-}
+max-width: 160px;}
 .recomendados .card-header {
    position: relative;
 }
@@ -514,11 +515,11 @@ main.grid-princpial {
 
 @media screen and (min-width: 480px) {
    .recomendados .slider {
-      max-width: 500px;
+      max-width: 450px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.5rem;
    }
 
    .recomendados .card {
@@ -542,7 +543,7 @@ main.grid-princpial {
    }
    .grid-princpial > .slider {
       margin: 0 auto;
-      max-width: 370px;
+      max-width: 400px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -603,7 +604,7 @@ main.grid-princpial {
    .detalle-texto {
       grid-column: 1/2;
       grid-row: 2/3;
-   }
+   border: none;}
    .descripcion-texto {
       grid-column: 1/2;
       grid-row: 3/4;
@@ -633,7 +634,7 @@ main.grid-princpial {
    .recomendados .card {
       width: 45%;
       margin: 0;
-      transition: box-shadow 0.3s ease;
+      max-width: 180px;transition: box-shadow 0.3s ease;
    }
    .recomendados .card:hover {
       box-shadow: 0 0 0.4rem rgba(34, 34, 34, 0.4);
