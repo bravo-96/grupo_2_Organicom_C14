@@ -34,14 +34,15 @@
             <a href="/register">Registrarse</a>
          </div>
       </button>
-      <a href="/carrito">
-         <button type="button" class="btn-carrito">
-            <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
-         </button>
-      </a>
+      <button type="button" class="btn-carrito">
+         <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
+      </button>
 
       <nav class="categorias-contenedor">
-         <div class="imagen-fondo xxx ccc ddd"></div>
+         <div class="imagen-fondo cereales"></div>
+         <div class="imagen-fondo frutos-secos"></div>
+         <div class="imagen-fondo jugos"></div>
+         <div class="imagen-fondo infusiones"></div>
          <ul>
             <li><a class="link-categoria" href="./" data-nombre_categoria="cereales">Fideos / Cereales</a></li>
             <li><a class="link-categoria" href="./" data-nombre_categoria="frutos-secos">Frutos secos</a></li>
@@ -54,183 +55,227 @@
       </form>
    </header>
 
-   <main class="grid-principal">
-      <section class="lista-carrito">
-         <h2>Mis productos</h2>
-         <article class="producto-card">
-            <button type="button" class="btn-cerrar"></button>
-            <a href="/detalleProducto">
-               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
-            </a>
-            <h3 class="titulo">
-               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
-            </h3>
-            <div class="cantidad-contenedor">
-               <p>Cantidad</p>
-               <div class="cantidad-input-contenedor">
-                  <button type="button" class="resta">-</button>
-                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
-                  <button type="button" class="suma">+</button>
-               </div>
-            </div>
-            <div class="precio-contenedor">
-               <p>Total</p>
-               <p class="precio-total">$ 750,00</p>
-            </div>
-         </article>
-         <article class="producto-card">
-            <button type="button" class="btn-cerrar"></button>
-            <a href="/detalleProducto">
-               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
-            </a>
-            <h3 class="titulo">
-               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
-            </h3>
-            <div class="cantidad-contenedor">
-               <p>Cantidad</p>
-               <div class="cantidad-input-contenedor">
-                  <button type="button" class="resta">-</button>
-                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
-                  <button type="button" class="suma">+</button>
-               </div>
-            </div>
-            <div class="precio-contenedor">
-               <p>Total</p>
-               <p class="precio-total">$ 750,00</p>
-            </div>
-         </article>
-         <article class="producto-card">
-            <button type="button" class="btn-cerrar"></button>
-            <a href="/detalleProducto">
-               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
-            </a>
-            <h3 class="titulo">
-               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
-            </h3>
-            <div class="cantidad-contenedor">
-               <p>Cantidad</p>
-               <div class="cantidad-input-contenedor">
-                  <button type="button" class="resta">-</button>
-                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
-                  <button type="button" class="suma">+</button>
-               </div>
-            </div>
-            <div class="precio-contenedor">
-               <p>Total</p>
-               <p class="precio-total">$ 750,00</p>
-            </div>
-         </article>
-      </section>
+   <div class="modalBg"></div>
 
-      <section class="codigo-descuento">
+   <div class="carrito-lateral">
+      <button type="button" class="cerrar">
+         <div class="icono"></div>
+      </button>
+      <h3>Mi lista de productos</h3>
+
+      <ul class="lista-productos">
+         <li class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <a href="/detalleProducto">
+               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            </a>
+            <h4 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h4>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </li>
+         <li class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <a href="/detalleProducto">
+               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            </a>
+            <h4 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h4>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </li>
+         <li class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <a href="/detalleProducto">
+               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            </a>
+            <h4 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h4>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </li>
+         <li class="producto-card">
+            <button type="button" class="btn-cerrar"></button>
+            <a href="/detalleProducto">
+               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
+            </a>
+            <h4 class="titulo">
+               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
+            </h4>
+            <div class="cantidad-contenedor">
+               <p>Cantidad</p>
+               <div class="cantidad-input-contenedor">
+                  <button type="button" class="resta">-</button>
+                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
+                  <button type="button" class="suma">+</button>
+               </div>
+            </div>
+            <div class="precio-contenedor">
+               <p>Total</p>
+               <p class="precio-total">$ 750,00</p>
+            </div>
+         </li>
+      </ul>
+      <div class="codigo-descuento">
          <p>¿Tenés algun código de descuento?</p>
          <form action="/">
             <input type="text" placeholder="Ingresa el código">
             <input type="submit" value="Aplicar">
          </form>
+      </div>
+      <div class="costo-total">
+         <p>Total productos</p>
+         <p>$ 1.250,00</p>
+      </div>
+      <a href="/carrito" class="btn-comprar">Comprar</a>
+   </div>
+
+   <main>
+      <section class="informacion">
+         <ul class="encabezado-tags">
+            <li class="link actual"><a href="">Datos</a></li>
+            <li class="flecha"></li>
+            <li class="link"><a href="">Envio</a></li>
+            <li class="flecha"></li>
+            <li class="link"><a href="">Pago</a></li>
+         </ul>
+         <div class="datos-contacto-box">
+            <h2>Datos de contacto</h2>
+            <div class="iniciar-sesion">
+               <p>¿Ya tenes una cuenta? <a href="/login">Inicia sesion aqui</a> y carga automáticamente todos tus datos.
+               </p>
+            </div>
+            <form action="/" method="get" class="formulario-datos-contacto">
+               <div class="email">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" placeholder="Ingrese su Email">
+                  <label for="chbx-susbribirse"> <input type="checkbox" name="suscribirse" id="chbx-susbribirse"
+                        checked>
+                     Quiero recibir ofertas y promociones en mi Email</label>
+               </div>
+               <div class="nombre">
+                  <label for="nombre">Nombre/s</label>
+                  <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre/s">
+               </div>
+               <div class="apellido">
+                  <label for="apellido">Apellido/s</label>
+                  <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido/s">
+               </div>
+               <div class="direccion">
+                  <label for="direccion">Dirección</label>
+                  <input type="text" name="direccion" id="direccion" placeholder="Ej: Av. Calle 321">
+               </div>
+               <div class="piso">
+                  <label for="piso">Piso</label>
+                  <input type="text" name="piso" id="piso" placeholder="Ej: 2">
+               </div>
+               <div class="departamento">
+                  <label for="departamento">Depto.</label>
+                  <input type="text" name="departamento" id="departamento" placeholder="Ej: C">
+               </div>
+               <div class="ciudad-barrio">
+                  <label for="ciudad-barrio">Ciudad y/o barrio</label>
+                  <input type="text" name="ciudad-barrio" id="ciudad-barrio" placeholder="Ingrese su ciudad o barrio">
+               </div>
+               <div class="codigo-postal">
+                  <label for="codigo-postal">Cod. Postal</label>
+                  <input type="text" name="codigo-postal" id="codigo-postal" placeholder="Ej: 1229  ó  C1229ABA">
+               </div>
+               <div class="numero-cel">
+                  <label for="numero-cel">Número de celular</label>
+                  <input type="tel" name="numero-cel" id="numero-cel" placeholder="Ej: 11 1234 4567">
+               </div>
+               <div class="numero-tel-otro">
+                  <label for="numero-tel-otro">Número de teléfono u otro</label>
+                  <input type="tel" name="numero-tel-otro" id="numero-tel-otro" placeholder="Ej: 11 4912 3456">
+               </div>
+               <input type="submit" value="Continuar">
+            </form>
+         </div>
       </section>
 
       <section class="resumen-compra">
-         <h2>Resumen de compra</h2>
-         <div class="resumen">
-            <p>Subtotal <span class="precio-subtotal">$ 750,00</span></p>
-            <p>Costo de envío <span class="precio-envio">$ 300,00</span></p>
-            <p class="precio-total"><span>Total</span> <span>$ 1.050,00</span></p>
-            <button type="button">Realizar compra</button>
+         <div class="max-width-box">
+            <div class="encabezado">
+               <div class="icono-carrito"></div>
+               <p class="ver-ocultar">Ver resúmen</p>
+               <p class="precio-total">$ 2.600</p>
+            </div>
+            <div class="cuerpo">
+               <div class="cuerpo-height">
+                  <button type="button" class="btn-editar-productos">Editar pedido</button>
+                  <div class="lista-productos">
+                     <article class="producto">
+                        <img class="imagen" src="/assets/img/producto-imagen-1.jpg" alt="/Titulo del producto/">
+                        <p class="titulo">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</p>
+                        <p class="cantidad">Cantidad x <span class="numero">2</span></p>
+                        <p class="precio-unidad">$ 750 c/u</p>
+                        <p class="precio-total">$ 1.500</p>
+                     </article>
+                     <article class="producto">
+                        <img class="imagen" src="/assets/img/producto-imagen-1.jpg" alt="/Titulo del producto/">
+                        <p class="titulo">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</p>
+                        <p class="cantidad">Cantidad x <span class="numero">2</span></p>
+                        <p class="precio-unidad">$ 750 c/u</p>
+                        <p class="precio-total">$ 1.500</p>
+                     </article>
+                     <article class="producto">
+                        <img class="imagen" src="/assets/img/producto-imagen-1.jpg" alt="/Titulo del producto/">
+                        <p class="titulo">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</p>
+                        <p class="cantidad">Cantidad x <span class="numero">2</span></p>
+                        <p class="precio-unidad">$ 750 c/u</p>
+                        <p class="precio-total">$ 1.500</p>
+                     </article>
+                  </div>
+                  <article class="codigo-descuento">
+                     <p>¿Tenés algun código de descuento?</p>
+                     <form action="/">
+                        <input type="text" placeholder="Ingresa el código">
+                        <input type="submit" value="Aplicar">
+                     </form>
+                  </article>
+                  <div class="resumen-costo">
+                     <p class="subtotal">Subtotal <span class="precio">$ 2.600</span></p>
+                     <p class="envio">Costo de Envío <span class="precio">en proceso...</span></p>
+                     <p class="precio-total">Total <span class="precio">$ 2.600</span></p>
+                  </div>
+               </div>
+            </div>
          </div>
       </section>
-
-      <section class="metodos-pago">
-         <p>Métodos de pago:</p>
-         <ul class="lista-metodos-pago">
-            <li><img title="Efectivo" src="/assets/img/efectivo.png" alt></li>
-            <li><img title="Mercado Pago" src="/assets/img/merc-pago.png" alt></li>
-            <li><img title="Visa" src="/assets/img/visa.png" alt></li>
-            <li><img title="Master Card" src="/assets/img/mast-card.png" alt></li>
-            <li><img title="American Express" src="/assets/img/amer-express.png" alt></li>
-         </ul>
-      </section>
-
-      <section class="recomendados">
-         <h2>Tambien te pueden interesar</h2>
-         <div class="slider">
-            <div class="flecha-izq"></div>
-            <div class="flecha-der"></div>
-
-            <article class="card">
-               <div class="card-header">
-                  <a href="/detalleProducto">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                  </a>
-                  <div class="favorito"></div>
-               </div>
-               <div class="card-body">
-                  <h3>Titulo del producto</h3>
-                  <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                  <p class="precio-final">$ 895,00</p>
-                  <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                  <div class="botones">
-                     <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                  </div>
-               </div>
-            </article>
-
-            <article class="card">
-               <div class="card-header">
-                  <a href="/detalleProducto">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                  </a>
-                  <div class="favorito"></div>
-               </div>
-               <div class="card-body">
-                  <h3>Titulo del producto</h3>
-                  <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                  <p class="precio-final">$ 895,00</p>
-                  <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                  <div class="botones">
-                     <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                  </div>
-               </div>
-            </article>
-
-            <article class="card">
-               <div class="card-header">
-                  <a href="/detalleProducto">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                  </a>
-                  <div class="favorito"></div>
-               </div>
-               <div class="card-body">
-                  <h3>Titulo del producto</h3>
-                  <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                  <p class="precio-final">$ 895,00</p>
-                  <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                  <div class="botones">
-                     <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                  </div>
-               </div>
-            </article>
-
-            <article class="card">
-               <div class="card-header">
-                  <a href="/detalleProducto">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                  </a>
-                  <div class="favorito"></div>
-               </div>
-               <div class="card-body">
-                  <h3>Titulo del producto</h3>
-                  <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                  <p class="precio-final">$ 895,00</p>
-                  <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                  <div class="botones">
-                     <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                  </div>
-               </div>
-            </article>
-         </div>
-      </section>
-
    </main>
 
    <footer>
@@ -278,6 +323,7 @@
          </p>
       </div>
    </footer>
+   <script src="/js/general.js"></script>
    <script src="/js/carrito.js"></script>
 </body>
 

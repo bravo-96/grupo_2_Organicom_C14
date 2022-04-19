@@ -1,77 +1,34 @@
-// ------ Heder & Footer ------
-const btnMenu = document.querySelector('.btn-menu');
-const navContenedor = document.querySelector('.categorias-contenedor');
-const btnCuenta = document.querySelector('.btn-cuenta');
-const contendorLoginRegister = document.querySelector(
-   '.contendor-login-register'
+// ------------
+
+const btnMostrarResumen = document.querySelector(
+   '.resumen-compra .ver-ocultar'
 );
-const btnBuscar = document.querySelector('.btn-buscar');
-const barraBusqueda = document.querySelector('.barra-busqueda');
+const cuerpoResumen = document.querySelector('.resumen-compra .cuerpo');
+const cuerpoResumenHeight = document.querySelector(
+   '.resumen-compra .cuerpo .cuerpo-height'
+);
+const cuerpoHeight =
+   cuerpoResumenHeight.clientHeight + cuerpoResumenHeight.style.paddingTop;
 
-const listaLinksCategorias = document.querySelectorAll('.link-categoria');
-const imgFondo = document.querySelector('.categorias-contenedor .imagen-fondo');
-
-btnMenu.addEventListener('click', () => {
-   navContenedor.classList.toggle('show');
-   btnMenu.classList.toggle('active');
-});
-
-btnCuenta.addEventListener('click', () => {
-   contendorLoginRegister.classList.toggle('show');
-   btnCuenta.classList.toggle('active');
-});
-btnBuscar.addEventListener('click', () => {
-   barraBusqueda.classList.toggle('show');
-   btnBuscar.classList.toggle('active');
-});
-
-listaLinksCategorias.forEach((elm) => {
-   elm.addEventListener('mouseenter', (e) => {
-      setTimeout(() => {
-         const categoria = e.target.dataset.nombre_categoria;
-
-         imgFondo.classList = imgFondo.classList[0];
-
-         switch (categoria) {
-            case 'cereales':
-               imgFondo.classList.add('cereales');
-               break;
-            case 'frutos-secos':
-               imgFondo.classList.add('frutos-secos');
-               break;
-            case 'jugos':
-               imgFondo.classList.add('jugos');
-               break;
-            case 'infusiones':
-               imgFondo.classList.add('infusiones');
-               break;
-         }
-      }, 250);
-   });
+btnMostrarResumen.addEventListener('click', () => {
+   if (!cuerpoResumen.style.height) {
+      cuerpoResumen.style.height = `${cuerpoHeight}px`;
+      btnMostrarResumen.textContent = 'Ocultar resúmen';
+      btnMostrarResumen.classList.add('show');
+   } else {
+      cuerpoResumen.style.height = '';
+      btnMostrarResumen.textContent = 'Ver resúmen';
+      btnMostrarResumen.classList.remove('show');
+   }
 });
 
 // ------------
 
-const cantidadInput = document.querySelector(
-   '.cantidad-input-contenedor input'
-);
-const cantidadBtnResta = document.querySelector(
-   '.cantidad-input-contenedor .resta'
-);
-const cantidadBtnSuma = document.querySelector(
-   '.cantidad-input-contenedor .suma'
-);
+const btnEditarProductos = document.querySelector('.btn-editar-productos');
 
-cantidadBtnResta.addEventListener('click', () => {
-   modificarCantidad('resta');
+btnEditarProductos.addEventListener('click', () => {
+   document.body.classList.add('modal-open');
+   carritoLateralContenedor.classList.add('show');
+   modalBg.style.display = 'block';
+   modalBg.style.position = 'fixed';
 });
-cantidadBtnSuma.addEventListener('click', () => modificarCantidad('suma'));
-
-function modificarCantidad(op) {
-   if (op === 'resta') {
-      cantidadInput.value = +cantidadInput.value - 1;
-   } else {
-      cantidadInput.value = +cantidadInput.value + 1;
-   }
-   cantidadInput.value = +cantidadInput.value < 1 ? 1 : cantidadInput.value;
-}
