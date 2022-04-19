@@ -10,7 +10,7 @@ main {
 
 /* ------ INFORMACION ------ */
 .informacion {
-   padding: 1rem;
+   padding: 3rem 1rem;
    width: 100%;
    max-width: 560px;
    margin: 0 auto;
@@ -348,6 +348,7 @@ main {
       width: 50%;
       max-width: 500px;
       margin: 0 2rem 0 auto;
+      /* padding: 3rem 1rem; */
    }
    .resumen-compra {
       width: 50%;

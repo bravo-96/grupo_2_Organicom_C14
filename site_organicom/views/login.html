@@ -167,40 +167,38 @@
 
    <main>
       <form class="login-form" action="">
-         <div class="div-r-p-p">
-            <div class="div-r-p">
-               <div class="div-titulo">
-                  <h2>Login</h2>
-                  <p>Ingresa a tu cuenta para ver tus productos favoritos, seguir, comprando, puntuar, comentar, y mucho más!</p>
-               </div>
-            <div class="login-main">
-                  <label for="email">Email</label>
-                  <input class="login_input-main" type="email" id="email" name="email" placeholder="Escribi tu email">
-                  <span class="login__text-error">Ingrese un Email valido/Asegurese de que este bien escrito</span>
-            </div>
-            <div class="login-main">
-                  <label for="password">Password</label>
-                  <input class="login_input-main" type="password" id="password" name="password" placeholder="Escribi tu password">
-                  
-            </div>
-            <div class="login-main outbox_reg-main">
-               <input type="checkbox" name="Recuerdame" id="Recuerdame" checked>
-               <label for="Recuerdame">Recuerdame</label>
-            </div>
-            <div class="login-main button-login">
-               <button type="submit">
-                  Inicia sesión
-               </button>
-            </div>
-   
-            <p>¿No tienes cuenta?</p><a href="/register">Registrate aquí</a>
-   
-         <div>
+         <div class="encabezado">
+            <h1 class="titulo">Iniciar sesion</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
          </div>
-         
+         <div class="login-main">
+            <label for="userName">Email o nombre de usuario</label>
+            <input class="login_input-main" type="text" id="userName" name="userName"
+               placeholder="Escribi tu email o el nombre de tu usuario">
+         </div>
+         <div class="login-main">
+            <label for="password">Password</label>
+            <input class="login_input-main" type="password" id="password" name="password"
+               placeholder="Escribi tu password">
+
+         </div>
+         <div class="login-main recuerdame-box">
+            <label for="recuerdame">
+               <input type="checkbox" name="recuerdame" id="recuerdame" checked>
+               Recuerdame
+            </label>
+            <a href="">Olvidé mi contraseña</a>
+         </div>
+         <div class="login-main button-login">
+            <button type="submit">
+               Iniciar sesión
+            </button>
+         </div>
+
+         <p class="iniciar-sesion">¿No te registraste aún? <a href="/login">create una cuenta aquí</a></p>
       </form>
    </main>
-  
+
    <footer>
       <div class="max-width-container">
          <div class="suscripcion-contenedor">

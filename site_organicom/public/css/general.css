@@ -38,7 +38,7 @@ img {
 }
 ::selection {
    color: #fff;
-   background-color: rgba(27, 104, 24, 0.3);
+   background-color: var(--verde-fondo);
 }
 
 @media screen and (min-width: 768px) {
@@ -495,7 +495,8 @@ footer .max-width-container {
 .suscripcion-contenedor form input {
    padding: 0 0.5rem;
    border: none;
-   width: 100%;background-color: transparent;
+   width: 100%;
+   background-color: transparent;
    font-size: 0.85rem;
 }
 .suscripcion-contenedor form input:focus-within {
@@ -782,7 +783,7 @@ footer .copyright {
 
    /* ------- FOOTER ------- */
    footer {
-      margin-top: 1rem;
+      /* margin-top: 1rem; */
       padding-top: 6rem;
       box-shadow: inset 0 0.5rem 3rem rgba(0, 0, 0, 0.3);
    }
