@@ -493,9 +493,9 @@ footer .max-width-container {
    align-items: center;
 }
 .suscripcion-contenedor form input {
-   padding: 0 0.2rem;
+   padding: 0 0.5rem;
    border: none;
-   background-color: transparent;
+   width: 100%;background-color: transparent;
    font-size: 0.85rem;
 }
 .suscripcion-contenedor form input:focus-within {
