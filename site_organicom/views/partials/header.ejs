@@ -1,0 +1,41 @@
+<header>
+   <a href="/" class="logo-link">
+      <img class="logo" src="/assets/img/logo-verde.svg" alt="Logo principal">
+   </a>
+   <button type="button" class="btn-menu">
+      <img src="/assets/img/menu-icono.svg" class="menu-icono" />
+      <span>Categorias</span>
+   </button>
+   <button type="button" class="btn-buscar">
+      <img src="/assets/img/lupa-icono.svg" class="lupa-icono" />
+   </button>
+   <button type="button" class="btn-cuenta">
+      <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
+      <span>Mi Cuenta</span>
+      <div class="contendor-login-register">
+         <p>Si ya tenes una cuenta, inicia sesion!</p>
+         <a href="/login">Iniciar sesión</a>
+         <p>Si aún no tenes una cuenta, registrate!</p>
+         <a href="/register">Registrarse</a>
+      </div>
+   </button>
+   <button type="button" class="btn-carrito">
+      <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
+   </button>
+
+   <nav class="categorias-contenedor">
+      <div class="imagen-fondo cereales"></div>
+      <div class="imagen-fondo frutos-secos"></div>
+      <div class="imagen-fondo jugos"></div>
+      <div class="imagen-fondo infusiones"></div>
+      <ul>
+         <li><a class="link-categoria" href="./" data-nombre_categoria="cereales">Fideos / Cereales</a></li>
+         <li><a class="link-categoria" href="./" data-nombre_categoria="frutos-secos">Frutos secos</a></li>
+         <li><a class="link-categoria" href="./" data-nombre_categoria="jugos">Jugos y bebidas</a></li>
+         <li><a class="link-categoria" href="./" data-nombre_categoria="infusiones">Infusiones</a></li>
+      </ul>
+   </nav>
+   <form action="/" method="GET" class="barra-busqueda">
+      <input type="text" placeholder="Buscar producto">
+   </form>
+</header>

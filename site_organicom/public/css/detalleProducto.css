@@ -580,7 +580,7 @@ max-width: 160px;}
    }
    .detalle-producto .btns-contenedor button {
       transition: box-shadow 0.3s ease;
-   }
+   font-size: 0.95rem;}
    .detalle-producto .btns-contenedor button:hover {
       box-shadow: 0 0 0.3rem #666;
    }

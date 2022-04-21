@@ -2,168 +2,17 @@
 <html lang="es">
 
 <head>
-   <meta charset="UTF-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <%- include("./partials/head") %>
+
    <link rel="stylesheet" href="/css/detalleProducto.css">
    <title>Detalle del producto</title>
-
-
 </head>
 
 <body class="detalle">
-   <header>
-      <a href="/" class="logo-link">
-         <img class="logo" src="/assets/img/logo-verde.svg" alt="Logo principal">
-      </a>
-      <button type="button" class="btn-menu">
-         <img src="/assets/img/menu-icono.svg" class="menu-icono" />
-         <span>Categorias</span>
-      </button>
-      <button type="button" class="btn-buscar">
-         <img src="/assets/img/lupa-icono.svg" class="lupa-icono" />
-      </button>
-      <button type="button" class="btn-cuenta">
-         <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
-         <span>Mi Cuenta</span>
-         <div class="contendor-login-register">
-            <p>Si ya tenes una cuenta, inicia sesion!</p>
-            <a href="/login">Iniciar sesión</a>
-            <p>Si aún no tenes una cuenta, registrate!</p>
-            <a href="/register">Registrarse</a>
-         </div>
-      </button>
-      <button type="button" class="btn-carrito">
-         <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
-      </button>
 
-      <nav class="categorias-contenedor">
-         <div class="imagen-fondo cereales"></div>
-         <div class="imagen-fondo frutos-secos"></div>
-         <div class="imagen-fondo jugos"></div>
-         <div class="imagen-fondo infusiones"></div>
-         <ul>
-            <li><a class="link-categoria" href="./" data-nombre_categoria="cereales">Fideos / Cereales</a></li>
-            <li><a class="link-categoria" href="./" data-nombre_categoria="frutos-secos">Frutos secos</a></li>
-            <li><a class="link-categoria" href="./" data-nombre_categoria="jugos">Jugos y bebidas</a></li>
-            <li><a class="link-categoria" href="./" data-nombre_categoria="infusiones">Infusiones</a></li>
-         </ul>
-      </nav>
-      <form action="/" method="GET" class="barra-busqueda">
-         <input type="text" placeholder="Buscar producto">
-      </form>
-   </header>
+   <%- include("./partials/header") %>
 
-   <div class="modalBg"></div>
-
-   <div class="carrito-lateral">
-      <button type="button" class="cerrar">
-         <div class="icono"></div>
-      </button>
-      <h3>Mi lista de productos</h3>
-
-      <ul class="lista-productos">
-         <li class="producto-card">
-            <button type="button" class="btn-cerrar"></button>
-            <a href="/detalleProducto">
-               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
-            </a>
-            <h4 class="titulo">
-               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
-            </h4>
-            <div class="cantidad-contenedor">
-               <p>Cantidad</p>
-               <div class="cantidad-input-contenedor">
-                  <button type="button" class="resta">-</button>
-                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
-                  <button type="button" class="suma">+</button>
-               </div>
-            </div>
-            <div class="precio-contenedor">
-               <p>Total</p>
-               <p class="precio-total">$ 750,00</p>
-            </div>
-         </li>
-         <li class="producto-card">
-            <button type="button" class="btn-cerrar"></button>
-            <a href="/detalleProducto">
-               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
-            </a>
-            <h4 class="titulo">
-               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
-            </h4>
-            <div class="cantidad-contenedor">
-               <p>Cantidad</p>
-               <div class="cantidad-input-contenedor">
-                  <button type="button" class="resta">-</button>
-                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
-                  <button type="button" class="suma">+</button>
-               </div>
-            </div>
-            <div class="precio-contenedor">
-               <p>Total</p>
-               <p class="precio-total">$ 750,00</p>
-            </div>
-         </li>
-         <li class="producto-card">
-            <button type="button" class="btn-cerrar"></button>
-            <a href="/detalleProducto">
-               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
-            </a>
-            <h4 class="titulo">
-               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
-            </h4>
-            <div class="cantidad-contenedor">
-               <p>Cantidad</p>
-               <div class="cantidad-input-contenedor">
-                  <button type="button" class="resta">-</button>
-                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
-                  <button type="button" class="suma">+</button>
-               </div>
-            </div>
-            <div class="precio-contenedor">
-               <p>Total</p>
-               <p class="precio-total">$ 750,00</p>
-            </div>
-         </li>
-         <li class="producto-card">
-            <button type="button" class="btn-cerrar"></button>
-            <a href="/detalleProducto">
-               <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
-            </a>
-            <h4 class="titulo">
-               Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC
-            </h4>
-            <div class="cantidad-contenedor">
-               <p>Cantidad</p>
-               <div class="cantidad-input-contenedor">
-                  <button type="button" class="resta">-</button>
-                  <input type="text" min="1" max="100" class="input-cantidad" name="input-cantidad" value="1">
-                  <button type="button" class="suma">+</button>
-               </div>
-            </div>
-            <div class="precio-contenedor">
-               <p>Total</p>
-               <p class="precio-total">$ 750,00</p>
-            </div>
-         </li>
-      </ul>
-      <div class="codigo-descuento">
-         <p>¿Tenés algun código de descuento?</p>
-         <form action="/">
-            <input type="text" placeholder="Ingresa el código">
-            <input type="submit" value="Aplicar">
-         </form>
-      </div>
-      <div class="costo-total">
-         <p>Total productos</p>
-         <p>$ 1.250,00</p>
-      </div>
-      <a href="/carrito" class="btn-comprar">Comprar</a>
-   </div>
+   <%- include("./partials/carrito-lateral") %>
 
    <!-- ------ Main ------ -->
 
@@ -181,7 +30,7 @@
       </section>
       <!-- ------------- -->
       <section class="detalle-producto">
-         <p class="categoria">Categorias: <a href="/">Bebidas</a></p>
+         <p class="categoria">Categorias: <a href="">Bebidas</a></p>
          <h1 class="titulo-producto">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h1>
          <div class="favorito-contenedor">
             <p class="estrellas"><span class="icono"></span>4.0</p>
@@ -324,7 +173,7 @@
                      <div class="favorito"></div>
                   </div>
                   <div class="card-body">
-                     <a href="/detalleProducto">
+                     <a href="/products/detalleProducto">
                         <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
                         <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
                         <p class="precio-final">$ 895,00</p>
@@ -342,7 +191,7 @@
                      <div class="favorito"></div>
                   </div>
                   <div class="card-body">
-                     <a href="/detalleProducto">
+                     <a href="/products/detalleProducto">
                         <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
                         <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
                         <p class="precio-final">$ 895,00</p>
@@ -360,7 +209,7 @@
                      <div class="favorito"></div>
                   </div>
                   <div class="card-body">
-                     <a href="/detalleProducto">
+                     <a href="/products/detalleProducto">
                         <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
                         <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
                         <p class="precio-final">$ 895,00</p>
@@ -378,7 +227,7 @@
                      <div class="favorito"></div>
                   </div>
                   <div class="card-body">
-                     <a href="/detalleProducto">
+                     <a href="/products/detalleProducto">
                         <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
                         <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
                         <p class="precio-final">$ 895,00</p>
@@ -394,54 +243,10 @@
       </section>
    </main>
 
-   <footer>
-      <div class="max-width-container">
-         <div class="suscripcion-contenedor">
-            <h4>¡Suscribite totalmente <br /> gratis!</h4>
-            <p>Y recibi nuestras ofertas y promociones todas las semanas</p>
-            <form action="/">
-               <input type="text" placeholder="Dejanos tu Email">
-               <button type="submit">Suscribirse</button>
-            </form>
-         </div>
-         <div class="contenido">
-            <ul class="lista-categorias">
-               <h4>Categorias</h4>
-               <li><a href="/">Fideos / Cereales</a></li>
-               <li><a href="/">Frutos secos</a></li>
-               <li><a href="/">Jugos y bebidas</a></li>
-               <li><a href="/">Infusiones</a></li>
-            </ul>
+   <%- include("./partials/footer") %>
 
-            <ul class="lista-mapa-sitio">
-               <h4>Explora</h4>
-               <li><a href="/">Inicio</a></li>
-               <li><a href="/">Categorias</a></li>
-               <li><a href="/login">Login</a></li>
-               <li><a href="/register">Registrate</a></li>
-               <li><a href="/carrito">Carrito</a></li>
-            </ul>
-
-            <div class="logo-redes-contenedor">
-               <img class="logo" src="/assets/img/logo-amarillo.svg" alt>
-               <ul class="lista-redes">
-                  <li><a href="/" class="facebook"></a></li>
-                  <li><a href="/" class="instagram"></a></li>
-                  <li><a href="/" class="twitter"></a></li>
-               </ul>
-            </div>
-         </div>
-
-         <p class="copyright">
-            Copyright 2022 | Todos los derechos reservados Organicom S.A. | Av. Calle Street 321 |
-            Capital Federal |
-            Argentina
-         </p>
-      </div>
-   </footer>
    <script src="/js/general.js"></script>
    <script src="/js/detalleProducto.js"></script>
 </body>
-
 
 </html>
