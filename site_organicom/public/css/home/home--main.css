@@ -1,0 +1,403 @@
+.banner {
+    height: 75vh;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    display: block;
+    position: relative;
+    color: var(--texto-blanco);
+    justify-content: center;
+}
+.banner .banner--button {
+    background: var(--amarilo);
+    border: none;
+    border-radius: 5px;
+    color: var(--verde);
+    cursor: pointer;
+    position: absolute;
+    left: 60%;
+    bottom: 40%;
+    width: 6rem;
+    height: 2em;
+    z-index: 20;
+    transition: all 1.5s;
+}
+.banner .banner--button:hover {
+    background: #ffca1d00;
+    border-right: 2px solid var(--verde);
+    border-bottom: 2px solid var(--verde);
+    color: var(--amarilo);
+}
+.banner h1 {
+    margin: 0;
+    padding: 2rem;
+    color: var(--amarilo);
+}
+.banner p {
+    padding: 0 2rem;
+    position: relative;
+    z-index: 10;
+}
+.banner .mockup {
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0;
+    opacity: 0.5;
+}
+.masVendido {
+    margin: 0;
+    
+    height: 400px;
+    padding: 20px;
+}
+.masVendido .masVendido--title{
+color: #191919;
+
+}
+.masVendido .h3 {
+    color: var(--crema);
+}
+.carousel1 {
+    height: 450px;
+    max-width: 850px;
+    padding: 20px;
+}
+.carousel1 .swiper-slide {
+    max-width: 300px;
+    max-height: 250px;
+}
+
+
+
+.descuento {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
+    background: linear-gradient(to bottom, #94e6e9, #493240);
+    
+}
+.desc{
+    text-align: center;
+    
+}
+.desc h3{
+    position: relative;    
+    background-color: #94e6e9;
+    color: #191919;
+    
+}
+.desc h3:before {
+    border-top: 2px solid #fff000;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;   
+    bottom: 0;
+    width: 37%;
+   
+  }
+  .desc h3:after {
+    border-top: 2px solid #fff000;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    right: 0;   
+    bottom: 0;
+    width: 37%;
+   
+  }
+.card {
+    position: relative;
+    width: 80%;
+    height: 300px;
+    margin: 10px 0;
+    background: #191919;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset -13px -13px 26px #2c8d68, inset 13px 13px 26px #44d7a0,  
+    7px 7px 5px #3d5e52;;
+}
+
+.card::before {
+    content: "";
+    background: linear-gradient(to bottom, #85770c 60%, #12e795);
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+    box-shadow:  -20px -20px 60px #bebebe, 20px 20px 60px #ffffff;
+    
+}
+
+.card::after {
+    content: "Organicom";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 6em;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.card .imgBox {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+.card .imgBox img {
+    position: relative;
+    left: 40% ;
+    max-width: 50%;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 30%;
+}
+
+.card .contentBox {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.card .contentBox h3 {
+    font-size: 18px;
+    color: var(--crema);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card .contentBox .price {
+    font-size: 24px;
+    color: var(--amarilo);
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+.card:hover .contentBox .price{
+    opacity: 0;
+}
+.card .contentBox .price--desc{
+    opacity: 0;
+    transition: all 0.5s;
+    color: #19e712;
+}
+.card:hover .contentBox .price--desc{
+    opacity: 1;
+    font-size: 38px;
+}
+
+.card .contentBox .btn__buy {
+    position: relative;
+    top: 100px;
+    font-size: 1rem;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: none;
+    background: #ffce00;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.card:hover .contentBox .btn__buy {
+    top: 0;
+    opacity: 1;
+}
+
+.mouse {
+    height: 300px;
+    width: auto;
+}
+
+
+.card .price__box--desc h3{
+    font-size: 44px;
+    color: var(--amarilo);
+    position: absolute;
+    top: -260px;
+    right: 15px;
+    transition: all 0.5s;
+}
+.card:hover .price__box--desc h3 {
+    top : -50px;
+    font-size: 64px;
+
+}
+
+.seguinos--box{
+    background-color: #94e6e9;
+    padding-bottom: 40px;
+    position: relative;
+}
+.mockup--seguinos{
+    width: 5rem;
+    position: absolute;
+    top: -1rem;
+   
+   
+}
+.seguinos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: var(--verde);
+    font-size: 14px;
+    border-radius: 0 0 30px 30px;
+}
+.seguinos p {
+    margin: 10px;
+    color: var(--texto-gris);
+    position: relative;
+    z-index: 40;
+}
+.seguinos .phone {
+    color: var(--amarilo);
+}
+
+.seguinos--redes {
+    display: flex;
+    gap: 15px;
+}
+.seguinos--redes .facebook {
+    animation: redes 3s infinite;
+}
+.seguinos--redes .instagram {
+    animation: redes 3s 0.3s infinite;
+}
+.seguinos--redes .twitter {
+    animation: redes 3s 0.5s infinite;
+}
+@keyframes redes {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+.contactanos {
+    height: 300px;
+    background: url("/assets/img/cerealesfondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 130px 65px 35px rgba(0, 0, 0, 0.808) inset;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+.contactanos h4 {
+    color: var(--amarilo);
+    font-size: 1.5rem;
+}
+.contactanos .lorem {
+    width: 200px;
+    color: var(--texto-gris);
+}
+.contactanos .lista-redes {
+    display: flex;
+}
+.contactanos .lista-redes li {
+    padding: 1rem;
+}
+.contactanos--contacto {
+    margin-top: 20px;
+    color: var(--texto-blanco);
+    font-size: 14px;
+}
+.contactanos--article {
+    width: 250px;
+    padding: 1rem;
+    background: #12121254;
+}
+
+
+
+.formulario {
+    background: #e8e8cc7c;
+    border-radius: 10px;
+    height: 200px;
+    font-size: 0.7rem;
+    width: 150px;
+}
+.formulario input {
+    width: 90%;
+    margin: 20px 5%;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid var(--texto-gris);
+    background: none;
+}
+.formulario input:focus-within {
+    outline: none;
+}
+.formulario input::placeholder,
+.msg::placeholder {
+    color: var(--verde-fondo);
+}
+.formulario .msg {
+    width: 90%;
+    height: 2rem;
+    margin-left: 5%;
+    border-radius: 5px;
+    border: none;
+    background: none;
+    border-bottom: 2px solid var(--texto-gris);
+}
+.formulario .msg:focus-within {
+    outline: none;
+}
+.formulario button {
+    color: var(--verde);
+    width: 50%;
+    height: 1.5rem;
+    margin-left: 25%;
+    margin-top: 15px;
+    background: var(--amarilo);
+    border: none;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+.formulario button:hover {
+    background: #ffca1d00;
+    border-right: 2px solid var(--verde);
+    border-bottom: 2px solid var(--verde);
+}

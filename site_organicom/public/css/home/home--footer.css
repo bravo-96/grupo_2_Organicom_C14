@@ -1,0 +1,134 @@
+
+footer .max-width-container {
+    width: 100%;
+    background: #116530;
+    text-align: center;
+    padding-top: 20px;
+}
+.suscripcion-contenedor {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.suscripcion-contenedor h4 {
+    /* font-size: 1.6rem; */
+    font-size: calc(0.5rem + 4.5vw);
+    color: var(--amarilo);
+    margin-bottom: 5px;
+}
+.suscripcion-contenedor p {
+    font-size: 0.9rem;
+    margin: 1rem;
+    color: var(--crema);
+}
+.suscripcion-contenedor form {
+    background-color: var(--fondo-input);
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.suscripcion-contenedor form input {
+    padding: 0 0.2rem;
+    border: none;
+    background-color: transparent;
+    font-size: 0.85rem;
+}
+.suscripcion-contenedor form input:focus-within {
+    outline: none;
+}
+.suscripcion-contenedor form button {
+    padding: 0.3rem;
+    background-color: var(--amarilo);
+    font-size: 0.75rem;
+    border-radius: 0.2rem;
+    border: none;
+    color: var(--verde);
+    font-weight: bolder;
+    transition: all 0.5s;
+}
+.suscripcion-contenedor form button:hover {
+    background: #ffca1d00;
+    border-right: 2px solid var(--verde);
+    border-bottom: 2px solid var(--verde);
+}
+
+.contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.contenido h4 {
+    margin: 0 0 0.3rem;
+    font-size: 1rem;
+    color: var(--amarilo);
+}
+
+.lista-categorias {
+    grid-column: 2/ 3;
+    grid-row: 1 / 2;
+    list-style: none;
+    text-align: right;
+}
+.lista-categorias a,
+.lista-mapa-sitio a {
+    font-size: 18px;
+    color: var(--texto-blanco);
+    text-decoration: none;
+    font-weight: normal;
+    line-height: 1.7;
+}
+
+.lista-mapa-sitio {
+    grid-column: 1 / 2;
+    list-style: none;
+    text-align: left;
+}
+
+.logo-redes-contenedor {
+    grid-column: 1 / -1;
+}
+
+.logo-redes-contenedor .logo {
+    display: block;
+    width: 90%;
+    margin: 0 auto 1rem;
+    max-width: 200px;
+}
+
+.logo-redes-contenedor .lista-redes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.lista-redes a.facebook,
+.lista-redes a.instagram,
+.lista-redes a.twitter {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.lista-redes a.facebook {
+    background-image: url(/assets/img/facebook-logo.svg);
+}
+.lista-redes a.instagram {
+    background-image: url(/assets/img/instagram-logo.svg);
+}
+.lista-redes a.twitter {
+    background-image: url(/assets/img/twitter-logo.svg);
+}
+
+footer .copyright {
+    font-size: 0.6rem;
+}

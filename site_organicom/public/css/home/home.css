@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:ital,wght@0,700;1,100&display=swap");
+@import "../variables.css";
+@import "../general.css";
+@import "../home/home--footer.css";
+@import "../home/home--header.css";
+@import "../home/home--main.css";
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+
+@media (min-width: 768px) {
+    .header .header--nav {
+        height: 60px;
+    }
+    .banner {
+        padding-left: 20%;
+    }
+    .banner h1 {
+        font-size: 42px;
+    }
+    .banner p {
+        width: 300px;
+    }
+    .banner .mockup {
+        height: 300px;
+        width: 40%;
+    }
+    
+    h3 {
+        font-size: 34px;
+    }
+
+    .seguinos {
+        height: 150px;
+        font-size: 24px;
+    }
+    .mockup--seguinos{
+        width: 10rem;
+        left: 1rem;              
+    }
+
+    .descuento  {        
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5rem;
+        font-size: 34px;
+        padding: 30px;
+    }
+
+    .card{
+      width: 40%;
+    }
+    
+    .formulario {
+        width: 200px;
+        height: 250px;
+        padding: 10px 0;
+    }
+    .contactanos h4 {
+        font-size: 38px;
+    }
+
+    .formulario input {
+        height: 30px;
+    }
+
+    .lista-mapa-sitio,
+    .lista-categorias {
+        text-align: center;
+        font-size: 18px;
+    }
+    .suscripcion--form {
+        width: 50%;
+    }
+    .suscripcion--form input {
+        height: 40px;
+    }
+    .suscripcion--form button {
+        width: 80px;
+        height: 30px;
+        font-size: 24px;
+    }
+    .lista-categorias h4,
+    .lista-mapa-sitio h4 {
+        font-size: 32px;
+    }
+
+
+}
+
+@media (min-width: 992px) {
+    .banner .banner--button{
+        left: 50%;
+    }
+
+}
