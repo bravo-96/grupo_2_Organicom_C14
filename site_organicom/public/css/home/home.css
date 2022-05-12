@@ -34,19 +34,16 @@
         width: 40%;
     }
     
-    h3 {
-        font-size: 34px;
-    }
+    
 
     .seguinos {
         height: 150px;
         font-size: 24px;
     }
     .mockup--seguinos{
-        width: 10rem;
-        left: 1rem;              
+        width: 10rem;     
+            
     }
-
     .descuento  {        
         display: flex;
         flex-wrap: wrap;
@@ -54,6 +51,13 @@
         font-size: 34px;
         padding: 30px;
     }
+    .carousel1 .swiper-slide {
+        width: 30%;
+        
+    }
+    .carousel1 {
+        width: 60%;
+    } 
 
     .card{
       width: 40%;
