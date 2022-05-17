@@ -10,6 +10,9 @@ const swiper = new Swiper('.carousel1', {
       prevEl: '.swiper-button-prev',  
     },  
   breakpoints: {
+    540:{
+      slidesPerView:2,
+    },
     768:{
       slidesPerView: 3,
     },

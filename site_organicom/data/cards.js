@@ -1,10 +1,14 @@
+
+
 module.exports = [
+   
+
     {
         name: "Jugos organicos",
         img: "producto-01.png",
         price: "61",
         discount: "61",
-        promo: "2 X 1",
+        promo: "2X1",
     },
     {
         name: "Pastas",
@@ -27,4 +31,5 @@ module.exports = [
         discount: "95",
         promo: "30%",
     },
+
 ];

@@ -7,14 +7,18 @@
 
 			<main>
 				<section class="banner">
-					<h1>Comsume organico</h1>
-					<p>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-						Repellat cumque quae vel atque labore quam reiciendis, ad
-						mollitia enim, aut dolore quidem animi. Enim, amet error
-						dolorem rem necessitatibus perferendis?
-					</p>
-					<button class="banner--button">Ver mas</button>
+					<div class="">
+						<h1>Comsume organico</h1>
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+							Repellat cumque quae vel atque labore quam reiciendis, ad
+							mollitia enim, aut dolore quidem animi. Enim, amet error
+							dolorem rem necessitatibus perferendis?
+						</p>
+					</div>
+					<div class="banner__box--btn">
+						<button class="banner--button">Ver mas</button>
+					</div>
 					<img class="mockup" src="/assets/img/mockup2.png" alt="" />
 				</section>
 
@@ -26,7 +30,7 @@
 
 							<div class="swiper-slide">
 								<div class="color__back" style="background-color: red;">
-									<img src="" alt="">
+									<img class='card--img'  src="" alt="">
 								</div>
 
 								<h4>producto</h4>
@@ -37,7 +41,7 @@
 							</div>
 							<div class="swiper-slide">
 								<div class="color__back" style="background-color: rgb(255, 136, 0);">
-									<img src="../assets/img/mockup2.png" alt="No image">
+									<img class='card--img' src="../assets/img/mockup2.png" alt="No image">
 								</div>
 								<h4>producto</h4>
 
@@ -149,17 +153,19 @@
 									<img src="../assets/img/<%= product.img %> ">
 								</div>
 								<div class="contentBox">
-									<h3>
-										<%- product.name %>
-									</h3>
-									<h2 class="price">$ <%- product.price %> <small>99</small> </h2>
-									<h3 class="price--desc">$ <%= product.discount %> <small>99</small></h3>
-									<div class="price__box--desc">
-										<h3>
-											<%= product.promo %>
+									<div class="product__box">
+										<h3 class="carousel__name">
+											<%- product.name %>
 										</h3>
+										<h2 class="price">$ <%- product.price%><small>.99</small> </h2>
+										<h3 class="price--desc">$<%= product.discount %><small>.00</small></h3>
 									</div>
+									<div class="price__box--desc">
+										<h3 class="desc__promo">
+											<%= product.promo %>
+										</h3>									
 									<button class="btn__buy">Comprar ahora</button>
+								</div>
 								</div>
 							</div>
 							<% }) %>

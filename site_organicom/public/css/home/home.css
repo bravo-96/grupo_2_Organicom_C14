@@ -15,13 +15,34 @@
     font-family: "Roboto";
 }
 
+@media (min-width: 425px){
+    .mockup--seguinos{
+       display: block;
+       position: relative;
+       left: 0;
+       top: -1rem;
+       width: 5rem;
+    }
+    .desc h3:before {
+        width: 30%;
+    }
+    .desc h3:after {
+        width: 30%;
+    }
+    .seguinos{
+        flex-direction: row;
+    }
+    
+    
+}
+
 
 @media (min-width: 768px) {
     .header .header--nav {
         height: 60px;
     }
     .banner {
-        padding-left: 20%;
+        
     }
     .banner h1 {
         font-size: 42px;
@@ -33,7 +54,12 @@
         height: 300px;
         width: 40%;
     }
-    
+    .desc h3:before {
+        width: 35%;
+    }
+    .desc h3:after {
+        width: 35%;
+    }
     
 
     .seguinos {
@@ -41,7 +67,8 @@
         font-size: 24px;
     }
     .mockup--seguinos{
-        width: 10rem;     
+        width: 11rem;   
+        top: -2rem;  
             
     }
     .descuento  {        
@@ -71,7 +98,10 @@
     .contactanos h4 {
         font-size: 38px;
     }
-
+    
+.contactanos .lorem{
+    font-size: 1rem;
+}
     .formulario input {
         height: 30px;
     }
@@ -104,5 +134,11 @@
     .banner .banner--button{
         left: 50%;
     }
-
+    .desc h3:before {
+        width: 40%;
+    }
+    .desc h3:after {
+        width: 40%;
+    }
+    
 }

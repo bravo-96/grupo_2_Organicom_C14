@@ -1,29 +1,29 @@
 .banner {
-    height: 75vh;
+    height: 400px;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     display: block;
     position: relative;
     color: var(--texto-blanco);
     justify-content: center;
 }
+.banner__box--btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
 .banner .banner--button {
     background: var(--amarilo);
     border: none;
     border-radius: 5px;
     color: var(--verde);
-    cursor: pointer;
-    position: absolute;
-    left: 60%;
-    bottom: 40%;
+    cursor: pointer;    
     width: 6rem;
     height: 2em;
     z-index: 20;
-    transition: all 1.5s;
+    transition: all 1s;
 }
 .banner .banner--button:hover {
-    background: #ffca1d00;
-    border-right: 2px solid var(--verde);
-    border-bottom: 2px solid var(--verde);
+    background:var(--verde) ;
     color: var(--amarilo);
 }
 .banner h1 {
@@ -37,12 +37,12 @@
     z-index: 10;
 }
 .banner .mockup {
-    height: 250px;
-    width: 100%;
+    height: 50%;
+    width: 50%;
     position: absolute;
     bottom: 0.5rem;
     right: 0;
-    opacity: 0.5;
+    
 }
 .masVendido {
     margin: 0;
@@ -74,17 +74,23 @@ color: #191919;
    
 }
 
-.carousel1  img{    
+.carousel1  .card--img{    
     position: relative;
     bottom: -80px;
     left: 10%;
     width: 80%;
     height: 80%;
+    transition: all .5s;
+}
+.carousel1:hover .card--img , .product__box{    
+    
+    transform: scaleY(2);
+    
 }
 .carousel1 .swiper-slide  .price__cart{
     display: flex;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
 }
 
 .carousel1 .swiper-slide h4{
@@ -118,23 +124,22 @@ color: #191919;
 .desc h3:before {
     border-top: 2px solid #fff000;
     content: "";
-    margin: 0 auto;
     position: absolute;
     top: 50%;
     left: 0;   
     bottom: 0;
-    width: 30%;
+    width: 25%;
    
   }
   .desc h3:after {
     border-top: 2px solid #fff000;
     content: "";
-    margin: 0 auto;
+    
     position: absolute;
     top: 50%;
     right: 0;   
     bottom: 0;
-    width: 30%;
+    width: 25%;
    
   }
 .card {
@@ -146,6 +151,15 @@ color: #191919;
     border-radius: 20px;
     overflow: hidden;
     box-shadow:inset  35px 20px 60px #bebebe,  7px -7px 30px #4d5753;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 1s;
+}
+.card:hover{
+    box-shadow:inset  35px 20px 60px #bebebe00,  7px -7px 30px #4d575300;
     
 }
 
@@ -157,7 +171,7 @@ color: #191919;
     width: 100%;
     height: 100%;
     transform: skewY(345deg);
-    transition: all 0.5s;
+    transition: all .5s ;
     
 }
 
@@ -165,7 +179,8 @@ color: #191919;
     top: -70%;
     transform: skewY(390deg);
     box-shadow:  -20px -20px 60px #bebebe, 20px 20px 60px #ffffff;
-    
+    background: linear-gradient(to left,  #12e795,#85770c 60%);
+   
 }
 
 .card::after {
@@ -190,32 +205,41 @@ color: #191919;
 }
 
 .card .imgBox img {
-    position: relative;
-    left: 40% ;
-    max-width: 50%;    
-    transition: 0.5s;
+    position: absolute;
+    left: 5% ;
+    top: 30%;
+    max-width: 11rem;    
+    transition: 1s;
 }
 
 .card:hover .imgBox img {
-    max-width: 20%;
+    max-width: 30%;
+    
 }
 
-.card .contentBox {
-    position: relative;
-    padding: 20px;
+.card .contentBox .product__box{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    z-index: 2;
+    text-align: center;
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    transition: all 0.5s;
 }
+.card:hover .contentBox .product__box{
 
-.card .contentBox h3 {
+            transform: translateY(-8rem);
+
+}
+.card .contentBox .carousel__name{
     font-size: 18px;
     color: var(--crema);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: 2rem;
+     
+    
 }
 
 .card .contentBox .price {
@@ -242,44 +266,41 @@ color: #191919;
 
 .card .contentBox .btn__buy {
     position: relative;
-    top: 100px;
-    font-size: 1rem;
-    opacity: 0;
+    top: 5rem;
+    font-size: 1rem;   
     padding: 10px 30px;
-    margin-top: 15px;
     color: #000000;
     text-decoration: none;
     background: #ffce00;
     border-radius: 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: 0.5s;
+    transition: all .5s; 
+    opacity: 0;
     cursor: pointer;
+    z-index: 10;
 }
 
 .card:hover .contentBox .btn__buy {
-    top: 0;
+    top: -3rem;
     opacity: 1;
 }
 
-.mouse {
-    height: 300px;
-    width: auto;
-}
 
 
-.card .price__box--desc h3{
+.card .price__box--desc .desc__promo{
     font-size: 44px;
     color: var(--amarilo);
     position: absolute;
     top: -260px;
     right: 15px;
-    transition: all 0.5s;
+    transition: all .5s;
+    opacity: 0;
 }
-.card:hover .price__box--desc h3 {
-    top : -50px;
+.card:hover .price__box--desc .desc__promo {
+    top :0;
     font-size: 64px;
-
+    opacity: 1;
 }
 
 .seguinos--box{
@@ -288,17 +309,20 @@ color: #191919;
   
 }
 .mockup--seguinos{
-    width: 5rem;
-    position: relative;
-    top: -1rem;
+    width: 3rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    flex-direction: column;
    
    
 }
 .seguinos {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 20px;
+    padding: 10px;
     margin-top: 5rem;
     justify-content: space-between;
     align-items: center;
@@ -306,10 +330,11 @@ color: #191919;
     height: 80px;
     background-color: var(--verde);
     font-size: 14px;
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 0 20px 20px;
+    flex-direction: column;
 }
 .seguinos p {
-    margin: 10px;
+    
     color: var(--texto-gris);
     position: relative;
     z-index: 40;
@@ -321,6 +346,8 @@ color: #191919;
 .seguinos--redes {
     display: flex;
     gap: 15px;
+    margin-bottom: 10px;
+   
 }
 .seguinos--redes .facebook {
     animation: redes 3s infinite;
@@ -336,7 +363,7 @@ color: #191919;
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(15px);
+        transform: translateY(10px);
     }
     100% {
         transform: translateY(0px);
@@ -354,30 +381,36 @@ color: #191919;
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
+  
 }
 .contactanos h4 {
     color: var(--amarilo);
     font-size: 1.5rem;
 }
 .contactanos .lorem {
-    width: 200px;
+    width: 150px;
+    font-size: 0.7rem;
     color: var(--texto-gris);
 }
 .contactanos .lista-redes {
     display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 1rem;
 }
-.contactanos .lista-redes li {
-    padding: 1rem;
-}
+
 .contactanos--contacto {
     margin-top: 20px;
     color: var(--texto-blanco);
-    font-size: 14px;
+    font-size: 0.7rem;
 }
 .contactanos--article {
-    width: 250px;
+    max-width: 250px;
+    width: 50%;
     padding: 1rem;
     background: #12121254;
+    border-radius: 1rem;
+    height: 250px;
 }
 
 
@@ -385,7 +418,7 @@ color: #191919;
 .formulario {
     background: #e8e8cc7c;
     border-radius: 10px;
-    height: 200px;
+    height: 250px;
     font-size: 0.7rem;
     width: 150px;
 }
