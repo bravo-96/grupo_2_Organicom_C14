@@ -98,7 +98,7 @@
 
 @media (min-width: 1024px) {
    main {
-      background: url('/assets/img/fondo-login.jpg') no-repeat center;
+      background: url('/assets/img/fondo-login.webp') no-repeat center;
       background-size: cover;
       padding: 0.1px;
       position: relative;

@@ -300,6 +300,8 @@ img {
 /* ------ HEADER ------ */
 header {
    position: relative;
+   background-color: var(--fondo-blanco);
+   z-index: 500;
    display: grid;
    grid-template-columns: repeat(5, auto);
    justify-content: space-between;
@@ -307,7 +309,7 @@ header {
    gap: 2%;
 
    padding: 0.5rem 5%;
-   box-shadow: 0 0.2rem 0.5rem #eee;
+   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 .logo-link {
    width: 25vw;
@@ -393,6 +395,19 @@ header button span {
 .usuario-icono {
    width: 1.4rem;
 }
+
+header .btn-carrito {
+   position: relative;
+}
+header .cantidad {
+   position: absolute;
+   top: -20%;
+   right: -10%;width: 1.5rem;
+   height: 1.5rem;
+   text-align: center;font-weight: bolder;color: var(--verde);padding: .25rem;font-size: 1rem;border-radius: 50%;
+
+background-color: var(--amarillo);}
+
 nav.categorias-contenedor {
    position: absolute;
    z-index: 500;
@@ -736,7 +751,7 @@ footer .copyright {
    header {
       grid-template-columns: auto auto 40% repeat(2, auto);
       gap: 0;
-      padding: 1rem 10%;
+      padding: 0.5rem 10%;
    }
 
    .menu-icono {
