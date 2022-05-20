@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- MEJORAR CODIGO, LO HICE CON POCO TIEMPO -->
+
+<!-- copiado del index -->
+
+<head>
+   <%- include("./partials/head", {title: "producto"}) %>
+
+   <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="/css/home.css">
+   <title>Admin | editarProductos</title>
+
+   
+
+</head>
+
+<body>
+   <%- include("./partials/header") %>
+
+   <%- include("./partials/carrito-lateral") %>
+   <!-- copiado del index-->
+   <main>
+    <!-- bootstrap -->
+    <div class="conteiner d-flex flex-wrap justify-content-center">
+       
+        <!-- UNA VEZ DE SELCCIONAR 1 PRODUCTO, MUESTRA EL SELECCIONADO -->
+
+            <div class="card m-2 text-black bg-light" style="width: 400px; height: 400px;">
+                <a href="/agregarProducto/<%= producto.id %> "><img src="/assets/img/<%= producto.imagen %> " class="card-img" style="width: 200px; height: 200px;" alt=""></a>
+                <div class="card-body">
+
+                    <h5 class="card-title"><%= producto.nombre %> </h5>
+                    <p class="card-text"><%= producto.precio %>  </p>
+                    <p class="card-text"><%= producto.descripcion %> </p>
+                    
+                </div>
+            </div>
+
+    
+    
+    </div>
+    <!-- bootstrap -->
+   </main>
+   <!-- copiado del index-->
+   <%- include("./partials/footer") %>
+
+   <script src="/js/general.js"></script>
+    <!-- copiado del index-->
+</body>
+</html>

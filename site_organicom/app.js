@@ -7,7 +7,11 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const preductsRouter = require('./routes/products');
+//--------------------Parte puesta por alex------------Si hay errores, mirar en el router---------
 
+const productosRouter = require("./routes/agregarProducto");
+
+//--------------------Cambiar nombres si se hace mas comodo---------------------------------------
 const app = express();
 
 // view engine setup
@@ -27,6 +31,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', preductsRouter);
+
+//--------------------Parte puesta por alex------------Si hay errores, mirar en el router---------
+
+app.use("/agregarProducto", productosRouter);
+
+//--------------------Cambiar nombres si se hace mas comodo---------------------------------------
+
 
 /*
 app.get('/', (req, res) =>
