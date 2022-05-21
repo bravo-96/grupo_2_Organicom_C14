@@ -5,7 +5,7 @@
 
 <!-- copiado del index-->
 <head>
-   <%- include("./partials/head", {title: "producto"}) %>
+    <%- include("../partials/head", {title: "producto"}) %>
 
    <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="/css/home.css">
@@ -16,9 +16,9 @@
 </head>
 
 <body>
-   <%- include("./partials/header") %>
+   <%- include("../partials/header") %>
 
-   <%- include("./partials/carrito-lateral") %>
+   <%- include("../partials/carrito-lateral") %>
 
 <!-- copiado del index-->
 
@@ -31,7 +31,7 @@
             <!-- Trae todos los productos -->
 
             <div class="card m-2 text-black bg-light" style="width: 400px; height: 400px;">
-                <a href="/agregarProducto/<%= producto.id %> "><img src="/assets/img/<%= producto.imagen %> " class="card-img" style="width: 200px; height: 200px;" alt=""></a>
+                <a href="/adminProducts/<%= producto.id %> "><img src="/assets/img/<%= producto.imagen %> " class="card-img" style="width: 200px; height: 200px;" alt=""></a>
                 <div class="card-body">
 
                     <h5 class="card-title"><%= producto.nombre %> </h5>
@@ -47,7 +47,7 @@
     <!-- bootstrap -->
 
     <!-- copiado del index-->
-    <%- include("./partials/footer") %>
+    <%- include("../partials/footer") %>
 
     <script src="/js/general.js"></script>
     <!-- copiado del index-->

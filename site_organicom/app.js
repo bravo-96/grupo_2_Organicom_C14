@@ -7,9 +7,10 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const preductsRouter = require('./routes/products');
+
 //--------------------Parte puesta por alex------------Si hay errores, mirar en el router---------
 
-const productosRouter = require("./routes/agregarProducto");
+const adminProductsRouter = require("./routes/adminProducts");
 
 //--------------------Cambiar nombres si se hace mas comodo---------------------------------------
 const app = express();
@@ -34,7 +35,7 @@ app.use('/products', preductsRouter);
 
 //--------------------Parte puesta por alex------------Si hay errores, mirar en el router---------
 
-app.use("/agregarProducto", productosRouter);
+app.use("/adminProducts", adminProductsRouter);
 
 //--------------------Cambiar nombres si se hace mas comodo---------------------------------------
 

@@ -6,14 +6,14 @@ let {getProductos} = require ("./data/dataFS");
 //POR FALLAS, revisar el JSON
 
 module.exports={
-    agregarProducto : (req,res)=>{
-        res.render("agregarProducto",{
+    adminProducts : (req,res)=>{
+        res.render("admin/adminProducts",{
             productos : getProductos
         })
     },
-    agregar : (req,res)=>{
+    agregarProducto : (req,res)=>{
         let producto = getProductos.find(producto => producto.id == req.params.id)
-        res.render("productos",{
+        res.render("admin/productos",{
             producto
         })
     }
