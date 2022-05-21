@@ -1,4 +1,5 @@
 let {getProductos, guardarProductos} = require ("./data/dataFS");
+//REVISAR CONTROLLERS/DATA/DATAFS PARA ENTENDER
 
 //Si quieren cambiar nombres haganlo pero AVISEN --Alex <3
 
@@ -6,6 +7,7 @@ let {getProductos, guardarProductos} = require ("./data/dataFS");
 //POR FALLAS, revisar el JSON
 
 module.exports={
+    /* trae los productos */
     adminProducts : (req,res)=>{
         res.render("admin/adminProducts",{
             productos : getProductos
@@ -14,6 +16,7 @@ module.exports={
     agregarProducto: (req,res)=>{
         res.render("admin/agregarProducto")
     },
+    /*------------------ logica del subir un producto ------------------*/
     create : (req,res)=>{
        let lastId = 0;
        getProductos.forEach(producto => {
@@ -34,8 +37,10 @@ module.exports={
        getProductos.push(nuevoProducto);
        guardarProductos(getProductos);
        res.redirect("/adminProducts")
+       /*------------------ logica del subir un producto ------------------*/
 
     },
+    /* ----------------------no hice esto solo deje armado las cosas----------------- */
     editarProducto : (req,res)=>{
         let producto = getProductos.find(producto => producto.id == req.params.id)
         res.render("admin/editarProductos",{
@@ -43,10 +48,8 @@ module.exports={
         })
     },
     update : (req,res)=>{
-        let producto = getProductos.find(producto => producto.id == req.params.id)
-        res.render("admin/editarProductos",{
-            producto
-        })
+        
     }
+    /*----------------------- no hice esto solo deje armado las cosas---------------- */
     
 }
