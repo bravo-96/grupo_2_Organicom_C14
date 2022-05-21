@@ -1,6 +1,11 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+
+/* hacer npm i method-override - alex */
+const methodOverride = require("method-override");
+/* hacer npm i method-override - alex */
+
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
@@ -13,16 +18,22 @@ const preductsRouter = require('./routes/products');
 const adminProductsRouter = require("./routes/adminProducts");
 
 //--------------------Cambiar nombres si se hace mas comodo---------------------------------------
+
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+/* agrege el app.use -alex*/
+app.use(methodOverride("_method"))
+/* agrege el app.use -alex*/
 
 // Capeta public
 app.use(express.static(path.join(__dirname, 'public')));
