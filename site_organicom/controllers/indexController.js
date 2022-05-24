@@ -1,5 +1,14 @@
+const carousel =  require('../data/cards');
+
+
+
+
 module.exports = {
-   index: (req, res, next) => {
-      return res.render('index', { title: 'Organicom' });
-   },
-};
+   index : (req,res) => 
+   res.render('index',{
+       title: 'Organicom',
+       carousel,
+           
+   }
+)
+}

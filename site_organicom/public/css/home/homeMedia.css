@@ -1,0 +1,136 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+@media (min-width: 425px){
+    .mockup--seguinos{
+       display: block;
+       position: relative;
+       left: 0;
+       top: -1rem;
+       width: 5rem;
+    }
+    .desc h3:before {
+        width: 30%;
+    }
+    .desc h3:after {
+        width: 30%;
+    }
+    .seguinos{
+        flex-direction: row;
+    }
+    
+    
+}
+
+
+@media (min-width: 768px) {
+    .header .header--nav {
+        height: 60px;
+    }
+    .banner {
+        
+    }
+    .banner h1 {
+        font-size: 42px;
+    }
+    .banner p {
+        width: 300px;
+    }
+    .banner .mockup {
+        height: 300px;
+        width: 40%;
+    }
+    .desc h3:before {
+        width: 35%;
+    }
+    .desc h3:after {
+        width: 35%;
+    }
+    
+
+    .seguinos {
+        height: 150px;
+        font-size: 24px;
+    }
+    .mockup--seguinos{
+        width: 11rem;   
+        top: -2rem;  
+            
+    }
+    .descuento  {        
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5rem;
+        font-size: 34px;
+        padding: 30px;
+    }
+    .carousel1 .swiper-slide {
+        width: 30%;
+        
+    }
+    .carousel1 {
+        width: 60%;
+    } 
+
+    .card{
+      width: 40%;
+    }
+    
+    .formulario {
+        width: 200px;
+        height: 250px;
+        padding: 10px 0;
+    }
+    .contactanos h4 {
+        font-size: 38px;
+    }
+    
+.contactanos .lorem{
+    font-size: 1rem;
+}
+    .formulario input {
+        height: 30px;
+    }
+
+    .lista-mapa-sitio,
+    .lista-categorias {
+        text-align: center;
+        font-size: 18px;
+    }
+    .suscripcion--form {
+        width: 50%;
+    }
+    .suscripcion--form input {
+        height: 40px;
+    }
+    .suscripcion--form button {
+        width: 80px;
+        height: 30px;
+        font-size: 24px;
+    }
+    .lista-categorias h4,
+    .lista-mapa-sitio h4 {
+        font-size: 32px;
+    }
+
+
+}
+
+@media (min-width: 992px) {
+    .banner .banner--button{
+        left: 50%;
+    }
+    .desc h3:before {
+        width: 40%;
+    }
+    .desc h3:after {
+        width: 40%;
+    }
+    
+}
