@@ -60,6 +60,7 @@ img {
 
 /* ///////////////////////////// */
 /* ------ CARRITO LATERAL ------ */
+/* ------ LOGIN REGISTRO LATERAL ------ */
 .modalBg {
    position: absolute;
    background-color: rgba(0, 0, 0, 0.6);
@@ -68,7 +69,8 @@ img {
    display: none;
 }
 
-.carrito-lateral {
+.carrito-lateral,
+.login-lateral {
    position: fixed;
    right: 0;
    top: 0;
@@ -83,12 +85,28 @@ img {
 
    height: 100%;
 
-   overflow-y: scroll;
+   overflow-y: auto;
    transform: translateX(120%);
 
    transition: transform 0.5s cubic-bezier(0.51, 0.02, 0.25, 0.88);
 }
-.carrito-lateral.show {
+.login-lateral {
+   left: 0;
+   right: auto;
+   top: 0;
+   bottom: 0;
+
+   background-color: var(--verde-fondo);
+   transform: translateX(-120%);
+   box-shadow: 1rem 0 1.5rem 0.5rem rgba(0, 0, 0, 0.3);
+   width: 100%;
+   color: var(--texto-blanco);
+   padding: 0 1rem;
+   max-width: 350px;
+}
+
+.carrito-lateral.show,
+.login-lateral.show {
    transform: translateX(0);
 }
 
@@ -243,7 +261,8 @@ img {
    text-transform: uppercase;
 }
 
-.carrito-lateral button.cerrar {
+.carrito-lateral button.cerrar,
+.login-lateral button.cerrar {
    position: absolute;
    top: 1rem;
    left: 1rem;
@@ -254,12 +273,27 @@ img {
    padding: 0.35rem;
    border-radius: 50%;
    border: 2px solid #000;
+   z-index: 200;
 }
-.carrito-lateral button.cerrar > .icono {
+
+.login-lateral button.cerrar {
+   background-color: transparent;
+   border: 2px solid #fff;
+}
+.login-lateral button.cerrar {
+   left: auto;
+   right: 1rem;
+}
+
+.carrito-lateral button.cerrar > .icono,
+.login-lateral button.cerrar > .icono {
    width: 100%;
    height: 100%;
    background: url('/assets/img/cerrar-icono.svg') no-repeat center;
    background-size: contain;
+}
+.login-lateral button.cerrar > .icono {
+   filter: invert(100%);
 }
 
 .carrito-lateral .codigo-descuento {
@@ -295,6 +329,104 @@ img {
    color: var(--verde);
    font-weight: bolder;
    font-size: 0.7rem;
+}
+
+/* ------ LOGIN LATERAL ------ */
+.login .login-form {
+   width: 100%;
+   margin: 5rem auto 0;
+   background-color: transparent;
+}
+.login .login-form a {
+   color: var(--amarillo);
+}
+
+.login-form .titulo {
+   font-size: 1.5rem;
+   color: var(--amarillo);
+   margin: 0 0 1.5rem;
+   text-align: center;
+}
+.login main form div.login-main {
+   padding-top: 1rem;
+}
+.login .login-form label {
+   display: block;
+   font-weight: bolder;
+   margin: 0 0 0.3rem 0.5rem;
+   font-size: 0.9rem;
+}
+.login .login-form input:not([type='checkbox']) {
+   display: block;
+   width: 100%;
+   border: none;
+   border-radius: 0.3rem;
+   padding: 0.5rem;
+   font-size: 0.9rem;
+   background-color: var(--fondo-input);
+}
+.login .login-form input[type='checkbox'] {
+   display: inline;
+}
+.login .login-form label[for='terminos'],
+.login .login-form label[for='publicidad'] {
+   font-size: 0.8rem;
+   font-weight: normal;
+   color: var(--texto-gris);
+}
+
+.login .login-form input:focus-within {
+   outline-color: var(--verde);
+}
+.login-main {
+   margin: 0 0 1.2rem;
+}
+
+.login .login-main .login_input-main {
+   width: 100%;
+   padding: 10px;
+   border-color: var(--colorGrisCB);
+   border-radius: 5px;
+}
+
+.login button,
+.login button {
+   padding: 0.8rem 0;
+   width: 100%;
+   font-size: 0.9rem;
+   line-height: 1;
+   border: none;
+   border-radius: 0.3rem;
+   background-color: var(--amarillo);
+   color: var(--verde);
+   font-weight: bolder;
+}
+
+.login {
+   display: inline;
+}
+.login-form .iniciar-sesion {
+   text-align: center;
+   font-size: 0.9rem;
+   margin: 1.5rem 0 0.5rem;
+}
+.login .login-form .recuerdame-box {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-size: 0.8rem;
+   line-height: 1;
+}
+.login .login-form .recuerdame-box label {
+   margin: 0;
+   display: flex;
+   gap: 0.5rem;
+   align-items: center;
+   font-weight: normal;
+   font-size: inherit;
+}
+.login-form .recuerdame-box a {
+   font-size: inherit;
 }
 
 /* ------ HEADER ------ */
@@ -336,53 +468,7 @@ header button {
 header .btn-cuenta {
    position: relative;
 }
-.btn-cuenta .contendor-login-register {
-   width: 200px;
-   padding: 1rem;
-   text-align: left;
-   cursor: default;
 
-   position: absolute;
-   top: 0;
-   right: 0;
-   z-index: 500;
-   opacity: 0;
-   visibility: hidden;
-   background-color: #fff;
-   border-radius: 0.3rem;
-   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3);
-
-   transition: 0.3s ease;
-   transition-property: opacity, visibility, transform;
-}
-.contendor-login-register.show {
-   opacity: 1;
-   visibility: visible;
-   transform: translateY(30%);
-}
-.btn-cuenta .contendor-login-register p {
-   font-size: 0.9rem;
-   margin: 0;
-}
-.btn-cuenta .contendor-login-register a {
-   margin: 0.5rem 0;
-   display: block;
-   font-size: 1rem;
-   background-color: var(--verde);
-   color: var(--texto-blanco);
-   font-weight: bolder;
-   text-decoration: none;
-   padding: 0.5rem 1rem;
-   text-align: center;
-   border-radius: 0.3rem;
-}
-.btn-cuenta .contendor-login-register a:first-of-type {
-   margin-bottom: 1rem;
-}
-.btn-cuenta .contendor-login-register a:last-of-type {
-   background-color: var(--amarillo);
-   color: var(--verde);
-}
 header button.active {
    background-color: #ddd;
 }
@@ -402,11 +488,18 @@ header .btn-carrito {
 header .cantidad {
    position: absolute;
    top: -20%;
-   right: -10%;width: 1.5rem;
+   right: -10%;
+   width: 1.5rem;
    height: 1.5rem;
-   text-align: center;font-weight: bolder;color: var(--verde);padding: .25rem;font-size: 1rem;border-radius: 50%;
+   text-align: center;
+   font-weight: bolder;
+   color: var(--verde);
+   padding: 0.25rem;
+   font-size: 1rem;
+   border-radius: 50%;
 
-background-color: var(--amarillo);}
+   background-color: var(--amarillo);
+}
 
 nav.categorias-contenedor {
    position: absolute;
@@ -461,7 +554,7 @@ nav.categorias-contenedor a {
 }
 .barra-busqueda input {
    margin: 0.3rem;
-   width: 97%;
+   width: 100%;
    border: none;
    border-radius: 0.2rem;
    background-color: var(--fondo-input);
@@ -488,7 +581,7 @@ footer .max-width-container {
 }
 .suscripcion-contenedor h4 {
    /* font-size: 1.6rem; */
-   font-size: calc(0.5rem + 4.5vw);
+   font-size: calc(0.5rem + 4vw);
    margin: 1rem 0;
 }
 .suscripcion-contenedor p {
@@ -739,7 +832,7 @@ footer .copyright {
    }
    /* ------- FOOTER ------- */
    .suscripcion-contenedor h4 {
-      font-size: 2.8rem;
+      font-size: 2.3rem;
    }
    /* -------------- */
 }
@@ -826,7 +919,7 @@ footer .copyright {
    }
 
    .suscripcion-contenedor h4 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-top: 0;
    }
 
