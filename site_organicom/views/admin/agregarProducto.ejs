@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <%- include("../partials/head", {title: "Agregar Producto"}) %>
+
+   <link rel="stylesheet" href="/css/register.css">
+   <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
+   <title>Agregar Producto</title>
+</head>
+
+<body class="register">
+
+   <%- include("../partials/header") %>
+
+   <%- include("../partials/carrito-lateral") %>
+
+   <main>
+      <form class="register-form" action="/adminProducts/agregarProducto" method="POST">
+         <div class="encabezado">
+            <h1 class="titulo">Crear producto</h1>
+            <p>me falto para la imagen, todas se ponen en default.</p>
+         </div>
+         <div class="register-main">
+            <label for="nombre">Producto</label>
+            <input class="register_input-main" type="text" id="nombre" name="nombre" placeholder="Nombre del producto" >
+         </div>
+         <div class="register-main">
+            <label for="numer">precio</label>
+            <input class="register_input-main" type="number" id="number" name="number"
+               placeholder="Ponga el valor" method="POST">
+         </div>
+         <div class="register-main">
+            <label for="descripcion">descripcion</label>
+            <input class="register_input-main" type="text" id="descripcion" name="descripcion" placeholder="Ponga una descripcion" >
+         </div>
+
+         <!-- <div class="register-main">
+            <label for="terminos">
+               <input type="checkbox" name="terminos" id="terminos">
+               Acepto los terminos y condiciones
+            </label>
+         </div> -->
+         <!-- <div class="register-main">
+            <label for="publicidad">
+               <input type="checkbox" name="publicidad" id="publicidad" checked>
+               Quiero recibir ofertas y promociones
+            </label>
+         </div> -->
+         <div class="register-main button-register">
+            <button type="submit">
+               <a href="/adminProducts/agregarProducto">Agregar</a>
+            </button>
+         </div>
+
+         <!-- <p class="iniciar-sesion">¿ya tenes una cuenta? <a href="/login">Inicia sesion aquí</a></p> -->
+      </form>
+   </main>
+
+   <%- include("../partials/footer") %>
+
+   <script src="/js/general.js"></script>
+</body>
+
+</html>
