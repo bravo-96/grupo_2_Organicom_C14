@@ -4,49 +4,64 @@
 <!-- MEJORAR CODIGO, LO HICE CON POCO TIEMPO -->
 
 <!-- copiado del index-->
+
 <head>
-    <%- include("../partials/head", {title: "producto"}) %>
+    <%- include("../partials/head", {title: "Crear producto"}) %>
 
-   <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="/css/home.css">
-   <title>Admin | crear producto</title>
-
-   
+    <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/admin/adminProducts.css">
+    <!-- <title>Admin | crear producto</title>    -->
 
 </head>
 
 <body>
-   <%- include("../partials/header") %>
+    <%- include("../partials/login-lateral") %>
 
-   <%- include("../partials/carrito-lateral") %>
+    <%- include("../partials/header") %>
 
-   <button><a href="/adminProducts/agregar">Nuevo Producto</a></button>
+    <%- include("../partials/carrito-lateral") %>
 
-<!-- copiado del index-->
+    <button><a href="/adminProducts/agregar">Nuevo Producto</a></button>
 
-  <!-- bootstrap -->
+    <!-- copiado del index-->
+    <main>
 
-    <div class="conteiner d-flex flex-wrap justify-content-center">
-        <!-- recorre el archivo productos.json ubicado en /controllers/data -->
-        <% productos.forEach(producto => { %>
+        <div class="lista-productos-grid">
+            <!-- recorre el archivo productos.json ubicado en /controllers/data -->
+            <% productos.forEach(producto => { %>
 
             <!-- Trae todos los productos -->
-
-            <div class="card m-2 text-black bg-light" style="width: 400px; height: 400px;">
-                <a href="/adminProducts/<%= producto.id %> "><img src="/assets/img/<%= producto.imagen %> " class="card-img" style="width: 200px; height: 200px;" alt=""></a>
-                <div class="card-body">
-
-                    <h5 class="card-title"><%= producto.nombre %> </h5>
-                    <p class="card-text"><%= producto.precio %>  </p>
-                    <p class="card-text"><%= producto.descripcion %> </p>
-                    
+            <article class="card">
+                <div class="card-header">
+                    <img src="/assets/img/<%= producto.imagen %>" alt>
                 </div>
-            </div>
+                <div class="card-body">
+                    <h3><%= producto.nombre %></h3>
+                    <p class="precio-inicial">
+                        <% if (producto.descuento) { %>
+                        <span><%= producto.precioInicial %></span>
+                        <span class="descuento">
+                            <%= producto.descuento %>%OFF!
+                        </span>
+                        <% } %>
+                    </p>
+                    <p class="precio-final">
+                        $ <%= producto.precioFinal %>
+                    </p>
+                    <a href="" class="categoria"><%= producto.categoria %></a>
+                    <div class="botones">
+                        <a href="/adminProducts/<%= producto.id %> ">
+                            <button class="btn-editar" type="button">Editar <span class="icono"></span></button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <% }); %>
 
-        <% }); %> 
-    
-    </div>
-    <!-- bootstrap -->
+
+
+        </div>
+    </main>
 
     <!-- copiado del index-->
     <%- include("../partials/footer") %>
@@ -54,4 +69,5 @@
     <script src="/js/general.js"></script>
     <!-- copiado del index-->
 </body>
+
 </html>

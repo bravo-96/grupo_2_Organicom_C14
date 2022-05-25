@@ -4,14 +4,13 @@ const path = require('path');
 
 /* hacer npm i method-override - alex */
 const methodOverride = require("method-override");
-/* hacer npm i method-override - alex */
 
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const preductsRouter = require('./routes/products');
+const productsRouter = require('./routes/products');
 
 //--------------------Parte puesta por alex------------Si hay errores, mirar en el router---------
 
@@ -42,14 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/products', preductsRouter);
-
-//--------------------Parte puesta por alex------------Si hay errores, mirar en el router---------
-
+app.use('/products', productsRouter);
 app.use("/adminProducts", adminProductsRouter);
-
-//--------------------Cambiar nombres si se hace mas comodo---------------------------------------
-
 
 /*
 app.get('/', (req, res) =>

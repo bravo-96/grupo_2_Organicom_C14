@@ -1,1 +1,62 @@
-[{"id":1,"nombre":"Fideo Molto","precio":"$100","descripcion":"mostachol","imagen":"Fideo-Molto.jpg"},{"id":2,"nombre":"Fideo Molto","precio":"$105","descripcion":"tirabuzon","imagen":"Fideos-Molto-Tirabuzon.jpg"},{"id":3,"nombre":"Fideo Fulano","precio":"$110","descripcion":"Cabello de Angel","imagen":"fideos-angel.jpg"},{"id":4,"nombre":"Fideo Terrabusi","precio":"$100","descripcion":"mostachol","imagen":"terrabusi-mostachol.jpg"},{"id":5,"nombre":"ssdfsf","descripcion":"gjasdgasdgsagasdd","imagen":"default.png"}]
+[
+   {
+      "id": 1,
+      "nombre": "Fideo Molto",
+      "descuento": "15",
+      "precioInicial": "600",
+      "precioFinal": "510",
+      "categoria": "fideos-cereales",
+      "descripcion": "mostachol",
+      "imagen": "Fideo-Molto.jpg"
+   },
+   {
+      "id": 2,
+      "nombre": "Fideo Molto",
+      "descuento": "15",
+      "precioInicial": "600",
+      "precioFinal": "510",
+      "categoria": "fideos-cereales",
+      "descripcion": "tirabuzon",
+      "imagen": "Fideos-Molto-Tirabuzon.jpg"
+   },
+   {
+      "id": 3,
+      "nombre": "Fideo Fulano",
+      "descuento": "15",
+      "precioInicial": "600",
+      "precioFinal": "510",
+      "categoria": "fideos-cereales",
+      "descripcion": "Cabello de Angel",
+      "imagen": "fideos-angel.jpg"
+   },
+   {
+      "id": 4,
+      "nombre": "Fideo Terrabusi",
+      "descuento": "",
+      "precioInicial": null,
+      "precioFinal": "400",
+      "categoria": "fideos-cereales",
+      "descripcion": "mostachol",
+      "imagen": "terrabusi-mostachol.jpg"
+   },
+   {
+      "id": 5,
+      "nombre": "Titulo del producto",
+      "descuento": "",
+      "precioInicial": null,
+      "precioFinal": "860",
+      "categoria": "fideos-cereales",
+      "descripcion": "Descriocon del producot",
+      "imagen": "default.png"
+   },
+   {
+      "id": 6,
+      "nombre": "Nombre prodcuto",
+      "descuento": "8",
+      "precioInicial": 1200,
+      "precioFinal": "1.104",
+      "categoria": "fideos-cereales",
+      "descripcion": "ajsdjajwdawdj",
+      "imagen": "default.png"
+   }
+]

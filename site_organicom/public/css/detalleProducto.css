@@ -249,7 +249,7 @@ main.grid-princpial {
       brightness(104%) contrast(101%);
 }
 .btns-contenedor .btn-agregar-carrito {
-   color: var(--amarillo);
+   /* color: var(--amarillo); */
 }
 
 /* ------- Detalle texto ------- */
