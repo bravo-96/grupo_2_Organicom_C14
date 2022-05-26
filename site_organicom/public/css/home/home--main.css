@@ -1,18 +1,22 @@
+
 .banner {
     height: 400px;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    display: block;
-    position: relative;
+
+    width: 100%;
+    background-image: url('/assets/img/banner-jugos-oferta-medium.png') ;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    
     color: var(--texto-blanco);
-    justify-content: center;
+    
 }
 .banner__box--btn{
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+   
 }
 .banner .banner--button {
-    background: var(--amarilo);
+    background: var(--amarillo);
     border: none;
     border-radius: 5px;
     color: var(--verde);
@@ -41,12 +45,13 @@
     width: 50%;
     position: absolute;
     bottom: 0.5rem;
-    right: 0;
+    left: 0;
+    top: 0.5rem;
+    opacity: 0.3;
     
 }
 .masVendido {
-    margin: 0;
-    
+    margin: 0;    
     height: 400px;
     padding: 20px;
 }
@@ -65,7 +70,7 @@ color: #191919;
   
 }
 .carousel1 .swiper-slide {
-    border-radius: 10px;
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;   
     border: 1px solid #807f7fb6;
@@ -75,9 +80,6 @@ color: #191919;
 }
 
 .carousel1  .card--img{    
-    position: relative;
-    bottom: -80px;
-    left: 10%;
     width: 80%;
     height: 80%;
     transition: all .5s;
@@ -106,23 +108,22 @@ color: #191919;
     display: flex;
     flex-wrap: wrap;  
     justify-content: center;
-    background: linear-gradient(to bottom, #94e6e9, #493240);
-  
+    
 }
 .desc{
     text-align: center;    
 
 }
 .desc h3{
-    position: relative;    
-    background-color: #94e6e9;
+    position: relative;  
+    margin-top: 2rem;
     color: #191919;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2rem;
     
 }
 .desc h3:before {
-    border-top: 2px solid #fff000;
+    border-top: 2px solid var(--texto-gris);
     content: "";
     position: absolute;
     top: 50%;
@@ -132,7 +133,7 @@ color: #191919;
    
   }
   .desc h3:after {
-    border-top: 2px solid #fff000;
+    border-top: 2px solid var(--texto-gris);
     content: "";
     
     position: absolute;
@@ -165,7 +166,7 @@ color: #191919;
 
 .card::before {
     content: "";
-    background: linear-gradient(to bottom, #85770c 60%, #12e795);
+    background: #90fcf6;
     position: absolute;
     top: -50%;
     width: 100%;
@@ -179,7 +180,7 @@ color: #191919;
     top: -70%;
     transform: skewY(390deg);
     box-shadow:  -20px -20px 60px #bebebe, 20px 20px 60px #ffffff;
-    background: linear-gradient(to left,  #12e795,#85770c 60%);
+    background: var(--amarillo);
    
 }
 
@@ -231,20 +232,22 @@ color: #191919;
             transform: translateY(-8rem);
 
 }
-.card .contentBox .carousel__name{
+.card  .carousel__name{
     font-size: 18px;
     color: var(--crema);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 2rem;
-     
+    margin-top: 2rem;     
     
+}
+.card:hover .carousel__name{
+    color: var(--verde);
 }
 
 .card .contentBox .price {
     font-size: 24px;
-    color: var(--amarilo);
+    color: var(--amarillo);
     font-weight: 700;
     letter-spacing: 1px;
     transition: all 0.5s;
@@ -272,7 +275,7 @@ color: #191919;
     color: #000000;
     text-decoration: none;
     background: #ffce00;
-    border-radius: 30px;
+    border-radius: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all .5s; 
@@ -290,7 +293,7 @@ color: #191919;
 
 .card .price__box--desc .desc__promo{
     font-size: 44px;
-    color: var(--amarilo);
+    color: var(--texto-gris);
     position: absolute;
     top: -260px;
     right: 15px;
@@ -303,52 +306,52 @@ color: #191919;
     opacity: 1;
 }
 
-.seguinos--box{
-    background-color: #94e6e9;
-    padding-bottom: 40px;
-  
-}
+
 .mockup--seguinos{
-    width: 3rem;
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    flex-direction: column;
-   
+    width: 5rem;
+    margin:0 2rem;
+    display: none;
    
 }
+
 .seguinos {
-    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 10px;
+    padding:  1.5rem;
     margin-top: 5rem;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 80px;
     background-color: var(--verde);
-    font-size: 14px;
-    border-radius: 0 0 20px 20px;
-    flex-direction: column;
+    font-size: 14px;    
+
 }
-.seguinos p {
+.seguinos_box--redes{
+    display: block;
     
-    color: var(--texto-gris);
-    position: relative;
-    z-index: 40;
 }
+.seguinos p {    
+    color: var(--texto-blanco);
+   
+}
+.text--seguinos{
+    width: 100%;
+    margin-right: 2rem;
+}
+
 .seguinos .phone {
-    color: var(--amarilo);
+    color: var(--amarillo);
+    
 }
 
 .seguinos--redes {
     display: flex;
     gap: 15px;
-    margin-bottom: 10px;
-   
+    margin-bottom: 10px; 
 }
+
 .seguinos--redes .facebook {
     animation: redes 3s infinite;
 }
