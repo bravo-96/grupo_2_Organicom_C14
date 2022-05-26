@@ -24,3 +24,13 @@ cardIconosFav.forEach((elm) => {
       elm.classList.toggle('active');
    });
 });
+
+// slider
+
+new Splide('#sliderRecomendados', {
+   perPage: 1,
+   perMove: 1,
+   pagination: false,
+   arrowPath:
+      "null",
+}).mount();

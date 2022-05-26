@@ -10,7 +10,7 @@ main.grid-princpial {
 .slider {
    position: relative;
    max-width: 450px;
-   margin: 4rem auto;
+   margin: 1rem auto;
 }
 
 .slider .lista-imgs {
@@ -362,11 +362,50 @@ main.grid-princpial {
 
 /* ------- SLIDER RECOMENDADOS ------- */
 
+.recomendados .splide__slide img {
+   width: 100%;
+   height: auto;
+}
+
+.recomendados .splide__page {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   justify-content: center;
+   justify-items: center;
+
+   padding: 0.5rem 0;
+}
+
+.recomendados .splide__arrow {
+   position: absolute;
+   z-index: 200;
+   top: 50%;
+
+   border: none;
+   width: 2.5rem;
+   height: 2.5rem;
+   border-radius: 50%;
+
+   display: block;
+   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
+   background-size: 0.7rem;
+
+   background-position-x: 1rem;
+   background-color: var(--verde-fondo);
+   box-shadow: 0 0 .5rem #777;
+}
+
+.recomendados .splide__arrow.splide__arrow--prev {
+   transform: translateY(-50%) rotate(180deg);
+   left: -0.9rem;
+}
+.recomendados .splide__arrow.splide__arrow--next {
+   right: -0.9rem;
+   transform: translateY(-50%);
+}
+
 .recomendados .slider {
    position: relative;
-   max-width: 350px;
-   margin: 2rem auto;
-   display: flex;
 }
 
 .recomendados .card h3 {
@@ -417,17 +456,11 @@ main.grid-princpial {
 .recomendados .flecha-der::before {
    transform: translate(10%, 0%);
 }
-.recomendados .card:nth-of-type(3),
-.recomendados .card:nth-of-type(4) {
-   display: none;
-}
+
 .recomendados .card {
-   width: 80%;
-   margin: 0 auto;
    box-shadow: 0 0 0.2rem var(--borde-gris-claro);
    border-radius: 0.5rem;
    color: var(--texto-gris);
-   max-width: 160px;
 }
 .recomendados .card-header {
    position: relative;
@@ -519,16 +552,12 @@ main.grid-princpial {
 /* ------- MOBILE XL ------- */
 
 @media screen and (min-width: 480px) {
-   .recomendados .slider {
-      max-width: 450px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+   .recomendados .splide__page {
+      gap: 1rem;
+      padding: 0.5rem;
    }
 
    .recomendados .card {
-      width: 40%;
       margin: 0;
    }
    .recomendados .card:not(:first-of-type) {
@@ -639,9 +668,8 @@ main.grid-princpial {
       justify-self: end;
    }
    .recomendados .card {
-      width: 45%;
       margin: 0;
-      max-width: 180px;
+
       transition: box-shadow 0.3s ease;
    }
    .recomendados .card:hover {

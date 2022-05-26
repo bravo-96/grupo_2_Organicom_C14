@@ -67,10 +67,6 @@
 .register {
    display: inline;
 }
-.register-form .iniciar-sesion {
-   text-align: center;
-   font-size: 0.8rem;
-}
 
 @media (min-width: 768px) {
 }
