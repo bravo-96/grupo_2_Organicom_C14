@@ -16,9 +16,9 @@ router.get("/agregar",agregarProducto)
 router.post("/agregarProducto",create)
 
 
-router.get("/:id", update)
+router.get("/editar/:id", editarProducto )
 /* PUT actualiza los datos */
-router.put("/:id",editarProducto);
+router.put("/editarProducto/:id", update);
 
 
 
