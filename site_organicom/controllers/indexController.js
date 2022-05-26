@@ -1,4 +1,4 @@
-const carousel =  require('../data/cards');
+const carousel =  require('../controllers/data/cards');
 
 
 
