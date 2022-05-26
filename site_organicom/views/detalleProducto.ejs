@@ -7,9 +7,14 @@
    }) %>
 
    <link rel="stylesheet" href="/css/detalleProducto.css">
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/css/splide-core.min.css">
+
 </head>
 
 <body class="detalle">
+
+   <%- include("./partials/login-lateral") %>
 
    <%- include("./partials/header") %>
 
@@ -18,16 +23,63 @@
    <!-- ------ Main ------ -->
 
    <main class="grid-princpial">
-      <section class="slider">
-         <div class="flecha-izq"></div>
-         <div class="flecha-der"></div>
-         <img class="producto-imagen-portada" src="/assets/img/producto-imagen-1.jpg" alt="">
-         <ul class="lista-imgs">
-            <li><img src="/assets/img/producto-imagen-1.jpg" alt></li>
-            <li><img src="/assets/img/producto-imagen-1.jpg" alt></li>
-            <li><img src="/assets/img/producto-imagen-1.jpg" alt></li>
-            <li><img src="/assets/img/producto-imagen-1.jpg" alt></li>
-         </ul>
+      <section class="slider-principal">
+
+         <section id="main-carousel" class="splide" aria-label="Galeria del producto">
+            <div class="splide__track">
+               <ul class="splide__list producto-imagen-portada">
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+               </ul>
+            </div>
+         </section>
+
+         <section id="thumbnail-carousel" class="splide" aria-label="Galeria del producto">
+            <div class="splide__track">
+               <ul class="splide__list lista-imgs">
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+               </ul>
+            </div>
+         </section>
       </section>
       <!-- ------------- -->
       <section class="detalle-producto">
@@ -164,87 +216,243 @@
       <section class="recomendados">
          <div class="sticky-contenedor">
             <h2>Tambien te pueden interesar</h2>
-            <div class="slider">
-               <div class="flecha-izq"></div>
-               <div class="flecha-der"></div>
 
-               <article class="card">
-                  <div class="card-header">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                     <div class="favorito"></div>
-                  </div>
-                  <div class="card-body">
-                     <a href="/products/detalleProducto">
-                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
-                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                        <p class="precio-final">$ 895,00</p>
-                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                     </a>
-                     <div class="botones">
-                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                     </div>
-                  </div>
-               </article>
+            <div class="slider splide" id="sliderRecomendados" aria-label="Productos Recomendados">
 
-               <article class="card">
-                  <div class="card-header">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                     <div class="favorito"></div>
-                  </div>
-                  <div class="card-body">
-                     <a href="/products/detalleProducto">
-                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
-                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                        <p class="precio-final">$ 895,00</p>
-                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                     </a>
-                     <div class="botones">
-                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                     </div>
-                  </div>
-               </article>
-
-               <article class="card">
-                  <div class="card-header">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                     <div class="favorito"></div>
-                  </div>
-                  <div class="card-body">
-                     <a href="/products/detalleProducto">
-                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
-                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                        <p class="precio-final">$ 895,00</p>
-                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                     </a>
-                     <div class="botones">
-                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                     </div>
-                  </div>
-               </article>
-
-               <article class="card">
-                  <div class="card-header">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                     <div class="favorito"></div>
-                  </div>
-                  <div class="card-body">
-                     <a href="/products/detalleProducto">
-                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
-                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                        <p class="precio-final">$ 895,00</p>
-                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                     </a>
-                     <div class="botones">
-                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                     </div>
-                  </div>
-               </article>
+               <div class="splide__track">
+                  <ul class="splide__list">
+                     <li class="splide__slide splide__page">
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                     </li>
+                     <li class="splide__slide splide__page">
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                     </li>
+                     <li class="splide__slide splide__page">
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                     </li>
+                  </ul>
+               </div>
             </div>
          </div>
       </section>
    </main>
 
    <%- include("./partials/footer") %>
+
+   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/js/splide.min.js"></script>
 
    <script src="/js/general.js"></script>
    <script src="/js/detalleProducto.js"></script>

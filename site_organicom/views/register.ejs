@@ -10,6 +10,7 @@
 </head>
 
 <body class="register">
+   <%- include("./partials/login-lateral") %>
 
    <%- include("./partials/header") %>
 
@@ -19,8 +20,8 @@
       <form class="register-form" action="">
          <div class="encabezado">
             <h1 class="titulo">Crear cuenta</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi est aliquam voluptatibus
-               molestiae impedit.</p>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi est aliquam voluptatibus
+               molestiae impedit.</p> -->
          </div>
          <div class="register-main">
             <label for="nombre">Nombre</label>
@@ -37,7 +38,7 @@
          </div>
          <div class="register-main">
             <label for="password">Password</label>
-            <input class="register_input-main" type="password" id="password" name="password"
+            <input class="register_input-main" type="password" id="register-password" name="password"
                placeholder="Escribi tu password">
 
          </div>
@@ -58,8 +59,6 @@
                Crear cuenta
             </button>
          </div>
-
-         <p class="iniciar-sesion">¿ya tenes una cuenta? <a href="/login">Inicia sesion aquí</a></p>
       </form>
    </main>
 

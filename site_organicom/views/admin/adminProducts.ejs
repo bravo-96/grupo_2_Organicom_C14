@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- MEJORAR CODIGO, LO HICE CON POCO TIEMPO -->
+
+<!-- copiado del index-->
+
+<head>
+    <%- include("../partials/head", {title: "Crear producto"}) %>
+
+    <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/admin/adminProducts.css">
+    <!-- <title>Admin | crear producto</title>    -->
+
+</head>
+
+<body>
+    <%- include("../partials/login-lateral") %>
+
+    <%- include("../partials/header") %>
+
+    <%- include("../partials/carrito-lateral") %>
+
+    <button><a href="/adminProducts/agregar">Nuevo Producto</a></button>
+
+    <!-- copiado del index-->
+    <main>
+
+        <div class="lista-productos-grid">
+            <!-- recorre el archivo productos.json ubicado en /controllers/data -->
+            <% productos.forEach(producto => { %>
+
+            <!-- Trae todos los productos -->
+            <article class="card">
+                <div class="card-header">
+                    <img src="/assets/img/<%= producto.imagen %>" alt>
+                </div>
+                <div class="card-body">
+                    <h3><%= producto.nombre %></h3>
+                    <p class="precio-inicial">
+                        <% if (producto.descuento) { %>
+                        <span><%= producto.precioInicial %></span>
+                        <span class="descuento">
+                            <%= producto.descuento %>%OFF!
+                        </span>
+                        <% } %>
+                    </p>
+                    <p class="precio-final">
+                        $ <%= producto.precioFinal %>
+                    </p>
+                    <a href="" class="categoria"><%= producto.categoria %></a>
+                    <div class="botones">
+                        <a href="/adminProducts/<%= producto.id %> ">
+                            <button class="btn-editar" type="button">Editar <span class="icono"></span></button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <% }); %>
+
+
+
+        </div>
+    </main>
+
+    <!-- copiado del index-->
+    <%- include("../partials/footer") %>
+
+    <script src="/js/general.js"></script>
+    <!-- copiado del index-->
+</body>
+
+</html>

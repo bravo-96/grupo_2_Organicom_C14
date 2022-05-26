@@ -1,12 +1,9 @@
 // ------ Heder & Footer ------
 const btnMenu = document.querySelector('.btn-menu');
-const navContenedor = document.querySelector('.categorias-contenedor');
-const btnCuenta = document.querySelector('.btn-cuenta');
-const contendorLoginRegister = document.querySelector(
-   '.contendor-login-register'
-);
 const btnBuscar = document.querySelector('.btn-buscar');
+const navContenedor = document.querySelector('.categorias-contenedor');
 const barraBusqueda = document.querySelector('.barra-busqueda');
+const modalBgMenu = document.querySelector('.modalBgMenu');
 
 const listaLinksCategorias = document.querySelectorAll('.link-categoria');
 const imgFondo = document.querySelectorAll(
@@ -14,14 +11,20 @@ const imgFondo = document.querySelectorAll(
 );
 
 btnMenu.addEventListener('click', () => {
-   navContenedor.classList.toggle('show');
-   btnMenu.classList.toggle('active');
+   navContenedor.classList.add('show');
+   btnMenu.classList.add('active');
+   document.body.classList.add('modal-open');
+   modalBgMenu.style.display = 'block';
+   modalBgMenu.style.position = 'fixed';
 });
 
-btnCuenta.addEventListener('click', () => {
-   contendorLoginRegister.classList.toggle('show');
-   btnCuenta.classList.toggle('active');
+modalBgMenu.addEventListener('click', () => {
+   navContenedor.classList.remove('show');
+   btnMenu.classList.remove('active');
+   document.body.classList.remove('modal-open');
+   modalBgMenu.style.display = 'none';
 });
+
 btnBuscar.addEventListener('click', () => {
    barraBusqueda.classList.toggle('show');
    btnBuscar.classList.toggle('active');
@@ -52,10 +55,18 @@ listaLinksCategorias.forEach((elm) => {
 });
 
 // ------ CARRITO LATERAL ------
+// ------ LOGIN REGISTER LATERAL ------
 
 const btnCarrito = document.querySelector('.btn-carrito');
-const carritoLateralContenedor = document.querySelector('.carrito-lateral');
+const btnCuenta = document.querySelector('.btn-cuenta');
 const modalBg = document.querySelector('body > .modalBg');
+
+const loginRegisterLateralContenedor = document.querySelector('.login-lateral');
+const btnCerrarLoginRegister = document.querySelector(
+   '.login-lateral > button.cerrar'
+);
+
+const carritoLateralContenedor = document.querySelector('.carrito-lateral');
 const btnCerrarCarrito = document.querySelector(
    '.carrito-lateral > button.cerrar'
 );
@@ -67,15 +78,30 @@ btnCarrito.addEventListener('click', () => {
    modalBg.style.position = 'fixed';
 });
 
+btnCuenta.addEventListener('click', () => {
+   document.body.classList.add('modal-open');
+   loginRegisterLateralContenedor.classList.add('show');
+   modalBg.style.display = 'block';
+   modalBg.style.position = 'fixed';
+});
+
 btnCerrarCarrito.addEventListener('click', () => {
    document.body.classList.remove('modal-open');
    carritoLateralContenedor.classList.remove('show');
    modalBg.style.display = 'none';
 });
+
+btnCerrarLoginRegister.addEventListener('click', () => {
+   document.body.classList.remove('modal-open');
+   loginRegisterLateralContenedor.classList.remove('show');
+   modalBg.style.display = 'none';
+});
+
 modalBg.addEventListener('click', () => {
    document.body.classList.remove('modal-open');
    modalBg.style.display = 'none';
    carritoLateralContenedor.classList.remove('show');
+   loginRegisterLateralContenedor.classList.remove('show');
 });
 
 // ------   CANTIDAD  ------
