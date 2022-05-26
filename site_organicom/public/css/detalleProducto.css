@@ -7,18 +7,56 @@ main.grid-princpial {
 
 /* ------- SLIDER PRODUCTO ------- */
 
-.slider {
+#thumbnail-carousel .splide__slide {
+   filter: opacity(0.8) brightness(0.3);
+}
+#thumbnail-carousel .splide__slide.is-active {
+   filter: opacity(1) brightness(1);
+}
+
+.slider-principal .splide__arrow {
+   position: absolute;
+   z-index: 200;
+   top: 50%;
+
+   border: none;
+   width: 3rem;
+   height: 3rem;
+   border-radius: 50%;
+
+   display: block;
+   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
+   background-size: 0.8rem;
+
+   background-position-x: 1.2rem;
+   background-color: var(--verde-fondo);
+   box-shadow: 0 0 0.5rem #777;
+}
+.slider-principal .splide__arrows *[disabled] {
+   filter: brightness(15) grayscale(1);
+}
+
+.slider-principal .splide__arrow.splide__arrow--prev {
+   transform: translateY(-50%) rotate(180deg);
+   left: -0.9rem;
+}
+.slider-principal .splide__arrow.splide__arrow--next {
+   right: -0.9rem;
+   transform: translateY(-50%);
+}
+
+.slider-principal {
    position: relative;
    max-width: 450px;
    margin: 1rem auto;
 }
 
-.slider .lista-imgs {
+.slider-principal .lista-imgs {
    display: none;
 }
 
-.slider .flecha-izq,
-.slider .flecha-der {
+.slider-principal .flecha-izq,
+.slider-principal .flecha-der {
    position: absolute;
    background-color: var(--verde);
    width: 3rem;
@@ -34,15 +72,15 @@ main.grid-princpial {
    top: 50%;
    transform: translateY(-50%);
 }
-.slider .flecha-izq {
+.slider-principal .flecha-izq {
    left: -0.5rem;
 }
-.slider .flecha-der {
+.slider-principal .flecha-der {
    right: -0.5rem;
 }
 
-.slider .flecha-izq::before,
-.slider .flecha-der::before {
+.slider-principal .flecha-izq::before,
+.slider-principal .flecha-der::before {
    content: '';
    display: block;
    width: 1.3rem;
@@ -52,15 +90,15 @@ main.grid-princpial {
    background-size: contain;
    transform: rotate(180deg) translate(10%, 0%);
 }
-.slider .flecha-der::before {
+.slider-principal .flecha-der::before {
    transform: translate(10%, 0%);
 }
 
-.slider .producto-imagen-portada {
+.slider-principal .producto-imagen-portada img {
    display: block;
    margin: 0 auto;
    padding: 1.3rem 0;
-   width: 70%;
+   /* width: 70%; */
    max-width: 300px;
    object-fit: contain;
    object-position: center;
@@ -68,7 +106,6 @@ main.grid-princpial {
 
 /* ------- DETALLE DEL PRODUCTO ------- */
 .detalle-producto {
-   /* margin-bottom: 2rem; */
    font-size: 0.9rem;
    color: var(--texto-gris);
    max-width: 500px;
@@ -376,6 +413,9 @@ main.grid-princpial {
    padding: 0.5rem 0;
 }
 
+.recomendados .splide__arrows [disabled] {
+   filter: brightness(15) grayscale(1);
+}
 .recomendados .splide__arrow {
    position: absolute;
    z-index: 200;
@@ -392,7 +432,7 @@ main.grid-princpial {
 
    background-position-x: 1rem;
    background-color: var(--verde-fondo);
-   box-shadow: 0 0 .5rem #777;
+   box-shadow: 0 0 0.5rem #777;
 }
 
 .recomendados .splide__arrow.splide__arrow--prev {
@@ -402,10 +442,6 @@ main.grid-princpial {
 .recomendados .splide__arrow.splide__arrow--next {
    right: -0.9rem;
    transform: translateY(-50%);
-}
-
-.recomendados .slider {
-   position: relative;
 }
 
 .recomendados .card h3 {
@@ -421,46 +457,12 @@ main.grid-princpial {
    -webkit-box-orient: vertical;
    color: #000;
 }
-.recomendados .flecha-izq,
-.recomendados .flecha-der {
-   position: absolute;
-   background-color: var(--verde);
-   width: 2rem;
-   height: 2rem;
-   border-radius: 50%;
-   box-shadow: 0 0 0.5rem #ccc;
-   cursor: pointer;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   top: 50%;
-   transform: translateY(-50%);
-}
-.recomendados .flecha-izq {
-   left: -1rem;
-}
-.recomendados .flecha-der {
-   right: -1rem;
-}
-.recomendados .flecha-izq::before,
-.recomendados .flecha-der::before {
-   content: '';
-   display: block;
-   width: 0.7rem;
-   height: 0.9rem;
-   background-color: transparent;
-   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
-   background-size: contain;
-   transform: rotate(180deg) translate(10%, 0%);
-}
-.recomendados .flecha-der::before {
-   transform: translate(10%, 0%);
-}
 
 .recomendados .card {
    box-shadow: 0 0 0.2rem var(--borde-gris-claro);
    border-radius: 0.5rem;
    color: var(--texto-gris);
+   max-width: 180px;
 }
 .recomendados .card-header {
    position: relative;
@@ -557,11 +559,32 @@ main.grid-princpial {
       padding: 0.5rem;
    }
 
+   .slider-principal .lista-imgs {
+      display: flex;
+      /* justify-content: center; */
+   }
+
+   .slider-principal .lista-imgs li {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 0.2rem;
+      border: 1px solid var(--borde-gris-claro);
+      cursor: pointer;
+   }
+   .slider-principal .lista-imgs img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+   }
+
+   .recomendados .slider {
+      max-width: 320px;
+      display: flex;
+      margin: 0 auto;
+   }
+
    .recomendados .card {
       margin: 0;
-   }
-   .recomendados .card:not(:first-of-type) {
-      display: block;
    }
 }
 
@@ -575,33 +598,17 @@ main.grid-princpial {
       margin-top: 2rem;
       padding: 0 2rem;
    }
-   .grid-princpial > .slider {
+   .grid-princpial > .slider-principal {
       margin: 0 auto;
       max-width: 400px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
    }
-   .slider .producto-imagen-portada {
+   .slider-principal .producto-imagen-portada {
       /* padding: 0; */
    }
-   .slider .lista-imgs {
-      display: flex;
-      justify-content: space-between;
-      gap: 5%;
-   }
-   .slider .lista-imgs li {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 0.2rem;
-      border: 1px solid var(--borde-gris-claro);
-      cursor: pointer;
-   }
-   .slider .lista-imgs img {
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
-   }
+
    /* -------------- */
    .detalle-producto {
       margin: 0;
@@ -664,19 +671,16 @@ main.grid-princpial {
    .recomendados .slider {
       display: flex;
       margin: 1rem 0 0;
-      max-width: 400px;
+      max-width: 330px;
       justify-self: end;
    }
    .recomendados .card {
       margin: 0;
-
+      max-width: 250px;
       transition: box-shadow 0.3s ease;
    }
    .recomendados .card:hover {
       box-shadow: 0 0 0.4rem rgba(34, 34, 34, 0.4);
-   }
-   .recomendados .card:not(:first-of-type) {
-      display: inline;
    }
 }
 
@@ -722,6 +726,10 @@ main.grid-princpial {
    }
    .favorito-contenedor p.favorito:hover {
       color: #000;
+   }
+
+   .recomendados .slider {
+      max-width: 400px;
    }
    .recomendados .card-header .favorito::after {
       content: 'Agregar favoritos';

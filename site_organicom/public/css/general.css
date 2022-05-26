@@ -58,6 +58,13 @@ img {
    }
 }
 
+.modalBgMenu {
+   position: absolute;
+   background-color: rgba(0, 0, 0, 0.6);
+   inset: 0;
+   z-index: 300;
+   display: none;
+}
 /* ///////////////////////////// */
 /* ------ CARRITO LATERAL ------ */
 /* ------ LOGIN REGISTRO LATERAL ------ */
@@ -65,7 +72,7 @@ img {
    position: absolute;
    background-color: rgba(0, 0, 0, 0.6);
    inset: 0;
-   z-index: 900;
+   z-index: 600;
    display: none;
 }
 
@@ -332,31 +339,31 @@ img {
 }
 
 /* ------ LOGIN LATERAL ------ */
-.login .login-form {
+.login-lateral .login .login-form {
    width: 100%;
    margin: 5rem auto 0;
    background-color: transparent;
 }
-.login .login-form a {
+.login-lateral .login .login-form a {
    color: var(--amarillo);
 }
 
-.login-form .titulo {
+.login-lateral .login-form .titulo {
    font-size: 1.5rem;
    color: var(--amarillo);
    margin: 0 0 1.5rem;
    text-align: center;
 }
-.login main form div.login-main {
+.login-lateral .login main form div.login-main {
    padding-top: 1rem;
 }
-.login .login-form label {
+.login-lateral .login .login-form label {
    display: block;
    font-weight: bolder;
    margin: 0 0 0.3rem 0.5rem;
    font-size: 0.9rem;
 }
-.login .login-form input:not([type='checkbox']) {
+.login-lateral .login .login-form input:not([type='checkbox']) {
    display: block;
    width: 100%;
    border: none;
@@ -365,32 +372,31 @@ img {
    font-size: 0.9rem;
    background-color: var(--fondo-input);
 }
-.login .login-form input[type='checkbox'] {
+.login-lateral .login .login-form input[type='checkbox'] {
    display: inline;
 }
 .login .login-form label[for='terminos'],
-.login .login-form label[for='publicidad'] {
+.login-lateral .login .login-form label[for='publicidad'] {
    font-size: 0.8rem;
    font-weight: normal;
    color: var(--texto-gris);
 }
 
-.login .login-form input:focus-within {
+.login-lateral .login .login-form input:focus-within {
    outline-color: var(--verde);
 }
-.login-main {
+.login-lateral .login-main {
    margin: 0 0 1.2rem;
 }
 
-.login .login-main .login_input-main {
+.login-lateral .login .login-main .login_input-main {
    width: 100%;
    padding: 10px;
    border-color: var(--colorGrisCB);
    border-radius: 5px;
 }
 
-.login button,
-.login button {
+.login-lateral .login button {
    padding: 0.8rem 0;
    width: 100%;
    font-size: 0.9rem;
@@ -402,22 +408,22 @@ img {
    font-weight: bolder;
 }
 
-.login {
+.login-lateral .login {
    display: inline;
 }
-.login-form .iniciar-sesion {
+.login-lateral .login-form .iniciar-sesion {
    text-align: center;
    font-size: 0.9rem;
    margin: 1.5rem 0 0.5rem;
 }
-.login .login-form .recuerdame-box {
+.login-lateral .login .login-form .recuerdame-box {
    display: flex;
    align-items: center;
    justify-content: space-between;
    font-size: 0.8rem;
    line-height: 1;
 }
-.login .login-form .recuerdame-box label {
+.login-lateral .login .login-form .recuerdame-box label {
    margin: 0;
    display: flex;
    gap: 0.5rem;
@@ -425,7 +431,7 @@ img {
    font-weight: normal;
    font-size: inherit;
 }
-.login-form .recuerdame-box a {
+.login-lateral .login-form .recuerdame-box a {
    font-size: inherit;
 }
 
@@ -433,7 +439,7 @@ img {
 header {
    position: relative;
    background-color: var(--fondo-blanco);
-   z-index: 500;
+   z-index: 300;
    display: grid;
    grid-template-columns: repeat(5, auto);
    justify-content: space-between;
@@ -503,8 +509,8 @@ header .cantidad {
 
 nav.categorias-contenedor {
    position: absolute;
-   z-index: 500;
-   top: 100%;
+   z-index: 1000;
+   top: 0;
    left: 0;
 
    transform: translateY(-30%);
@@ -516,14 +522,14 @@ nav.categorias-contenedor {
    padding: 0 8%;
    background-color: var(--verde-fondo);
 
-   transition: 0.5s cubic-bezier(1, -0.03, 0.33, 0.87);
+   box-shadow: 0px 0px 1rem #333;transition: 0.5s cubic-bezier(1, -0.03, 0.33, 0.87);
    transition-property: opacity, visibility, transform;
 }
 nav.categorias-contenedor.show {
    opacity: 1;
    visibility: visible;
    transform: translateY(0);
-}
+box-shadow: 0 0 2rem 1rem #444;}
 nav.categorias-contenedor ul {
    display: grid;
    grid-template-columns: 1fr 1fr;
@@ -891,7 +897,6 @@ footer .copyright {
 
    /* ------- FOOTER ------- */
    footer {
-      padding-top: 6rem;
       /* box-shadow: inset 0 0.5rem 3rem rgba(0, 0, 0, 0.3); */
    }
 

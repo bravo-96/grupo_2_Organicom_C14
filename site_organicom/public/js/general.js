@@ -1,11 +1,9 @@
 // ------ Heder & Footer ------
 const btnMenu = document.querySelector('.btn-menu');
-const navContenedor = document.querySelector('.categorias-contenedor');
-const contendorLoginRegister = document.querySelector(
-   '.contendor-login-register'
-);
 const btnBuscar = document.querySelector('.btn-buscar');
+const navContenedor = document.querySelector('.categorias-contenedor');
 const barraBusqueda = document.querySelector('.barra-busqueda');
+const modalBgMenu = document.querySelector('.modalBgMenu');
 
 const listaLinksCategorias = document.querySelectorAll('.link-categoria');
 const imgFondo = document.querySelectorAll(
@@ -13,8 +11,18 @@ const imgFondo = document.querySelectorAll(
 );
 
 btnMenu.addEventListener('click', () => {
-   navContenedor.classList.toggle('show');
-   btnMenu.classList.toggle('active');
+   navContenedor.classList.add('show');
+   btnMenu.classList.add('active');
+   document.body.classList.add('modal-open');
+   modalBgMenu.style.display = 'block';
+   modalBgMenu.style.position = 'fixed';
+});
+
+modalBgMenu.addEventListener('click', () => {
+   navContenedor.classList.remove('show');
+   btnMenu.classList.remove('active');
+   document.body.classList.remove('modal-open');
+   modalBgMenu.style.display = 'none';
 });
 
 btnBuscar.addEventListener('click', () => {

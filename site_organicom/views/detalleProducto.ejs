@@ -14,45 +14,6 @@
 
 <body class="detalle">
 
-
-
-   <!-- <section id="image-carousel" class="splide" aria-label="Productos Recomendados">
-      <div class="splide__track">
-         <ul class="splide__list">
-            <li class="splide__slide splide__page">
-               <div class="card">
-                  <img src="/assets/img/default.png" alt="">
-               </div>
-               <div class="card">
-                  <img src="/assets/img/default.png" alt="">
-               </div>
-               <div class="card">
-                  <img src="/assets/img/default.png" alt="">
-               </div>
-               <div class="card">
-                  <img src="/assets/img/default.png" alt="">
-               </div>
-            </li>
-            <li class="splide__slide splide__page">
-               <div class="card">
-                  <img src="/assets/img/default.png" alt="">
-               </div>
-               <div class="card">
-                  <img src="/assets/img/default.png" alt="">
-               </div>
-               <div class="card">
-                  <img src="/assets/img/default.png" alt="">
-               </div>
-               <div class="card">
-                  <img src="/assets/img/default.png" alt="">
-               </div>
-            </li>
-         </ul>
-      </div>
-   </section> -->
-
-
-
    <%- include("./partials/login-lateral") %>
 
    <%- include("./partials/header") %>
@@ -62,16 +23,63 @@
    <!-- ------ Main ------ -->
 
    <main class="grid-princpial">
-      <section class="slider">
-         <div class="flecha-izq"></div>
-         <div class="flecha-der"></div>
-         <img class="producto-imagen-portada" src="/assets/img/producto-imagen-1.jpg" alt="">
-         <ul class="lista-imgs">
-            <li><img src="/assets/img/producto-imagen-1.jpg" alt></li>
-            <li><img src="/assets/img/producto-imagen-1.jpg" alt></li>
-            <li><img src="/assets/img/producto-imagen-1.jpg" alt></li>
-            <li><img src="/assets/img/producto-imagen-1.jpg" alt></li>
-         </ul>
+      <section class="slider-principal">
+
+         <section id="main-carousel" class="splide" aria-label="Galeria del producto">
+            <div class="splide__track">
+               <ul class="splide__list producto-imagen-portada">
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+               </ul>
+            </div>
+         </section>
+
+         <section id="thumbnail-carousel" class="splide" aria-label="Galeria del producto">
+            <div class="splide__track">
+               <ul class="splide__list lista-imgs">
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+               </ul>
+            </div>
+         </section>
       </section>
       <!-- ------------- -->
       <section class="detalle-producto">
@@ -437,81 +445,6 @@
                      </li>
                   </ul>
                </div>
-
-
-
-
-               <!-- <article class="card">
-                  <div class="card-header">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                     <div class="favorito"></div>
-                  </div>
-                  <div class="card-body">
-                     <a href="/products/detalleProducto">
-                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
-                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                        <p class="precio-final">$ 895,00</p>
-                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                     </a>
-                     <div class="botones">
-                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                     </div>
-                  </div>
-               </article>
-
-               <article class="card">
-                  <div class="card-header">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                     <div class="favorito"></div>
-                  </div>
-                  <div class="card-body">
-                     <a href="/products/detalleProducto">
-                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
-                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                        <p class="precio-final">$ 895,00</p>
-                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                     </a>
-                     <div class="botones">
-                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                     </div>
-                  </div>
-               </article>
-
-               <article class="card">
-                  <div class="card-header">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                     <div class="favorito"></div>
-                  </div>
-                  <div class="card-body">
-                     <a href="/products/detalleProducto">
-                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
-                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                        <p class="precio-final">$ 895,00</p>
-                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                     </a>
-                     <div class="botones">
-                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                     </div>
-                  </div>
-               </article>
-
-               <article class="card">
-                  <div class="card-header">
-                     <img src="/assets/img/producto-imagen-1.jpg" alt>
-                     <div class="favorito"></div>
-                  </div>
-                  <div class="card-body">
-                     <a href="/products/detalleProducto">
-                        <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
-                        <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span></p>
-                        <p class="precio-final">$ 895,00</p>
-                        <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
-                     </a>
-                     <div class="botones">
-                        <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
-                     </div>
-                  </div>
-               </article> -->
             </div>
          </div>
       </section>
