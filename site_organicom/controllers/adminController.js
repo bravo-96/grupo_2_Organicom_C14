@@ -59,8 +59,8 @@ module.exports = {
    },
    /* ----------------------no hice esto solo deje armado las cosas----------------- */
    editarProducto: (req, res) => {
-      let producto = getProductos.find(
-         (producto) => producto.id == req.params.id
+      let producto = productos.find(
+         (producto) => producto.id === +req.params.id
       );
       res.render('admin/editarProductos', {
          producto,
