@@ -1,19 +1,6 @@
-/////////////////////////////////////////////
-// ORSERVACION: Al hacer un require("") de un archivo JSON,
-//              automaticamente te lo parsea a codigo Javascript
 const productos = require('./data/productos.json');
-// la constante <producto> ya es un array javascript con objetos
 
 let { guardarProductos } = require('./data/dataFS');
-//REVISAR CONTROLLERS/DATA/DATAFS PARA ENTENDER
-
-//Si quieren cambiar nombres haganlo pero AVISEN --Alex <3
-
-//POR FALLAS, revisar el JSON
-
-// function adminProducts(req,res){
-//    return res.render("admin/adminProducts",{productos})
-// }
 
 module.exports = {
    /* trae los productos */
@@ -27,15 +14,6 @@ module.exports = {
    },
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => {
-      //    let lastId = 0;
-      //    getProductos.forEach(producto => {
-      //        if (producto.id > lastId) {
-      //            lastId = producto.id
-      //        }
-      //    });
-
-      // CAMBIO: Cambié el <lastId> por ( productos.length + 1 )
-
       let { nombre, precio, descripcion, descuento, categoria } = req.body;
 
       let nuevoProducto = {

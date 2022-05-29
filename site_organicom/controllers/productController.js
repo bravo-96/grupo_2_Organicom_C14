@@ -9,7 +9,6 @@ module.exports = {
       return res.render('detalleProducto', {
          producto,
       });
-      // return res.send(req.params);
    },
    carrito: (req, res, next) => {
       return res.render('carrito');
