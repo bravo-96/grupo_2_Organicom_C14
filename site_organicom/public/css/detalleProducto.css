@@ -555,7 +555,7 @@ main.grid-princpial {
 
 @media screen and (min-width: 480px) {
    .recomendados .splide__page {
-      gap: 1rem;
+      gap: 1.5rem 0.5rem;
       padding: 0.5rem;
    }
 
