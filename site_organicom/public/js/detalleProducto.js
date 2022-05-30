@@ -32,26 +32,26 @@ new Splide('#sliderRecomendados', {
    arrowPath: '0',
 }).mount();
 
-// thumbnail ----------------------------------
-document.addEventListener('DOMContentLoaded', function () {
-   const main = new Splide('#main-carousel', {
-      pagination: false,
-      arrowPath: '0',
-   });
+// // thumbnail ----------------------------------
+// document.addEventListener('DOMContentLoaded', function () {
+//    const main = new Splide('#main-carousel', {
+//       pagination: false,
+//       arrowPath: '0',
+//    });
 
-   const thumbnails = new Splide('#thumbnail-carousel', {
-      gap: 3,
-      drag: false,
-      perMove: 1,
-      perPage: 4,
-      // fixedWidth: 70,
-      focus: 'center',
-      arrows: false,
-      pagination: false,
-      isNavigation: true,
-   });
+//    const thumbnails = new Splide('#thumbnail-carousel', {
+//       gap: 3,
+//       drag: false,
+//       perMove: 1,
+//       perPage: 4,
+//       // fixedWidth: 70,
+//       focus: 'center',
+//       arrows: false,
+//       pagination: false,
+//       isNavigation: true,
+//    });
 
-   main.sync(thumbnails);
-   main.mount();
-   thumbnails.mount();
-});
+//    main.sync(thumbnails);
+//    main.mount();
+//    thumbnails.mount();
+// });

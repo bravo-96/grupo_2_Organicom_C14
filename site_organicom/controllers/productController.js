@@ -13,4 +13,16 @@ module.exports = {
    carrito: (req, res, next) => {
       return res.render('carrito');
    },
+   catFideosCereales: (req, res, next) => {
+      return res.render('categorias/fideos-cereales');
+   },
+   catFrutosSecos: (req, res, next) => {
+      return res.render('categorias/frutos-secos');
+   },
+   catInfusiones: (req, res, next) => {
+      return res.render('categorias/infusiones');
+   },
+   catJugosBebidas: (req, res, next) => {
+      return res.render('categorias/jugos-bebidas');
+   },
 };
