@@ -1,4 +1,5 @@
 const productos = require('./data/productos.json');
+const path = require('path');
 
 let { guardarProductos } = require('./data/dataFS');
 
@@ -14,9 +15,8 @@ module.exports = {
    },
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => {
-      let { nombre, precio, descripcion, descuento, categoria } = req.body;
-
-      let nuevoProducto = {
+      const { nombre, precio, descripcion, descuento, categoria } = req.body;
+      const nuevoProducto = {
          id: productos.length + 1,
          nombre,
          descuento,
@@ -26,8 +26,10 @@ module.exports = {
          ).toLocaleString(),
          categoria,
          descripcion,
-         imagen: 'default.png',
+         imagenPrincipal: req.file.filename,
+         listaImagenes: req.files,
       };
+
 
       productos.push(nuevoProducto);
       guardarProductos(productos);
@@ -37,7 +39,7 @@ module.exports = {
    },
    /* ----------------------no hice esto solo deje armado las cosas----------------- */
    editarProducto: (req, res) => {
-      let producto = productos.find(
+      const producto = productos.find(
          (producto) => producto.id === +req.params.id
       );
       res.render('admin/editarProductos', {

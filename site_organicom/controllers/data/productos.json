@@ -58,5 +58,15 @@
       "categoria": "fideos-cereales",
       "descripcion": "ajsdjajwdawdj",
       "imagen": "default.png"
+   },
+   {
+      "id": 7,
+      "nombre": "palmitos etc etcetc etcetc etcetc etc",
+      "descuento": "5",
+      "precioInicial": 400,
+      "precioFinal": "380",
+      "categoria": "fideos-cereales",
+      "descripcion": "awdawdawd",
+      "imagenPrincipal": "1653877628217_img_.jpg"
    }
 ]

@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
 // MULTER
 const multer = require('multer');
 const storage = multer.diskStorage({
-   destination: function (req, file, cb) {
-      cb(null, '../public/imgs/products_images');
+   destination: (req, file, cb) => {
+      cb(null, path.join(__dirname, '../public/imgs/products_images'));
    },
-   filename: function (req, file, cb) {
+   filename: (req, file, cb) => {
       cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);
    },
 });
@@ -33,7 +34,11 @@ router.get('/agregar', agregarProducto);
 
 /* POST carga los datos al formulario */
 // uso de multer en el formulario
-router.post('/agregarProducto', uploadFile.single("idDelInputDeSubida") ,create);
+router.post(
+   '/agregarProducto',
+   uploadFile.single('imgPrincipalProducto'),
+   create
+);
 
 router.get('/editar/:id', editarProducto);
 /* PUT actualiza los datos */
