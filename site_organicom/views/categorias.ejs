@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-   <%- include("../partials/head", {
+   <%- include("./partials/head", {
       title: "Fideos y Cereales"
    }) %>
 
@@ -10,9 +10,9 @@
 </head>
 
 <body>
-   <%- include("../partials/login-lateral") %>
-   <%- include("../partials/header") %>
-   <%- include("../partials/carrito-lateral") %>
+   <%- include("./partials/login-lateral") %>
+   <%- include("./partials/header") %>
+   <%- include("./partials/carrito-lateral") %>
 
    <main>
       <div class="hero-categoria">
@@ -20,7 +20,7 @@
       </div>
       <div class="grid-principal">
          <h1>Fideos y Cereales</h1>
-         <% productosFinales.forEach(producto => { %>
+         <% productoCategoria.forEach(producto => { %>
          <article class="card">
             <div class="card-header">
                <img src="/imgs/products_images/<%= producto.imagenPrincipal %> " alt>
@@ -49,7 +49,7 @@
       </div>
    </main>
 
-   <%- include("../partials/footer") %>
+   <%- include("./partials/footer") %>
 
    <script src="/js/general.js"></script>
 </body>
