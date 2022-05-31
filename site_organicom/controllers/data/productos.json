@@ -58,5 +58,61 @@
       "categoria": "fideos-cereales",
       "descripcion": "ajsdjajwdawdj",
       "imagen": "default.png"
+   },
+   {
+      "id": 7,
+      "nombre": "",
+      "descuento": "",
+      "precioInicial": null,
+      "precioFinal": "0",
+      "categoria": "fideos-cereales",
+      "descripcion": "",
+      "imagen": "default.png"
+   },
+   {
+      "id": 8,
+      "nombre": "fdsaf",
+      "descuento": "",
+      "precioInicial": null,
+      "precioFinal": "2341",
+      "categoria": "fideos-cereales",
+      "descripcion": "wqerwqeghsh",
+      "imagen": "default.png"
+   },
+   {
+      "id": 9,
+      "nombre": "laica",
+      "descuento": "10",
+      "precioInicial": 2000,
+      "precioFinal": "1800",
+      "categoria": "fideos-cereales",
+      "descripcion": "soy laica",
+      "imagen": "default.png"
+   },
+   {
+      "id": 10,
+      "nombre": "mainca",
+      "descuento": "25",
+      "precioInicial": 231423,
+      "precioFinal": "173.567",
+      "categoria": "frutos-secos",
+      "descripcion": "alalalalalala",
+      "imagen": "default.png"
+   },
+   {
+      "id": 11,
+      "precioInicial": null,
+      "precioFinal": "NaN",
+      "imagen": "default.png"
+   },
+   {
+      "id": 12,
+      "nombre": "prueba",
+      "descuento": "20",
+      "precioInicial": 2010,
+      "precioFinal": "1608",
+      "categoria": "frutos-secos",
+      "descripcion": "alalalalalalasaf",
+      "imagen": "1654038253897_img_.jpg"
    }
 ]

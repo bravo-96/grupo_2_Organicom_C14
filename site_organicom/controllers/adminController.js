@@ -36,7 +36,7 @@ module.exports = {
 
       // CAMBIO: Cambié el <lastId> por ( productos.length + 1 )
 
-      let { nombre, precio, descripcion, descuento, categoria } = req.body;
+      let { nombre, precio, descripcion, descuento, categoria} = req.body;
 
       let nuevoProducto = {
          id: productos.length + 1,
@@ -48,7 +48,7 @@ module.exports = {
          ).toLocaleString(),
          categoria,
          descripcion,
-         imagen: 'default.png',
+         imagen : req.file ? req.file.filename : "default.png",
       };
 
       productos.push(nuevoProducto);

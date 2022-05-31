@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 //Si quieren cambiar nombres haganlo pero AVISEN --Alex <3
+const multer = require("multer")
+let uploadFiles = require("../middleware/uploadFiles")
 
 let {adminProducts, agregarProducto, create, editarProducto, update} = require ("../controllers/adminController")
 
@@ -13,7 +15,7 @@ router.get("/",adminProducts);
 router.get("/agregar",agregarProducto)
 
 /* POST carga los datos al formulario */
-router.post("/agregarProducto",create)
+router.post("/agregarProducto",uploadFiles.single("imagen"),create)
 
 
 router.get("/editar/:id", editarProducto )

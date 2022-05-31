@@ -17,7 +17,7 @@
    <%- include("../partials/carrito-lateral") %>
 
    <main>
-      <form class="agregar-form" action="/adminProducts/agregarProducto" method="POST">
+      <form class="agregar-form" action="/adminProducts/agregarProducto" method="POST" enctype="multipart/form-data">
          <h1 class="titulo">Crear producto</h1>
          <div class="input-contenedor">
             <label for="nombre">Título del producto</label>
@@ -41,6 +41,10 @@
          <div class="input-contenedor">
             <label for="descripcion">Descripción</label>
             <input type="text" id="descripcion" name="descripcion" placeholder="Ponga una descripcion">
+         </div>
+         <div class="input-contenedor">
+            <label for="inputFile">insertar imagen</label>
+            <input type="file" id="inputFile" name="imagen">
          </div>
 
          <!-- <div class="register-main button-register">

@@ -2,8 +2,10 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 
+
 /* hacer npm i method-override - alex */
 const methodOverride = require("method-override");
+const multer = require ("multer")
 
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
