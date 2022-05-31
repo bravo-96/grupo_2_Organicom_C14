@@ -2,7 +2,7 @@
 
 main {
    padding: 1rem;
-   max-width: 800px;
+   max-width: 600px;
    margin: 0 auto;
 }
 
@@ -62,4 +62,23 @@ h1 .titulo {
    background-color: var(--amarillo);
    color: var(--verde);
    font-weight: bolder;
+}
+
+@media screen and (min-width: 596px) {
+   .agregar-form {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+
+   .agregar-form * {
+      grid-column: 1 / 4;
+   }
+   .agregar-form .precio {
+      grid-column: 1 / 2;
+   }
+   .agregar-form .descuento {
+      grid-column: 2 / 3;
+   }
+   .agregar-form .categoria {
+      grid-column: 3 / 4;
+   }
 }
