@@ -23,14 +23,19 @@
    <!-- ------ Main ------ -->
 
    <main class="grid-princpial">
+
+      <img src="/imgs/products_images/<%= producto.imagenPrincipal %> " alt=""
+         style="max-width: 400px; margin: 0 auto;display: block;">
+
+
       <!-- <section class="slider-principal">
 
          <section id="main-carousel" class="splide" aria-label="Galeria del producto">
             <div class="splide__track">
                <ul class="splide__list producto-imagen-portada">
-                  <li class="splide__slide"> -->
-                     <img src="/assets/img/producto-imagen-1.jpg" alt="" style="max-width: 400px;">
-                  <!-- </li>
+                  <li class="splide__slide"> 
+      <img src="/assets/img/producto-imagen-1.jpg" alt="" style="max-width: 400px;">-->
+      <!-- </li>
                   <li class="splide__slide">
                      <img src="/assets/img/default.png" alt="">
                   </li>
@@ -53,7 +58,7 @@
             </div>
          </section> -->
 
-         <!-- <section id="thumbnail-carousel" class="splide" aria-label="Galeria del producto">
+      <!-- <section id="thumbnail-carousel" class="splide" aria-label="Galeria del producto">
             <div class="splide__track">
                <ul class="splide__list lista-imgs">
                   <li class="splide__slide">
@@ -83,7 +88,7 @@
       </section>
       <!-- ------------- -->
       <section class="detalle-producto">
-         <p class="categoria">Categorias: <a href="">Bebidas</a></p>
+         <p class="categoria">Categorias: <a href=""><%= producto.categoria %> </a></p>
          <!-- <h1 class="titulo-producto">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h1> -->
          <h1 class="titulo-producto"><%= producto.nombre %></h1>
 
@@ -92,10 +97,13 @@
             <p class="favorito"><span>Agregar a favoritos</span><span class="icono"></span></p>
          </div>
          <div class="precio-contenedor">
-            <p class="precio-final">$ <%= producto.precioFinal %></p>
+            <p class="precio-final">$ <%= producto.precioFinal %>.00</p>
+            <% if (producto.descuento) { %>
             <p class="precio-inicial">
-               <span>$ <%= producto.precioInicial %></span> <span class="descuento"><%= producto.descuento %>% OFF!</span>
+               <span>$ <%= producto.precioInicial %></span> <span class="descuento"><%= producto.descuento %>%
+                  OFF!</span>
             </p>
+            <% } %>
          </div>
          <div class="cantidad">
             <label for="input-cantidad">¿Cuantos queres llevar?</label>
@@ -104,16 +112,6 @@
                <input type="text" max="100" id="input-cantidad" name="input-cantidad" value="1">
                <button type="button" class="suma">+</button>
             </div>
-            <!-- <select name="contidad-select" id="contidad-select">
-               <option value="1">1</option>
-               <option value="1">1</option>
-               <option value="2">2</option>
-               <option value="3">3</option>
-               <option value="4">4</option>
-               <option value="5">5</option>
-               <option value="10">10</option>
-               <option value="20">20</option>
-            </select> -->
          </div>
          <p>Métodos de pagos: </p>
          <ul class="lista-metodos-pago">
@@ -125,7 +123,12 @@
          </ul>
          <div class="btns-contenedor">
             <button type="button" class="btn-agregar-carrito">Agregar <span class="icono"></span></button>
-            <button type="button" class="btn-comprar-ahora">Comprar ahora</button>
+            <button type="button" class="btn-comprar-ahora">
+               <a href="/products/carrito">
+                  Comprar ahora
+               </a>
+            </button>
+
          </div>
       </section>
       <!-- ------------- -->

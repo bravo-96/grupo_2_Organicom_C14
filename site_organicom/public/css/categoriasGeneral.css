@@ -23,7 +23,9 @@
    -webkit-line-clamp: 2;
    -webkit-box-orient: vertical;
    color: #000;
-width: 90%;height: 30px;}
+   width: 90%;
+   height: 30px;
+}
 
 .card {
    box-shadow: 0 0 0.2rem var(--borde-gris-claro);
@@ -51,23 +53,25 @@ width: 90%;height: 30px;}
    display: block;
    margin: 0 auto;
    width: 50%;
-   height: 150px;object-fit: cover;padding: 1rem 0;
+   height: 150px;
+   object-fit: cover;
+   padding: 1rem 0;
 }
 
 .card-body {
    padding: 0.5rem;
    text-align: center;
 }
-.card-body a {
-   font-weight: initial;
+.card a {
    text-decoration: none;
-   color: var(--texto-gris);
 }
 
 .card-body .precio-inicial span:first-child {
    font-size: 0.8rem;
+   color: var(--texto-gris-claro);
    margin-bottom: 0;
 
+   font-weight: initial;
    text-decoration: line-through;
 }
 .card-body .precio-inicial .descuento {
@@ -92,6 +96,8 @@ width: 90%;height: 30px;}
 .card-body .precio-secundario {
    margin: 0 0 0.5rem;
    font-size: 0.8rem;
+   color: var(--texto-gris-claro);
+   font-weight: initial;
 }
 
 .card-body .btn-agregar {
@@ -124,8 +130,6 @@ width: 90%;height: 30px;}
 /* ------- TABLET ------- */
 @media screen and (min-width: 768px) {
    .card {
-      
-      
       transition: box-shadow 0.3s ease;
    }
    .card:hover {
