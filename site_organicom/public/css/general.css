@@ -794,7 +794,7 @@ footer .copyright {
    nav.categorias-contenedor ul {
       display: flex;
       flex-direction: column;
-      margin: 1rem 0 1rem 15%;
+      margin: 4rem 0 4rem 15%;
    }
    nav.categorias-contenedor a {
       font-size: 1.2rem;

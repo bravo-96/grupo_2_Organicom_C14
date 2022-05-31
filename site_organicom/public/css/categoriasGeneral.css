@@ -1,14 +1,58 @@
 @import 'general.css';
 
+.hero-categoria {
+   position: relative;
+   z-index: 200;
+   height: 40vh;
+   overflow: hidden;
+}
+
+.hero-categoria::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.8) 80%,
+      rgba(0, 0, 0, 1) 100%
+   );
+}
+
+.hero-categoria img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+h1 {
+   position: absolute;
+   top: -4rem;
+   width: 100%;
+   font-size: clamp(1.5rem, 5vw, 2.5rem);
+   margin: 0;
+   text-shadow: 0 0 1rem #000;
+   line-height: 1;
+   color: var(--texto-blanco);
+   text-align: center;
+}
+
 .grid-principal {
+   position: relative;
+   top: -20vh;
+   background-color: var(--fondo-blanco);
+   z-index: 250;
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(auto, 180px));
    justify-content: center;
    gap: 2rem;
 
+   width: 90%;
    max-width: 950px;
-   margin: 2rem auto;
-   padding: 0 1rem;
+   margin: 0 auto 2rem;
+   padding: 2rem;
+   border-radius: 1.5rem 1.5rem 0 0;
 }
 
 .card h3 {
