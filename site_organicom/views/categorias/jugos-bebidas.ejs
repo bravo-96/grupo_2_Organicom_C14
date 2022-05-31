@@ -14,7 +14,13 @@
    <%- include("../partials/header") %>
    <%- include("../partials/carrito-lateral") %>
 
-   <main>jugos</main>
+   <main>
+      <div class="grid-principal">
+         <% productosFinales.forEach(producto => { %>
+         <h1><%= producto.nombre %></h1>
+         <% }) %>
+      </div>
+   </main>
 
    <%- include("../partials/footer") %>
 

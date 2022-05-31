@@ -1,1 +1,166 @@
 @import 'general.css';
+
+.grid-principal {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(auto, 180px));
+   justify-content: center;
+   gap: 2rem;
+
+   max-width: 950px;
+   margin: 2rem auto;
+   padding: 0 1rem;
+}
+
+.card h3 {
+   font-size: 0.8rem;
+   margin: 0 auto 0.5rem;
+   letter-spacing: -0.3px;
+
+   line-height: 1.2;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   color: #000;
+width: 90%;height: 30px;}
+
+.card {
+   box-shadow: 0 0 0.2rem var(--borde-gris-claro);
+   border-radius: 0.5rem;
+   color: var(--texto-gris);
+   max-width: 200px;
+}
+.card-header {
+   position: relative;
+}
+.card-header .favorito {
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   width: 1.5rem;
+   height: 1.5rem;
+   cursor: pointer;
+   background: url(/assets/img/favorito-outline-icono.svg) no-repeat center;
+   background-size: contain;
+}
+.card-header .favorito.active {
+   background-image: url(/assets/img/favorito-solid-icono.svg);
+}
+.card-header img {
+   display: block;
+   margin: 0 auto;
+   width: 50%;
+   height: 150px;object-fit: cover;padding: 1rem 0;
+}
+
+.card-body {
+   padding: 0.5rem;
+   text-align: center;
+}
+.card-body a {
+   font-weight: initial;
+   text-decoration: none;
+   color: var(--texto-gris);
+}
+
+.card-body .precio-inicial span:first-child {
+   font-size: 0.8rem;
+   margin-bottom: 0;
+
+   text-decoration: line-through;
+}
+.card-body .precio-inicial .descuento {
+   background-color: var(--verde-fondo);
+   padding: 0.1rem 0.2rem;
+   font-weight: bolder;
+   color: var(--texto-blanco);
+   font-size: 0.7rem;
+}
+.card-body .precio-inicial {
+   margin: 0;
+   height: 20px;
+   line-height: 1;
+}
+.card-body .precio-final {
+   font-size: 1.3rem;
+   font-weight: bolder;
+   margin: 0.5rem 0;
+   color: var(--verde);
+   line-height: 1;
+}
+.card-body .precio-secundario {
+   margin: 0 0 0.5rem;
+   font-size: 0.8rem;
+}
+
+.card-body .btn-agregar {
+   background-color: var(--amarillo);
+   color: var(--verde);
+   font-weight: bolder;
+   font-size: 0.9rem;
+   padding: 0.6rem 0;
+   display: block;
+   margin: 0 auto;
+   border: none;
+   border-radius: 0.2rem;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   gap: 0.5rem;
+   cursor: pointer;
+}
+.card-body .btn-agregar .icono {
+   display: block;
+   background: url(/assets/img/carrito-icono.svg) no-repeat center;
+   background-size: contain;
+   width: 1rem;
+   height: 1rem;
+
+   filter: invert(28%) sepia(7%) saturate(5768%) hue-rotate(93deg)
+      brightness(98%) contrast(87%);
+}
+
+/* ------- TABLET ------- */
+@media screen and (min-width: 768px) {
+   .card {
+      
+      
+      transition: box-shadow 0.3s ease;
+   }
+   .card:hover {
+      box-shadow: 0 0 0.4rem rgba(34, 34, 34, 0.4);
+   }
+}
+
+/* ------- DESKTOP ------- */
+@media screen and (min-width: 1024px) {
+   .card-header .favorito::after {
+      content: 'Agregar favoritos';
+      position: absolute;
+      width: max-content;
+      right: 120%;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 0.3rem;
+      padding: 0.3rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      color: var(--verde);
+      font-weight: bolder;
+      transform: translateX(20%);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s ease;
+      z-index: 100;
+      transition-property: transform, visibility, opacity;
+   }
+   .card-header .favorito.active::after {
+      content: 'Quitar favoritos';
+   }
+   .card-header .favorito:hover::after {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      line-height: 1;
+   }
+}
