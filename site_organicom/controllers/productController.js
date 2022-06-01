@@ -10,33 +10,19 @@ module.exports = {
          producto,
       });
    },
+
    carrito: (req, res, next) => {
       return res.render('carrito');
    },
 
-   // Categorias
-   catFideosCereales: (req, res, next) => {
-      const productosFinales = productos.filter((producto) => {
-         return producto.categoria === 'fideos-cereales';
+   // Categoria
+   categoria: (req, res, next) => {
+      const productoCategoria = productos.filter((producto) => {
+         return producto.categoria === req.params.categoria;
       });
-      return res.render('categorias/fideos-cereales', { productosFinales });
-   },
-   catFrutosSecos: (req, res, next) => {
-      const productosFinales = productos.filter((producto) => {
-         return producto.categoria === 'frutos-secos';
+      return res.render('categorias', {
+         productoCategoria,
+         categoria: req.params.categoria,
       });
-      return res.render('categorias/frutos-secos', { productosFinales });
-   },
-   catInfusiones: (req, res, next) => {
-      const productosFinales = productos.filter((producto) => {
-         return producto.categoria === 'infusiones';
-      });
-      return res.render('categorias/infusiones', { productosFinales });
-   },
-   catJugosBebidas: (req, res, next) => {
-      const productosFinales = productos.filter((producto) => {
-         return producto.categoria === 'jugos-bebidas';
-      });
-      return res.render('categorias/jugos-bebidas', { productosFinales });
    },
 };

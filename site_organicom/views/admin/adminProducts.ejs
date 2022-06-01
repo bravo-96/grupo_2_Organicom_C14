@@ -31,21 +31,22 @@
             <article class="card">
                 <div class="card-header">
                     <!-- <img src="/assets/img/<%#= producto.imagen %>" alt> -->
-                    <img src="/imgs/products_images/<%= producto.imgPrincipalProducto%>"
-                        alt>
+                    <img src="/imgs/products_images/<%= producto.imgPrincipalProducto%>" alt>
                 </div>
                 <div class="card-body">
                     <h3><%= producto.nombre %></h3>
                     <p class="precio-inicial">
                         <% if (producto.descuento) { %>
-                        <span>$<%= producto.precioInicial %></span>
+                        <span>$<%= producto.precio %></span>
                         <span class="descuento">
                             <%= producto.descuento %>%OFF!
                         </span>
                         <% } %>
                     </p>
                     <p class="precio-final">
-                        $ <%= producto.precioFinal %>.00
+                        $ <%= producto.descuento ? 
+                            Math.trunc(+producto.precio - (+producto.precio * +producto.descuento / 100)) :
+                            Math.trunc(producto.precio) %>.00
                     </p>
                     <a href="" class="categoria"><%= producto.categoria %></a>
                     <div class="botones">

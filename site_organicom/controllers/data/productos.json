@@ -3,8 +3,7 @@
       "id": 1,
       "nombre": "Fideos Angel 300g",
       "descuento": "2",
-      "precioInicial": 160,
-      "precioFinal": "156",
+      "precio": "400",
       "categoria": "fideos-cereales",
       "descripcion": "Una descripcion",
       "imagenPrincipal": "1653954837867_img_.jpg"
@@ -13,8 +12,7 @@
       "id": 2,
       "nombre": "Fideos Molto 500g",
       "descuento": "",
-      "precioInicial": null,
-      "precioFinal": "190",
+      "precio": "500",
       "categoria": "fideos-cereales",
       "descripcion": "descripcion",
       "imagenPrincipal": "1653954961049_img_.jpg"
@@ -23,8 +21,7 @@
       "id": 3,
       "nombre": "Fideos Molto Tirabuz 500g",
       "descuento": "8",
-      "precioInicial": 200,
-      "precioFinal": "184",
+      "precio": "470",
       "categoria": "fideos-cereales",
       "descripcion": "Descripccion",
       "imagenPrincipal": "1653956301347_img_.jpg"
@@ -33,8 +30,7 @@
       "id": 4,
       "nombre": "Fideos Terrabusi Mostachol 450g",
       "descuento": "",
-      "precioInicial": null,
-      "precioFinal": "185",
+      "precio": "370",
       "categoria": "fideos-cereales",
       "descripcion": "awdawd",
       "imagenPrincipal": "1653956346467_img_.jpg"
@@ -43,8 +39,7 @@
       "id": 5,
       "nombre": "prueba2",
       "descuento": "19",
-      "precioInicial": 2000,
-      "precioFinal": "1620",
+      "precio": "440",
       "categoria": "jugos-bebidas",
       "descripcion": "rfsdafgasghfadstgeqrfesyht",
       "imagen": "1654042027044_img_.jpg"
@@ -53,8 +48,7 @@
       "id": 6,
       "nombre": "fideos-Molto",
       "descuento": "20",
-      "precioInicial": 2000,
-      "precioFinal": "1600",
+      "precio": "445",
       "categoria": "fideos-cereales",
       "descripcion": "wqrweqrwetwewgq",
       "imgPrincipalProducto": "1654042511376_img_.jpg"
