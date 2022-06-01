@@ -87,7 +87,6 @@
       <!-- ------------- -->
       <section class="detalle-producto">
          <p class="categoria">Categoria: <a href=""><%= producto.categoria %> </a></p>
-         <!-- <h1 class="titulo-producto">Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h1> -->
          <h1 class="titulo-producto"><%= producto.nombre %></h1>
 
          <div class="favorito-contenedor">
@@ -95,10 +94,15 @@
             <p class="favorito"><span>Agregar a favoritos</span><span class="icono"></span></p>
          </div>
          <div class="precio-contenedor">
-            <p class="precio-final">$ <%= producto.precioFinal %>.00</p>
+            <p class="precio-final">
+               $<%= producto.descuento ? 
+               Math.trunc(+producto.precio - (+producto.precio * +producto.descuento / 100)) :
+               Math.trunc(producto.precio) %>.00
+            </p>
+
             <% if (producto.descuento) { %>
             <p class="precio-inicial">
-               <span>$ <%= producto.precioInicial %></span> <span class="descuento"><%= producto.descuento %>%
+               <span>$ <%= producto.precio %></span> <span class="descuento"><%= producto.descuento %>%
                   OFF!</span>
             </p>
             <% } %>

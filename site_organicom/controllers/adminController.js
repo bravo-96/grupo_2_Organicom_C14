@@ -21,10 +21,7 @@ module.exports = {
          id: productos.length + 1,
          nombre,
          descuento,
-         precioInicial: descuento ? Math.trunc(precio) : null,
-         precioFinal: Math.trunc(
-            descuento ? precio - (precio * +descuento) / 100 : precio
-         ).toLocaleString(),
+         precio,
          categoria,
          descripcion,
          imgPrincipalProducto : req.file ? req.file.filename : "default.png",
