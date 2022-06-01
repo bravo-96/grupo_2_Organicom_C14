@@ -1,14 +1,5 @@
 [
    {
-      "id": 1,
-      "nombre": "Fideos Angel 300g",
-      "descuento": "2",
-      "precio": "400",
-      "categoria": "fideos-cereales",
-      "descripcion": "Una descripcion",
-      "imagenPrincipal": "1653954837867_img_.jpg"
-   },
-   {
       "id": 2,
       "nombre": "Fideos Molto 500g",
       "descuento": "",

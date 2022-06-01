@@ -45,7 +45,7 @@ module.exports = {
          precio,
          categoria,
          descripcion,
-         imagen : req.file ? req.file.filename : "default.png",
+         imgPrincipalProducto : req.file ? req.file.filename : "default.png",
       };
 
       productos.push(nuevoProducto);
@@ -54,7 +54,7 @@ module.exports = {
       res.redirect('/adminProducts');
       /*------------------ logica del subir un producto ------------------*/
    },
-   /* ----------------------no hice esto solo deje armado las cosas----------------- */
+   /* ----------------------consultas a Alex <3----------------- */
    editarProducto: (req, res) => {
       let producto = productos.find(
          (producto) => producto.id === +req.params.id
@@ -63,6 +63,34 @@ module.exports = {
          producto,
       });
    },
-   update: (req, res) => {},
-   /*----------------------- no hice esto solo deje armado las cosas---------------- */
+   update: (req, res) => {
+      let {nombre, descuento, precio, categoria, descripcion} = req.body
+      productos.forEach(producto =>{
+         if(producto.id === +req.params.id){
+            producto.id = producto.id,
+            producto.nombre = nombre,
+            producto.descuento = descuento,
+            producto.precio = precio,
+            producto.categoria = categoria,
+            producto.descripcion = descripcion,
+            producto.imgPrincipalProducto = req.file ? req.file.filename : producto.imgPrincipalProducto
+         }
+      });
+      
+      guardarProductos(productos);
+
+      res.redirect('/adminProducts');
+   },
+   borrar : (req, res)=>{
+      productos.forEach(producto =>{
+         if(producto.id === +req.params.id){
+            let productoBorrar = productos.indexOf(producto);
+            productos.splice(productoBorrar, 1);
+         }
+      });
+      guardarProductos(productos);
+
+      res.redirect('/adminProducts');
+   }
+   /*-----------------------consultas a Alex <3---------------- */
 };

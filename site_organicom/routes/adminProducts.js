@@ -13,6 +13,7 @@ let {
    create,
    editarProducto,
    update,
+   borrar
 } = require('../controllers/adminController');
 
 //POR FALLAS, MIRAR EN CONTROLLERS
@@ -32,6 +33,12 @@ router.post(
 
 router.get('/editar/:id', editarProducto);
 /* PUT actualiza los datos */
-router.put('/editarProducto/:id', update);
+
+router.put(
+    '/editarProducto/:id',
+    uploadFiles.single('imgPrincipalProducto'),
+    update);
+
+router.delete("/delete/:id", borrar)
 
 module.exports = router;
