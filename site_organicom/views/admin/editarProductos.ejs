@@ -19,11 +19,11 @@
             <p class="card-text"><%= producto.descripcion %> </p>
         </div> -->
 
-        <form class="editar-form" action="/adminProducts/editar/<%= producto.id %>" method="">
+        <form class="editar-form" action="/adminProducts/editar/<%= producto.id %>?_method=put" method="POST" enctype="multipart/form-data">
 
             <div class="input-contenedor">
                 <label for="imgs-producto">Subir imágen principal del producto (solo una)</label>
-                <input type="file" id="imgPrincipalProducto" name="imgPrincipalProducto" accept="image/*">
+                <input type="file" id="imgPrincipalProducto" name="imgPrincipalProducto" accept="image/*" value="<%= producto.imgPrincipalProducto %>">
             </div>
             <!-- <div class="input-contenedor">
                 <label for="imgs-producto">Subir más imágenes del producto (pueden ser varias)</label>
@@ -36,13 +36,11 @@
             </div>
             <div class="input-contenedor precio">
                 <label for="numer">Precio</label>
-                <input type="number" id="precio" name="precio" placeholder="ej: 150" method="POST" min="1" value="<%= producto.precioInicial ? 
-                                producto.precioInicial : 
-                                +producto.precioFinal %>" />
+                <input type="number" id="precio" name="precio" placeholder="ej: 150"  min="1" value="<%= producto.precio %>" />
             </div>
             <div class="input-contenedor descuento">
                 <label for="numer">Descuento en %</label>
-                <input type="number" id="descuento" name="descuento" placeholder="ej.: 15" method="POST">
+                <input type="number" id="descuento" name="descuento" placeholder="ej.: 15" value="<%= producto.descuento %>">
             </div>
             <div class="input-contenedor categoria">
                 <label for="categoria">Seleccione la categoria</label>
@@ -77,9 +75,14 @@
                 <textarea name="descripcion" id="descripcion" cols="30" rows="10"
                     placeholder="Escriba una descripcion del producto"><%= producto.descripcion %></textarea>
             </div>
-
+            
             <div class="input-contenedor button-agregar">
                 <button type="submit">Guardar Cambios</button>
+            </div>    
+        </form>
+        <form action="/adminProducts/delete/<%= producto.id %>?_method=DELETE" method="POST">
+            <div class="input-contenedor">
+                <button type="submit">Eliminar producto</button>
             </div>
         </form>
     </main>
