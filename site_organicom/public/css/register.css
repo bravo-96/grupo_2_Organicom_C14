@@ -7,9 +7,6 @@
    max-width: 470px;
    background-color: var(--fondo-pagina);
 }
-.register-form .encabezado {
-   /* font-size: 0.9rem; */
-}
 .register-form .titulo {
    font-size: 1.5rem;
    margin: 1rem 0;
@@ -88,7 +85,7 @@
       z-index: 100;
       padding: 1.5rem 1rem;
       width: 100%;
-      margin: 2rem 10% 2rem auto;
+      margin: 2rem auto 2rem 10%;
 
       max-width: 420px;
       background-color: var(--fondo-pagina);

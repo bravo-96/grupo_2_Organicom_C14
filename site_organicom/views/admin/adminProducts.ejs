@@ -8,7 +8,7 @@
 <head>
     <%- include("../partials/head", {title: "Crear producto"}) %>
 
-    <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="/css/admin/adminProducts.css">
     <!-- <title>Admin | crear producto</title>    -->
 
@@ -16,15 +16,12 @@
 
 <body>
     <%- include("../partials/login-lateral") %>
-
     <%- include("../partials/header") %>
-
     <%- include("../partials/carrito-lateral") %>
-
-    <button><a href="/adminProducts/agregar">Nuevo Producto</a></button>
 
     <!-- copiado del index-->
     <main>
+        <a class="btn-agregar-nuevo" href="/adminProducts/agregar">Nuevo Producto</a>
 
         <div class="lista-productos-grid">
             <!-- recorre el archivo productos.json ubicado en /controllers/data -->
@@ -33,20 +30,22 @@
             <!-- Trae todos los productos -->
             <article class="card">
                 <div class="card-header">
-                    <img src="/assets/img/<%= producto.imagen %>" alt>
+                    <!-- <img src="/assets/img/<%#= producto.imagen %>" alt> -->
+                    <img src="/imgs/products_images/<%= producto.imgPrincipalProducto%>"
+                        alt>
                 </div>
                 <div class="card-body">
                     <h3><%= producto.nombre %></h3>
                     <p class="precio-inicial">
                         <% if (producto.descuento) { %>
-                        <span><%= producto.precioInicial %></span>
+                        <span>$<%= producto.precioInicial %></span>
                         <span class="descuento">
                             <%= producto.descuento %>%OFF!
                         </span>
                         <% } %>
                     </p>
                     <p class="precio-final">
-                        $ <%= producto.precioFinal %>
+                        $ <%= producto.precioFinal %>.00
                     </p>
                     <a href="" class="categoria"><%= producto.categoria %></a>
                     <div class="botones">

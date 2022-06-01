@@ -1,62 +1,62 @@
 [
    {
       "id": 1,
-      "nombre": "Fideo Molto",
-      "descuento": "15",
-      "precioInicial": "600",
-      "precioFinal": "510",
+      "nombre": "Fideos Angel 300g",
+      "descuento": "2",
+      "precioInicial": 160,
+      "precioFinal": "156",
       "categoria": "fideos-cereales",
-      "descripcion": "mostachol",
-      "imagen": "Fideo-Molto.jpg"
+      "descripcion": "Una descripcion",
+      "imagenPrincipal": "1653954837867_img_.jpg"
    },
    {
       "id": 2,
-      "nombre": "Fideo Molto",
-      "descuento": "15",
-      "precioInicial": "600",
-      "precioFinal": "510",
+      "nombre": "Fideos Molto 500g",
+      "descuento": "",
+      "precioInicial": null,
+      "precioFinal": "190",
       "categoria": "fideos-cereales",
-      "descripcion": "tirabuzon",
-      "imagen": "Fideos-Molto-Tirabuzon.jpg"
+      "descripcion": "descripcion",
+      "imagenPrincipal": "1653954961049_img_.jpg"
    },
    {
       "id": 3,
-      "nombre": "Fideo Fulano",
-      "descuento": "15",
-      "precioInicial": "600",
-      "precioFinal": "510",
+      "nombre": "Fideos Molto Tirabuz 500g",
+      "descuento": "8",
+      "precioInicial": 200,
+      "precioFinal": "184",
       "categoria": "fideos-cereales",
-      "descripcion": "Cabello de Angel",
-      "imagen": "fideos-angel.jpg"
+      "descripcion": "Descripccion",
+      "imagenPrincipal": "1653956301347_img_.jpg"
    },
    {
       "id": 4,
-      "nombre": "Fideo Terrabusi",
+      "nombre": "Fideos Terrabusi Mostachol 450g",
       "descuento": "",
       "precioInicial": null,
-      "precioFinal": "400",
+      "precioFinal": "185",
       "categoria": "fideos-cereales",
-      "descripcion": "mostachol",
-      "imagen": "terrabusi-mostachol.jpg"
+      "descripcion": "awdawd",
+      "imagenPrincipal": "1653956346467_img_.jpg"
    },
    {
       "id": 5,
-      "nombre": "Titulo del producto",
-      "descuento": "",
-      "precioInicial": null,
-      "precioFinal": "860",
-      "categoria": "fideos-cereales",
-      "descripcion": "Descriocon del producot",
-      "imagen": "default.png"
+      "nombre": "prueba2",
+      "descuento": "19",
+      "precioInicial": 2000,
+      "precioFinal": "1620",
+      "categoria": "jugos-bebidas",
+      "descripcion": "rfsdafgasghfadstgeqrfesyht",
+      "imagen": "1654042027044_img_.jpg"
    },
    {
       "id": 6,
-      "nombre": "Nombre prodcuto",
-      "descuento": "8",
-      "precioInicial": 1200,
-      "precioFinal": "1.104",
+      "nombre": "fideos-Molto",
+      "descuento": "20",
+      "precioInicial": 2000,
+      "precioFinal": "1600",
       "categoria": "fideos-cereales",
-      "descripcion": "ajsdjajwdawdj",
-      "imagen": "default.png"
+      "descripcion": "wqrweqrwetwewgq",
+      "imgPrincipalProducto": "1654042511376_img_.jpg"
    }
 ]

@@ -13,12 +13,7 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
-
-//--------------------Parte puesta por alex------------Si hay errores, mirar en el router---------
-
-const adminProductsRouter = require("./routes/adminProducts");
-
-//--------------------Cambiar nombres si se hace mas comodo---------------------------------------
+const adminProductsRouter = require('./routes/adminProducts');
 
 const app = express();
 
@@ -26,14 +21,13 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 /* agrege el app.use -alex*/
-app.use(methodOverride("_method"))
+app.use(methodOverride('_method'));
 /* agrege el app.use -alex*/
 
 // Capeta public
@@ -44,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use("/adminProducts", adminProductsRouter);
+app.use('/adminProducts', adminProductsRouter);
 
 /*
 app.get('/', (req, res) =>

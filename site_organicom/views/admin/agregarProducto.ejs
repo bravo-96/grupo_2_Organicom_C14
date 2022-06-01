@@ -4,9 +4,8 @@
 <head>
    <%- include("../partials/head", {title: "Agregar Producto"}) %>
 
+   <!-- <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script> -->
    <link rel="stylesheet" href="/css/admin/agregarProducto.css">
-   <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
-   <title>Agregar Producto</title>
 </head>
 
 <body>
@@ -17,45 +16,50 @@
    <%- include("../partials/carrito-lateral") %>
 
    <main>
+      <h1 class="titulo">Crear producto</h1>
+
       <form class="agregar-form" action="/adminProducts/agregarProducto" method="POST" enctype="multipart/form-data">
-         <h1 class="titulo">Crear producto</h1>
+
+
+         <div class="input-contenedor">
+            <label for="imgs-producto">Subir imágen principal del producto (solo una)</label>
+            <input type="file" id="imgPrincipalProducto" name="imgPrincipalProducto" accept="image/*">
+         </div>
+         <!-- <div class="input-contenedor">
+            <label for="imgs-producto">Subir más imágenes del producto (pueden ser varias)</label>
+            <input type="file" id="listaImagenesProducto" name="listaImagenesProducto" accept="image/*" multiple>
+         </div> -->
          <div class="input-contenedor">
             <label for="nombre">Título del producto</label>
             <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto">
          </div>
-         <div class="input-contenedor">
+         <div class="input-contenedor precio">
             <label for="numer">Precio</label>
-            <input type="number" id="precio" name="precio" placeholder="ej: 150" method="POST">
+            <input type="number" id="precio" name="precio" placeholder="ej: 150" method="POST" min="1">
          </div>
-         <div class="input-contenedor">
+         <div class="input-contenedor descuento">
             <label for="numer">Descuento en %</label>
             <input type="number" id="descuento" name="descuento" placeholder="ej.: 15" method="POST">
          </div>
-         <select name="categoria" id="categoria">
-            <option value="fideos-cereales">Fideos y Cereales</option>
-            <option value="frutos-secos">Frutos secos</option>
-            <option value="jugos-bebidas">Jugos y Bebidas</option>
-            <option value="infusiones">Infusiones</option>
-         </select>
+         <div class="input-contenedor categoria">
+            <label for="categoria">Seleccione la categoria</label>
+            <select name="categoria" id="categoria">
+               <option value="fideos-cereales">Fideos y Cereales</option>
+               <option value="frutos-secos">Frutos secos</option>
+               <option value="jugos-bebidas">Jugos y Bebidas</option>
+               <option value="infusiones">Infusiones</option>
+            </select>
          </div>
          <div class="input-contenedor">
             <label for="descripcion">Descripción</label>
-            <input type="text" id="descripcion" name="descripcion" placeholder="Ponga una descripcion">
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10"
+               placeholder="Escriba una descripcion del producto"></textarea>
          </div>
-         <div class="input-contenedor">
+       <!--   <div class="input-contenedor">
             <label for="inputFile">insertar imagen</label>
             <input type="file" id="inputFile" name="imagen">
-         </div>
-
-         <!-- <div class="register-main button-register">
-            <button type="submit">
-               <a href="/adminProducts/agregarProducto">Agregar</a>
-            </button>
          </div> -->
 
-         <!-- ORSERVACION: Cuando un <button> o un <input> son de tipo "submit" y estan dentro de un <form>
-                           no es necesario especificar la ruta a la cual se envian los datos, 
-                           en el <form action="/ruta/"> ya se especificó -->
          <div class="input-contenedor button-agregar">
             <button type="submit">Agregar</button>
          </div>

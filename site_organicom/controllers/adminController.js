@@ -1,19 +1,8 @@
-/////////////////////////////////////////////
-// ORSERVACION: Al hacer un require("") de un archivo JSON,
-//              automaticamente te lo parsea a codigo Javascript
 const productos = require('./data/productos.json');
-// la constante <producto> ya es un array javascript con objetos
+const path = require('path');
 
 let { guardarProductos } = require('./data/dataFS');
-//REVISAR CONTROLLERS/DATA/DATAFS PARA ENTENDER
-
-//Si quieren cambiar nombres haganlo pero AVISEN --Alex <3
-
-//POR FALLAS, revisar el JSON
-
-// function adminProducts(req,res){
-//    return res.render("admin/adminProducts",{productos})
-// }
+let uploadFiles = require ("../middleware/uploadFiles")
 
 module.exports = {
    /* trae los productos */
@@ -27,18 +16,8 @@ module.exports = {
    },
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => {
-      //    let lastId = 0;
-      //    getProductos.forEach(producto => {
-      //        if (producto.id > lastId) {
-      //            lastId = producto.id
-      //        }
-      //    });
-
-      // CAMBIO: Cambié el <lastId> por ( productos.length + 1 )
-
-      let { nombre, precio, descripcion, descuento, categoria} = req.body;
-
-      let nuevoProducto = {
+      const { nombre, precio, descripcion, descuento, categoria } = req.body;
+      const nuevoProducto = {
          id: productos.length + 1,
          nombre,
          descuento,
@@ -48,8 +27,9 @@ module.exports = {
          ).toLocaleString(),
          categoria,
          descripcion,
-         imagen : req.file ? req.file.filename : "default.png",
+         imgPrincipalProducto : req.file ? req.file.filename : "default.png",
       };
+
 
       productos.push(nuevoProducto);
       guardarProductos(productos);
@@ -59,7 +39,7 @@ module.exports = {
    },
    /* ----------------------no hice esto solo deje armado las cosas----------------- */
    editarProducto: (req, res) => {
-      let producto = productos.find(
+      const producto = productos.find(
          (producto) => producto.id === +req.params.id
       );
       res.render('admin/editarProductos', {

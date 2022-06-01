@@ -136,3 +136,12 @@ function modificarCantidad(op, e) {
    }
    cantidadInput.value = +cantidadInput.value < 1 ? 1 : cantidadInput.value;
 }
+
+// Icono favorito card
+const cardIconosFav = document.querySelectorAll(' .card-header .favorito');
+
+cardIconosFav.forEach((elm) => {
+   elm.addEventListener('click', () => {
+      elm.classList.toggle('active');
+   });
+});

@@ -8,10 +8,10 @@ main.grid-princpial {
 /* ------- SLIDER PRODUCTO ------- */
 
 #thumbnail-carousel .splide__slide {
-   filter: opacity(0.8) brightness(0.3);
+   filter: brightness(0.7);
 }
 #thumbnail-carousel .splide__slide.is-active {
-   filter: opacity(1) brightness(1);
+   filter: brightness(1);
 }
 
 .slider-principal .splide__arrow {
@@ -111,12 +111,19 @@ main.grid-princpial {
    max-width: 500px;
    margin: 0 auto 2rem;
 }
+
+.detalle-producto a {
+   text-decoration: none;
+}
+
+.detalle-producto a {
+}
 .detalle-producto .categoria {
    font-size: 0.9rem;
    margin: 0;
 }
 .detalle-producto h1 {
-   font-size: 1.1rem;
+   font-size: 1.3rem;
    margin: 0.5rem 0;
 
    color: #000;
@@ -168,7 +175,7 @@ main.grid-princpial {
    margin: 2.5rem 0 0;
 }
 .precio-contenedor .precio-final {
-   font-size: 1.6rem;
+   font-size: 2.3rem;
    color: var(--verde);
    font-weight: bolder;
    margin: 0;
@@ -178,11 +185,11 @@ main.grid-princpial {
 }
 .precio-contenedor .precio-inicial span:first-child {
    color: var(--texto-gris);
-   font-size: 0.9rem;
+   font-size: 1rem;
    text-decoration: line-through;
 }
 .precio-contenedor .precio-inicial .descuento {
-   font-size: 0.9rem;
+   font-size: 1.1rem;
    font-weight: bolder;
    line-height: 1;
    background-color: var(--verde);
@@ -555,7 +562,7 @@ main.grid-princpial {
 
 @media screen and (min-width: 480px) {
    .recomendados .splide__page {
-      gap: 1rem;
+      gap: 1.5rem 0.5rem;
       padding: 0.5rem;
    }
 
@@ -626,9 +633,6 @@ main.grid-princpial {
    .detalle-producto .btns-contenedor button:hover {
       box-shadow: 0 0 0.3rem #666;
    }
-   .detalle-producto .precio-final {
-      font-size: 1.8rem;
-   }
    .detalle-producto .precio-inicial span:first-child {
       font-size: 1rem;
    }
@@ -671,7 +675,7 @@ main.grid-princpial {
    .recomendados .slider {
       display: flex;
       margin: 1rem 0 0;
-      max-width: 330px;
+      max-width: 300px;
       justify-self: end;
    }
    .recomendados .card {
@@ -689,7 +693,7 @@ main.grid-princpial {
    main.grid-princpial {
       max-width: 1100px;
       margin: 3rem auto;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr 1fr;
       row-gap: 4rem;
    }
 
@@ -729,7 +733,7 @@ main.grid-princpial {
    }
 
    .recomendados .slider {
-      max-width: 400px;
+      max-width: 380px;
    }
    .recomendados .card-header .favorito::after {
       content: 'Agregar favoritos';
