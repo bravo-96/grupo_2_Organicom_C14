@@ -2,6 +2,7 @@ const productos = require('./data/productos.json');
 const path = require('path');
 
 let { guardarProductos } = require('./data/dataFS');
+let uploadFiles = require ("../middleware/uploadFiles")
 
 module.exports = {
    /* trae los productos */
@@ -26,8 +27,7 @@ module.exports = {
          ).toLocaleString(),
          categoria,
          descripcion,
-         imagenPrincipal: req.file.filename,
-         listaImagenes: req.files,
+         imgPrincipalProducto : req.file ? req.file.filename : "default.png",
       };
 
 

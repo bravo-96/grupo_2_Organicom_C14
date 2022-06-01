@@ -38,5 +38,25 @@
       "categoria": "fideos-cereales",
       "descripcion": "awdawd",
       "imagenPrincipal": "1653956346467_img_.jpg"
+   },
+   {
+      "id": 5,
+      "nombre": "prueba2",
+      "descuento": "19",
+      "precioInicial": 2000,
+      "precioFinal": "1620",
+      "categoria": "jugos-bebidas",
+      "descripcion": "rfsdafgasghfadstgeqrfesyht",
+      "imagen": "1654042027044_img_.jpg"
+   },
+   {
+      "id": 6,
+      "nombre": "fideos-Molto",
+      "descuento": "20",
+      "precioInicial": 2000,
+      "precioFinal": "1600",
+      "categoria": "fideos-cereales",
+      "descripcion": "wqrweqrwetwewgq",
+      "imgPrincipalProducto": "1654042511376_img_.jpg"
    }
 ]

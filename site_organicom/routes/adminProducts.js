@@ -2,20 +2,10 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-// MULTER
-const multer = require('multer');
-const storage = multer.diskStorage({
-   destination: (req, file, cb) => {
-      cb(null, path.join(__dirname, '../public/imgs/products_images'));
-   },
-   filename: (req, file, cb) => {
-      cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);
-   },
-});
-const uploadFile = multer({ storage });
-//--------------------------------------
 
 //Si quieren cambiar nombres haganlo pero AVISEN --Alex <3
+const multer = require("multer")
+let uploadFiles = require("../middleware/uploadFiles")
 
 let {
    adminProducts,
@@ -36,7 +26,7 @@ router.get('/agregar', agregarProducto);
 // uso de multer en el formulario
 router.post(
    '/agregarProducto',
-   uploadFile.single('imgPrincipalProducto'),
+   uploadFiles.single('imgPrincipalProducto'),
    create
 );
 
