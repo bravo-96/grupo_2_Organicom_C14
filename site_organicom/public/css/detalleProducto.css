@@ -55,7 +55,7 @@ main.grid-princpial {
    display: none;
 }
 
-.slider-principal .flecha-izq,
+/* .slider-principal .flecha-izq,
 .slider-principal .flecha-der {
    position: absolute;
    background-color: var(--verde);
@@ -92,7 +92,7 @@ main.grid-princpial {
 }
 .slider-principal .flecha-der::before {
    transform: translate(10%, 0%);
-}
+} */
 
 .slider-principal .producto-imagen-portada img {
    display: block;

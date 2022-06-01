@@ -2,11 +2,10 @@
 <html lang="es">
 
 <head>
-   <%- include("./partials/head", {title: "Inicio"}) %>
+   <%- include("./partials/head", {title: "Bienvenido"}) %>
 
-   <script src="https://kit.fontawesome.com/2086e27e93.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/css/splide-core.min.css">
    <link rel="stylesheet" href="/css/home.css">
-
 </head>
 
 <body>
@@ -17,116 +16,97 @@
    <%- include("./partials/carrito-lateral") %>
 
    <main>
-      <!-- <section class="banner">
-         <h1>Comsume organico</h1>
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat cumque quae vel atque labore quam
-            reiciendis, ad mollitia enim, aut dolore quidem animi. Enim, amet error dolorem rem necessitatibus
-            perferendis?</p>
-         <button class="banner--button">Ver mas</button>
-         <img class="mockup" src="/assets/img/mockup.png" alt="">
-      </section> -->
+      <section class="populares">
+         <section id="popularesSlider" class="splide" aria-label="Productos populares">
+            <h2>Los más populares</h2>
+            <div class="splide__track">
+               <ul class="splide__list">
+                  <% for( let i = 0; i < 6; i++ ) { %>
+                  <li class="splide__slide">
+                     <article class="card">
+                        <div class="card-header">
+                           <img src="/imgs/products_images/<%=  productos[i].imagenPrincipal %> " alt>
+                           <div class="favorito"></div>
+                        </div>
+                        <div class="card-body">
+                           <a href="/products/detalleProducto/<%= productos[i].id %> ">
+                              <h3><%= productos[i].nombre %> </h3>
+                              <p class="precio-inicial">
+                                 <% if (productos[i].descuento) { %>
+                                 <span>$<%= productos[i].precio %></span>
+                                 <span class="descuento">
+                                    <%= productos[i].descuento %>%OFF!
+                                 </span>
+                                 <% } %>
+                              </p>
+                              <p class="precio-final">
+                                 $ <%= productos[i].descuento ? 
+                                             Math.trunc(+productos[i].precio - (+productos[i].precio * +productos[i].descuento / 100)) :
+                                             Math.trunc(productos[i].precio) %>.00
+                              </p>
+                              <!-- <p class="precio-secundario">$ <%= productos[i].precio %>.00 x 1Kg</p> -->
+                           </a>
+                           <div class="botones">
+                              <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                           </div>
+                        </div>
+                     </article>
+                  </li>
+                  <% } %>
 
-      <section class="banner">
-         <img class="flecha-izq-banner" src="/assets/img/flecha-blanco.svg" alt="">
-         <img class="flecha-der-banner" src="/assets/img/flecha-blanco.svg" alt="">
-
-         <picture>
-            <source media="(min-width:1024px)" srcset="/assets/img/banner-jugos-oferta-large.png">
-            <source media="(min-width:768px)" srcset="/assets/img/banner-jugos-oferta-medium.png">
-            <img src="/assets/img/banner-jugos-oferta-small.png" alt="">
-         </picture>
-      </section>
-
-      <section class=" carousel">
-         <div class="carousel--container  ">
-            <div class="a uno"></div>
-            <div class="a dos"></div>
-            <div class="a tres"></div>
-            <div class="a cuatro"></div>
-         </div>
-      </section>
-      <section class="carousel">
-         <div class="carousel--container  ">
-            <div class="a uno"></div>
-            <div class="a dos"></div>
-            <div class="a tres"></div>
-            <div class="a cuatro"></div>
-         </div>
-      </section>
-
-      <section class="masVendido ">
-         <h3>Lo mas vendido</h3>
-         <div class="carousel--container  card">
-            <div class="a uno"></div>
-            <div class="a dos"></div>
-            <div class="a tres"></div>
-            <div class="a cuatro"></div>
-         </div>
-      </section>
-      <section class="seguinos">
-         <p>Atencion al cliente : 0800-organic</p>
-         <p>Seguinos en </p>
-         <ul class="lista-redes seguinos--redes">
-            <li><a href="/" class="facebook"></a></li>
-            <li><a href="/" class="instagram"></a></li>
-            <li><a href="/" class="twitter"></a></li>
-         </ul>
-      </section>
-      <section class="descuento">
-         <article class="descuento--card">
-            <p>Descuento de algo</p>
-         </article>
-         <article class="descuento--card">
-            <p>Descuento de algo</p>
-         </article>
-      </section>
-      <section class="masVendido">
-         <h3>Ofertas</h3>
-         <div class="carousel--container  card">
-            <div class="a uno"></div>
-            <div class="a dos"></div>
-            <div class="a tres"></div>
-            <div class="a cuatro"></div>
-         </div>
-      </section>
-
-      <section class="contactanos">
-         <article class="contactanos--article">
-            <h4>Contactanos</h4>
-            <p class="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. illum quibusdam .</p>
-            <div class="contactanos--contacto">
-               <p>Teléfono</p>
-               <p>contacto@organicom.com.ar</p>
-               <p>Direccion</p>
-               <ul class="lista-redes">
-                  <li><a href="/" class="facebook"></a></li>
-                  <li><a href="/" class="instagram"></a></li>
-                  <li><a href="/" class="twitter"></a></li>
                </ul>
             </div>
-         </article>
-         <form class="formulario" action="/" method="post">
-            <ul>
-               <li>
-                  <input type="text" placeholder="Nombre" name="user_name">
-               </li>
-               <li>
-                  <input type="email" placeholder="E-mail" name="user_mail">
-               </li>
-               <li>
-                  <textarea class="msg" placeholder="Deje su mensaje" name="user_message"></textarea>
-               </li>
-               <button type="submit">Enviar</button>
-            </ul>
-
-         </form>
+         </section>
       </section>
+      <section class="ofertas">
+         <section id="ofertasSlider" class="splide" aria-label="Productos populares">
+            <h2>Últimas ofertas</h2>
+            <div class="splide__track">
+               <ul class="splide__list">
+                  <% for( let i = 0; i < 6; i++ ) { %>
+                  <li class="splide__slide">
+                     <article class="card">
+                        <div class="card-header">
+                           <img src="/imgs/products_images/<%=  productos[i].imagenPrincipal %> " alt>
+                           <div class="favorito"></div>
+                        </div>
+                        <div class="card-body">
+                           <a href="/products/detalleProducto/<%= productos[i].id %> ">
+                              <h3><%= productos[i].nombre %> </h3>
+                              <p class="precio-inicial">
+                                 <% if (productos[i].descuento) { %>
+                                 <span>$<%= productos[i].precio %></span>
+                                 <span class="descuento">
+                                    <%= productos[i].descuento %>%OFF!
+                                 </span>
+                                 <% } %>
+                              </p>
+                              <p class="precio-final">
+                                 $ <%= productos[i].descuento ? 
+                                             Math.trunc(+productos[i].precio - (+productos[i].precio * +productos[i].descuento / 100)) :
+                                             Math.trunc(productos[i].precio) %>.00
+                              </p>
+                              <!-- <p class="precio-secundario">$ <%= productos[i].precio %>.00 x 1Kg</p> -->
+                           </a>
+                           <div class="botones">
+                              <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                           </div>
+                        </div>
+                     </article>
+                  </li>
+                  <% } %>
 
+               </ul>
+            </div>
+         </section>
+      </section>
    </main>
 
    <%- include("./partials/footer") %>
 
+   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/js/splide.min.js"></script>
    <script src="/js/general.js"></script>
+   <script src="/js/home.js"></script>
 </body>
 
 </html>

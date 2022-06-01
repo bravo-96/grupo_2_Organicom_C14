@@ -1,345 +1,210 @@
 @import './general.css';
 
-.banner {
-   /* height: 75vh ; */
-   /* background: #121212; */
-   /* display: block; */
-   /* position: relative; */
-   /* color: var(--texto-blanco); */
-   /* justify-content: center; */
-   position: relative;
+.splide__track {
+   padding: 1rem;
+}
+.splide__arrow {
+   z-index: 200;
+   position: absolute;
+
+   top: 50%;
+
+   border: none;
+   width: 3rem;
+   height: 3rem;
+   border-radius: 50%;
+
+   display: block;
+   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
+   background-size: 0.8rem;
+
+   background-position-x: 1.2rem;
+   background-color: var(--verde-fondo);
+   box-shadow: 0 0 0.5rem #777;
+}
+.splide__arrows *[disabled] {
+   filter: brightness(15) grayscale(1);
 }
 
-.banner .flecha-izq-banner,
-.banner .flecha-der-banner {
-   width: 0.9rem;
-   position: absolute;
-   top: 50%;
-   right: 3%;
-   filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.4));
+.splide__arrow.splide__arrow--prev {
+   transform: translateY(-50%) rotate(180deg);
+   left: -0.9rem;
+   z-index: 200;
+}
+.splide__arrow.splide__arrow--next {
+   right: -0.9rem;
    transform: translateY(-50%);
 }
-.banner .flecha-izq-banner {
-   right: initial;
-   left: 3%;
-   transform: translateY(-50%) rotate(180deg);
+
+.card h3 {
+   font-size: 0.8rem;
+   margin: 0 auto 0.5rem;
+   width: 90%;
+   letter-spacing: -0.3px;
+
+   line-height: 1.2;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   color: #000;
+   height: 31px;
 }
 
-/* .banner .banner--button{
-  background: var(--amarilo);
-  border: none;
-  border-radius: 5px;
-  color: var(--verde);
-  cursor: pointer;
-  position: absolute;
-  left: 60%;
-  bottom: 40%;
-  width: 5em;
-  height: 2em;
-  z-index: 20;
-  transition: all 1.5s;
-} */
-/* .banner .banner--button:hover {
-   background: #ffca1d00;
-   border-right: 2px solid var(--verde);
-   border-bottom: 2px solid var(--verde);
-   color: var(--amarilo);
-} */
-.banner h1 {
-   margin: 0;
-   padding: 2rem;
-   color: var(--amarilo);
+.card {
+   box-shadow: 0 0 0.2rem var(--borde-gris-claro);
+   border-radius: 0.5rem;
+   color: var(--texto-gris);
+   max-width: 190px;
+   margin: 0 auto;
 }
-.banner p {
-   padding: 0 2rem;
+.card-header {
    position: relative;
-   z-index: 10;
 }
-.banner .mockup {
-   height: 250px;
-   width: 100%;
+.card-header .favorito {
    position: absolute;
-   bottom: 0.5rem;
-   right: 0;
-   opacity: 0.5;
+   top: 1rem;
+   right: 1rem;
+   width: 1.5rem;
+   height: 1.5rem;
+   cursor: pointer;
+   background: url(/assets/img/favorito-outline-icono.svg) no-repeat center;
+   background-size: contain;
 }
-
-.masVendido .card {
-   height: 200px;
-   margin: 25px 10%;
-   padding: 10px;
-   width: 80%;
-   border: 1px solid #88888886;
-   border-radius: 10px;
-   box-shadow: 5px 2px 10px 2px #888888bb;
+.card-header .favorito.active {
+   background-image: url(/assets/img/favorito-solid-icono.svg);
 }
-
-.masVendido .card .imgBox {
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-pack: center;
-   -ms-flex-pack: center;
-   justify-content: center;
-}
-
-.masVendido .card .imgBox img {
-   height: 80px;
-   width: 80px;
-   border-radius: 50%;
-   -o-object-fit: cover;
+.card-header img {
+   display: block;
+   margin: 0 auto;
+   width: 50%;
+   height: 160px;
    object-fit: cover;
+   padding: 1rem 0;
 }
 
-.masVendido .card .cardText {
-   margin-top: 5px;
-   font-size: 10px;
-   margin-bottom: 10px;
-}
-
-.seguinos {
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   padding: 10px;
-   margin-top: 20px;
-   justify-content: space-between;
-   align-items: center;
-   width: 100%;
-   height: 80px;
-   background-color: var(--verde);
-   font-size: 14px;
-}
-
-.seguinos p {
-   margin: 10px;
-   color: var(--crema);
-}
-
-.seguinos--redes {
-   display: flex;
-   gap: 10px;
-}
-.seguinos--redes .facebook {
-   animation: redes 3s infinite;
-}
-.seguinos--redes .instagram {
-   animation: redes 3s 0.3s infinite;
-}
-.seguinos--redes .twitter {
-   animation: redes 3s 0.5s infinite;
-}
-@keyframes redes {
-   0% {
-      transform: translateY(0px);
-   }
-   50% {
-      transform: translateY(15px);
-   }
-   100% {
-      transform: translateY(0px);
-   }
-}
-
-.carousel--container {
-   display: flex;
-   overflow: auto;
-   width: 100%;
-   height: 300px;
-   flex-flow: row nowrap;
-   margin-top: 20px;
-   scroll-snap-type: x mandatory;
-}
-.carousel--container .a {
-   width: 100%;
-   height: 100%;
-   text-align: center;
-   scroll-snap-align: center;
-   flex: none;
-   background-size: 100%;
-   background-repeat: no-repeat;
-}
-.carousel--container .uno {
-   background-image: url('/assets/img/frutasVerduras.jpg');
-}
-.carousel--container .dos {
-   background-image: url(/assets/img/cerealesfondo.jpg);
-}
-.carousel--container .tres {
-   background-image: url('/assets/img/jugos.webp');
-}
-.carousel--container .cuatro {
-   background-image: url('/assets/img/pastaseca.jpeg');
-}
-.descuento {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-}
-.descuento--card {
-   border-radius: 10px;
-   border: 1px solid var(--texto-gris);
-   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
-   height: 200px;
-   width: 300px;
-   margin: 20px 10px;
-   padding: 20% 0;
+.card-body {
+   padding: 0.5rem;
    text-align: center;
 }
-.contactanos {
-   height: 300px;
-   background: url(/assets/img/cerealesfondo.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   box-shadow: 130px 65px 35px rgba(0, 0, 0, 0.808) inset;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   margin-top: 20px;
-}
-.contactanos h4 {
-   color: var(--amarilo);
-   font-size: 1.5rem;
-}
-.contactanos .lorem {
-   width: 200px;
+.card-body a {
+   font-weight: initial;
+   text-decoration: none;
    color: var(--texto-gris);
 }
-.contactanos .lista-redes {
-   display: flex;
+
+.card-body .precio-inicial span:first-child {
+   font-size: 0.9rem;
+   margin-bottom: 0;
+
+   text-decoration: line-through;
 }
-.contactanos .lista-redes li {
-   padding: 1rem;
-}
-.contactanos--contacto {
-   margin-top: 20px;
+.card-body .precio-inicial .descuento {
+   background-color: var(--verde-fondo);
+   padding: 0.1rem 0.2rem;
+   font-weight: bolder;
    color: var(--texto-blanco);
-   font-size: 14px;
+   font-size: 0.9rem;
 }
-.contactanos--article {
-   width: 250px;
-   padding: 1rem;
-   background: #12121254;
+.card-body .precio-inicial {
+   margin: 0;
+   height: 22px;
 }
-
-.formulario {
-   background: #e8e8cc7c;
-   border-radius: 10px;
-   display: flex;
-   justify-content: space-evenly;
-   height: 200px;
-   font-size: 0.7rem;
-   width: 150px;
-}
-
-.formulario input {
-   width: 90%;
-   margin: 20px 5%;
-   border-radius: 5px;
-   border: none;
-   border-bottom: 2px solid var(--texto-gris);
-   background: none;
-}
-.formulario input:focus-within {
-   outline: none;
-}
-.formulario input::placeholder,
-.msg::placeholder {
-   color: var(--verde-fondo);
-}
-
-.formulario .msg {
-   width: 90%;
-   height: 2rem;
-   margin-left: 5%;
-   border-radius: 5px;
-   border: none;
-   background: none;
-   border-bottom: 2px solid var(--texto-gris);
-}
-.formulario .msg:focus-within {
-   outline: none;
-}
-.formulario button {
+.card-body .precio-final {
+   font-size: 1.4rem;
+   font-weight: bolder;
+   margin: 0.5rem 0;
    color: var(--verde);
-   width: 50%;
-   height: 1.5rem;
-   margin-left: 25%;
-   margin-top: 15px;
-   background: var(--amarilo);
+   line-height: 1;
+}
+.card-body .precio-secundario {
+   margin: 0 0 0.5rem;
+   font-size: 0.7rem;
+}
+
+.card-body .btn-agregar {
+   background-color: var(--amarillo);
+   color: var(--verde);
+   font-weight: bolder;
+   padding: 0.6rem 0;
+   display: block;
+   margin: 0 auto;
    border: none;
-   border-radius: 5px;
-   transition: all 0.5s;
+   border-radius: 0.2rem;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   gap: 0.5rem;
+   cursor: pointer;
 }
-.formulario button:hover {
-   background: #ffca1d00;
-   border-right: 2px solid var(--verde);
-   border-bottom: 2px solid var(--verde);
+.card-body .btn-agregar .icono {
+   display: block;
+   background: url(/assets/img/carrito-icono.svg) no-repeat center;
+   background-size: contain;
+   width: 1rem;
+   height: 1rem;
+
+   filter: invert(28%) sepia(7%) saturate(5768%) hue-rotate(93deg)
+      brightness(98%) contrast(87%);
 }
 
-@media (min-width: 768px) {
-   .header .header--nav {
-      height: 60px;
-   }
-   .banner {
-      /* padding-left: 20%; */
-   }
-   .banner h1 {
-      font-size: 42px;
-   }
-   .banner p {
-      width: 300px;
-   }
-   .banner .mockup {
-      height: 400px;
-      width: 100%;
-   }
-   .carousel {
-      height: 400px;
-   }
-   .carousel .carousel--container {
-      margin-top: 20px;
-   }
-   h3 {
-      font-size: 34px;
-   }
-   .masVendido {
-      height: 400px;
-   }
-   .masVendido .card {
-      height: 350px;
-   }
-   .seguinos {
-      height: 150px;
-      font-size: 24px;
-   }
-   .descuento .descuento--card {
-      height: 300px;
-      width: 500px;
-      margin: 10px 10px;
-      font-size: 34px;
-      padding: 30px;
-   }
+/* Populares, Ofertas */
+#popularesSlider,
+#ofertasSlider {
+   width: 90%;
+   max-width: 1100px;
+   margin: 0 auto 3rem;
+}
+.populares h2,
+.ofertas h2 {
+   font-size: 1.5rem;
+   color: var(--verde);
+   font-weight: bolder;
+   margin: 1rem 0 0 2rem;
+}
 
-   .formulario {
-      width: 200px;
-      height: 250px;
-      padding: 10px 0;
+/* ------- TABLET ------- */
+@media screen and (min-width: 768px) {
+   .card {
+      margin: 0 auto;
+      max-width: 180px;
+      height: 100%;
+      transition: box-shadow 0.3s ease;
    }
-   .contactanos h4 {
-      font-size: 38px;
+   .card:hover {
+      box-shadow: 0 0 0.4rem rgba(34, 34, 34, 0.4);
    }
+}
 
-   .formulario input {
-      height: 30px;
+/* ------- DESKTOP ------- */
+@media screen and (min-width: 1024px) {
+   .card-header .favorito::after {
+      content: 'Agregar favoritos';
+      position: absolute;
+      width: max-content;
+      right: 120%;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 0.3rem;
+      padding: 0.3rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      color: var(--verde);
+      font-weight: bolder;
+      transform: translateX(20%);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s ease;
+      z-index: 100;
+      transition-property: transform, visibility, opacity;
    }
-
-   .suscripcion--form input {
-      height: 40px;
+   .card-header .favorito.active::after {
+      content: 'Quitar favoritos';
    }
-   .suscripcion--form button {
-      width: 80px;
-      height: 30px;
-      font-size: 24px;
+   .card-header .favorito:hover::after {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      line-height: 1;
    }
 }
