@@ -14,13 +14,44 @@
    <%- include("./partials/header") %>
    <%- include("./partials/carrito-lateral") %>
 
+
+
+
+
+
    <main>
       <div class="hero-categoria">
+
+         <% if ( categoria === "fideos-cereales" ) { %>
+
          <img src="/assets/img/hero-fideos.webp" alt>
+
       </div>
       <div class="grid-principal">
          <h1>Fideos y Cereales</h1>
+         <% } else if (categoria === "frutos-secos") { %>
+         <img src="/assets/img/hero-frutos-secos.jpg" alt>
+
+      </div>
+      <div class="grid-principal">
+         <h1>Frutos secos</h1>
+         <% } else if (categoria === "jugos-bebidas") { %>
+         <img src="/assets/img/hero-jugos.jpg" alt>
+
+      </div>
+      <div class="grid-principal">
+         <h1>Jugos y Bebidas</h1>
+         <% } else if (categoria === "infusiones") { %>
+         <img src="/assets/img/hero-infusiones.jpg" alt>
+
+      </div>
+      <div class="grid-principal">
+         <h1>Infusiones</h1>
+         <% } %>
+
+
          <% productoCategoria.forEach(producto => { %>
+
          <article class="card">
             <div class="card-header">
                <img src="/imgs/products_images/<%= producto.imagenPrincipal %> " alt>
