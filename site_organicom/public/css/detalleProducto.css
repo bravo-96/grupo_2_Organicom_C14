@@ -344,8 +344,7 @@ main.grid-princpial {
 .comentarios .comentario {
    padding: 1rem 0;
    border-bottom: 1px solid var(--borde-gris-claro);
-
-   font-size: 0.9rem;
+   font-size: 0.85rem;
 }
 .comentario p {
    margin: 0;
@@ -427,19 +426,16 @@ main.grid-princpial {
    position: absolute;
    z-index: 200;
    top: 50%;
-
    border: none;
    width: 2.5rem;
    height: 2.5rem;
    border-radius: 50%;
-
    display: block;
    background: url(/assets/img/flecha-blanco.svg) no-repeat center;
    background-size: 0.7rem;
-
    background-position-x: 1rem;
    background-color: var(--verde-fondo);
-   box-shadow: 0 0 0.5rem #777;
+   box-shadow: 0 0 0.5rem #00000029;
 }
 
 .recomendados .splide__arrow.splide__arrow--prev {
@@ -711,7 +707,7 @@ main.grid-princpial {
    .detalle-texto,
    .descripcion-texto,
    .comentarios .comentario-texto {
-      font-size: 1rem;
+      font-size: 0.9rem;
       /* margin-inline-start: auto; */
    }
    .detalle-texto h2,

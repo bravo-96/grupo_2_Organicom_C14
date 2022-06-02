@@ -1,5 +1,14 @@
 [
    {
+      "id": 1,
+      "nombre": "Fideos Molto 500g",
+      "descuento": "",
+      "precio": "500",
+      "categoria": "fideos-cereales",
+      "descripcion": "descripcion",
+      "imagenPrincipal": "1653954961049_img_.jpg"
+   },
+   {
       "id": 2,
       "nombre": "Fideos Molto 500g",
       "descuento": "",
@@ -37,6 +46,15 @@
    },
    {
       "id": 6,
+      "nombre": "fideos-Molto",
+      "descuento": "20",
+      "precio": "445",
+      "categoria": "fideos-cereales",
+      "descripcion": "wqrweqrwetwewgq",
+      "imgPrincipalProducto": "1654042511376_img_.jpg"
+   },
+   {
+      "id": 7,
       "nombre": "fideos-Molto",
       "descuento": "20",
       "precio": "445",

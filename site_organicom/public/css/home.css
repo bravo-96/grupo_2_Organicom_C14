@@ -58,6 +58,7 @@
    color: var(--texto-gris);
    max-width: 190px;
    margin: 0 auto;
+   background-color: #fff;
 }
 .card-header {
    position: relative;
@@ -149,21 +150,325 @@
       brightness(98%) contrast(87%);
 }
 
-/* Populares, Ofertas */
+/* SLIDERS : Populares, Ofertas, frutos secos, jugos */
 #popularesSlider,
-#ofertasSlider {
+#ofertasSlider,
+#frutosSecosSlider,
+#jugosSlider {
    width: 90%;
-   max-width: 1100px;
+   max-width: 1000px;
    margin: 0 auto 3rem;
+   z-index: 210;
 }
 .populares h2,
-.ofertas h2 {
-   font-size: 1.5rem;
+.ofertas h2,
+.frutos-secos h2,
+.jugos h2 {
+   font-size: 1.3rem;
    color: var(--verde);
    font-weight: bolder;
    margin: 1rem 0 0 2rem;
 }
 
+/* -------- SEPARADOR --------- */
+.separador {
+   padding: 1rem;
+   background-color: var(--verde-fondo);
+   color: var(--texto-blanco);
+   font-size: clamp(0.7rem, 4vw, 1rem);
+}
+.grid-separador {
+   display: grid;
+   grid-template-columns: auto 1.4fr;
+   align-items: center;
+   gap: 0rem 5%;
+   margin: 0 auto;
+   max-width: 440px;
+}
+.seguinos,
+.lista-redes {
+   display: flex;
+   align-items: center;
+}
+.lista-redes {
+   gap: 5%;
+   width: 100%;
+   margin: 0 0 0 1rem;
+}
+.separador .lista-redes a {
+   max-width: 1.4rem;
+}
+.seguinos {
+   grid-column: 2/3;
+}
+.seguinos p {
+   min-width: max-content;
+   margin: 0;
+}
+.atencion {
+   grid-column: 2/3;
+}
+.atencion p {
+   margin: 0;
+}
+.atencion p span {
+   display: inline-block;
+   min-width: max-content;
+   color: var(--amarillo);
+   font-weight: bolder;
+}
+.logo {
+   grid-column: 1/2;
+   grid-row: 1/3;
+   max-width: 130px;
+}
+
+/* --------- Banners de ofertas --------- */
+.banners-ofertas {
+   max-width: 870px;
+   margin: 0 auto;
+}
+.banners-ofertas .contenedor {
+   display: flex;
+   padding: 1rem;
+   margin: 3rem 0;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   gap: 1rem;
+}
+.banners-ofertas .contenedor a {
+   max-width: 300px;
+   display: block;
+}
+.banners-ofertas .contenedor img {
+   display: block;
+}
+
+/* ------------ frutos secos , jugos ------------ */
+.frutos-secos h2,
+.jugos h2 {
+   font-size: clamp(1.5rem, 6vw, 2rem);
+   margin: 0 0 1rem 0;
+   color: var(--amarillo);
+   font-weight: bolder;
+   text-transform: uppercase;
+   text-align: center;
+   position: relative;
+   z-index: 200;
+}
+.frutos-secos h2 a,
+.jugos h2 a {
+   text-decoration: none;
+   color: inherit;
+}
+.frutos-secos h2 a:hover,
+.jugos h2 a:hover {
+   text-decoration: underline;
+}
+
+.frutos-secos .card,
+.jugos .card {
+   position: relative;
+   z-index: 200;
+}
+
+.hero {
+   position: relative;
+   margin: 0 0 -9rem 0;
+   z-index: 190;
+   height: 30vh;
+   overflow: hidden;
+}
+
+.hero::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.6) 55%,
+      rgba(0, 0, 0, 0.8) 75%,
+      rgba(0, 0, 0, 1) 100%
+   );
+}
+
+.hero img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+/* ---------- contacto ------------ */
+
+.contacto {
+   position: relative;
+   margin-top: 5rem;
+   background: url(/assets/img/bg-contacto.jpg) no-repeat center;
+   background-size: cover;
+   color: var(--texto-blanco);
+   z-index: 100;
+   overflow: hidden;
+}
+.contacto::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 40%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0) 100%
+   );
+}
+.contacto .contenedor {
+   position: relative;
+   z-index: 150;
+   display: flex;
+   flex-wrap: wrap;
+   padding: 1rem;
+}
+
+.contacto h3 {
+   color: var(--amarillo);
+   text-transform: uppercase;
+   font-weight: bolder;
+   font-size: 1.7rem;
+   margin: 2rem 0 3rem;
+}
+
+.contacto .contenido-texto {
+   padding: 1rem;
+}
+.contacto .contenido-texto > p {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   min-width: max-content;
+}
+
+.contacto .contenido-texto .icono,
+.contacto .contenido-texto .icono,
+.contacto .contenido-texto .icono {
+   display: inline-block;
+   width: 1rem;
+   height: 1rem;
+   background: no-repeat center;
+   background-size: cover;
+}
+.contacto .contenido-texto .tel .icono {
+   background-image: url(/assets/img/tel-icono.svg);
+}
+.contacto .contenido-texto .email .icono {
+   background-image: url(/assets/img/email-icono.svg);
+}
+.contacto .contenido-texto .calle .icono {
+   background-image: url(/assets/img/calle-icono.svg);
+}
+
+.contacto .contenido-texto > .lista-redes {
+   margin: 0;
+}
+
+.form-contacto {
+   background-color: #fff;
+   padding: 1rem;
+   border-radius: 0.6rem;
+   color: var(--verde);
+   margin: 2rem auto 1rem;
+   width: 100%;
+   max-width: 450px;
+}
+
+.form-contacto .input-contenedor {
+   padding-top: 1rem;
+   width: 100%;
+   border-color: var(--colorGrisCB);
+   border-radius: 5px;
+}
+.form-contacto label {
+   display: block;
+   font-weight: bolder;
+   margin: 0 0 0.3rem 0.5rem;
+   font-size: 0.9rem;
+}
+.form-contacto label[for='subscribir'] {
+   font-weight: 500;
+   color: #000;
+}
+
+.form-contacto input:not([type='checkbox']),
+.form-contacto textarea {
+   display: block;
+   width: 100%;
+   border: none;
+   border-radius: 0.3rem;
+   padding: 0.5rem;
+   font-size: 0.9rem;
+   background-color: var(--fondo-input);
+   resize: none;
+}
+.form-contacto input[type='checkbox'] {
+   display: inline;
+   margin-right: 0.5rem;
+}
+
+.form-contacto input:focus-within,
+.form-contacto textarea:focus-within {
+   outline-color: var(--verde);
+}
+
+.form-contacto button {
+   padding: 0.8rem 0;
+   width: 100%;
+   margin: 0.5rem 0 0;
+   font-size: 0.9rem;
+   line-height: 1;
+   text-transform: uppercase;
+   border: none;
+   border-radius: 0.3rem;
+   background-color: var(--amarillo);
+   color: var(--verde);
+   font-weight: bolder;
+}
+
+@media screen and (min-width: 650px) {
+   /* -------- SEPARADOR --------- */
+
+   .grid-separador {
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 0rem 5%;
+      max-width: 840px;
+   }
+   .seguinos {
+      grid-column: 1/2;
+      justify-content: center;
+   }
+   .seguinos .lista-redes {
+      width: auto;
+   }
+   .atencion {
+      grid-column: 3/4;
+   }
+   .logo {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      max-width: 140px;
+   }
+
+   /* ---------- contacto ---------- */
+   .contacto .contenedor {
+      padding: 4rem 1rem;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+   }
+   .form-contacto {
+      margin: 0;
+   }
+}
 /* ------- TABLET ------- */
 @media screen and (min-width: 768px) {
    .card {
@@ -174,6 +479,11 @@
    }
    .card:hover {
       box-shadow: 0 0 0.4rem rgba(34, 34, 34, 0.4);
+   }
+
+   /* Banner ofertas */
+   .banners-ofertas .contenedor a {
+      max-width: 350px;
    }
 }
 
@@ -206,5 +516,12 @@
       opacity: 1;
       visibility: visible;
       line-height: 1;
+   }
+   /* Banner ofertas */
+   .banners-ofertas {
+      max-width: 1000px;
+   }
+   .banners-ofertas .contenedor a {
+      max-width: 470px;
    }
 }

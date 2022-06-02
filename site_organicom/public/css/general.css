@@ -117,19 +117,6 @@ img {
    transform: translateX(0);
 }
 
-/* .carrito-lateral .contenedor::-webkit-scrollbar {
-   width: 0.4rem;
-}
-.carrito-lateral .contenedor::-webkit-scrollbar-track {
-   background: transparent;
-}
-.carrito-lateral .contenedor::-webkit-scrollbar-thumb {
-   background-color: var(--amarillo);
-}
-.carrito-lateral .contenedor::-webkit-scrollbar-thumb:hover {
-   background-color: var(--verde);
-} */
-
 .carrito-lateral > h3 {
    font-size: 1rem;
    text-align: center;
