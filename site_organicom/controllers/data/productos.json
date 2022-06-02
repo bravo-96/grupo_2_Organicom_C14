@@ -36,7 +36,7 @@
       "imgPrincipalProducto": "1653956346467_img_.jpg"
    },
    {
-      "id": 6,
+      "id": 5,
       "nombre": "fideos-Molto",
       "descuento": "20",
       "precio": "445",
@@ -45,12 +45,21 @@
       "imgPrincipalProducto": "1654042511376_img_.jpg"
    },
    {
-      "id": 7,
+      "id": 6,
       "nombre": "fideos-Molto",
       "descuento": "20",
       "precio": "445",
       "categoria": "fideos-cereales",
       "descripcion": "wqrweqrwetwewgq",
       "imgPrincipalProducto": "1654200891972_img_.jpg"
+   },
+   {
+      "id": 7,
+      "nombre": "jugo de naranja",
+      "descuento": "5",
+      "precio": "150",
+      "categoria": "jugos-bebidas",
+      "descripcion": "hola soy un jugo bebible <3",
+      "imgPrincipalProducto": "1654204269871_img_.jpg"
    }
 ]

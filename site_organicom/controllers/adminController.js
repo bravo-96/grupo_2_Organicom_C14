@@ -85,7 +85,6 @@ module.exports = {
       productos.forEach(producto =>{
          if(producto.id === +req.params.id){
             let productoBorrar = productos.indexOf(producto);
-            /* let borrarImage = productos.indexOf(producto.imgPrincipalProducto) */
             productos.splice(productoBorrar, 1)
                
          }
