@@ -6,7 +6,7 @@
       "precio": "500",
       "categoria": "fideos-cereales",
       "descripcion": "descripcion",
-      "imagenPrincipal": "1653954961049_img_.jpg"
+      "imgPrincipalProducto": "1653954961049_img_.jpg"
    },
    {
       "id": 2,
@@ -15,7 +15,7 @@
       "precio": "500",
       "categoria": "fideos-cereales",
       "descripcion": "descripcion",
-      "imagenPrincipal": "1653954961049_img_.jpg"
+      "imgPrincipalProducto": "1653954961049_img_.jpg"
    },
    {
       "id": 3,
@@ -24,7 +24,7 @@
       "precio": "470",
       "categoria": "fideos-cereales",
       "descripcion": "Descripccion",
-      "imagenPrincipal": "1653956301347_img_.jpg"
+      "imgPrincipalProducto": "1653956301347_img_.jpg"
    },
    {
       "id": 4,
@@ -33,16 +33,7 @@
       "precio": "370",
       "categoria": "fideos-cereales",
       "descripcion": "awdawd",
-      "imagenPrincipal": "1653956346467_img_.jpg"
-   },
-   {
-      "id": 5,
-      "nombre": "prueba2",
-      "descuento": "19",
-      "precio": "440",
-      "categoria": "jugos-bebidas",
-      "descripcion": "rfsdafgasghfadstgeqrfesyht",
-      "imagen": "1654042027044_img_.jpg"
+      "imgPrincipalProducto": "1653956346467_img_.jpg"
    },
    {
       "id": 6,
@@ -60,6 +51,6 @@
       "precio": "445",
       "categoria": "fideos-cereales",
       "descripcion": "wqrweqrwetwewgq",
-      "imgPrincipalProducto": "1654042511376_img_.jpg"
+      "imgPrincipalProducto": "1654200891972_img_.jpg"
    }
 ]

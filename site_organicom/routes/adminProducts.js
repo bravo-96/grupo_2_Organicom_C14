@@ -32,8 +32,8 @@ router.post(
 );
 
 router.get('/editar/:id', editarProducto);
-/* PUT actualiza los datos */
 
+/* PUT actualiza los datos */
 router.put(
     '/editarProducto/:id',
     uploadFiles.single('imgPrincipalProducto'),

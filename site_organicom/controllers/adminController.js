@@ -73,7 +73,7 @@ module.exports = {
             producto.precio = precio,
             producto.categoria = categoria,
             producto.descripcion = descripcion,
-            producto.imgPrincipalProducto = req.file ? req.file.filename : producto.imgPrincipalProducto
+            producto.imgPrincipalProducto = req.file ? req.file.filename : producto.imgPrincipalProducto;
          }
       });
       
@@ -85,7 +85,9 @@ module.exports = {
       productos.forEach(producto =>{
          if(producto.id === +req.params.id){
             let productoBorrar = productos.indexOf(producto);
-            productos.splice(productoBorrar, 1);
+            /* let borrarImage = productos.indexOf(producto.imgPrincipalProducto) */
+            productos.splice(productoBorrar, 1)
+               
          }
       });
       guardarProductos(productos);

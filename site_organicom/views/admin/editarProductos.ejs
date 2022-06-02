@@ -19,7 +19,7 @@
             <p class="card-text"><%= producto.descripcion %> </p>
         </div> -->
 
-        <form class="editar-form" action="/adminProducts/editar/<%= producto.id %>?_method=put" method="POST" enctype="multipart/form-data">
+        <form class="editar-form" action="/adminProducts/editarProducto/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
             <div class="input-contenedor">
                 <label for="imgs-producto">Subir imágen principal del producto (solo una)</label>
