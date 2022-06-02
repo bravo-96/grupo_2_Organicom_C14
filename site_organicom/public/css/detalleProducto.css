@@ -172,7 +172,7 @@ main.grid-princpial {
    display: flex;
    align-items: center;
    gap: 1.5rem;
-   margin: 2.5rem 0 0;
+   margin: 1rem 0 0;
 }
 .precio-contenedor .precio-final {
    font-size: 2.3rem;

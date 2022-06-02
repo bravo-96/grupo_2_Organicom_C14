@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+   new Splide('#bannerSlide', {
+      type: 'loop',
+      perPage: 1,
+      pagination: true,
+      arrowPath: '0',
+      autoplay: true,
+      interval: 5000,
+   }).mount();
+
    new Splide('#popularesSlider', {
       breakpoints: {
          450: {
@@ -11,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             perPage: 3,
             gap: '1rem',
          },
-         950: {
+         1200: {
             perPage: 4,
          },
       },
@@ -34,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             perPage: 3,
             gap: '1rem',
          },
-         950: {
+         1200: {
             perPage: 4,
          },
       },
@@ -57,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             perPage: 3,
             gap: '1rem',
          },
-         950: {
+         1200: {
             perPage: 4,
          },
       },
@@ -80,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             perPage: 3,
             gap: '1rem',
          },
-         950: {
+         1200: {
             perPage: 4,
          },
       },

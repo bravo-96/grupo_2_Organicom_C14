@@ -36,6 +36,38 @@
    transform: translateY(-50%);
 }
 
+/* -------- banner principal ------------ */
+
+#bannerSlide .splide__track {
+   padding: 0;
+}
+#bannerSlide .splide__arrow.splide__arrow--prev {
+   left: 1rem;
+}
+#bannerSlide .splide__arrow.splide__arrow--next {
+   right: 1rem;
+}
+#bannerSlide .splide__pagination.splide__pagination--ltr {
+   margin-top: -2rem;
+   margin-bottom: 6rem;
+   z-index: 100;
+   position: relative;
+}
+#bannerSlide .splide__pagination__page {
+   width: 1rem;
+   height: 1rem;
+   border: 2px solid var(--verde);
+   background-color: #fff;
+   border-radius: 50%;
+   margin: 0 0.2rem;
+   transform: scale(0.7);
+}
+#bannerSlide .splide__pagination__page.is-active {
+   background-color: var(--amarillo);
+}
+
+/* -------- cards ---------------- */
+
 .card h3 {
    font-size: 0.8rem;
    margin: 0 auto 0.5rem;
@@ -53,7 +85,7 @@
 }
 
 .card {
-   box-shadow: 0 0 0.2rem var(--borde-gris-claro);
+   box-shadow: 0 0 0.2rem rgb(0 0 0 / 20%);
    border-radius: 0.5rem;
    color: var(--texto-gris);
    max-width: 190px;
@@ -156,8 +188,8 @@
 #frutosSecosSlider,
 #jugosSlider {
    width: 90%;
-   max-width: 1000px;
-   margin: 0 auto 3rem;
+   max-width: 900px;
+   margin: 0 auto 4rem;
    z-index: 210;
 }
 .populares h2,
@@ -489,6 +521,13 @@
 
 /* ------- DESKTOP ------- */
 @media screen and (min-width: 1024px) {
+   #popularesSlider,
+   #ofertasSlider,
+   #frutosSecosSlider,
+   #jugosSlider {
+      margin: 0 auto 7rem;
+   }
+
    .card-header .favorito::after {
       content: 'Agregar favoritos';
       position: absolute;
@@ -523,5 +562,14 @@
    }
    .banners-ofertas .contenedor a {
       max-width: 470px;
+   }
+}
+
+@media screen and (min-width: 1200px) {
+   #popularesSlider,
+   #ofertasSlider,
+   #frutosSecosSlider,
+   #jugosSlider {
+      max-width: 1100px;
    }
 }
