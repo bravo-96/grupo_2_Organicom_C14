@@ -9,24 +9,6 @@
       "imgPrincipalProducto": "1653954961049_img_.jpg"
    },
    {
-      "id": 2,
-      "nombre": "Fideos Molto 500g",
-      "descuento": "",
-      "precio": "500",
-      "categoria": "fideos-cereales",
-      "descripcion": "descripcion",
-      "imgPrincipalProducto": "1653954961049_img_.jpg"
-   },
-   {
-      "id": 3,
-      "nombre": "Fideos Molto Tirabuz 500g",
-      "descuento": "8",
-      "precio": "470",
-      "categoria": "fideos-cereales",
-      "descripcion": "Descripccion",
-      "imgPrincipalProducto": "1653956301347_img_.jpg"
-   },
-   {
       "id": 4,
       "nombre": "Fideos Terrabusi Mostachol 450g",
       "descuento": "",
