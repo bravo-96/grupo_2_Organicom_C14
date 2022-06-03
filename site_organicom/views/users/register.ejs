@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-   <%- include("./partials/head", {title: "Registro"}) %>
+   <%- include("../partials/head", {title: "Registro"}) %>
 
    <link rel="stylesheet" href="/css/register.css">
    <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
@@ -10,14 +10,14 @@
 </head>
 
 <body class="register">
-   <%- include("./partials/login-lateral") %>
+   <%- include("../users/login-lateral") %>
 
-   <%- include("./partials/header") %>
+   <%- include("../partials/header") %>
 
-   <%- include("./partials/carrito-lateral") %>
+   <%- include("../partials/carrito-lateral") %>
 
    <main>
-      <form class="register-form" action="">
+      <form class="register-form" action="/users/register2" method="POST">
          <div class="encabezado">
             <h1 class="titulo">Crear cuenta</h1>
          </div>
@@ -60,7 +60,7 @@
       </form>
    </main>
 
-   <%- include("./partials/footer") %>
+   <%- include("../partials/footer") %>
 
    <script src="/js/general.js"></script>
 </body>

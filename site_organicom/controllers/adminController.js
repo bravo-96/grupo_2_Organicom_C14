@@ -22,19 +22,18 @@ module.exports = {
    },
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => {
-      //    let lastId = 0;
-      //    getProductos.forEach(producto => {
-      //        if (producto.id > lastId) {
-      //            lastId = producto.id
-      //        }
-      //    });
-
-      // CAMBIO: Cambié el <lastId> por ( productos.length + 1 )
+      
+          let lastId = 0;
+          getProductos.forEach(producto => {
+              if (producto.id > lastId) {
+                 lastId = producto.id
+              }
+          });
 
       let { nombre, precio, descripcion, descuento, categoria } = req.body;
-
+     
       let nuevoProducto = {
-         id: productos.length + 1,
+         id,
          nombre,
          descuento,
          precio,

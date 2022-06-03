@@ -1,0 +1,20 @@
+[
+   {
+      "id": 1,
+      "nombre": "alexander benitez ",
+      "email": "sadassad@safd.com",
+      "number": "3484547424",
+      "password": "123123",
+      "rol": "user",
+      "avatar": "default.png"
+   },
+   {
+      "id": 2,
+      "nombre": "dsfsadf",
+      "email": "locoman@gmail.com",
+      "number": "3484203121",
+      "password": "12341234",
+      "rol": "user",
+      "avatar": "default.png"
+   }
+]
