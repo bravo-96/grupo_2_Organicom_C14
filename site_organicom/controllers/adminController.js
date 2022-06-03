@@ -22,6 +22,8 @@ module.exports = {
    },
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => {
+     
+      //reutilice el codigo anterior <3
       
           let lastId = 0;
           getProductos.forEach(producto => {
@@ -29,7 +31,8 @@ module.exports = {
                  lastId = producto.id
               }
           });
-
+     
+      //reutilice el codigo anterior alex <3
       let { nombre, precio, descripcion, descuento, categoria } = req.body;
      
       let nuevoProducto = {
