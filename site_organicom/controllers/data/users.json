@@ -25,5 +25,14 @@
       "password": "$2a$10$2V9bNrSBmWKnPnH5Me9z.OT2Yo/iwzhnbSjDdwLizHuWFCrxRgwJ6",
       "rol": "user",
       "avatar": "default.png"
+   },
+   {
+      "id": 4,
+      "nombre": "alexander a benitez ",
+      "email": "buenas@gmail.com",
+      "number": "12345678990",
+      "password": "$2a$10$ngxOMI254pMK0Pqr7eyy2eUKYT6HhcK7I6OWpHP/n1jA9MMmn7LYS",
+      "rol": "user",
+      "avatar": "default.png"
    }
 ]

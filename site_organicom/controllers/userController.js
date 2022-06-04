@@ -4,11 +4,12 @@ let {guardarUser}= require("./data/dataFS")
 const bcrypt = require("bcryptjs")
 const {validationResult} = require("express-validator");
 const res = require('express/lib/response');
+const req = require('express/lib/request');
 
 //armado de logica register Alex <3
 module.exports = {
    register: (req, res, next) => {
-      return res.render('users/register');
+      return res.render('users/register',{session : req.session});
    },
    processRegister : (req, res, next)=>{
 
@@ -60,7 +61,12 @@ module.exports = {
       }else{
          res.send(errors)
       }
+      next()
       
+   },
+   logout : (req, res, next) => {
+      req.session.destroy()
+      res.redirect("/")
    }
    
 };
