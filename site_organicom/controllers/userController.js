@@ -62,11 +62,14 @@ module.exports = {
          res.send(errors)
       }
       next()
+      //el next esta de mas
+      //Logica del login consultas a Alex <3
       
    },
    logout : (req, res, next) => {
       req.session.destroy()
       res.redirect("/")
+      //Logica del logout consultas a Alex <3
    }
    
 };

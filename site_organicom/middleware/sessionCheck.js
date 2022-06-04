@@ -7,3 +7,6 @@ module.exports = {
         }
     }
 }
+
+//exporte la logica para llamarla cuando quiera
+//para no tener tanto codigo en un solo lugar, puede confundir, solo por eso
