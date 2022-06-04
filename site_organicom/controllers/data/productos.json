@@ -1,14 +1,5 @@
 [
    {
-      "id": 4,
-      "nombre": "Fideos Terrabusi Mostachol 450g",
-      "descuento": "",
-      "precio": "370",
-      "categoria": "fideos-cereales",
-      "descripcion": "awdawd",
-      "imgPrincipalProducto": "1653956346467_img_.jpg"
-   },
-   {
       "id": 5,
       "nombre": "fideos-Molto",
       "descuento": "20",
@@ -36,7 +27,7 @@
       "imgPrincipalProducto": "1654204269871_img_.jpg"
    },
    {
-      "id": 6,
+      "id": 8,
       "nombre": "jugo de naranja",
       "descuento": "5",
       "precio": "120",
@@ -45,7 +36,7 @@
       "imgPrincipalProducto": "1654286291686_img_.jpg"
    },
    {
-      "id": 7,
+      "id": 9,
       "nombre": "jugos diversos",
       "descuento": "10",
       "precio": "255",
@@ -54,7 +45,7 @@
       "imgPrincipalProducto": "1654286335254_img_.jpg"
    },
    {
-      "id": 8,
+      "id": 10,
       "nombre": "pistachos 300g",
       "descuento": "10",
       "precio": "1085",
@@ -63,7 +54,7 @@
       "imgPrincipalProducto": "1654286464448_img_.png"
    },
    {
-      "id": 9,
+      "id": 11,
       "nombre": "nuez 300g",
       "descuento": "5",
       "precio": "1090",
@@ -72,7 +63,7 @@
       "imgPrincipalProducto": "1654286497853_img_.jpg"
    },
    {
-      "id": 10,
+      "id": 12,
       "nombre": "castañas 350g",
       "descuento": "",
       "precio": "995",
@@ -81,12 +72,21 @@
       "imgPrincipalProducto": "1654286536674_img_.png"
    },
    {
-      "id": 11,
+      "id": 13,
       "nombre": "almendras 400g premium",
       "descuento": "15",
       "precio": "1000",
       "categoria": "fideos-cereales",
       "descripcion": "ewfdasfeqwrfwfsdafqwerfsadfqwerfsfsafwqerqwf",
       "imgPrincipalProducto": "1654286593272_img_.jpg"
+   },
+   {
+      "id": 14,
+      "nombre": "mix tropical 400g",
+      "descuento": "15",
+      "precio": "420",
+      "categoria": "frutos-secos",
+      "descripcion": "sdfsdafwefsadfwefsdafsa",
+      "imgPrincipalProducto": "1654314052950_img_.jpg"
    }
 ]

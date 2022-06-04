@@ -3,12 +3,14 @@
       <div class="icono"></div>
    </button>
    <div class="login">
-      <form class="login-form" action="">
-         <h1 class="titulo">Iniciar sesión</h1>
+      <form class="login-form" action="/users/login2" method="post">
+         <div>
+            <% if(typeof session.user === "undefined") {%>
+               <h1 class="titulo">Iniciar sesión</h1>
          <div class="login-main">
-            <label for="userName">Email o nombre de usuario</label>
-            <input class="login_input-main" type="text" id="userName" name="userName"
-               placeholder="Escribi tu email o el nombre de tu usuario">
+            <label for="email">Email</label>
+            <input class="login_input-main" type="email" id="email" name="email"
+               placeholder="Escribi tu email">
          </div>
          <div class="login-main">
             <label for="password">Password</label>
@@ -35,6 +37,18 @@
             <button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Ingresar como ADMIN</button>
          </a>
          <!-- para verificar el crud, cambiar de lugar pls -->
+
+            <% }else{ %> 
+
+                  <a href="/users/profile"><button type="button" class="btn-registrate">Bienvenido <%- session.user.nombre %>  </button></a>
+                  
+               
+               <a href="/adminProducts">
+                  <button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Ingresar como ADMIN</button>
+               </a>
+
+            <% } %>  
+         </div>
       </form>
    </div>
 </div>

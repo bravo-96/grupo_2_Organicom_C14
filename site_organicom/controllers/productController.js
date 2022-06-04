@@ -8,6 +8,7 @@ module.exports = {
 
       return res.render('detalleProducto', {
          producto,
+         session : req.session
       });
    },
 

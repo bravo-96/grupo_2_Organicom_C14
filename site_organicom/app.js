@@ -6,6 +6,7 @@ const path = require('path');
 /* hacer npm i method-override - alex */
 const methodOverride = require("method-override");
 const multer = require ("multer")
+const session = require("express-session")
 
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -27,6 +28,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 /* agrege el app.use -alex*/
+app.use(session({
+   secret : "productos",
+   resave : false,
+   saveUninitialized : true
+}))
 app.use(methodOverride('_method'));
 /* agrege el app.use -alex*/
 

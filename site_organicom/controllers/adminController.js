@@ -15,10 +15,12 @@ module.exports = {
    adminProducts: (req, res) => {
       res.render('admin/adminProducts', {
          productos,
+         session : req.session
+        
       });
    },
    agregarProducto: (req, res) => {
-      res.render('admin/agregarProducto');
+      res.render('admin/agregarProducto'/* , {session : req.session} */);
    },
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => {
@@ -26,17 +28,17 @@ module.exports = {
       //reutilice el codigo anterior <3
       
           let lastId = 0;
-          getProductos.forEach(producto => {
+          productos.forEach(producto => {
               if (producto.id > lastId) {
                  lastId = producto.id
               }
           });
      
       //reutilice el codigo anterior alex <3
-      let { nombre, precio, descripcion, descuento, categoria } = req.body;
+      let { id, nombre, precio, descripcion, descuento, categoria } = req.body;
      
       let nuevoProducto = {
-         id,
+         id : lastId + 1,
          nombre,
          descuento,
          precio,
@@ -58,6 +60,7 @@ module.exports = {
       );
       res.render('admin/editarProductos', {
          producto,
+         session : req.session
       });
    },
    update: (req, res) => {

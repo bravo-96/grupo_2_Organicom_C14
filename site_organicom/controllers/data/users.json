@@ -16,5 +16,14 @@
       "password": "12341234",
       "rol": "user",
       "avatar": "default.png"
+   },
+   {
+      "id": 3,
+      "nombre": "Bubba Ink",
+      "email": "hola@gmail.com",
+      "number": "1234567890",
+      "password": "$2a$10$2V9bNrSBmWKnPnH5Me9z.OT2Yo/iwzhnbSjDdwLizHuWFCrxRgwJ6",
+      "rol": "user",
+      "avatar": "default.png"
    }
 ]

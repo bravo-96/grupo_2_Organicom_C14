@@ -1,6 +1,9 @@
 const fs = require('fs');
 const usuarios = require("./data/users.json")
 let {guardarUser}= require("./data/dataFS")
+const bcrypt = require("bcryptjs")
+const {validationResult} = require("express-validator");
+const res = require('express/lib/response');
 
 //armado de logica register Alex <3
 module.exports = {
@@ -23,7 +26,7 @@ module.exports = {
          nombre,
          email,
          number,
-         password,
+         password : bcrypt.hashSync(password, 10),
          rol : "user",
          avatar : "default.png"
       };
@@ -39,7 +42,25 @@ module.exports = {
       return res.render("users/login-lateral")
    },
    processLogin : (req, res, next)=>{
+      let errors = validationResult(req)
+      if (errors.isEmpty()) {
+         let {id, nombre, email, password, avatar, rol} = usuarios.find(user => user.email === req.body.email)
+         req.session.user = {
+            id,
+            nombre,
+            email,
+            password,
+            avatar,
+            rol
+         }
+         
+         res.locals.user = req.session.user
+         res.redirect("/")
 
+      }else{
+         res.send(errors)
+      }
+      
    }
    
 };
