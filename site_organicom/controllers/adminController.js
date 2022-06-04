@@ -20,7 +20,7 @@ module.exports = {
       });
    },
    agregarProducto: (req, res) => {
-      res.render('admin/agregarProducto'/* , {session : req.session} */);
+      res.render('admin/agregarProducto', {session : req.session});
    },
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => {

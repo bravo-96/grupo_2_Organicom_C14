@@ -24,6 +24,7 @@ module.exports = {
       return res.render('categorias', {
          productoCategoria,
          categoria: req.params.categoria,
+         session : req.session
       });
    },
 };
