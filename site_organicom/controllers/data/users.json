@@ -34,5 +34,14 @@
       "password": "$2a$10$ngxOMI254pMK0Pqr7eyy2eUKYT6HhcK7I6OWpHP/n1jA9MMmn7LYS",
       "rol": "user",
       "avatar": "default.png"
+   },
+   {
+      "id": 5,
+      "nombre": "bubba",
+      "email": "noche@gmail.com",
+      "number": "12314514543",
+      "password": "$2a$10$E4r4vpvMtPt/q1yX5QOXMu2oFZJyPO5q14bEXLkcxAb7fOfkRkk0O",
+      "rol": "user",
+      "avatar": "default.png"
    }
 ]

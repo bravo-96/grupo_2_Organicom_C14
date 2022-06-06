@@ -9,7 +9,7 @@ const {inSession} = require("../middleware/sessionCheck")
 
 //RUTAS DONE
 //register
-router.get('/register', inSession, register);
+router.get("/register", inSession, register);
 router.post("/register2", processRegister)
 
 //login

@@ -3,7 +3,7 @@ module.exports = {
         if (req.session.user) {
             res.redirect("/")
         }else{
-            next
+            next()
         }
     }
 }

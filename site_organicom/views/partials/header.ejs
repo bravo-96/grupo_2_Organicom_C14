@@ -9,10 +9,17 @@
    <button type="button" class="btn-buscar">
       <img src="/assets/img/lupa-icono.svg" class="lupa-icono" />
    </button>
+   <% if(typeof session.user === "undefined") {%>
    <button type="button" class="btn-cuenta">
       <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
       <span>Mi Cuenta</span>
    </button>
+   <% }else{ %> 
+      <button type="button" class="btn-cuenta">
+         <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
+         <span> <%= session.user.nombre %> </span>
+      </button>
+   <% } %> 
    <button type="button" class="btn-carrito">
       <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
       <div class="cantidad">3</div>
