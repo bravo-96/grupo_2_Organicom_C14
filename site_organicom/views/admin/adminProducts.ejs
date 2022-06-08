@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<!-- MEJORAR CODIGO, LO HICE CON POCO TIEMPO -->
-
-<!-- copiado del index-->
-
 <head>
     <%- include("../partials/head", {title: "Crear producto"}) %>
 
-    <!-- <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="/css/admin/adminProducts.css">
     <!-- <title>Admin | crear producto</title>    -->
 
@@ -19,15 +14,12 @@
     <%- include("../partials/header") %>
     <%- include("../partials/carrito-lateral") %>
 
-    <!-- copiado del index-->
     <main>
         <a class="btn-agregar-nuevo" href="/adminProducts/agregar">Nuevo Producto</a>
 
         <div class="lista-productos-grid">
-            <!-- recorre el archivo productos.json ubicado en /controllers/data -->
             <% productos.forEach(producto => { %>
 
-            <!-- Trae todos los productos -->
             <article class="card">
                 <div class="card-header">
                     <!-- <img src="/assets/img/<%#= producto.imagen %>" alt> -->
@@ -63,11 +55,9 @@
         </div>
     </main>
 
-    <!-- copiado del index-->
     <%- include("../partials/footer") %>
 
     <script src="/js/general.js"></script>
-    <!-- copiado del index-->
 </body>
 
 </html>

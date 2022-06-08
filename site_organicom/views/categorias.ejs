@@ -10,11 +10,9 @@
 </head>
 
 <body>
-   <!-- PRESTAR ATENCION A LAS RUTAS DE INCLUDE EN GENERAL -->
    <%- include("./users/login-lateral") %>
    <%- include("./partials/header") %>
    <%- include("./partials/carrito-lateral") %>
-   <!-- PRESTAR ATENCION A LAS RUTAS DE INCLUDE EN GENERAL -->
 
    <main>
       <div class="hero-categoria">
@@ -42,6 +40,8 @@
          <img src="/assets/img/hero-infusiones.jpg" alt>
 
       </div>
+
+
       <div class="grid-principal">
          <h1>Infusiones</h1>
          <% } %>
@@ -69,8 +69,8 @@
                      $ <%= producto.descuento ? 
                         Math.trunc(+producto.precio - (+producto.precio * +producto.descuento / 100)) :
                         Math.trunc(producto.precio) %>.00
-                     </p>
-                  <!-- <p class="precio-secundario">$ <%= producto.precio %>.00 x 1Kg</p> -->
+                  </p>
+                  <!-- <p class="precio-secundario">$ <%#= producto.precio %>.00 x 1Kg</p> -->
                </a>
                <div class="botones">
                   <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>

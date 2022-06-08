@@ -5,12 +5,13 @@ const {
    detalleProducto,
    carrito,
    categoria,
+   busqueda,
 } = require('../controllers/productController');
 
-router.get('/detalleProducto/:id', detalleProducto);
-
-router.get('/carrito', carrito);
-
-router.get('/categorias/:categoria', categoria);
+router
+   .get('/detalleProducto/:id', detalleProducto)
+   .get('/carrito', carrito)
+   .get('/categorias/:categoria', categoria)
+   .get('/resultadoBusqueda', busqueda);
 
 module.exports = router;
