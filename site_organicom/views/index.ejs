@@ -76,6 +76,14 @@
                                  <span class="descuento">
                                     <%= productos[i].descuento %>%OFF!
                                  </span>
+                                 <% } else { %>
+                                 <span style="background-color: #ccc;
+                                           display: block; 
+                                           height: 1px; 
+                                           position: relative;
+                                           width: 80%;
+                                           margin: 0 auto;
+                                           top: 50%;"></span>
                                  <% } %>
                               </p>
                               <p class="precio-final">
@@ -83,7 +91,7 @@
                                              Math.trunc(+productos[i].precio - (+productos[i].precio * +productos[i].descuento / 100)) :
                                              Math.trunc(productos[i].precio) %>.00
                               </p>
-                              <!-- <p class="precio-secundario">$ <%= productos[i].precio %>.00 x 1Kg</p> -->
+                              <!-- <p class="precio-secundario">$ <%#= productos[i].precio %>.00 x 1Kg</p> -->
                            </a>
                            <div class="botones">
                               <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
@@ -118,6 +126,14 @@
                                  <span class="descuento">
                                     <%= productos[i].descuento %>%OFF!
                                  </span>
+                                 <% } else { %>
+                                 <span style="background-color: #ccc;
+                                              display: block; 
+                                              height: 1px; 
+                                              position: relative;
+                                              width: 80%;
+                                              margin: 0 auto;
+                                              top: 50%;"></span>
                                  <% } %>
                               </p>
                               <p class="precio-final">
@@ -201,6 +217,14 @@
                                  <span class="descuento">
                                     <%= descuento %>%OFF!
                                  </span>
+                                 <% } else { %>
+                                 <span style="background-color: #ccc;
+                                              display: block; 
+                                              height: 1px; 
+                                              position: relative;
+                                              width: 80%;
+                                              margin: 0 auto;
+                                              top: 50%;"></span>
                                  <% } %>
                               </p>
                               <p class="precio-final">
@@ -255,6 +279,14 @@
                                  <span class="descuento">
                                     <%= descuento %>%OFF!
                                  </span>
+                                 <% } else { %>
+                                 <span style="background-color: #ccc;
+                                              display: block; 
+                                              height: 1px; 
+                                              position: relative;
+                                              width: 80%;
+                                              margin: 0 auto;
+                                              top: 50%;"></span>
                                  <% } %>
                               </p>
                               <p class="precio-final">

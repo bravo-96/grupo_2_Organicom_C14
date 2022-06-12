@@ -13,7 +13,7 @@ module.exports = {
    },
 
    carrito: (req, res, next) => {
-      return res.render('carrito');
+      return res.render('carrito', { session: req.session });
    },
 
    // Busqueda

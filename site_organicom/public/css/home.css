@@ -145,7 +145,7 @@
    height: 22px;
 }
 .card-body .precio-final {
-   font-size: 1.4rem;
+   font-size: 1.3rem;
    font-weight: bolder;
    margin: 0.5rem 0;
    color: var(--verde);
