@@ -83,5 +83,9 @@
       <p>Total productos</p>
       <p>$ 1.250,00</p>
    </div>
+   <% if(typeof session.user === "undefined") {%>       
+         <span>inicia sesion o registrate para continuar la compra</span>
+   <% }else{ %> 
    <a href="/products/carrito" class="btn-comprar">Comprar</a>
+   <% } %> 
 </div>

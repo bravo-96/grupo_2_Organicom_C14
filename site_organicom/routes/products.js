@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const {offSession} = require("../middleware/sessionCheck")
 
 const {
    detalleProducto,
@@ -10,7 +11,7 @@ const {
 
 router
    .get('/detalleProducto/:id', detalleProducto)
-   .get('/carrito', carrito)
+   .get('/carrito',offSession, carrito)
    .get('/categorias/:categoria', categoria)
    .get('/resultadoBusqueda', busqueda);
 

@@ -1,6 +1,15 @@
+const req = require("express/lib/request")
+
 module.exports = {
     inSession : (req, res, next)=>{
         if (req.session.user) {
+            res.redirect("/")
+        }else{
+            next()
+        }
+    },
+    offSession : (req,res,next)=>{
+        if (typeof req.session.user === "undefined") {
             res.redirect("/")
         }else{
             next()

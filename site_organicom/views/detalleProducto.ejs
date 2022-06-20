@@ -125,12 +125,15 @@
          </ul>
          <div class="btns-contenedor">
             <button type="button" class="btn-agregar-carrito">Agregar <span class="icono"></span></button>
+            <% if(typeof session.user === "undefined") {%> 
+              <button class="btn-comprar-ahora"><a href="/users/login-lateral">Inicia sesion para continuar</a></button> 
+            <% }else{ %> 
             <button type="button" class="btn-comprar-ahora">
                <a href="/products/carrito">
                   Comprar ahora
                </a>
             </button>
-
+            <% } %> 
          </div>
       </section>
       <!-- ------------- -->
