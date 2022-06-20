@@ -60,7 +60,7 @@
             <h2>Los más populares</h2>
             <div class="splide__track">
                <ul class="splide__list">
-                  <% for( let i = 0; i < 6; i++ ) { %>
+                  <% for( let i = 0; i <= 10; i++ ) { %>
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
@@ -76,6 +76,14 @@
                                  <span class="descuento">
                                     <%= productos[i].descuento %>%OFF!
                                  </span>
+                                 <% } else { %>
+                                 <span style="background-color: #ccc;
+                                           display: block; 
+                                           height: 1px; 
+                                           position: relative;
+                                           width: 80%;
+                                           margin: 0 auto;
+                                           top: 50%;"></span>
                                  <% } %>
                               </p>
                               <p class="precio-final">
@@ -83,7 +91,7 @@
                                              Math.trunc(+productos[i].precio - (+productos[i].precio * +productos[i].descuento / 100)) :
                                              Math.trunc(productos[i].precio) %>.00
                               </p>
-                              <!-- <p class="precio-secundario">$ <%= productos[i].precio %>.00 x 1Kg</p> -->
+                              <!-- <p class="precio-secundario">$ <%#= productos[i].precio %>.00 x 1Kg</p> -->
                            </a>
                            <div class="botones">
                               <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
@@ -102,7 +110,7 @@
             <h2>Últimas ofertas</h2>
             <div class="splide__track">
                <ul class="splide__list">
-                  <% for( let i = 0; i < 6; i++ ) { %>
+                  <% for( let i = 0; i <= 10; i++ ) { %>
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
@@ -118,6 +126,14 @@
                                  <span class="descuento">
                                     <%= productos[i].descuento %>%OFF!
                                  </span>
+                                 <% } else { %>
+                                 <span style="background-color: #ccc;
+                                              display: block; 
+                                              height: 1px; 
+                                              position: relative;
+                                              width: 80%;
+                                              margin: 0 auto;
+                                              top: 50%;"></span>
                                  <% } %>
                               </p>
                               <p class="precio-final">
@@ -182,30 +198,41 @@
             </h2>
             <div class="splide__track">
                <ul class="splide__list">
-                  <% for( let i = 0; i < 6; i++ ) { %>
+                  <% productos.forEach(({imgPrincipalProducto, nombre, descuento, precio, categoria, id} )=> { %>
+
+                  <% if (categoria === "frutos-secos") { %>
+
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
-                           <img src="/imgs/products_images/<%=  productos[i].imgPrincipalProducto %> " alt>
+                           <img src="/imgs/products_images/<%=  imgPrincipalProducto %> " alt>
                            <div class="favorito"></div>
                         </div>
                         <div class="card-body">
-                           <a href="/products/detalleProducto/<%= productos[i].id %> ">
-                              <h3><%= productos[i].nombre %> </h3>
+                           <a href="/products/detalleProducto/<%= id %> ">
+                              <h3><%= nombre %> </h3>
                               <p class="precio-inicial">
-                                 <% if (productos[i].descuento) { %>
-                                 <span>$<%= productos[i].precio %></span>
+                                 <% if (descuento) { %>
+                                 <span>$<%= precio %></span>
                                  <span class="descuento">
-                                    <%= productos[i].descuento %>%OFF!
+                                    <%= descuento %>%OFF!
                                  </span>
+                                 <% } else { %>
+                                 <span style="background-color: #ccc;
+                                              display: block; 
+                                              height: 1px; 
+                                              position: relative;
+                                              width: 80%;
+                                              margin: 0 auto;
+                                              top: 50%;"></span>
                                  <% } %>
                               </p>
                               <p class="precio-final">
-                                 $ <%= productos[i].descuento ? 
-                                             Math.trunc(+productos[i].precio - (+productos[i].precio * +productos[i].descuento / 100)) :
-                                             Math.trunc(productos[i].precio) %>.00
+                                 $ <%= descuento ? 
+                                                               Math.trunc(+precio - (+precio * +descuento / 100)) :
+                                                               Math.trunc(precio) %>.00
                               </p>
-                              <!-- <p class="precio-secundario">$ <%= productos[i].precio %>.00 x 1Kg</p> -->
+                              <!-- <p class="precio-secundario">$ <%= precio %>.00 x 1Kg</p> -->
                            </a>
                            <div class="botones">
                               <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
@@ -213,7 +240,10 @@
                         </div>
                      </article>
                   </li>
+
                   <% } %>
+
+                  <% }); %>
 
                </ul>
             </div>
@@ -230,30 +260,41 @@
             </h2>
             <div class="splide__track">
                <ul class="splide__list">
-                  <% for( let i = 0; i < 6; i++ ) { %>
+                  <% productos.forEach(({imgPrincipalProducto, nombre, descuento, precio, categoria, id} )=> { %>
+
+                  <% if (categoria === "jugos-bebidas") { %>
+
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
-                           <img src="/imgs/products_images/<%=  productos[i].imgPrincipalProducto %> " alt>
+                           <img src="/imgs/products_images/<%=  imgPrincipalProducto %> " alt>
                            <div class="favorito"></div>
                         </div>
                         <div class="card-body">
-                           <a href="/products/detalleProducto/<%= productos[i].id %> ">
-                              <h3><%= productos[i].nombre %> </h3>
+                           <a href="/products/detalleProducto/<%= id %> ">
+                              <h3><%= nombre %> </h3>
                               <p class="precio-inicial">
-                                 <% if (productos[i].descuento) { %>
-                                 <span>$<%= productos[i].precio %></span>
+                                 <% if (descuento) { %>
+                                 <span>$<%= precio %></span>
                                  <span class="descuento">
-                                    <%= productos[i].descuento %>%OFF!
+                                    <%= descuento %>%OFF!
                                  </span>
+                                 <% } else { %>
+                                 <span style="background-color: #ccc;
+                                              display: block; 
+                                              height: 1px; 
+                                              position: relative;
+                                              width: 80%;
+                                              margin: 0 auto;
+                                              top: 50%;"></span>
                                  <% } %>
                               </p>
                               <p class="precio-final">
-                                 $ <%= productos[i].descuento ? 
-                                             Math.trunc(+productos[i].precio - (+productos[i].precio * +productos[i].descuento / 100)) :
-                                             Math.trunc(productos[i].precio) %>.00
+                                 $ <%= descuento ? 
+                                                            Math.trunc(+precio - (+precio * +descuento / 100)) :
+                                                            Math.trunc(precio) %>.00
                               </p>
-                              <!-- <p class="precio-secundario">$ <%= productos[i].precio %>.00 x 1Kg</p> -->
+                              <!-- <p class="precio-secundario">$ <%= precio %>.00 x 1Kg</p> -->
                            </a>
                            <div class="botones">
                               <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
@@ -261,7 +302,10 @@
                         </div>
                      </article>
                   </li>
+
                   <% } %>
+
+                  <% }); %>
 
                </ul>
             </div>

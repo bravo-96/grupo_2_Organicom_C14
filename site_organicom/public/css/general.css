@@ -539,26 +539,43 @@ nav.categorias-contenedor a {
    max-height: 0;
    width: 100%;
 
+   display: flex;
+   align-items: center;
+
    grid-column: 1 / -1;
+
+   background-color: var(--fondo-input);
 
    transition: 0.5s ease;
    transition-property: padding, max-height;
+   border-radius: 0.4rem;
 }
 .barra-busqueda.show {
    max-height: 60px;
 }
 .barra-busqueda input {
-   margin: 0.3rem;
    width: 100%;
    border: none;
-   border-radius: 0.2rem;
-   background-color: var(--fondo-input);
+   background-color: transparent;
    padding: 0.5rem 1rem;
 
    transition: box-shadow 0.3s ease;
 }
+.barra-busqueda input[type='submit'] {
+   width: 2rem;
+   border: none;
+   cursor: pointer;
+   background: url(/assets/img/lupa-icono.svg) no-repeat center;
+   background-size: 50% 50%;
+
+   transition: background-color 0.3s ease;
+}
+.barra-busqueda input[type='submit']:hover {
+   background-color: #ddd;
+}
+
 .barra-busqueda input:focus-within {
-   outline-color: var(--verde);
+   outline: none;
 }
 
 /* ------ FOOTER ------ */
@@ -794,10 +811,8 @@ footer .copyright {
       right: -10%;
       opacity: 0;
 
-      background-image: url(/assets/img/flecha-derecha.svg);
-      background-position: center;
+      background: url(/assets/img/flecha-derecha.svg) no-repeat center;
       background-size: contain;
-      background-repeat: no-repeat;
 
       width: 2rem;
       height: 1.1rem;
@@ -863,25 +878,11 @@ footer .copyright {
       grid-row: 1 / 2;
 
       position: relative;
-      display: flex;
-      align-items: center;
    }
 
    .barra-busqueda input {
       padding-right: 2rem;
       height: 100%;
-   }
-
-   .barra-busqueda::after {
-      content: '';
-      position: absolute;
-      right: 1rem;
-      width: 1.1rem;
-      height: 1.1rem;
-      background-image: url(/assets/img/lupa-icono.svg);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
    }
 
    /* ------- FOOTER ------- */

@@ -14,12 +14,12 @@
       <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
       <span>Mi Cuenta</span>
    </button>
-   <% }else{ %> 
-      <button type="button" class="btn-cuenta">
-         <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
-         <span> <%= session.user.nombre %> </span>
-      </button>
-   <% } %> 
+   <% }else{ %>
+   <button type="button" class="btn-cuenta">
+      <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
+      <span> <%= session.user.nombre %> </span>
+   </button>
+   <% } %>
    <button type="button" class="btn-carrito">
       <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />
       <div class="cantidad">3</div>
@@ -31,17 +31,30 @@
       <div class="imagen-fondo jugos"></div>
       <div class="imagen-fondo infusiones"></div>
       <ul>
-         <li><a class="link-categoria" href="/products/categorias/fideos-cereales"
-               data-nombre_categoria="cereales">Fideos / Cereales</a></li>
-         <li><a class="link-categoria" href="/products/categorias/frutos-secos"
-               data-nombre_categoria="frutos-secos">Frutos secos</a></li>
-         <li><a class="link-categoria" href="/products/categorias/jugos-bebidas" data-nombre_categoria="jugos">Jugos y
-               bebidas</a></li>
-         <li><a class="link-categoria" href="/products/categorias/infusiones"
-               data-nombre_categoria="infusiones">Infusiones</a></li>
+         <li>
+            <a class="link-categoria" href="/products/categorias/fideos-cereales" data-nombre_categoria="cereales">
+               Fideos / Cereales
+            </a>
+         </li>
+         <li>
+            <a class="link-categoria" href="/products/categorias/frutos-secos" data-nombre_categoria="frutos-secos">
+               Frutos secos
+            </a>
+         </li>
+         <li>
+            <a class="link-categoria" href="/products/categorias/jugos-bebidas" data-nombre_categoria="jugos">
+               Jugos y bebidas
+            </a>
+         </li>
+         <li>
+            <a class="link-categoria" href="/products/categorias/infusiones" data-nombre_categoria="infusiones">
+               Infusiones
+            </a>
+         </li>
       </ul>
    </nav>
-   <form action="/" method="GET" class="barra-busqueda">
-      <input type="text" placeholder="Buscar producto">
+   <form action="/resultadoBusqueda" method="GET" class="barra-busqueda">
+      <input type="text" name="keyword" id="keyword" placeholder="Busca un producto ...">
+      <input type="submit" name="keyword" value="">
    </form>
 </header>

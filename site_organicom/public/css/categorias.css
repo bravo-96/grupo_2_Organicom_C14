@@ -34,7 +34,7 @@ h1 {
    margin: 0;
    text-shadow: 0 0 1rem #000;
    line-height: 1;
-   color: var(--texto-blanco);
+   color: var(--amarillo);
    text-align: center;
 }
 
@@ -47,10 +47,9 @@ h1 {
    grid-template-columns: repeat(auto-fill, minmax(auto, 180px));
    justify-content: center;
    gap: 2rem;
-
    width: 90%;
    max-width: 950px;
-   margin: 0 auto 2rem;
+   margin: 0 auto -6rem;
    padding: 2rem;
    border-radius: 1.5rem 1.5rem 0 0;
 }
@@ -96,7 +95,7 @@ h1 {
 .card-header img {
    display: block;
    margin: 0 auto;
-   width: 50%;
+   width: 80%;
    height: 150px;
    object-fit: cover;
    padding: 1rem 0;

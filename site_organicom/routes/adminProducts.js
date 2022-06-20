@@ -2,10 +2,8 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-
-//Si quieren cambiar nombres haganlo pero AVISEN --Alex <3
-const multer = require("multer")
-let uploadFiles = require("../middleware/uploadFiles")
+const multer = require('multer');
+let uploadFiles = require('../middleware/uploadFiles');
 
 let {
    adminProducts,
@@ -13,32 +11,30 @@ let {
    create,
    editarProducto,
    update,
-   borrar
+   borrar,
 } = require('../controllers/adminController');
+const { busqueda } = require('../controllers/productController');
 
-//POR FALLAS, MIRAR EN CONTROLLERS
+router
+   .get('/', adminProducts)
 
-router.get('/', adminProducts);
+   /* GET muestra el formulario */
+   .get('/agregar', agregarProducto)
 
-/* GET muestra el formulario */
-router.get('/agregar', agregarProducto);
+   /* POST carga los datos al formulario */
+   .post('/agregarProducto', uploadFiles.single('imgPrincipalProducto'), create)
 
-/* POST carga los datos al formulario */
-// uso de multer en el formulario
-router.post(
-   '/agregarProducto',
-   uploadFiles.single('imgPrincipalProducto'),
-   create
-);
+   .get('/editar/:id', editarProducto)
 
-router.get('/editar/:id', editarProducto);
+   /* PUT actualiza los datos */
+   .put(
+      '/editarProducto/:id',
+      uploadFiles.single('imgPrincipalProducto'),
+      update
+   )
 
-/* PUT actualiza los datos */
-router.put(
-    '/editarProducto/:id',
-    uploadFiles.single('imgPrincipalProducto'),
-    update);
+   .delete('/delete/:id', borrar)
 
-router.delete("/delete/:id", borrar)
+   .get('/resultadoBusqueda', busqueda)
 
 module.exports = router;

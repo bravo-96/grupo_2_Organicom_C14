@@ -1,52 +1,7 @@
 [
    {
-      "id": 5,
-      "nombre": "fideos-Molto",
-      "descuento": "20",
-      "precio": "445",
-      "categoria": "fideos-cereales",
-      "descripcion": "wqrweqrwetwewgq",
-      "imgPrincipalProducto": "1654042511376_img_.jpg"
-   },
-   {
-      "id": 6,
-      "nombre": "fideos-Molto",
-      "descuento": "20",
-      "precio": "445",
-      "categoria": "fideos-cereales",
-      "descripcion": "wqrweqrwetwewgq",
-      "imgPrincipalProducto": "1654200891972_img_.jpg"
-   },
-   {
-      "id": 7,
-      "nombre": "jugo de naranja",
-      "descuento": "5",
-      "precio": "150",
-      "categoria": "jugos-bebidas",
-      "descripcion": "hola soy un jugo bebible <3",
-      "imgPrincipalProducto": "1654204269871_img_.jpg"
-   },
-   {
-      "id": 8,
-      "nombre": "jugo de naranja",
-      "descuento": "5",
-      "precio": "120",
-      "categoria": "jugos-bebidas",
-      "descripcion": "sdafdfsadfqwefqewfasdfasf",
-      "imgPrincipalProducto": "1654286291686_img_.jpg"
-   },
-   {
-      "id": 9,
-      "nombre": "jugos diversos",
-      "descuento": "10",
-      "precio": "255",
-      "categoria": "jugos-bebidas",
-      "descripcion": "fasdfqwerfasfdgqreefdadfargvbqar",
-      "imgPrincipalProducto": "1654286335254_img_.jpg"
-   },
-   {
       "id": 10,
-      "nombre": "pistachos 300g",
+      "nombre": "Pistacho con Cascara Salado y Tostado x 300 g",
       "descuento": "10",
       "precio": "1085",
       "categoria": "frutos-secos",
@@ -55,7 +10,7 @@
    },
    {
       "id": 11,
-      "nombre": "nuez 300g",
+      "nombre": "Nuez Pelada Mariposa Extra Light x 300 g",
       "descuento": "5",
       "precio": "1090",
       "categoria": "frutos-secos",
@@ -64,7 +19,7 @@
    },
    {
       "id": 12,
-      "nombre": "castañas 350g",
+      "nombre": "Castañas de Caju Tostadas 350g Especiales sin Sal",
       "descuento": "",
       "precio": "995",
       "categoria": "frutos-secos",
@@ -73,7 +28,7 @@
    },
    {
       "id": 13,
-      "nombre": "almendras 400g premium",
+      "nombre": "Almendras Nonpareil 400 gr Premium Grandes SIN TACC",
       "descuento": "15",
       "precio": "1000",
       "categoria": "frutos-secos",
@@ -82,7 +37,7 @@
    },
    {
       "id": 14,
-      "nombre": "mix tropical 400g",
+      "nombre": "Mix Tropical x 400 g",
       "descuento": "15",
       "precio": "420",
       "categoria": "frutos-secos",
@@ -91,7 +46,7 @@
    },
    {
       "id": 15,
-      "nombre": "te verde en capullos",
+      "nombre": "Te Verde en Capullos con Flores x Unidad",
       "descuento": "",
       "precio": "155",
       "categoria": "infusiones",
@@ -100,7 +55,7 @@
    },
    {
       "id": 16,
-      "nombre": "te verde en capullo con lirio",
+      "nombre": "Te Verde en Capullos y Lirios x Unidad",
       "descuento": "5",
       "precio": "155",
       "categoria": "infusiones",
@@ -109,7 +64,7 @@
    },
    {
       "id": 17,
-      "nombre": "Ambay guiral 50g",
+      "nombre": "Infusion de Ambay Guiral x 50 g",
       "descuento": "",
       "precio": "140",
       "categoria": "infusiones",
@@ -118,7 +73,7 @@
    },
    {
       "id": 18,
-      "nombre": "Hojas de boldo 50g",
+      "nombre": "Infusion de Boldo en Hojas Guiral x 50 g",
       "descuento": "",
       "precio": "355",
       "categoria": "infusiones",
@@ -127,7 +82,7 @@
    },
    {
       "id": 19,
-      "nombre": "Burrito guiral 50g",
+      "nombre": "Infusion de Burrito Guiral x 50 g",
       "descuento": "10",
       "precio": "315",
       "categoria": "infusiones",
@@ -136,7 +91,7 @@
    },
    {
       "id": 20,
-      "nombre": "Fideos de chia wakas",
+      "nombre": "Fideos Fusilli con Chia Wakas x 250 g SIN TACC",
       "descuento": "",
       "precio": "235",
       "categoria": "fideos-cereales",
