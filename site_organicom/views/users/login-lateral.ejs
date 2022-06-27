@@ -38,9 +38,9 @@
          </a> -->
          <!-- para verificar el crud, cambiar de lugar pls -->
          <%}else if(typeof session.user !== "undefined" && session.user.rol === "admin") { %> 
-            <li>
+            <ul>
                Modo Admin
-            </li>
+            </ul>
 
             <a href="/users/profile"><button type="button" class="btn-registrate">Bienvenido <%- session.user.nombre %></button></a>
 
@@ -51,6 +51,7 @@
             <a href="/users/logout"><button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Cerrar Sesion</button></a>
 
             <%}else{%>
+
                <a href="/users/profile"><button type="button" class="btn-registrate">Bienvenido <%- session.user.nombre %> </button></a>
 
                <a href="/users/logout"><button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Cerrar Sesion</button></a>
