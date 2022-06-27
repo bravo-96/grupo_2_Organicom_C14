@@ -4,7 +4,7 @@ const path = require('path');
 
 const multer = require('multer');
 let uploadFiles = require('../middleware/uploadFiles');
-const {offSession} = require("../middleware/sessionCheck")
+const {offSession, soloAdmin} = require("../middleware/sessionCheck")
 
 let {
    adminProducts,
@@ -17,15 +17,15 @@ let {
 const { busqueda } = require('../controllers/productController');
 
 router
-   .get('/',offSession, adminProducts)
+   .get('/', offSession, soloAdmin, adminProducts)
 
    /* GET muestra el formulario */
-   .get('/agregar',offSession, agregarProducto)
+   .get('/agregar', offSession, soloAdmin, agregarProducto)
 
    /* POST carga los datos al formulario */
    .post('/agregarProducto', uploadFiles.single('imgPrincipalProducto'), create)
 
-   .get('/editar/:id',offSession, editarProducto)
+   .get('/editar/:id', offSession, soloAdmin, editarProducto)
 
    /* PUT actualiza los datos */
    .put(

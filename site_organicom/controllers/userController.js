@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs")
 const {validationResult} = require("express-validator");
 const res = require('express/lib/response');
 const req = require('express/lib/request');
+const { notEqual } = require('assert');
 
 //armado de logica register Alex <3
 module.exports = {
@@ -12,8 +13,8 @@ module.exports = {
       return res.render('users/register',{session : req.session});
    },
    processRegister : (req, res, next)=>{
-      let errors = validationResult(req)
-      if(errors.isEmpty()){
+      
+      
          let lastId = 0;
       usuarios.forEach(user => {
           if (user.id > lastId) {
@@ -21,6 +22,7 @@ module.exports = {
           }
       });
       
+      if(req.body.email && req.body.nombre && req.body.password !== "undefined"){
       let {nombre, email, number, password} = req.body
 
       let newUser = {
@@ -33,10 +35,11 @@ module.exports = {
          avatar : "default.png",
          terminos : true
       };
+      
       usuarios.push(newUser);
       guardarUser(usuarios)
 
-      //res.redirect("/")
+      res.redirect("/")
       }else{
          res.redirect("/users/register")
       }

@@ -14,6 +14,13 @@ module.exports = {
         }else{
             next()
         }
+    },
+    soloAdmin : (req,res,next)=>{
+        if (req.session.user.rol !== "admin") {
+            res.redirect("/")
+        }else{
+            next()
+        }
     }
 }
 

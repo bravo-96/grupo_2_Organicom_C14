@@ -32,7 +32,7 @@
       "email": "buenas@gmail.com",
       "number": "12345678990",
       "password": "$2a$10$ngxOMI254pMK0Pqr7eyy2eUKYT6HhcK7I6OWpHP/n1jA9MMmn7LYS",
-      "rol": "user",
+      "rol": "admin",
       "avatar": "default.png"
    },
    {
@@ -43,5 +43,15 @@
       "password": "$2a$10$E4r4vpvMtPt/q1yX5QOXMu2oFZJyPO5q14bEXLkcxAb7fOfkRkk0O",
       "rol": "user",
       "avatar": "default.png"
+   },
+   {
+      "id": 6,
+      "nombre": "magma",
+      "email": "fua@gmail.com",
+      "number": "12351612334",
+      "password": "$2a$10$F5TzMFJ54mwnRFYC17tScOEQf2T3BNcn44ai4gGtFsUjKL7NLBTMG",
+      "rol": "user",
+      "avatar": "default.png",
+      "terminos": true
    }
 ]
