@@ -18,14 +18,11 @@ module.exports=[
         .notEmpty()
         .withMessage("debes ingresar una contraseña"),
 
-    body ("nombre", "email", "password")
-        .custom((value,{req})=>{
-            if (req.body.email && req.body.name && req.body.password !== "undefined") {
-                next()
-            }else{
-                return false
-            }
-        })
-        .withMessage("debes ingresar los datos correspondientes")
-]
+    body ("email")
+    /* .if(email==="undefined"){
 
+    } */
+    .notEmpty()
+    .isEmail()
+    
+]
