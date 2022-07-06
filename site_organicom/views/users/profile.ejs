@@ -7,8 +7,15 @@
   
 </head>
 <body>
+
     <%- include("../partials/header") %>
-  
+    <%- include("../users/login-lateral") %>
+    <%- include("../partials/carrito-lateral") %>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/css/splide-core.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+ 
     <main class="form_box">
        
             <form class="profile-form" action="/users/register2" method="POST">

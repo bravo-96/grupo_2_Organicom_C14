@@ -52,8 +52,14 @@
       "password": "$2a$10$e2/Dwkl/HOs2BtvTOwfdZej0SicQE86KfKp5JVWvKWFd3ATsrlYpS",
       "rol": "user",
       "avatar": "default.png"
+   },
+   {
+      "id": 12,
+      "nombre": "papap ",
+      "email": "popo@gmail.com",
+      "number": "",
+      "password": "$2a$10$AuoMH9AX9l719rIS7Tfd2OPqPSjy7QulhskocqX/utTmIUBSgfIUO",
+      "rol": "user",
+      "avatar": "/assets/img/default.png"
    }
-   
-  
-
 ]
