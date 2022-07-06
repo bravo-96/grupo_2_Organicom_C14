@@ -57,9 +57,9 @@
       "id": 12,
       "nombre": "papap ",
       "email": "popo@gmail.com",
-      "number": "",
+      "number": "54353245",
       "password": "$2a$10$AuoMH9AX9l719rIS7Tfd2OPqPSjy7QulhskocqX/utTmIUBSgfIUO",
       "rol": "user",
-      "avatar": "/assets/img/default.png"
+      "avatar": "default.png"
    }
 ]
