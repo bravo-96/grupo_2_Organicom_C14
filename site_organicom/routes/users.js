@@ -7,10 +7,11 @@ const {login, processLogin, processRegister, register, logout, profile } = requi
 const {inSession} = require("../middleware/sessionCheck")
 
 
+
 //RUTAS DONE
 //register
 router.get("/register", inSession, register);
-router.post("/register2", processRegister)
+router.post("/register2",/* loginValidator, */ processRegister)
 
 //login
 router.get("/login", inSession, login)

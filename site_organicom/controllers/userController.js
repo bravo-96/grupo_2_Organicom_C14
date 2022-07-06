@@ -11,8 +11,9 @@ module.exports = {
       return res.render('users/register',{session : req.session});
    },
    processRegister : (req, res, next)=>{
-
-      let lastId = 0;
+      let errors = validationResult(req)
+      if(errors.isEmpty()){
+         let lastId = 0;
       usuarios.forEach(user => {
           if (user.id > lastId) {
              lastId = user.id
@@ -28,12 +29,18 @@ module.exports = {
          number,
          password : bcrypt.hashSync(password, 10),
          rol : "user",
-         avatar : "/assets/img/default.png"
+         avatar : "default.png",
+         terminos : true
       };
       usuarios.push(newUser);
       guardarUser(usuarios)
 
-      res.redirect("/")
+      //res.redirect("/")
+      }else{
+         res.redirect("/users/register")
+      }
+      next()
+      
    //SI HAY DUDAS, REVISAR EL ADMINCONTROLLER PARA ENTENDER COMO FUNCIONA, PARA TENER UNA REFERENCIA <3
    //FALTAN COSAS POR AGREGAR PERO LAS SUBO DE A POCO
    //armado de logica register Alex <3
@@ -82,5 +89,5 @@ module.exports = {
          
       })
    }
-   
+  
 };
