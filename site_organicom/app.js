@@ -16,6 +16,8 @@ const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const adminProductsRouter = require('./routes/adminProducts');
 
+
+
 const app = express();
 
 // view engine setup
@@ -40,11 +42,12 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // RUTAS
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/adminProducts', adminProductsRouter);
+
+
 
 /*
 app.get('/', (req, res) =>
