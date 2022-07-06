@@ -1,0 +1,51 @@
+@import './general.css';
+
+
+.form_box{
+    background: url('/assets/img/fondo-register.webp') no-repeat center;
+    height: 600px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.profile-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    height: 100%;
+    max-height: 500px;
+    width: 80%;   
+    max-width: 470px;
+    background-color: var(--fondo-pagina);
+    border-radius: 0.3rem;
+}
+.profile-title{
+    text-align: center;
+    margin: 0;
+    color: var(--verde);
+}
+.button-profile{
+    padding: 1rem 0;
+    align-self: center;
+    width: 80%;
+    max-width: 200px;
+    line-height: 1;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--amarillo);
+    color: var(--verde);
+    font-weight: bolder;
+}
+.img_profile-box{
+    display: flex;
+    justify-content: center;
+}
+.img_user-profile{
+    width: 80px;
+    height: 80px;
+    
+}

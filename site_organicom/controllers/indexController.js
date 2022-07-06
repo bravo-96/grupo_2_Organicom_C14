@@ -6,5 +6,5 @@ module.exports = {
       { title: 'Organicom', 
       productos, 
       session : req.session });
-   },
+   }
 };

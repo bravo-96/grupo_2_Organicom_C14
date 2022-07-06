@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head", {title: "Perfil"}) %>
+    <link rel="stylesheet" href="/css/profile.css">
+    <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+    <%- include("../partials/header") %>
+  
+    <main class="form_box">
+       
+            <form class="profile-form" action="/users/register2" method="POST">
+                <div class='img_profile-box'>
+                    <img src="/assets/img/usuario-icono.svg" alt='' class="img_user-profile">
+                </div>
+            
+                   <h1 class="profile-title">Perfil</h1>
+            
+                
+                   <label for="nombre"  >Nombre</label>
+                   <input class="profile-main" type="text" id="nombre" name="nombre" value="<%= session.user.nombre %> " required>
+               
+              
+                   <label for="email">Email</label>
+                   <input class="profile-main" type="email" id="email" name="email" value="<%= session.user.email %> " required>
+          
+              
+                   <label for="numer">Telefono/celular</label>
+                   <input class="profile-main" type="number" id="number" name="number"
+                      placeholder="Escriba su numero(opcional)." value="<%= session.user.number %> ">
+                
+              
+                   <label for="password">Password</label>
+                   <input class="profile-main" type="password" id="profile-password" name="password">       
+                      
+                   <button type="submit" class="profile-main button-profile">
+                      Guardar
+                   </button>       
+                
+             </form>
+    </main>
+
+    <%- include("../partials/footer") %>
+    <script src="/js/general.js"></script>
+
+</body>
+</html>

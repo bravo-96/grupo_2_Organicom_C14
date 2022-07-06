@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require("multer")
 let uploadFiles = require("../middleware/uploadFiles")
 let loginValidator = require("../validations/loginValidator")
-const {login, processLogin, processRegister, register, logout } = require('../controllers/userController');
+const {login, processLogin, processRegister, register, logout, profile } = require('../controllers/userController');
 const {inSession} = require("../middleware/sessionCheck")
 
 
@@ -18,6 +18,9 @@ router.post("/login2", loginValidator, processLogin)
 
 //logout
 router.get("/logout", logout)
+
+router.get('/profile',profile)
+
 
 module.exports = router;
 

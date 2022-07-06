@@ -3,8 +3,7 @@ const usuarios = require("./data/users.json")
 let {guardarUser}= require("./data/dataFS")
 const bcrypt = require("bcryptjs")
 const {validationResult} = require("express-validator");
-const res = require('express/lib/response');
-const req = require('express/lib/request');
+
 
 //armado de logica register Alex <3
 module.exports = {
@@ -29,7 +28,7 @@ module.exports = {
          number,
          password : bcrypt.hashSync(password, 10),
          rol : "user",
-         avatar : "default.png"
+         avatar : "/assets/img/default.png"
       };
       usuarios.push(newUser);
       guardarUser(usuarios)
@@ -66,10 +65,22 @@ module.exports = {
       //Logica del login consultas a Alex <3
       
    },
-   logout : (req, res, next) => {
+   logout : (req, res, ) => {
       req.session.destroy()
       res.redirect("/")
       //Logica del logout consultas a Alex <3
+   },
+
+   profile:(req,res) =>{
+      let id = req.session.id
+      const users = JSON.parse(fs.readFileSync('./controllers/data/users.json','utf-8'));
+      const user = users.find(user => user.id === id);
+      
+      return res.render('users/profile',{
+         user,
+         session : req.session 
+         
+      })
    }
    
 };
