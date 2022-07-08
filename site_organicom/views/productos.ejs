@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <%- include("./partials/head", {title: "Productos"}) %>
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/css/splide-core.min.css">
+   <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <%- include("./users/login-lateral") %>
+
+   <%- include("./partials/header") %>
+
+   <%- include("./partials/carrito-lateral") %>
+    <main>
+        <div class="lista-productos-grid">
+            <% productos.forEach(producto => { %>
+
+            <article class="card">
+                <div class="card-header">
+                    <!-- <img src="/assets/img/<%#= producto.imagen %>" alt> -->
+                    <img src="/imgs/products_images/<%= producto.imgPrincipalProducto%>" alt>
+                </div>
+                <div class="card-body">
+                    <h3><%= producto.nombre %></h3>
+                    <p class="precio-inicial">
+                        <% if (producto.descuento) { %>
+                        <span>$<%= producto.precio %></span>
+                        <span class="descuento">
+                            <%= producto.descuento %>%OFF!
+                        </span>
+                        <% } %>
+                    </p>
+                    <p class="precio-final">
+                        $ <%= producto.descuento ? 
+                            Math.trunc(+producto.precio - (+producto.precio * +producto.descuento / 100)) :
+                            Math.trunc(producto.precio) %>.00
+                    </p>
+                    <a href="" class="categoria"><%= producto.categoria %></a>
+                    <div class="botones">
+                        <a href="/products/detalleProducto/<%= producto.id %> ">
+                            <button class="btn-editar" type="button">Agregar <span class="icono"></span></button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <% }); %>
+
+
+
+        </div>
+    </main>
+    <%- include("./partials/footer") %>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/js/splide.min.js"></script>
+    <script src="/js/general.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+ 
+</html>
