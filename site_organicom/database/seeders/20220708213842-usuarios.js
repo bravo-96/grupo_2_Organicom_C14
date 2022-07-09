@@ -1,6 +1,6 @@
 'use strict';
-const users_db = require('../../controllers/data/users.json');
-const users = users_db.map(usuario => {
+const usuarios_db = require('../../controllers/data/users.json');
+const usuarios = usuarios_db.map(usuario => {
   return {
     nombre : usuario.nombre,
     email : usuario.email,
@@ -14,12 +14,12 @@ const users = users_db.map(usuario => {
 module.exports = {
   async up (queryInterface, Sequelize) {
   
-      await queryInterface.bulkInsert('Users', users, {});
+      await queryInterface.bulkInsert('Usuarios', usuarios, {});
     
   },
 
   async down (queryInterface, Sequelize) {
    
-     await queryInterface.bulkDelete('Users', null, {});
+     await queryInterface.bulkDelete('Usuarios', null, {});
        }
 };

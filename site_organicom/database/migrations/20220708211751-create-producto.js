@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       descripcion: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       categoriaId: {
         type: Sequelize.INTEGER,
@@ -30,10 +30,10 @@ module.exports = {
         }
       },
       beneficios: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       preparacion: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       marcaId : {
         type: Sequelize.INTEGER,

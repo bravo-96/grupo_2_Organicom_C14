@@ -1,14 +1,14 @@
 const req = require('express/lib/request');
 //const productos = require('../controllers/data/productos.json');
 const {producto} = require("../database/models");
-const categorias = require('../database/models/categorias');
+//const categorias = require('../database/models/categorias');
 
 module.exports = {
    detalleProducto: (req, res, next) => {
       producto.findByPk(req.params.id)
-      .then(producto => {
+      .then(productos => {
          return res.render('detalleProducto',{
-            producto, 
+            productos, 
             session: req.session 
          });
       })
@@ -93,13 +93,13 @@ module.exports = {
       }); */
    },
    listar : (req, res) => {
-      producto.findAll()
+      /* producto.findAll()
       .then(productos =>{
-         /* res.send(categorias) */
-         res.render('productos', {
+         res.send(productos) */
+         /* res.render('productos', {
             productos,
             session : req.session     
-         });
-      })
+         }); */
+      /* }) */
    }
 };
