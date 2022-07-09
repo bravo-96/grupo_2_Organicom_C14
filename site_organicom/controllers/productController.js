@@ -1,17 +1,18 @@
 const req = require('express/lib/request');
 //const productos = require('../controllers/data/productos.json');
-const {producto} = require("../database/models");
+const db = require("../database/models");
 //const categorias = require('../database/models/categorias');
 
 module.exports = {
    detalleProducto: (req, res, next) => {
-      producto.findByPk(req.params.id)
+      db.Producto.findByPk(req.params.id)
       .then(productos => {
          return res.render('detalleProducto',{
             productos, 
             session: req.session 
          });
       })
+      .catch(errors => console.log(errors))
       /* const producto = productos.find((prod) => {
          return prod.id === +req.params.id;
       });
@@ -23,19 +24,20 @@ module.exports = {
    },
 
    carrito: (req, res, next) => {
-      producto.findByPk()
+      db.Producto.findByPk()
       .then(productos => {
          return res.render('carrito', { session: req.session });
       })
+      .catch(errors => console.log(errors))
       //return res.render('carrito', { session: req.session });
    },
 
    // Busqueda
    busqueda: (req, res) => {
-      let keyword = req.query.search
-      producto.findAll({
+      let searchy = req.query.search.toLowerCase()
+      db.Producto.findAll({
          where : {
-            nombre : keyword
+            nombre : searchy
          }
       })
       .then(producto =>{
@@ -45,6 +47,7 @@ module.exports = {
             session : req.session
          })
       })
+      .catch(errors => console.log(errors))
       /* let { keyword } = req.query;
       let noSpaceKeyword = keyword.join('');
       const result = productos.filter((producto) =>
@@ -70,7 +73,7 @@ module.exports = {
    categorie: (req, res, next) => {
 
      let busqueda = req.query.categorie
-     producto.findAll({
+     db.producto.findAll({
          where : {
             categoria : busqueda
          }
@@ -82,6 +85,7 @@ module.exports = {
             session : req.session
          })
       })
+      .catch(errors => console.log(errors))
       
      /*  const productoCategoria = productos.filter((producto) => {
          return producto.categoria === req.params.categoria;
@@ -93,13 +97,14 @@ module.exports = {
       }); */
    },
    listar : (req, res) => {
-      /* producto.findAll()
-      .then(productos =>{
-         res.send(productos) */
+      db.Imagenes.findAll()
+      .then(imagen =>{
+         res.send(imagen) 
          /* res.render('productos', {
             productos,
             session : req.session     
          }); */
-      /* }) */
+      })
+      .catch(errors => console.log(errors))
    }
 };

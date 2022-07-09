@@ -66,7 +66,7 @@
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
-                           <img src="/imgs/products_images/<%=  productos[i].imgPrincipalProducto %> " alt>
+                           <img src="/imgs/products_images/<%=  productos[i].productoId %> " alt>
                            <div class="favorito"></div>
                         </div>
                         <div class="card-body">
@@ -116,7 +116,7 @@
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
-                           <img src="/imgs/products_images/<%=  productos[i].imgPrincipalProducto %> " alt>
+                           <img src="/imgs/products_images/<%=  productos[i].productoId %> " alt>
                            <div class="favorito"></div>
                         </div>
                         <div class="card-body">
@@ -200,14 +200,14 @@
             </h2>
             <div class="splide__track">
                <ul class="splide__list">
-                  <% productos.forEach(({imgPrincipalProducto, nombre, descuento, precio, categoria, id} )=> { %>
+                  <% productos.forEach(({productoId, nombre, descuento, precio, categoria, id} )=> { %>
 
-                  <% if (categoria === "frutos-secos") { %>
+                  <% if (categoria === "Frutos Secos") { %>
 
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
-                           <img src="/imgs/products_images/<%=  imgPrincipalProducto %> " alt>
+                           <img src="/imgs/products_images/<%=  productoId %> " alt>
                            <div class="favorito"></div>
                         </div>
                         <div class="card-body">
@@ -264,7 +264,7 @@
                <ul class="splide__list">
                   <% productos.forEach(({imgPrincipalProducto, nombre, descuento, precio, categoria, id} )=> { %>
 
-                  <% if (categoria === "jugos-bebidas") { %>
+                  <% if (categoria === "Jugos Bebidas") { %>
 
                   <li class="splide__slide">
                      <article class="card">

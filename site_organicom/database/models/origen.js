@@ -17,7 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     nombre: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Origen',
+    modelName: 'Origenes',
   });
+  Origen.associate = models =>{
+    Origen.hasMany(models.Producto, {
+      as : "productos",
+      foreignKey : "origenId"
+    })
+  }
   return Origen;
 };

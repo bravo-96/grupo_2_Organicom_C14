@@ -17,7 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     nombre: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Marca',
+    modelName: 'Marcas',
   });
+  Marca.associate = models =>{
+    Marca.hasMany(models.Producto, {
+      as : "productos",
+      foreignKey : "marcaId"
+    })
+  }
   return Marca;
 };
