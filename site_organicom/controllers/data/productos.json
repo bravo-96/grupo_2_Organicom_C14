@@ -1,61 +1,71 @@
 [
    {
-      "id": 10,
-      "nombre": "Pistacho con Cascara Salado y Tostado x 300 g",
+      "id": 1,
+      "nombre": "Pistacho con Cascara Salado y Tostado Organicom x 300 g",
       "descuento": "10",
       "precio": "1085",
       "categoriaId": 1,
       "marcaId":2,
       "origenId":8,
-      "descripcion": "sdfadfasdfasdfsadfwqerfefsdafqwe",
+      "beneficios":"Todos los frutos secos contienen fibra, que ayuda a reducir el colesterol. La fibra también hace que te sientas lleno, y así comes menos. Además, se cree que la fibra influye en la prevención de la diabetes tipo 2. Vitamina E.",
+      "preparacion":"Usos: Listos para comer del paquete o para usar en recetas cocina",
+      "descripcion": "Valor Energético: 85 kcal = 357 kJ; Carbohidratos: 4,2 g; Proteínas: 3.1 g; Grasas Totales: 6.6 g; Grasas Saturadas: 0.8 g; Grasas Trans: 0 g; Fibra Alimentaria: 1.9 g; Sodio: 64 mg; Porción: 15 g",
       "imgPrincipalProducto": "1654286464448_img_.png"
    },
    {
-      "id": 11,
+      "id": 2,
       "nombre": "Nuez Pelada Mariposa Extra Light x 300 g",
       "descuento": "5",
       "precio": "1090",
       "categoriaId": 1,
       "marcaId":3,
       "origenId":11,
-      "descripcion": "saf324dfgsfdhsgfjsgfefgfdhnfghsrthrtyewer",
+      "beneficios":"Todos los frutos secos contienen fibra, que ayuda a reducir el colesterol. La fibra también hace que te sientas lleno, y así comes menos. Además, se cree que la fibra influye en la prevención de la diabetes tipo 2. Vitamina E.",
+      "preparacion":"Ideal para sumar como snack saludable. Para comer solo o junto a otros frutos secos o frutas desecadas como pasas o cranberries. También se puede agregar en recetas saladas como rellenos de tartas y empanadas, ensaladas, pizza e inclusive preparaciones dulces como budines, tortas, panqueques, brownies, como acompañamiento del yogur o en la granola.",
+      "descripcion": "Valor Energético: 103 kcal = 427 kJ; Carbohidratos: 2,3 g; Proteínas: 2.1 g; Grasas Totales: 9.5 g; Grasas Saturadas: 0.6 g; Grasas Trans: 0 g; Fibra Alimentaria: 1.1 g; Sodio: 0.3 mg; Porción: 15 g (una cucharada).* % Valores Diarios con base a una dieta de 2.000 kcal u 8.400 kJ. Sus valores diarios pueden ser mayores o menores dependiendo de sus necesidades energéticas",
       "imgPrincipalProducto": "1654286497853_img_.jpg"
    },
    {
-      "id": 12,
+      "id": 3,
       "nombre": "Castañas de Caju Tostadas 350g Especiales sin Sal",
       "descuento": 0,
       "precio": "995",
       "categoriaId": 1,
       "marcaId":3,
       "origenId":19,
-      "descripcion": "dsafeqwrewqrfasfqwerfafasdfwqe",
+      "beneficios":"Todos los frutos secos contienen fibra, que ayuda a reducir el colesterol. La fibra también hace que te sientas lleno, y así comes menos. Además, se cree que la fibra influye en la prevención de la diabetes tipo 2. Vitamina E.",
+      "preparacion":"Para consumir como snack, en picadas, ensaladas, con pasta, rellenos.",
+      "descripcion": "Valor Energético: 172 kcal=722 kj; Carbohidratos: 9,8 g; Proteínas: 4,5 g; Grasas Totales: 13 g; Grasas Saturadas: 2,7 g; Grasas Trans: 0 g; Fibra Alimentaria: 0,9 g; Sodio: 192 mg; Porción: 30 gr.",
       "imgPrincipalProducto": "1654286536674_img_.png"
    },
    {
-      "id": 13,
-      "nombre": "Almendras Nonpareil 400 gr Premium Grandes SIN TACC",
+      "id": 4,
+      "nombre": "Almendras Nonpareil 400 gr Premium Grandes Organicom SIN TACC",
       "descuento": "15",
       "precio": "1000",
       "categoriaId": 1,
       "marcaId":2,
       "origenId":16,
-      "descripcion": "ewfdasfeqwrfwfsdafqwerfsadfqwerfsfsafwqerqwf",
+      "beneficios":"Todos los frutos secos contienen fibra, que ayuda a reducir el colesterol. La fibra también hace que te sientas lleno, y así comes menos. Además, se cree que la fibra influye en la prevención de la diabetes tipo 2. Vitamina E.",
+      "preparacion":"Ideal para consumir como snack saludable, para agregar en el desayuno o la merienda, ensaladas, para preparar leche de almendras, para rellenos, etc.",
+      "descripcion": "Valor Energético: 86.5 kcal; Carbohidratos: 3.2 g; Proteínas: 3.1 g; Grasas Totales: 7.5 g; Grasas Saturadas: 1.2 g; Grasas Trans: 0 g; Fibra Alimentaria: 3.7 g; Sodio: 1.2 mg; Porción: 15 g.",
       "imgPrincipalProducto": "1654286593272_img_.jpg"
    },
    {
-      "id": 14,
+      "id": 5,
       "nombre": "Mix Tropical x 400 g",
       "descuento": "15",
       "precio": "420",
       "categoriaId": 1,
       "marcaId":1,
       "origenId":13,
-      "descripcion": "sdfsdafwefsadfwefsdafsa",
+      "beneficios":"Todos los frutos secos contienen fibra, que ayuda a reducir el colesterol. La fibra también hace que te sientas lleno, y así comes menos. Además, se cree que la fibra influye en la prevención de la diabetes tipo 2. Vitamina E.",
+      "preparacion":"Uso: servir en un recipiente con fruta para desayuno/merienda",
+      "descripcion": "Variedad de frutos secos de buena calidad para mejor disfrute",
       "imgPrincipalProducto": "1654314052950_img_.jpg"
    },
    {
-      "id": 15,
+      "id": 6,
       "nombre": "Te Verde en Capullos con Flores x Unidad",
       "descuento": 0,
       "precio": "155",
@@ -68,7 +78,7 @@
       "imgPrincipalProducto": "1654362802709_img_.jpg"
    },
    {
-      "id": 16,
+      "id": 7,
       "nombre": "Te Verde en Capullos y Lirios x Unidad",
       "descuento": "5",
       "precio": "155",
@@ -81,7 +91,7 @@
       "imgPrincipalProducto": "1654362881834_img_.jpg"
    },
    {
-      "id": 17,
+      "id": 8,
       "nombre": "Infusion de Ambay Organicom x 50 g",
       "descuento": 0,
       "precio": "140",
@@ -94,7 +104,7 @@
       "imgPrincipalProducto": "1654362959477_img_.jpg"
    },
    {
-      "id": 18,
+      "id": 9,
       "nombre": "Infusion de Boldo en Hojas Organicom x 50 g",
       "descuento": 0,
       "precio": "355",
@@ -107,7 +117,7 @@
       "imgPrincipalProducto": "1654363059467_img_.jpg"
    },
    {
-      "id": 19,
+      "id": 10,
       "nombre": "Infusion de Burrito Organicom x 50 g",
       "descuento": "10",
       "precio": "315",
@@ -120,7 +130,7 @@
       "imgPrincipalProducto": "1654363120385_img_.jpg"
    },
    {
-      "id": 20,
+      "id": 11,
       "nombre": "Fideos Fusilli con Chia Wakas x 250 g SIN TACC",
       "descuento": 0,
       "precio": "235",
@@ -133,7 +143,7 @@
       "imgPrincipalProducto": "1654363313252_img_.png"
    },
    {
-      "id": 21,
+      "id": 12,
       "nombre": "Fideos de arroz spaghetti Organicom 250g sin tacc",
       "descuento": "13",
       "precio": "425",
@@ -146,7 +156,7 @@
       "imgPrincipalProducto": "1654363398016_img_.jpg"
    },
    {
-      "id": 22,
+      "id": 13,
       "nombre": "Leche de coco, bebida vegetal Organicom 400 ml",
       "descuento": 0,
       "precio": "660",
@@ -159,7 +169,7 @@
       "imgPrincipalProducto": "1654363516594_img_.jpg"
    },
    {
-      "id": 23,
+      "id": 14,
       "nombre": "Hongos secos de pino 200g",
       "descuento": "11",
       "precio": "1140",
@@ -172,7 +182,7 @@
       "imgPrincipalProducto": "1654363605854_img_.png"
    },
    {
-      "id": 24,
+      "id": 15,
       "nombre": "Fideos de Arroz con Morron Soyarroz Organicom x 300 g SIN TACC",
       "descuento": 0,
       "precio": "295",
@@ -185,7 +195,7 @@
       "imgPrincipalProducto": "1654363695586_img_.jpg"
    },
    {
-      "id": 25,
+      "id": 16,
       "nombre": "Fideos de Arroz con Espinaca Soyarroz Organicom x 300 g SIN TACC",
       "descuento": "4",
       "precio": "295",
@@ -198,7 +208,7 @@
       "imgPrincipalProducto": "1654363770622_img_.jpg"
    },
    {
-      "id": 26,
+      "id": 17,
       "nombre": "Fideos Schar Penne de Alemania x 250 g SIN TACC",
       "descuento": 0,
       "precio": "245",
@@ -211,7 +221,7 @@
       "imgPrincipalProducto": "1654363818942_img_.jpg"
    },
    {
-      "id": 27,
+      "id": 18,
       "nombre": "Infusion Diente de Leon Organicom x 50 gr.",
       "descuento": 0,
       "precio": "200",
@@ -224,7 +234,7 @@
       "imgPrincipalProducto": "1654363874340_img_.jpg"
    },
    {
-      "id": 28,
+      "id": 19,
       "nombre": "Moringa Oleifera en Hojas Guiral x 50 gr",
       "descuento": 0,
       "precio": "285",
@@ -237,7 +247,7 @@
       "imgPrincipalProducto": "1654363907942_img_.jpg"
    },
    {
-      "id": 29,
+      "id": 20,
       "nombre": "Te Gunpowder Verde en Hebras Chino x 100 g",
       "descuento": 0,
       "precio": "390",
