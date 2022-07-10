@@ -8,11 +8,11 @@
 </head>
 
 <body class="carrito">
-   <%- include("./partials/login-lateral") %>
-
+   <!-- PRESTAR ATENCION A LAS RUTAS DE INCLUDE EN GENERAL -->
+   <%- include("./users/login-lateral") %>
    <%- include("./partials/header") %>
-
    <%- include("./partials/carrito-lateral") %>
+   <!-- PRESTAR ATENCION A LAS RUTAS DE INCLUDE EN GENERAL -->
 
    <main>
       <section class="informacion">
@@ -25,10 +25,10 @@
          </ul>
          <div class="datos-contacto-box">
             <h2>Datos de contacto</h2>
-            <div class="iniciar-sesion">
+            <!-- <div class="iniciar-sesion">
                <p>¿Ya tenes una cuenta? <a href="/login">Inicia sesion aqui</a> y carga automáticamente todos tus datos.
                </p>
-            </div>
+            </div> -->
             <form action="/" method="get" class="formulario-datos-contacto">
                <div class="email">
                   <label for="email">Email</label>

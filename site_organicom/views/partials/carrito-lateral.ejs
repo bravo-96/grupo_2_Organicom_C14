@@ -10,7 +10,7 @@
       <li class="producto-card">
          <button type="button" class="btn-cerrar"></button>
          <!-- <a href="/products/detalleProducto/244"> -->
-         <a href="/products/detalleProducto">
+         <a href="/products/detalleProducto/1">
             <img src="/assets/img/producto-imagen-1.jpg" alt="Imagen del producto">
          </a>
          <h4 class="titulo">
@@ -83,5 +83,9 @@
       <p>Total productos</p>
       <p>$ 1.250,00</p>
    </div>
+   <% if(typeof session.user === "undefined") {%>       
+         <span>inicia sesion o registrate para continuar la compra</span>
+   <% }else{ %> 
    <a href="/products/carrito" class="btn-comprar">Comprar</a>
+   <% } %> 
 </div>

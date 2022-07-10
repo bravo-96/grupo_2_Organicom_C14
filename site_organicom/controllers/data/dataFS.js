@@ -9,8 +9,11 @@ module.exports = {
          JSON.stringify(dataBase, null, 3)
       );
    },
+   
    guardarUser: (codeBase) =>{
-      fs.writeFileSync("./controllers/data/users.json", JSON.stringify(codeBase, null, 3));
+      fs.writeFileSync(
+         "./controllers/data/users.json", 
+         JSON.stringify(codeBase, null, 3));
    }
 };
 

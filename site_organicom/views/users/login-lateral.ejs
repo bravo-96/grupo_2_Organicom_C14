@@ -1,0 +1,64 @@
+<div class="login-lateral">
+   <button type="button" class="cerrar">
+      <div class="icono"></div>
+   </button>
+   <div class="login">
+      <form class="login-form" action="/users/login2" method="post">
+         <div>
+            <% if(typeof session.user === "undefined") {%>
+               <h1 class="titulo">Iniciar sesión</h1>
+         <div class="login-main">
+            <label for="email">Email</label>
+            <input class="login_input-main" type="email" id="email" name="email"
+               placeholder="Escribi tu email">
+         </div>
+         <div class="login-main">
+            <label for="password">Password</label>
+            <input class="login_input-main" type="password" id="password" name="password"
+               placeholder="Escribi tu password">
+         </div>
+         <div class="login-main recuerdame-box">
+            <label for="recuerdame">
+               <input type="checkbox" name="recuerdame" id="recuerdame" checked>
+               Recuerdame
+            </label>
+            <a href="">Olvidé mi contraseña</a>
+         </div>
+         <button type="submit">
+            INICIAR SESIÓN
+         </button>
+
+         <p class="iniciar-sesion">¡Registrate si aún no tenes una cuenta!</p>
+         <a href="/users/register">
+            <button type="button" class="btn-registrate">REGISTRARSE</button>
+         </a>
+         <!-- para verificar el crud, cambiar de lugar pls -->
+        <!--  <a href="/adminProducts">
+            <button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Ingresar como ADMIN</button>
+         </a> -->
+         <!-- para verificar el crud, cambiar de lugar pls -->
+         <%}else if(typeof session.user !== "undefined" && session.user.rol === "admin") { %> 
+            <ul>
+               Modo Admin
+            </ul>
+
+            <a href="/users/profile"><button type="button" class="btn-registrate">Bienvenido <%- session.user.nombre %></button></a>
+
+            <a href="/adminProducts">
+               <button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Ingresar como ADMIN</button>
+            </a>
+
+            <a href="/users/logout"><button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Cerrar Sesion</button></a>
+
+            <%}else{%>
+
+               <a href="/users/profile"><button type="button" class="btn-registrate">Bienvenido <%- session.user.nombre %> </button></a>
+
+               <a href="/users/logout"><button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Cerrar Sesion</button></a>
+               
+
+            <% } %>  
+         </div>
+      </form>
+   </div>
+</div>

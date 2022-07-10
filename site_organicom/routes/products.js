@@ -1,10 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const {offSession} = require("../middleware/sessionCheck")
 
-const {detalleProducto,carrito} = require('../controllers/productController');
+const {
+   detalleProducto,
+   carrito,
+   categoria,
+   busqueda,
+} = require('../controllers/productController');
 
-router.get('/detalleProducto', detalleProducto);
-// router.get('/detalleProducto/:id', detalleProducto);
-router.get('/carrito', carrito);
+router
+   .get('/detalleProducto/:id', detalleProducto)
+   .get('/carrito',offSession, carrito)
+   .get('/categorias/:categoria', categoria)
+   .get('/resultadoBusqueda', busqueda);
 
 module.exports = router;

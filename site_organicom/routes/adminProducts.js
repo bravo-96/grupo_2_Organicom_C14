@@ -1,25 +1,41 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
-//Si quieren cambiar nombres haganlo pero AVISEN --Alex <3
+const multer = require('multer');
+let uploadFiles = require('../middleware/uploadFiles');
+const {offSession, soloAdmin} = require("../middleware/sessionCheck")
 
-let {adminProducts, agregarProducto, create, editarProducto, update} = require ("../controllers/adminController")
+let {
+   adminProducts,
+   agregarProducto,
+   create,
+   editarProducto,
+   update,
+   borrar,
+} = require('../controllers/adminController');
+const { busqueda } = require('../controllers/productController');
 
-//POR FALLAS, MIRAR EN CONTROLLERS
+router
+   .get('/', offSession, soloAdmin, adminProducts)
 
-router.get("/",adminProducts);
+   /* GET muestra el formulario */
+   .get('/agregar', offSession, soloAdmin, agregarProducto)
 
-/* GET muestra el formulario */
-router.get("/agregar",agregarProducto)
+   /* POST carga los datos al formulario */
+   .post('/agregarProducto', uploadFiles.single('imgPrincipalProducto'), create)
 
-/* POST carga los datos al formulario */
-router.post("/agregarProducto",create)
+   .get('/editar/:id', offSession, soloAdmin, editarProducto)
 
+   /* PUT actualiza los datos */
+   .put(
+      '/editarProducto/:id',
+      uploadFiles.single('imgPrincipalProducto'),
+      update
+   )
 
-router.get("/editar/:id", editarProducto )
-/* PUT actualiza los datos */
-router.put("/editarProducto/:id", update);
+   .delete('/delete/:id', borrar)
 
+   .get('/resultadoBusqueda', busqueda)
 
-
-module.exports = router
+module.exports = router;

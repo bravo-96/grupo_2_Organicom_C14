@@ -1,56 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<!-- MEJORAR CODIGO, LO HICE CON POCO TIEMPO -->
-
-<!-- este seria para editar, tambien se puede usar de plantilla para las demas -->
-
-<!-- copiado del index -->
-
 <head>
-   <%- include("../partials/head", {title: "producto"}) %>
-
-   <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="/css/home.css">
-   <title>Admin | editarProductos</title>
-
-   
-
+    <%- include("../partials/head", {title: "Editar Producto"}) %>
+    <link rel="stylesheet" href="/css/admin/editarProductos.css">
 </head>
 
 <body>
-   <%- include("../partials/login-lateral") %>
+    <%- include("../users/login-lateral") %>
+    <%- include("../partials/header") %>
+    <%- include("../partials/carrito-lateral") %>
 
-   <%- include("../partials/header") %>
+    <main>
+        <!-- <img src="/assets/img/<%= producto.imagen %> " class="card-img" alt="">
+        <div class="card-body">
+            <h5 class="card-title"><%= producto.nombre %> </h5>
+            <p class="card-text"><%= producto.precio %> </p>
+            <p class="card-text"><%= producto.descripcion %> </p>
+        </div> -->
 
-   <%- include("../partials/carrito-lateral") %>
-   <!-- copiado del index-->
-   <main>
-    <!-- bootstrap -->
-    <div class="conteiner d-flex flex-wrap justify-content-center">
-       
-        <!-- UNA VEZ DE SELCCIONAR 1 PRODUCTO, MUESTRA EL SELECCIONADO -->
+        <form class="editar-form" action="/adminProducts/editarProducto/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
-            <div class="card m-2 text-black bg-light" style="width: 400px; height: 400px;">
-                <a href="/editarProducto/<%= producto.id %> "><img src="/assets/img/<%= producto.imagen %> " class="card-img" style="width: 200px; height: 200px;" alt=""></a>
-                <div class="card-body">
-
-                    <h5 class="card-title"><%= producto.nombre %> </h5>
-                    <p class="card-text"><%= producto.precio %>  </p>
-                    <p class="card-text"><%= producto.descripcion %> </p>
-                    
-                </div>
+            <div class="input-contenedor">
+                <label for="imgs-producto">Subir imágen principal del producto (solo una)</label>
+                <input type="file" id="imgPrincipalProducto" name="imgPrincipalProducto" accept="image/*" value="<%= producto.imgPrincipalProducto %>">
             </div>
+            <!-- <div class="input-contenedor">
+                <label for="imgs-producto">Subir más imágenes del producto (pueden ser varias)</label>
+                <input type="file" id="listaImagenesProducto" name="listaImagenesProducto" accept="image/*" multiple>
+             </div> -->
+            <div class="input-contenedor">
+                <label for="nombre">Título del producto</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto"
+                    value="<%= producto.nombre %>">
+            </div>
+            <div class="input-contenedor precio">
+                <label for="numer">Precio</label>
+                <input type="number" id="precio" name="precio" placeholder="ej: 150"  min="1" value="<%= producto.precio %>" />
+            </div>
+            <div class="input-contenedor descuento">
+                <label for="numer">Descuento en %</label>
+                <input type="number" id="descuento" name="descuento" placeholder="ej.: 15" value="<%= producto.descuento %>">
+            </div>
+            <div class="input-contenedor categoria">
+                <label for="categoria">Seleccione la categoria</label>
 
-    
-    
-    </div>
-    <!-- bootstrap -->
-   </main>
-   <!-- copiado del index-->
-   <%- include("../partials/footer") %>
+                <!-- Seleccion la categoria del producto en base a condiciones -->
+                <select name="categoria" id="categoria">
+                    <% if (producto.categoria === "fideos-cereales") { %>
+                    <option selected value="fideos-cereales">Fideos y Cereales</option>
+                    <option value="frutos-secos">Frutos secos</option>
+                    <option value="jugos-bebidas">Jugos y Bebidas</option>
+                    <option value="infusiones">Infusiones</option>
+                    <% } else if (producto.categoria === "frutos-secos") { %>
+                    <option value="fideos-cereales">Fideos y Cereales</option>
+                    <option selected value="frutos-secos">Frutos secos</option>
+                    <option value="jugos-bebidas">Jugos y Bebidas</option>
+                    <option value="infusiones">Infusiones</option>
+                    <% } else if (producto.categoria === "jugos-bebidas") { %>
+                    <option value="fideos-cereales">Fideos y Cereales</option>
+                    <option value="frutos-secos">Frutos secos</option>
+                    <option selected value="jugos-bebidas">Jugos y Bebidas</option>
+                    <option value="infusiones">Infusiones</option>
+                    <% } else { %>
+                    <option value="fideos-cereales">Fideos y Cereales</option>
+                    <option value="frutos-secos">Frutos secos</option>
+                    <option value="jugos-bebidas">Jugos y Bebidas</option>
+                    <option selected value="infusiones">Infusiones</option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="input-contenedor">
+                <label for="descripcion">Descripción</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10"
+                    placeholder="Escriba una descripcion del producto"><%= producto.descripcion %></textarea>
+            </div>
+            
+            <div class="input-contenedor button-agregar">
+                <button type="submit">Guardar Cambios</button>
+            </div>    
+        </form>
+        <form action="/adminProducts/delete/<%= producto.id %>?_method=DELETE" method="POST">
+            <div class="input-contenedor">
+                <button type="submit">Eliminar producto</button>
+            </div>
+        </form>
+    </main>
+    <%- include("../partials/footer") %>
 
-   <script src="/js/general.js"></script>
-    <!-- copiado del index-->
+    <script src=" /js/general.js"></script>
 </body>
+
 </html>
