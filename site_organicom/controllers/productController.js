@@ -5,10 +5,12 @@ const db = require("../database/models");
 
 module.exports = {
    detalleProducto: (req, res, next) => {
-      db.Producto.findByPk(req.params.id)
-      .then(productos => {
+      db.Producto.findByPk(req.params.id,{
+         include : ["categoria"]
+      })
+      .then(producto => {
          return res.render('detalleProducto',{
-            productos, 
+            producto, 
             session: req.session 
          });
       })
@@ -25,7 +27,7 @@ module.exports = {
 
    carrito: (req, res, next) => {
       db.Producto.findByPk()
-      .then(productos => {
+      .then(producto => {
          return res.render('carrito', { session: req.session });
       })
       .catch(errors => console.log(errors))
@@ -34,20 +36,22 @@ module.exports = {
 
    // Busqueda
    busqueda: (req, res) => {
-      let searchy = req.query.search.toLowerCase()
+      let { keyword } = req.query/* .toLowerCase() */;
+      /* let noSpaceKeyword = keyword.join('');
+      const result = (()=>productos.nombre.toLowerCase().include(noSpaceKeyword)); */
       db.Producto.findAll({
          where : {
-            nombre : searchy
+            nombre : keyword
          }
       })
-      .then(producto =>{
+      .then(productos=>{
+         /* res.send(req.query) */
          res.render("resultadoBusqueda",{
-            producto,
-            keyword,
+           /*  result, */
+            productos,
             session : req.session
          })
       })
-      .catch(errors => console.log(errors))
       /* let { keyword } = req.query;
       let noSpaceKeyword = keyword.join('');
       const result = productos.filter((producto) =>
@@ -72,16 +76,13 @@ module.exports = {
    // Categoria
    categorie: (req, res, next) => {
 
-     let busqueda = req.query.categorie
-     db.producto.findAll({
-         where : {
-            categoria : busqueda
-         }
-      })
-      .then(producto =>{
+     /* let busqueda = req.query.categoria */
+     db.Categorias.findAll()
+      .then(categoria =>{
+         /* res.render(categoria) */
          res.render("categorias",{
-            producto,
-            busqueda,
+            categoria,
+            /* busqueda, */
             session : req.session
          })
       })
@@ -97,13 +98,15 @@ module.exports = {
       }); */
    },
    listar : (req, res) => {
-      db.Imagenes.findAll()
-      .then(imagen =>{
-         res.send(imagen) 
-         /* res.render('productos', {
-            productos,
+      db.Producto.findAll(/* {
+         /* include : ["categoria","imagenes"]
+      } */)
+      .then(producto =>{
+         /* res.send(producto)  */
+         res.render('productos', {
+            producto,
             session : req.session     
-         }); */
+         });
       })
       .catch(errors => console.log(errors))
    }

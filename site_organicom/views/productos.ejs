@@ -15,7 +15,7 @@
    <%- include("./partials/carrito-lateral") %>
     <main>
         <div class="lista-productos-grid">
-            <% productos.forEach(producto => { %>
+            <!-- <% producto.forEach(producto => { %> -->
 
             <article class="card">
                 <div class="card-header">
@@ -37,7 +37,7 @@
                             Math.trunc(+producto.precio - (+producto.precio * +producto.descuento / 100)) :
                             Math.trunc(producto.precio) %>.00
                     </p>
-                    <a href="" class="categoria"><%= producto.categoria %></a>
+                    <a href="" class="categoria"><%= producto.categoriaId %></a>
                     <div class="botones">
                         <a href="/products/detalleProducto/<%= producto.id %> ">
                             <button class="btn-editar" type="button">Agregar <span class="icono"></span></button>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </article>
-            <% }); %>
+            <!-- <% }); %> -->
 
 
 

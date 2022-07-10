@@ -5,7 +5,7 @@ const db = require("../database/models")
 module.exports = {
    index: (req, res, next) => {
       db.Producto.findAll({
-         include : ["categoria"]
+         include : ["categoria"/* , "imagenes" */]
       })
       .then(productos =>{
          /* res.send(productos) */
