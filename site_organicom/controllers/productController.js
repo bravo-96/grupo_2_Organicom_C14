@@ -77,7 +77,7 @@ module.exports = {
    categorie: (req, res, next) => {
 
      /* let busqueda = req.query.categoria */
-     db.Categorias.findAll()
+     db.Categoria.findAll()
       .then(categoria =>{
          /* res.render(categoria) */
          res.render("categorias",{

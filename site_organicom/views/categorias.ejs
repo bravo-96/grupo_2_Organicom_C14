@@ -17,26 +17,26 @@
    <main>
       <div class="hero-categoria">
 
-         <% if ( categoria === "Fideos Cereales") { %>
+         <% if ( categoria.nombre === "Fideos Cereales") { %>
 
          <img src="/assets/img/hero-fideos.webp" alt>
 
       </div>
       <div class="grid-principal">
          <h1>Fideos y Cereales</h1>
-         <% } else if (categoria === "Frutos Secos") { %>
+         <% } else if (categoria.nombre === "Frutos Secos") { %>
          <img src="/assets/img/hero-frutos-secos.jpg" alt>
 
       </div>
       <div class="grid-principal">
          <h1>Frutos secos</h1>
-         <% } else if (categoria === "Jugos Bebidas") { %>
+         <% } else if (categoria.nombre === "Jugos Bebidas") { %>
          <img src="/assets/img/hero-jugos.jpg" alt>
 
       </div>
       <div class="grid-principal">
          <h1>Jugos y Bebidas</h1>
-         <% } else if (categoria === "Infusiones") { %>
+         <% } else if (categoria.nombre === "Infusiones") { %>
          <img src="/assets/img/hero-infusiones.jpg" alt>
 
       </div>
