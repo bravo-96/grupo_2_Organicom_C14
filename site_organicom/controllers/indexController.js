@@ -5,11 +5,12 @@ const db = require("../database/models")
 module.exports = {
    index: (req, res, next) => {
       db.Producto.findAll({
-         include : ["categoria"/* , "imagenes" */]
+         include : ["categoria", "imagenes"]
       })
-      .then(productos =>{
-         /* res.send(productos) */
+      .then((productos) =>{
+        /*  res.send(productos) */
          res.render('index', {
+            title: 'Organicom',
             productos,
             session : req.session
          });
