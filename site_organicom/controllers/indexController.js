@@ -1,5 +1,5 @@
 const carousel =  require('../controllers/data/cards');
-
+const db = require('../database/models');
 
 
 
