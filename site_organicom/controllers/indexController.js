@@ -1,6 +1,7 @@
-const productos = require('../controllers/data/productos.json');
-const db = require("../database/models")
-//const {categoria} = require("../database/models");
+const carousel =  require('../controllers/data/cards');
+const db = require('../database/models');
+
+
 
 module.exports = {
    index: (req, res, next) => {
@@ -21,4 +22,5 @@ module.exports = {
       productos, 
       session : req.session }); */
    }
-};
+}
+
