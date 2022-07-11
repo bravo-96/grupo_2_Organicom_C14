@@ -261,10 +261,6 @@
             </div>
          </section>
       </section>
-
-      <div>
-         <a href="/products/listar">lista</a>
-      </div>
       <section class="populares">
          <section id="popularesSlider" class="splide" aria-label="Productos populares">
             <h2>Los más populares</h2>
@@ -274,7 +270,7 @@
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
-                           <img src="/imgs/products_images/<%=  productos[i].productoId %> " alt>
+                           <img src="/imgs/products_images/<%= productos[i].imgPrincipalProducto %>  " alt>
                            <div class="favorito"></div>
                         </div>
                         <div class="card-body">
@@ -324,11 +320,11 @@
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
-                           <img src="/imgs/products_images/<%=  productos[i].productoId %> " alt>
+                           <img src="/imgs/products_images/<%= productos[i].imgPrincipalProducto %>  " alt>
                            <div class="favorito"></div>
                         </div>
                         <div class="card-body">
-                           <a href="/products/detalleProducto/<%= productos[i].id %> ">
+                           <a href="/products/detalleProducto/<%= productos[i].precio %> ">
                               <h3><%= productos[i].nombre %> </h3>
                               <p class="precio-inicial">
                                  <% if (productos[i].descuento) { %>
@@ -408,14 +404,14 @@
             </h2>
             <div class="splide__track">
                <ul class="splide__list">
-                  <% productos.forEach(({productoId, nombre, descuento, precio, categoria, id} )=> { %>
+                  <% productos.forEach(({imgPrincipalProducto, nombre, descuento, precio, categoria, id} )=> { %>
 
                   <% if (categoria === "Frutos Secos") { %>
 
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
-                           <img src="/imgs/products_images/<%=  productoId %> " alt>
+                           <img src="/imgs/products_images/default.png " alt>
                            <div class="favorito"></div>
                         </div>
                         <div class="card-body">
@@ -477,7 +473,7 @@
                   <li class="splide__slide">
                      <article class="card">
                         <div class="card-header">
-                           <img src="/imgs/products_images/<%=  imgPrincipalProducto %> " alt>
+                           <img src="/imgs/products_images/default.png " alt>
                            <div class="favorito"></div>
                         </div>
                         <div class="card-body">
