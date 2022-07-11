@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Imagen',
+    tableName : "imagenes"
   });
   Imagen.associate = models =>{
     Imagen.belongsTo(models.Producto, {

@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Origen',
+    tableName : "origenes"
   });
   Origen.associate = models =>{
     Origen.hasMany(models.Producto, {

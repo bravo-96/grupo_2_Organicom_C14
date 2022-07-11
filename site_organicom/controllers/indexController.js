@@ -8,7 +8,7 @@ module.exports = {
          include : ["categoria", "imagenes"]
       })
       .then((productos) =>{
-        /*  res.send(productos) */
+         /* res.send(productos) */
          res.render('index', {
             title: 'Organicom',
             productos,
