@@ -22,7 +22,7 @@
 
    <main class="grid-princpial">
 
-      <img src="/imgs/products_images/<%= producto.imgPrincipalProducto %> " alt=""
+      <img src="/imgs/products_images/<%= producto.imagenes[0].nombre %> " alt=""
          style="max-width: 300px; margin: 0 auto;display: block;">
 
 
@@ -86,7 +86,7 @@
       </section>
       <!-- ------------- -->
       <section class="detalle-producto">
-         <p class="categoria">Categoria: <a href=""><%= producto.categoria %> </a></p>
+         <p class="categoria">Categoria: <a href=""><%= producto.categoria.nombre %> </a></p>
          <h1 class="titulo-producto"><%= producto.nombre %></h1>
 
          <div class="favorito-contenedor">

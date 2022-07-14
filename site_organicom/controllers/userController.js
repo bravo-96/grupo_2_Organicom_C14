@@ -1,4 +1,4 @@
-// const usurios = require("./data/users.json")
+const usuarios = require("./data/users.json")
 
 //armado de logica register Alex <3
 module.exports = {
@@ -48,11 +48,12 @@ module.exports = {
     return res.render("users/login-lateral");
   },
   processLogin: (req, res, next) => {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
+    /* let errors = validationResult(req); */
+   /*  if (errors.isEmpty()) { */
       let { id, nombre, email, password, avatar, rol } = usuarios.find(
         (user) => user.email === req.body.email
       );
+      
       req.session.user = {
         id,
         nombre,
@@ -61,13 +62,17 @@ module.exports = {
         avatar,
         rol,
       };
+      
 
       res.locals.user = req.session.user;
       res.redirect("/");
-    } else {
-      res.send(errors);
-    }
-    next();
+      
+    /* } else { */
+      /* res.send(errors); */
+    /* } */
+    
+    /* next(); */
+    
     //el next esta de mas
     //Logica del login consultas a Alex <3
   },

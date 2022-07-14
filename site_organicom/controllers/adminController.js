@@ -17,7 +17,7 @@ module.exports = {
    /* trae los productos */
    adminProducts: (req, res) => {
       db.Producto.findAll({
-         include : ["categoria"/* , "imagenes" */]
+         include : ["categoria", "imagenes"]
       })
       .then(productos =>{
          res.render('admin/adminProducts', {
@@ -35,10 +35,10 @@ module.exports = {
    create: (req, res) => { 
       db.Producto.create({
          ...req.body,
-         imagen : req.file ? req.file.filename : "default.png"
+         Imagen : req.file ? req.file.filename : "default.png"
       })
       .then(productos=>{
-         res.redirect('/admin/adminProducts',{
+         res.redirect('/adminProducts',{
             productos,
             session : req.session
          });

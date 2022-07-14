@@ -6,9 +6,10 @@ const db = require("../database/models");
 module.exports = {
    detalleProducto: (req, res, next) => {
       db.Producto.findByPk(req.params.id,{
-         include : ["categoria"]
+         include : ["categoria", "imagenes"]
       })
       .then(producto => {
+         /* res.send(producto) */
          return res.render('detalleProducto',{
             producto, 
             session: req.session 
@@ -77,12 +78,13 @@ module.exports = {
    categorie: (req, res, next) => {
 
      /* let busqueda = req.query.categoria */
-     db.Categoria.findAll()
+     db.Categoria.findAll({
+       include : ["productos"]
+     })
       .then(categoria =>{
-         /* res.render(categoria) */
+         /* res.send(categoria) */
          res.render("categorias",{
             categoria,
-            /* busqueda, */
             session : req.session
          })
       })
@@ -98,9 +100,9 @@ module.exports = {
       }); */
    },
    listar : (req, res) => {
-      db.Producto.findAll(/* {
-         /* include : ["categoria","imagenes"]
-      } */)
+      db.Producto.findAll( {
+          include : ["categoria","imagenes"]
+      } )
       .then(producto =>{
          /* res.send(producto)  */
          res.render('productos', {

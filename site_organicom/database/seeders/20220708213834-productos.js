@@ -5,7 +5,7 @@ const productos = productos_db.map(producto => {
     nombre : producto.nombre,
     descuento : producto.descuento,
     precio : +producto.precio,
-    categoriaId : producto.categoria,
+    categoriaId : producto.categoriaId,
     descripcion : producto.descripcion,
     beneficios: producto.beneficios,
     preparacion: producto.preparacion,
