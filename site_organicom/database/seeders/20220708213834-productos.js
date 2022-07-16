@@ -9,8 +9,8 @@ const productos = productos_db.map(producto => {
     descripcion : producto.descripcion,
     beneficios: producto.beneficios,
     preparacion: producto.preparacion,
-    marcaId: producto.marca,
-    origenId: producto.origen,
+    marcaId: producto.marcaId,
+    origenId: producto.origenId,
     createdAt : new Date()
   }
 })

@@ -81,7 +81,7 @@ module.exports = {
       include : [
         {
            association : "productos",
-           include : ['imagenes']
+           include : ['imagenes',"origen","marca"]
         }
      
      ],
@@ -90,11 +90,11 @@ module.exports = {
       }
     })
       .then((categoria) =>{
-         /* return res.send(categoria) */
-         res.render("categorias",{
+         return res.send(categoria)
+        /*  res.render("categorias",{
             categoria,
             session : req.session
-         })
+         }) */
       })
       .catch(errors => console.log(errors))
       
