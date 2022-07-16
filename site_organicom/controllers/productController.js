@@ -77,12 +77,20 @@ module.exports = {
    // Categoria
    categorie: (req, res, next) => {
 
-     /* let busqueda = req.query.categoria */
      db.Categoria.findAll({
-       include : ["productos"]
-     })
+      include : [
+        {
+           association : "productos",
+           include : ['imagenes']
+        }
+     
+     ],
+      where : {
+        id : req.query.categoria
+      }
+    })
       .then(categoria =>{
-         /* res.send(categoria) */
+         /* return res.send(categoria) */
          res.render("categorias",{
             categoria,
             session : req.session

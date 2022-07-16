@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
         as : "marca",
         foreignKey : "marcaId"
       })
-      Producto.hasMany(models.Origen, {
-        as : "origenes",
+      Producto.belongsTo(models.Origen, {
+        as : "origen",
         foreignKey : "origenId"
       })
     }

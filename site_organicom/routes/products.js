@@ -13,7 +13,7 @@ const {
 router
    .get('/detalleProducto/:id', detalleProducto)
    .get('/carrito',offSession, carrito)
-   .get('/categorias/:categoria', categorie)
+   .get('/categorias', categorie)
    .get('/resultadoBusqueda', busqueda)
    .get("/listar", listar)
 

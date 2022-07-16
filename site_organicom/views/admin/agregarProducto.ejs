@@ -42,16 +42,44 @@
          <div class="input-contenedor categoria">
             <label for="categoria">Seleccione la categoria</label>
             <select name="categoria" id="categoria">
-               <option value="Fideos Cereales">Fideos y Cereales</option>
-               <option value="Frutos Secos">Frutos secos</option>
-               <option value="Jugos Bebidas">Jugos y Bebidas</option>
-               <option value="Infusiones">Infusiones</option>
+               <option value="" >seleccione la categoria</option>
+               <% categorias.forEach(categoria => { %>
+                  <option value="<%= categoria %>" ><%= categoria.nombre %> </option>
+               <% }) %> 
+            </select>
+         </div>
+         <div class="input-contenedor categoria">
+            <label for="categoria">Seleccione el origen</label>
+            <select name="origen" id="origen">
+               <option value="" >seleccione el origen</option>
+               <% origenes.forEach(origen => { %>
+                  <option value="<%= origen %>" ><%= origen.nombre %> </option>
+               <% }) %> 
+            </select>
+         </div>
+         <div class="input-contenedor categoria">
+            <label for="categoria">Seleccione la marca</label>
+            <select name="marca" id="marca">
+               <option value="" >seleccione la marca</option>
+               <% marcas.forEach(marca => { %>
+                  <option value="<%= marca %>" ><%= marca.nombre %> </option>
+               <% }) %> 
             </select>
          </div>
          <div class="input-contenedor">
             <label for="descripcion">Descripción</label>
             <textarea name="descripcion" id="descripcion" cols="30" rows="10"
                placeholder="Escriba una descripcion del producto"></textarea>
+         </div>
+         <div class="input-contenedor">
+            <label for="beneficios">Beneficios</label>
+            <textarea name="beneficios" id="beneficios" cols="30" rows="10"
+               placeholder="Escriba beneficios del producto"></textarea>
+         </div>
+         <div class="input-contenedor">
+            <label for="preparacion">preparacion</label>
+            <textarea name="preparacion" id="preparacion" cols="30" rows="10"
+               placeholder="Escriba preparacion/uso del producto"></textarea>
          </div>
        <!--   <div class="input-contenedor">
             <label for="inputFile">insertar imagen</label>
