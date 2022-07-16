@@ -76,7 +76,7 @@ module.exports = {
 
    // Categoria
    categorie: (req, res, next) => {
-
+      
      db.Categoria.findAll({
       include : [
         {
@@ -89,7 +89,7 @@ module.exports = {
         id : req.query.categoria
       }
     })
-      .then(categoria =>{
+      .then((categoria) =>{
          /* return res.send(categoria) */
          res.render("categorias",{
             categoria,

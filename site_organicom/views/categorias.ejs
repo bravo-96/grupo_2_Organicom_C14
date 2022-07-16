@@ -48,14 +48,14 @@
 
 
          <% categoria.forEach(productos => { %>
-
+            
          <article class="card">
             <div class="card-header">
-               <img src="/imgs/products_images/<%= productos.imagenes %> " alt>
+               <img src="/imgs/products_images/<%= productos.imagenes[0].nombre %>" alt>
                <div class="favorito"></div>
             </div>
             <div class="card-body">
-               <a href="/products/detalleProducto/<%= productos.id %> ">
+               <a href="/products/detalleProducto/<%= productos.id %>">
                   <h3><%= productos.nombre %> </h3>
                   <p class="precio-inicial">
                      <% if (productos.descuento) { %>
