@@ -47,13 +47,12 @@ module.exports = {
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => { 
       
-
       db.Producto.create({
          ...req.body,
-         Imagen : req.file ? req.file.filename : "default.png"
+         imagenes : req.file ? req.file.filename : "default.png"
       })
       .then(productos=>{
-         return res.send(req.params)
+         return res.send(productos)
          res.redirect('/adminProducts',{
             productos,
             session : req.session

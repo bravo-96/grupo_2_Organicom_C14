@@ -89,12 +89,12 @@ module.exports = {
         id : req.query.categoria
       }
     })
-      .then((categoria) =>{
-         return res.send(categoria)
-        /*  res.render("categorias",{
+      .then(categoria =>{
+         /* return res.send(categoria) */
+         res.render("categorias",{
             categoria,
             session : req.session
-         }) */
+         })
       })
       .catch(errors => console.log(errors))
       
