@@ -1,3 +1,136 @@
 @import './general.css';
 
+.lista-productos-general {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 170px));
+    justify-content: center;
+    gap: 1rem;
+ 
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    
+ }
 
+.card-general h3 {
+    font-size: 0.8rem;
+    margin: 0 auto 0.5rem;
+    width: 90%;
+    letter-spacing: -0.3px;
+ 
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #000;
+    height: 31px;
+ }
+ 
+ .card-general {
+    box-shadow: 0 0 0.2rem rgb(0 0 0 / 20%);
+    border-radius: 0.5rem;
+    color: var(--texto-gris);
+    max-width: 190px;
+    margin: 0 auto;
+    background-color: #fff;
+ }
+ .card-header-general {
+    position: relative;
+ }
+ .card-header-general .favorito {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    background: url(/assets/img/favorito-outline-icono.svg) no-repeat center;
+    background-size: contain;
+ }
+ .card-header-general .favorito.active {
+    background-image: url(/assets/img/favorito-solid-icono.svg);
+ }
+ .card-header-general img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 160px;
+    object-fit: cover;
+    padding: 1rem 0;
+ }
+ 
+ .card-body-general{
+    padding: 0.5rem;
+    text-align: center;
+ }
+ .card-body-general a {
+    font-weight: initial;
+    text-decoration: none;
+    color: var(--texto-gris);
+ }
+ .card-body-general .precio-inicial-general span:first-child {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+ 
+    text-decoration: line-through;
+ }
+ .card-body-general .precio-inicial-general .descuento-general-general {
+    background-color: var(--verde-fondo);
+    padding: 0.1rem 0.2rem;
+    font-weight: bolder;
+    color: var(--texto-blanco);
+    font-size: 0.9rem;
+ }
+ .card-body-general .precio-inicial-general {
+    margin: 0;
+    height: 22px;
+ }
+ .card-body-general .precio-final-general {
+    font-size: 1.3rem;
+   font-weight: bolder;
+   min-height: 1rem;
+   margin: 0.5rem 0;
+   color: var(--verde);
+   line-height: 1;
+ }
+ .card-body-general .precio-secundario-general {
+    margin: 0 0 0.5rem;
+    font-size: 0.7rem;
+ }
+ 
+ .card-body-general .btn-agregar-general {
+    background-color: var(--amarillo);
+    color: var(--verde);
+    font-weight: bolder;
+    padding: 0.6rem 0;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+ }
+ .card-body-general .btn-agregar-general .icono-general {
+    display: block;
+    background: url(/assets/img/carrito-icono.svg) no-repeat center;
+    background-size: contain;
+    width: 1rem;
+    height: 1rem;
+ 
+    filter: invert(28%) sepia(7%) saturate(5768%) hue-rotate(93deg)
+       brightness(98%) contrast(87%);
+ }
+ 
+ /* .grid-separador {
+    display: grid;
+    grid-template-columns: auto 1.4fr;
+    align-items: center;
+    gap: 0rem 5%;
+    margin: 0 auto;
+    max-width: 440px;
+ } */
