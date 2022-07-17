@@ -125,7 +125,9 @@
     filter: invert(28%) sepia(7%) saturate(5768%) hue-rotate(93deg)
        brightness(98%) contrast(87%);
  }
- 
+ .lista-productos-general .a-general {
+    text-decoration: none;
+ }
  /* .grid-separador {
     display: grid;
     grid-template-columns: auto 1.4fr;
