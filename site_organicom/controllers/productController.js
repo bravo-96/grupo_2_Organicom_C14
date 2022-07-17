@@ -6,7 +6,7 @@ const db = require("../database/models");
 module.exports = {
    detalleProducto: (req, res, next) => {
       db.Producto.findByPk(req.params.id,{
-         include : ["categoria", "imagenes"]
+         include : ["categoria", "imagenes", "origen", "marca"]
       })
       .then(producto => {
          /* res.send(producto) */
