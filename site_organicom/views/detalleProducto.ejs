@@ -22,7 +22,7 @@
 
    <main class="grid-princpial">
 
-      <img src="/imgs/products_images/<%= producto.imgPrincipalProducto %> " alt=""
+      <img src="/imgs/products_images/<%= producto.imagenes[0].nombre %> " alt=""
          style="max-width: 300px; margin: 0 auto;display: block;">
 
 
@@ -86,9 +86,11 @@
       </section>
       <!-- ------------- -->
       <section class="detalle-producto">
-         <p class="categoria">Categoria: <a href=""><%= producto.categoria %> </a></p>
+         <p class="categoria">Categoria: <a href=""><%= producto.categoria.nombre %> </a></p>
+         <p class="categoria">Marca: <%= producto.marca.nombre %></p>
+         <p class="categoria">Origen: <%= producto.origen.nombre %></p>
          <h1 class="titulo-producto"><%= producto.nombre %></h1>
-
+         
          <div class="favorito-contenedor">
             <p class="estrellas"><span class="icono"></span>4.0</p>
             <p class="favorito"><span>Agregar a favoritos</span><span class="icono"></span></p>
@@ -137,50 +139,30 @@
          </div>
       </section>
       <!-- ------------- -->
-      <section class="detalle-texto">
-         <h2>Detalles del producto</h2>
-         <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ipsa est in eligendi earum nam itaque,
-            voluptatem reprehenderit quibusdam enim.
-         </p>
-         <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero ipsa est in eligendi earum nam itaque.
-         </p>
-         <ul>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
-            <li>Lorem ipsum, dolor sit </li>
-            <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
-         </ul>
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores laudantium omnis, nam maxime eos sed
-            inventore aliquid saepe blanditiis odit est suscipit amet accusantium, ex accusamus repellendus. Molestias
-            labore molestiae nulla, in, maxime veritatis aut enim asperiores iure, repellat quasi.
-         </p>
-      </section>
-      <!-- ------------- -->
       <section class="descripcion-texto">
          <h2>Descripcion del producto</h2>
          <ul>
             <li>
-               Lorem ipsum: dolor sit amet.
-            </li>
-            <li>
-               Lorem ipsum: dolor sit amet.
-            </li>
-            <li>
-               Lorem ipsum: dolor sit amet.
-            </li>
-            <li>
-               Lorem ipsum: dolor sit amet.
-            </li>
-            <li>
-               Lorem ipsum: dolor sit amet.
+               <%= producto.descripcion %> 
             </li>
          </ul>
-         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.
-         </p>
       </section>
+      <section class="detalle-texto">
+         <h2>Beneficios del producto</h2>
+         <ul>
+            <li>
+               <%= producto.beneficios %> 
+            </li>
+         </ul>
+         <h2>Metodos de preparacion/uso</h2>
+         <ul>
+            <li>
+               <%= producto.preparacion %> 
+            </li>
+         </ul>
+      </section>
+      <!-- ------------- -->
+      
       <!-- ------------- -->
       <section class="comentarios">
          <h2>Reseñas</h2>

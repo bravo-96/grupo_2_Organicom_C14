@@ -23,14 +23,14 @@ router
    .get('/agregar', offSession, soloAdmin, agregarProducto)
 
    /* POST carga los datos al formulario */
-   .post('/agregarProducto', uploadFiles.single('imgPrincipalProducto'), create)
+   .post('/agregarProducto', uploadFiles.single('imagenes'), create)
 
    .get('/editar/:id', offSession, soloAdmin, editarProducto)
 
    /* PUT actualiza los datos */
    .put(
       '/editarProducto/:id',
-      uploadFiles.single('imgPrincipalProducto'),
+      uploadFiles.single('productoId'),
       update
    )
 

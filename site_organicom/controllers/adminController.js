@@ -17,7 +17,7 @@ module.exports = {
    /* trae los productos */
    adminProducts: (req, res) => {
       db.Producto.findAll({
-         include : ["categoria"/* , "imagenes" */]
+         include : ["categoria", "imagenes"]
       })
       .then(productos =>{
          res.render('admin/adminProducts', {
@@ -29,21 +29,52 @@ module.exports = {
       .catch(errors => console.log(errors))
    },
    agregarProducto: (req, res) => {
-      res.render('admin/agregarProducto', {session : req.session});
+      let categorias = db.Categoria.findAll();
+      let origenes = db.Origen.findAll();
+      let marcas = db.Marca.findAll();
+      /* let imagenes = db.Imagen.findAll(); */
+
+      Promise.all([categorias, origenes, marcas])
+         .then(([categorias,origenes,marcas]) => {
+            return res.render('admin/agregarProducto', {
+               session : req.session,
+               categorias,
+               marcas,
+               origenes
+            });
+         })
+         .catch(error => console.log(error))
    },
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => { 
+      
       db.Producto.create({
          ...req.body,
-         imagen : req.file ? req.file.filename : "default.png"
+         imagenes : req.file ? req.file.filename : "default.png"
       })
       .then(productos=>{
-         res.redirect('/admin/adminProducts',{
+         return res.send(req.body)
+         /* res.redirect('/adminProducts',{
             productos,
             session : req.session
-         });
+         }); */
       })
       .catch(errors => console.log(errors))
+      /* let categorias = db.Categoria.findAll();
+      let origenes = db.Origen.findAll();
+      let marcas = db.Marca.findAll();
+
+      Promise.all([categorias, origenes,marcas])
+         .then(([categorias,origenes,marcas]) => {
+            return res.render('admin/agregarProducto', {
+               session : req.session,
+               categorias,
+               marcas,
+               origenes
+            });
+         })
+         .catch(error => console.log(error)) */
+
       
       /*------------------ logica del subir un producto ------------------*/
    },

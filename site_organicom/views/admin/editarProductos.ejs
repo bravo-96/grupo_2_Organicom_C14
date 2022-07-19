@@ -23,7 +23,7 @@
 
             <div class="input-contenedor">
                 <label for="imgs-producto">Subir imágen principal del producto (solo una)</label>
-                <input type="file" id="imgPrincipalProducto" name="imgPrincipalProducto" accept="image/*" value="<%= producto.imgPrincipalProducto %>">
+                <input type="file" id="imgPrincipalProducto" name="imgPrincipalProducto" accept="image/*" value="<%= producto.imagenes %>">
             </div>
             <!-- <div class="input-contenedor">
                 <label for="imgs-producto">Subir más imágenes del producto (pueden ser varias)</label>
@@ -92,3 +92,4 @@
 </body>
 
 </html>
+<%= marca === producto.marca ? "selected" : null %> 

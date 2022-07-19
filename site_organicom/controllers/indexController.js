@@ -8,11 +8,11 @@ module.exports = {
       db.Producto.findAll({
          include : ["categoria", "imagenes"]
       })
-      .then((productos) =>{
+      .then((producto) =>{
          /* res.send(productos) */
          res.render('index', {
             title: 'Organicom',
-            productos,
+            producto,
             session : req.session
          });
       })
