@@ -5,11 +5,10 @@ let uploadFiles = require("../middleware/uploadFiles")
 let loginValidator = require("../validations/loginValidator")
 const {login, processLogin, processRegister, register, logout, profile } = require('../controllers/userController');
 const {inSession} = require("../middleware/sessionCheck");
-const { create } = require('../controllers/adminController');
+const { userCreate, userEdit } = require('../controllers/userController');
 
 
-router.get('/create', create);
-router.post('/:id', );
+
 
 
 
@@ -17,7 +16,12 @@ router.post('/:id', );
 //RUTAS DONE
 //register
 router.get("/register", register);
-router.post("/register2", processRegister)
+router.post('/create', userCreate);
+
+
+//EDITAR 
+router.get("/profile", userEdit);
+ router.post('/:id', userEdit);
 
 //login
 router.get("/login", inSession, login)

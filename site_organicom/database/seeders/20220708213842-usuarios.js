@@ -1,25 +1,25 @@
 'use strict';
 const usuarios_db = require('../../controllers/data/users.json');
-const usuarios = usuarios_db.map(usuario => {
+const users = usuarios_db.map(User => {
   return {
-    nombre : usuario.nombre,
-    email : usuario.email,
-    rol : usuario.rol,
-    telefono : usuario.number,
-    password : usuario.password,
-    avatar : usuario.avatar,
+    nombre : User.nombre,
+    email : User.email,
+    rol : User.rol,
+    telefono : User.number,
+    password : User.password,
+    avatar : User.avatar,
     createdAt : new Date()
   }
 })
 module.exports = {
   async up (queryInterface, Sequelize) {
   
-      await queryInterface.bulkInsert('Usuarios', usuarios, {});
+      await queryInterface.bulkInsert('Users', users, {});
     
   },
 
   async down (queryInterface, Sequelize) {
    
-     await queryInterface.bulkDelete('Usuarios', null, {});
+     await queryInterface.bulkDelete('Users', null, {});
        }
 };

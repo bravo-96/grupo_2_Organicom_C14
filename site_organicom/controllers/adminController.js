@@ -97,22 +97,7 @@ module.exports = {
       }); */
    },
    update: (req, res) => {
-     /*  let { nombre, descuento, precio, categoria, descripcion } = req.body;
-      productos.forEach((producto) => {
-         if (producto.id === +req.params.id) {
-            (producto.id = producto.id),
-               (producto.nombre = nombre),
-               (producto.descuento = descuento),
-               (producto.precio = precio),
-               (producto.categoria = categoria),
-               (producto.descripcion = descripcion),
-               (producto.imgPrincipalProducto = req.file
-                  ? req.file.filename
-                  : producto.imgPrincipalProducto);
-         }
-      });
-
-      guardarProductos(productos); */
+  
       let producto = db.Producto.findByPk(req.params.id)
       db.Producto.update({
          ...req.body,

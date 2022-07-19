@@ -1,29 +1,40 @@
-// const usuarios = require("./data/users.json")
+ const usuarios = require("./data/users.json")
 const db = require("../database/models");
-
-//armado de logica register Alex <3
+const fs = require('fs');
+  //armado de logica register Alex <3
 module.exports = {
-
-  user:(req, res)=>{
+  register: (req, res, ) => {
     db.User.findAll()
-        .then(function(users){
-          res.render()
-  })
+    return res.render("users/register", { session: req.session });
+  },
+  userCreate:(req, res)=>{ 
+    db.User.create({
+     ...req.body,
+      })    
+    .then(function(users){
+  
+      return res.redirect('/')
+    })
   .catch(errors => console.log(errors))
 },
-  userCreate:(req, res)=>{
-    db.User.findAll()
-        .then(function(users){
 
-  })
-  .catch(errors => console.log(errors))
-},
   userEdit:(req, res)=>{
-      db.User.findAll()
-      .then(function(users){
+     db.User.findByPk(req.params.id)
+    db.User.update({
+       ...req.body,
+      
+    },{
+       where : {id : req.params.id}
+    })
+    .then(user=>{
+       res.redirect("/",{
+          user       
+       });
+    })
+    .catch(errors => console.log(errors))
 
-  })
-},
+    
+ },
   userDelete:(req, res)=>{
     db.User.findAll()
     .then(function(users){
@@ -34,48 +45,46 @@ module.exports = {
 
 
 
-  register: (req, res, next) => {
-    return res.render("users/register", { session: req.session });
-  },
-  processRegister: (req, res, next) => {
-    let lastId = 0;
-    usuarios.forEach((user) => {
-      if (user.id > lastId) {
-        lastId = user.id;
-      }
-    });
+ 
+  // processRegister: (req, res, next) => {
+  //   let lastId = 0;
+  //   usuarios.forEach((user) => {
+  //     if (user.id > lastId) {
+  //       lastId = user.id;
+  //     }
+  //   });
 
-    if (
-      req.body.email &&
-      req.body.nombre &&
-      req.body.password !== "undefined"
-    ) {
-      let { nombre, email, number, password } = req.body;
+  //   if (
+  //     req.body.email &&
+  //     req.body.nombre &&
+  //     req.body.password !== "undefined"
+  //   ) {
+  //     let { nombre, email, number, password } = req.body;
 
-      let newUser = {
-        id: lastId + 1,
-        nombre,
-        email,
-        number,
-        password: bcrypt.hashSync(password, 10),
-        rol: "user",
-        avatar: "default.png",
-        terminos: true,
-      };
+  //     let newUser = {
+  //       id: lastId + 1,
+  //       nombre,
+  //       email,
+  //       number,
+  //       password: bcrypt.hashSync(password, 10),
+  //       rol: "user",
+  //       avatar: "default.png",
+  //       terminos: true,
+  //     };
 
-      usuarios.push(newUser);
-      guardarUser(usuarios);
+  //     usuarios.push(newUser);
+  //     guardarUser(usuarios);
 
-      res.redirect("/");
-    } else {
-      res.redirect("/users/register");
-    }
-    next();
+  //     res.redirect("/");
+  //   } else {
+  //     res.redirect("/users/register");
+  //   }
+  //   next();
 
-    //SI HAY DUDAS, REVISAR EL ADMINCONTROLLER PARA ENTENDER COMO FUNCIONA, PARA TENER UNA REFERENCIA <3
-    //FALTAN COSAS POR AGREGAR PERO LAS SUBO DE A POCO
-    //armado de logica register Alex <3
-  },
+  //   //SI HAY DUDAS, REVISAR EL ADMINCONTROLLER PARA ENTENDER COMO FUNCIONA, PARA TENER UNA REFERENCIA <3
+  //   //FALTAN COSAS POR AGREGAR PERO LAS SUBO DE A POCO
+  //   //armado de logica register Alex <3
+  // },
   login: (req, res, next) => {
     return res.render("users/login-lateral");
   },
