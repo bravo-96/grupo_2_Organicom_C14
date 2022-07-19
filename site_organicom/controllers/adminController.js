@@ -32,8 +32,9 @@ module.exports = {
       let categorias = db.Categoria.findAll();
       let origenes = db.Origen.findAll();
       let marcas = db.Marca.findAll();
+      /* let imagenes = db.Imagen.findAll(); */
 
-      Promise.all([categorias, origenes,marcas])
+      Promise.all([categorias, origenes, marcas])
          .then(([categorias,origenes,marcas]) => {
             return res.render('admin/agregarProducto', {
                session : req.session,
@@ -52,11 +53,11 @@ module.exports = {
          imagenes : req.file ? req.file.filename : "default.png"
       })
       .then(productos=>{
-         return res.send(productos)
-         res.redirect('/adminProducts',{
+         return res.send(req.body)
+         /* res.redirect('/adminProducts',{
             productos,
             session : req.session
-         });
+         }); */
       })
       .catch(errors => console.log(errors))
       /* let categorias = db.Categoria.findAll();
