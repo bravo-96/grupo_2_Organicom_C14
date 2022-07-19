@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/userRouter');
 const productsRouter = require('./routes/products');
 const adminProductsRouter = require('./routes/adminProducts');
 
@@ -49,24 +49,6 @@ app.use('/products', productsRouter);
 app.use('/adminProducts', adminProductsRouter);
 
 
-
-/*
-app.get('/', (req, res) =>
-   res.sendFile(path.resolve(__dirname, 'views', 'index.html'))
-);
-app.get('/detalleProducto', (req, res) =>
-   res.sendFile(path.resolve(__dirname, 'views', 'detalleProducto.html'))
-);
-app.get('/carrito', (req, res) =>
-   res.sendFile(path.resolve(__dirname, 'views', 'carrito.html'))
-);
-app.get('/login', (req, res) =>
-   res.sendFile(path.resolve(__dirname, 'views', 'login.html'))
-);
-app.get('/register', (req, res) =>
-   res.sendFile(path.resolve(__dirname, 'views', 'register.html'))
-);
-*/
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

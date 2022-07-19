@@ -8,10 +8,7 @@
    </button>
    <button type="button" class="btn-buscar">
       <img src="/assets/img/lupa-icono.svg" class="lupa-icono" />
-   </button>
-   <button type="button" class="btn-comprar-ahora">
-         <a href="/products/listar">Todos los productos</a>
-   </button>
+   </button>   
    <% if(typeof session.user === "undefined") {%>
    <button type="button" class="btn-cuenta">
       <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
@@ -34,6 +31,9 @@
       <div class="imagen-fondo jugos"></div>
       <div class="imagen-fondo infusiones"></div>
       <ul>
+         <li>          
+               <a href="/products/listar" class="link-categoria">Todos los productos</a>       
+         </li>
          <li>
             <a class="link-categoria" href="/products/categorias/fideos-cereales" data-nombre_categoria= "3">
                Fideos / Cereales
@@ -58,6 +58,6 @@
    </nav>
    <form action="/resultadoBusqueda" method="GET" class="barra-busqueda">
       <input type="text" name="keyword" id="keyword" placeholder="Busca un producto ...">
-      <input type="submit" name="keyword">
+     <button type="submit" name='keyword'></button>
    </form>
 </header>

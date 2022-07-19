@@ -4,14 +4,20 @@ const multer = require("multer")
 let uploadFiles = require("../middleware/uploadFiles")
 let loginValidator = require("../validations/loginValidator")
 const {login, processLogin, processRegister, register, logout, profile } = require('../controllers/userController');
-const {inSession} = require("../middleware/sessionCheck")
+const {inSession} = require("../middleware/sessionCheck");
+const { create } = require('../controllers/adminController');
+
+
+router.get('/create', create);
+router.post('/:id', );
+
 
 
 
 //RUTAS DONE
 //register
-router.get("/register", inSession, register);
-router.post("/register2",/* loginValidator, */ processRegister)
+router.get("/register", register);
+router.post("/register2", processRegister)
 
 //login
 router.get("/login", inSession, login)

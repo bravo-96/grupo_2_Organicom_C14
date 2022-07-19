@@ -1,7 +1,39 @@
-// const usurios = require("./data/users.json")
+// const usuarios = require("./data/users.json")
+const db = require("../database/models");
 
 //armado de logica register Alex <3
 module.exports = {
+
+  user:(req, res)=>{
+    db.User.findAll()
+        .then(function(users){
+          res.render()
+  })
+  .catch(errors => console.log(errors))
+},
+  userCreate:(req, res)=>{
+    db.User.findAll()
+        .then(function(users){
+
+  })
+  .catch(errors => console.log(errors))
+},
+  userEdit:(req, res)=>{
+      db.User.findAll()
+      .then(function(users){
+
+  })
+},
+  userDelete:(req, res)=>{
+    db.User.findAll()
+    .then(function(users){
+
+    })
+  },
+
+
+
+
   register: (req, res, next) => {
     return res.render("users/register", { session: req.session });
   },
