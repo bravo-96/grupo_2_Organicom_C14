@@ -12,23 +12,12 @@
     <%- include("../partials/carrito-lateral") %>
 
     <main>
-        <!-- <img src="/assets/img/<%= producto.imagen %> " class="card-img" alt="">
-        <div class="card-body">
-            <h5 class="card-title"><%= producto.nombre %> </h5>
-            <p class="card-text"><%= producto.precio %> </p>
-            <p class="card-text"><%= producto.descripcion %> </p>
-        </div> -->
-
         <form class="editar-form" action="/adminProducts/editarProducto/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
             <div class="input-contenedor">
-                <label for="imgs-producto">Subir imágen principal del producto (solo una)</label>
-                <input type="file" id="imgPrincipalProducto" name="imgPrincipalProducto" accept="image/*" value="<%= producto.imagenes %>">
+                <label for="imagenes">Subir imágen principal del producto (solo una)</label>
+                <input type="file" id="imagenes" name="imagenes" accept="image/*">
             </div>
-            <!-- <div class="input-contenedor">
-                <label for="imgs-producto">Subir más imágenes del producto (pueden ser varias)</label>
-                <input type="file" id="listaImagenesProducto" name="listaImagenesProducto" accept="image/*" multiple>
-             </div> -->
             <div class="input-contenedor">
                 <label for="nombre">Título del producto</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto"
@@ -44,37 +33,46 @@
             </div>
             <div class="input-contenedor categoria">
                 <label for="categoria">Seleccione la categoria</label>
-
-                <!-- Seleccion la categoria del producto en base a condiciones -->
-                <select name="categoria" id="categoria">
-                    <% if (producto.categoria === "fideos-cereales") { %>
-                    <option selected value="fideos-cereales">Fideos y Cereales</option>
-                    <option value="frutos-secos">Frutos secos</option>
-                    <option value="jugos-bebidas">Jugos y Bebidas</option>
-                    <option value="infusiones">Infusiones</option>
-                    <% } else if (producto.categoria === "frutos-secos") { %>
-                    <option value="fideos-cereales">Fideos y Cereales</option>
-                    <option selected value="frutos-secos">Frutos secos</option>
-                    <option value="jugos-bebidas">Jugos y Bebidas</option>
-                    <option value="infusiones">Infusiones</option>
-                    <% } else if (producto.categoria === "jugos-bebidas") { %>
-                    <option value="fideos-cereales">Fideos y Cereales</option>
-                    <option value="frutos-secos">Frutos secos</option>
-                    <option selected value="jugos-bebidas">Jugos y Bebidas</option>
-                    <option value="infusiones">Infusiones</option>
-                    <% } else { %>
-                    <option value="fideos-cereales">Fideos y Cereales</option>
-                    <option value="frutos-secos">Frutos secos</option>
-                    <option value="jugos-bebidas">Jugos y Bebidas</option>
-                    <option selected value="infusiones">Infusiones</option>
-                    <% } %>
+                <select name="categoriaId" id="categoriaId">
+                   <option value="" >seleccione la categoria</option>
+                   <% categorias.forEach(categoria => { %>
+                      <option  value="<%= categoria.id %>" <%= categoria.id === producto.categoriaId && 'selected'%>  ><%= categoria.nombre %> </option>
+                   <% }) %> 
                 </select>
-            </div>
+             </div>
+             <div class="input-contenedor categoria">
+                <label for="categoria">Seleccione el origen</label>
+                <select name="origenId" id="origenId">
+                   <option value="" >seleccione el origen</option>
+                   <% origenes.forEach(origen => { %>
+                      <option  value="<%= origen.id %>"  <%= origen.id === producto.origenId && 'selected'%>><%= origen.nombre %> </option>
+                   <% }) %> 
+                </select>
+             </div>
+             <div class="input-contenedor categoria">
+                <label for="categoria">Seleccione la marca</label>
+                <select name="marcaId" id="marcaId">
+                   <option value="" >seleccione la marca</option>
+                   <% marcas.forEach(marca => { %>
+                      <option  value="<%= marca.id %>"  <%= marca.id === producto.marcaId && 'selected'%>><%= marca.nombre %> </option>
+                   <% }) %> 
+                </select>
+             </div>
             <div class="input-contenedor">
                 <label for="descripcion">Descripción</label>
                 <textarea name="descripcion" id="descripcion" cols="30" rows="10"
                     placeholder="Escriba una descripcion del producto"><%= producto.descripcion %></textarea>
             </div>
+            <div class="input-contenedor">
+                <label for="beneficios">Beneficios</label>
+                <textarea name="beneficios" id="beneficios" cols="30" rows="10"
+                   placeholder="Escriba beneficios del producto"><%= producto.beneficios %></textarea>
+             </div>
+             <div class="input-contenedor">
+                <label for="preparacion">preparacion</label>
+                <textarea name="preparacion" id="preparacion" cols="30" rows="10"
+                   placeholder="Escriba preparacion/uso del producto"><%= producto.preparacion %></textarea>
+             </div>
             
             <div class="input-contenedor button-agregar">
                 <button type="submit">Guardar Cambios</button>
@@ -92,4 +90,3 @@
 </body>
 
 </html>
-<%= marca === producto.marca ? "selected" : null %> 
