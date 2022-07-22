@@ -5,7 +5,7 @@ let uploadFiles = require("../middleware/uploadFiles")
 let loginValidator = require("../validations/loginValidator")
 const {login, processLogin, processRegister, register, logout, profile } = require('../controllers/userController');
 const {inSession} = require("../middleware/sessionCheck");
-const { userCreate, userEdit } = require('../controllers/userController');
+const { userCreate, userEdit,userLogin } = require('../controllers/userController');
 
 
 
@@ -25,7 +25,7 @@ router.get("/profile", userEdit);
 
 //login
 router.get("/login", inSession, login)
-router.post("/login2", loginValidator, processLogin)
+router.post("/userLogin", loginValidator, userLogin)
 
 //logout
 router.get("/logout", logout)

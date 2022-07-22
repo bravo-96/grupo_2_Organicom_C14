@@ -1,6 +1,8 @@
  const usuarios = require("./data/users.json")
 const db = require("../database/models");
+const bcrypt = require('bcryptjs');
 const fs = require('fs');
+
   //armado de logica register Alex <3
 module.exports = {
   register: (req, res, ) => {
@@ -10,12 +12,32 @@ module.exports = {
   userCreate:(req, res)=>{ 
     db.User.create({
      ...req.body,
+     pass : bcrypt.hashSync(pass, 10),
+     rol: usuarios.rol = 'user',
+     avatar : usuarios.avatar = 'default.png'
       })    
-    .then(function(users){
-  
-      return res.redirect('/')
+    .then(function(){        
+       return res.redirect('/')
     })
   .catch(errors => console.log(errors))
+},
+login: (req, res, ) => {
+  db.User.findAll()
+  return res.render("users/login-lateral");
+},
+
+  userLogin : (req, res) => {
+    db.User.findByPk(req.params.id,{
+      where : { email : req.body.email }
+  })
+  .then(user => {
+     res.local.user = req.session.user;
+
+     return res.redirect('/')
+      
+    })
+    .catch(err => {console.log(err)});
+     
 },
 
   userEdit:(req, res)=>{
