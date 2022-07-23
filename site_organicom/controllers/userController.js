@@ -6,7 +6,7 @@ const fs = require('fs');
   //armado de logica register Alex <3
 module.exports = {
   register: (req, res, ) => {
-    db.User.findAll()
+     db.User.findAll()
     return res.render("users/register", { session: req.session });
   },
   userCreate:(req, res)=>{ 
