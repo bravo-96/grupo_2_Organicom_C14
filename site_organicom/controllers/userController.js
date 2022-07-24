@@ -5,9 +5,9 @@ const fs = require('fs');
 
   //armado de logica register Alex <3
 module.exports = {
-  register: (req, res, ) => {
+  register: async (req, res, ) => {
      db.User.findAll()
-    return res.render("users/register", { session: req.session });
+    await res.render("users/register", { session: req.session });
   },
   userCreate:(req, res)=>{ 
     db.User.create({
@@ -21,7 +21,7 @@ module.exports = {
     })
   .catch(errors => console.log(errors))
 },
-login: (req, res, ) => {
+login: async(req, res, ) => {
   db.User.findAll()
   return res.render("users/login-lateral");
 },
