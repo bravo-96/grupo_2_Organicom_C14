@@ -3,7 +3,7 @@ const db = require("../database/models");
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
 
-  //armado de logica register Alex <3
+  
 module.exports = {
   register: async (req, res, ) => {
      db.User.findAll()
