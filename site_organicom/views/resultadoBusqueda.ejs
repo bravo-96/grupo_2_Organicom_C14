@@ -20,11 +20,11 @@
 
          <% if (productos.length > 0) { %>
 
-         <% productos.forEach(({imgPrincipalProducto, nombre, descuento, precio, categoria, id} )=> { %>
+         <% productos.forEach(({imagenes,nombre, descuento, precio, categoria, id} )=> { %>
 
          <article class="card">
             <div class="card-header">
-               <img src="/imgs/products_images/<%= imgPrincipalProducto %> " alt>
+               <img src="/imgs/products_images/<%= imagenes[0].nombre %> " alt>
                <div class="favorito"></div>
             </div>
             <div class="card-body">

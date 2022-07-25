@@ -30,7 +30,7 @@ router
    /* PUT actualiza los datos */
    .put(
       '/editarProducto/:id',
-      uploadFiles.single('productoId'),
+      uploadFiles.single('imagenes'),
       update
    )
 

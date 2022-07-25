@@ -47,106 +47,81 @@ module.exports = {
    },
    /*------------------ logica del subir un producto ------------------*/
    create: (req, res) => { 
-      
+   
       db.Producto.create({
          ...req.body,
-         imagenes : req.file ? req.file.filename : "default.png"
       })
-      .then(productos=>{
-         return res.send(req.body)
-         /* res.redirect('/adminProducts',{
-            productos,
-            session : req.session
-         }); */
-      })
-      .catch(errors => console.log(errors))
-      /* let categorias = db.Categoria.findAll();
-      let origenes = db.Origen.findAll();
-      let marcas = db.Marca.findAll();
-
-      Promise.all([categorias, origenes,marcas])
-         .then(([categorias,origenes,marcas]) => {
-            return res.render('admin/agregarProducto', {
-               session : req.session,
-               categorias,
-               marcas,
-               origenes
-            });
+      .then(producto=>{
+         db.Imagen.create({
+            nombre: req.file ? req.file.filename : "default.png",
+            productoId: producto.id
+         }).then( () => {
+            return res.redirect('/adminProducts');
          })
-         .catch(error => console.log(error)) */
-
-      
-      /*------------------ logica del subir un producto ------------------*/
+      }).catch(errors => console.log(errors))
    },
    /* ----------------------consultas a Alex <3----------------- */
    editarProducto: (req, res) => {
-      db.Producto.findByPk(req.params.id)
-         .then(producto =>{
+      let producto = db.Producto.findByPk(req.params.id,{
+         include : ['categoria','imagenes','marca','origen']
+      });
+      let categorias = db.Categoria.findAll();
+      let origenes = db.Origen.findAll();
+      let marcas = db.Marca.findAll();
+
+      Promise.all([producto,categorias, origenes, marcas])
+         .then(([producto,categorias,origenes,marcas]) =>{
             res.render('admin/editarProductos', {
                producto,
+               categorias,
+               origenes,
+               marcas,
                session : req.session
             });
          })
          .catch(errors => console.log(errors))
-      /* let producto = productos.find(
-         (producto) => producto.id === +req.params.id
-      );
-      res.render('admin/editarProductos', {
-         producto,
-         session : req.session
-      }); */
    },
    update: (req, res) => {
-  
-      let producto = db.Producto.findByPk(req.params.id)
-      db.Producto.update({
-         ...req.body,
-         imagen : req.file ? req.file.filename : producto.imagen
-      },{
-         where : {id : req.params.id}
-      })
-      .then(producto=>{
-         /* res.send(req.params) */
-         res.redirect("/adminProducts",{
-            producto,
-            session : req.session
-         });
-      })
-      .catch(errors => console.log(errors))
-
       
+      db.Producto.findByPk(req.params.id, {
+         include : ['imagenes']
+      })
+         .then(producto => {
+            db.Producto.update({
+               ...req.body,
+            },{
+               where : {id : req.params.id}
+            })
+            .then(()=>{
+
+               db.Imagen.update(
+                  {
+                     nombre : req.file ? req.file.filename : producto.imagenes[0].nombre
+                  },
+                  {
+                     where : {productoId : req.params.id}
+                  }
+               ).then( () => {
+                  return res.redirect("/adminProducts");
+               })
+              
+            })
+         }).catch(errors => console.log(errors))
    },
    borrar: (req, res) => {
-      /* productos.forEach((producto) => {
-         if (producto.id === +req.params.id) {
-            try {
-               fs.unlinkSync(
-                  path.join(
-                     __dirname,
-                     `../public/imgs/products_images/${producto.imgPrincipalProducto}`
-                  )
-               );
-
-               console.log('Imagen eliminada');
-            } catch (err) {
-               console.error('No se pudo borrar la imagen', err);
-            }
-
-            let productoBorrar = productos.indexOf(producto);
-            productos.splice(productoBorrar, 1);
+      
+      db.Imagen.destroy({
+         where : {
+            productoId : req.params.id
          }
-      });
-      guardarProductos(productos); */
-      db.Producto.destroy({
-         where : {id : req.params.id}
-      })
-      .then(producto =>{
-         res.redirect('/',{
-            producto,
-            session : req.session
-         });
-      })
-      .catch(errors => console.log(errors))
+      }).then( () => {
+         db.Producto.destroy({
+            where : {id : req.params.id}
+         })
+         .then(() =>{
+            res.redirect('/adminProducts');
+         })
+      }).catch(errors => console.log(errors))
    },
    /*-----------------------consultas a Alex <3---------------- */
 };

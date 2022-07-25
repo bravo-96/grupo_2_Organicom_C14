@@ -3,6 +3,8 @@ const req = require('express/lib/request');
 const db = require("../database/models");
 //const categorias = require('../database/models/categorias');
 
+const {Op} = require('sequelize');
+
 module.exports = {
    detalleProducto: (req, res, next) => {
       db.Producto.findByPk(req.params.id,{
@@ -37,41 +39,21 @@ module.exports = {
 
    // Busqueda
    busqueda: (req, res) => {
-      let { keyword } = req.query/* .toLowerCase() */;
-      /* let noSpaceKeyword = keyword.join('');
-      const result = (()=>productos.nombre.toLowerCase().include(noSpaceKeyword)); */
+      let { keyword } = req.query
       db.Producto.findAll({
          where : {
-            nombre : keyword
-         }
+            nombre : {
+               [Op.substring] : keyword
+            }
+         },
+         include : ['categoria','imagenes','origen','marca']
       })
       .then(productos=>{
-         /* res.send(req.query) */
-         res.render("resultadoBusqueda",{
-           /*  result, */
+         return res.render("resultadoBusqueda",{
             productos,
             session : req.session
          })
       })
-      /* let { keyword } = req.query;
-      let noSpaceKeyword = keyword.join('');
-      const result = productos.filter((producto) =>
-         producto.nombre.toLowerCase().includes(noSpaceKeyword)
-      ); */
-
-      // let namesCategories = categories.map((category) => {
-      //    return {
-      //       id: category.id,
-      //       name: category.name,
-      //    };
-      // });
-
-      /* return res.render('resultadoBusqueda', {
-         productos: result,
-         noSpaceKeyword,
-         // namesCategories,
-         session: req.session,
-      }); */
    },
 
    // Categoria
