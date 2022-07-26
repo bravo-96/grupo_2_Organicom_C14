@@ -1,18 +1,20 @@
  const usuarios = require("./data/users.json")
+const {validationResult} = require('express-validator')
 const db = require("../database/models");
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
 
-  
 module.exports = {
   register: async (req, res, ) => {
      db.User.findAll()
     await res.render("users/register", { session: req.session });
   },
   userCreate:(req, res)=>{ 
+    const password = req.body.password;
+
     db.User.create({
      ...req.body,
-     pass : bcrypt.hashSync(pass, 10),
+     password : bcrypt.hashSync(password,10),
      rol: usuarios.rol = 'user',
      avatar : usuarios.avatar = 'default.png'
       })    
@@ -21,42 +23,37 @@ module.exports = {
     })
   .catch(errors => console.log(errors))
 },
-login: async(req, res, ) => {
-  db.User.findAll()
-  return res.render("users/login-lateral");
+login: (req, res, ) => {  
+  return res.render("/users/login-lateral");
 },
 
   userLogin : (req, res) => {
-    db.User.findByPk(req.params.id,{
-      where : { email : req.body.email }
-  })
-  .then(user => {
-     res.local.user = req.session.user;
-
-     return res.redirect('/')
-      
-    })
-    .catch(err => {console.log(err)});
-     
+    let errors = validationResult(req)
+    if (errors.isEmpty()){
+      db.User.findOne({
+            where : { email : req.body.email }
+        })
+        .then(user => {
+            req.session.user = {
+                id : user.id,
+                nombre : user.nombre,          
+                avatar : user.avatar,
+                rol : user.rol
+            }
+            if(req.body.recordar){
+                res.cookie('', req.session.user, {maxAge : 1000*60*10} )
+            }
+            res.locals.user = req.session.user;
+            res.redirect('/')
+        })
+        .catch(errors => console.log(errors))
+    }else{
+        res.render('users/login-lateral', {
+            errors : errors.mapped(),
+            old : req.body,
+        })
+    }
 },
-
-  userEdit:(req, res)=>{
-     db.User.findByPk(req.params.id)
-    db.User.update({
-       ...req.body,
-      
-    },{
-       where : {id : req.params.id}
-    })
-    .then(user=>{
-       res.redirect("/",{
-          user       
-       });
-    })
-    .catch(errors => console.log(errors))
-
-    
- },
   userDelete:(req, res)=>{
     db.User.findAll()
     .then(function(users){

@@ -5,12 +5,12 @@
    <div class="login">
       <form class="login-form" action="/users/userLogin" method="POST">
          <div>
-            <% if(typeof session.user === "undefined") {%>
+            <% if(typeof locals.user === "undefined") {%>
                <h1 class="titulo">Iniciar sesión</h1>
          <div class="login-main">
             <label for="email">Email</label>
             <input class="login_input-main" type="email" id="email" name="email"
-               placeholder="Escribi tu email">
+               placeholder="Escribi tu email"> locals.
          </div>
          <div class="login-main">
             <label for="password">Password</label>
@@ -37,12 +37,12 @@
             <button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Ingresar como ADMIN</button>
          </a> -->
          <!-- para verificar el crud, cambiar de lugar pls -->
-         <%}else if(typeof session.user !== "undefined" && session.user.rol === "admin") { %> 
+         <%} else if(typeof locals.user !== "undefined" && locals.user.rol === "admin") { %> 
             <ul>
                Modo Admin
             </ul>
 
-            <a href="/users/profile"><button type="button" class="btn-registrate">Bienvenido <%- session.user.nombre %></button></a>
+            <a href="/users/profile"><button type="button" class="btn-registrate">Bienvenido <%- locals.user.nombre %></button></a>
 
             <a href="/adminProducts">
                <button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Ingresar como ADMIN</button>
@@ -52,7 +52,7 @@
 
             <%}else{%>
 
-               <a href="/users/profile"><button type="button" class="btn-registrate">Bienvenido <%- session.user.nombre %> </button></a>
+               <a href="/users/profile"><button type="button" class="btn-registrate">Bienvenido <%- locals.user.nombre %> </button></a>
 
                <a href="/users/logout"><button type="button" class="btn-registrate" style="margin: 2rem 0 0 0;">Cerrar Sesion</button></a>
                
