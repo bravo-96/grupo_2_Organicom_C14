@@ -1,4 +1,5 @@
 const usuarios = require("./data/users.json")
+const fs = require("fs")
 
 //armado de logica register Alex <3
 module.exports = {

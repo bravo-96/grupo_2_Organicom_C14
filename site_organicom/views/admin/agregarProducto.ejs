@@ -18,11 +18,12 @@
 
       <form class="agregar-form" action="/adminProducts/agregarProducto" method="POST" enctype="multipart/form-data">
 
-
+         
          <div class="input-contenedor">
             <label for="imgs-producto">Subir imágen principal del producto (solo una)</label>
-            <input type="file"  id="imagenes" name="imagenes" accept="image/*">
+            <input type="file"  id="imagenes" name="imagenes[]" onchange="previsualizarImg(event)" accept="image/*">
          </div>
+         <div><img src="" alt="" id="img-producto-pr" style="size: 50% ;"></div>
          <!-- <div class="input-contenedor">
             <label for="imgs-producto">Subir más imágenes del producto (pueden ser varias)</label>
             <input type="file" id="listaImagenesProducto" name="listaImagenesProducto" accept="image/*" multiple>
@@ -95,6 +96,26 @@
    <%- include("../partials/footer") %>
 
    <script src="/js/general.js"></script>
+   <script >
+
+   let previsualizarImg = (event) => {
+
+      let imgPreview = new FileReader();
+      let id_img = document.getElementById("img-producto-pr");
+
+      imgPreview.onload = ()=> {
+
+         if (imgPreview.readyState == 2) {
+            id_img.src = imgPreview.result
+         } else {
+            id_img.src = ("error")
+         }
+
+      }
+      imgPreview.readAsDataURL(event.target.files[0])
+   }
+
+   </script>
 </body>
 
 </html>
