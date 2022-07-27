@@ -16,8 +16,9 @@
 
             <div class="input-contenedor">
                 <label for="imagenes">Subir imágen principal del producto (solo una)</label>
-                <input type="file" id="imagenes" name="imagenes" accept="image/*">
+                <input type="file" id="imagenes" name="imagenes" accept="image/*"  onchange="previsualizarImgEdit(event)">
             </div>
+            <div><img src="/imgs/products_images/<%= producto.imagenes[0].nombre%>" alt="" id="img-producto-edit" class="img-edit"></div>
             <div class="input-contenedor">
                 <label for="nombre">Título del producto</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto"
@@ -87,6 +88,24 @@
     <%- include("../partials/footer") %>
 
     <script src=" /js/general.js"></script>
+    <script >
+        
+        let previsualizarImgEdit = (event) => {
+     
+           let imgPreviewEdit = new FileReader();
+           let id_img = document.getElementById("img-producto-edit");
+     
+           imgPreviewEdit.onload = ()=> {
+     
+              if (imgPreviewEdit.readyState == 2) {
+                 id_img.src = imgPreviewEdit.result
+              } 
+     
+           }
+           imgPreviewEdit.readAsDataURL(event.target.files[0])
+        }
+     
+        </script>
 </body>
 
 </html>

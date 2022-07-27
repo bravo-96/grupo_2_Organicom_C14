@@ -107,9 +107,7 @@
 
          if (imgPreview.readyState == 2) {
             id_img.src = imgPreview.result
-         } else {
-            id_img.src = ("error")
-         }
+         } 
 
       }
       imgPreview.readAsDataURL(event.target.files[0])
