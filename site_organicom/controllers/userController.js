@@ -9,7 +9,7 @@ module.exports = {
   userCreate: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      const { email, nombre, password } = req.body;
+      const { email, nombre,telefono, password } = req.body;
 
       db.User.create({
         nombre: nombre.trim(),
@@ -49,13 +49,18 @@ module.exports = {
             avatar: user.avatar,
             rol: user.rol,
           };
-          if (req.body.recordar) {
-            res.cookie("", req.session.user, { maxAge: 1000 * 60 * 10 });
+          if (req.body.recuerdame) {
+            res.cookie("organicom", req.session.user, { maxAge: 1000 * 60 * 2 });
           }
           res.locals.user = req.session.user;
           res.redirect("/");
         })
         .catch((errors) => console.log(errors));
+    }else {
+      res.render('',{
+        errors: errors.mapped(),
+        old : req.body
+      })
     }
   },
   userDelete: (req, res) => {
