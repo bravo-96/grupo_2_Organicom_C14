@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <%- include("../partials/head", {title: "Registro"}) %>
+
+   <link rel="stylesheet" href="/css/register.css">
+   <script src="https://kit.fontawesome.com/c798016428.js" crossorigin="anonymous"></script>
+ 
+</head>
+
+<body class="register">
+
+   <%- include("../partials/carrito-lateral") %>
+   <!-- PRESTAR ATENCION A LAS RUTAS DE INCLUDE EN GENERAL -->
+
+   <main>
+      <form class="register-form" action="/users/userLogin" method="POST">
+         <div class="encabezado">
+            <h1 class="titulo">Inicio de sesión</h1>
+         </div>
+         <div class="register-main">
+            <label for="email">Email</label>
+            <input class="register_input-main" type="email" id="email" name="email" placeholder="email" autocomplete="off">
+         </div>
+         <div class="register-main">
+            <label for="password">Password</label>
+            <input class="register_input-main" type="password" id="register-password" name="password" placeholder="password" >
+         </div>
+         <div class="register-main">
+            <label for="recuerdame">
+                <input type="checkbox" name="recuerdame" id="recuerdame" checked>
+                Recuerdame
+             </label>
+             <a href="">Olvidé mi contraseña</a>
+         </div>
+         <div class="register-main button-register">          
+            <button type="submit">
+               Ingresar
+            </button>
+            <span><%= locals.errors && errors.email ? errors.email.msg : null %> </span>      
+         </div>
+      </form>
+   </main>
+
+   <%- include("../partials/footer") %>
+
+   <script src="/js/general.js"></script>
+</body>
+
+</html>
