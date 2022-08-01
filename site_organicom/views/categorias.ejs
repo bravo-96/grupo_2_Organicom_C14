@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <%- include("./partials/head", {
+      title: "Fideos y Cereales"
+   }) %>
+
+   <link rel="stylesheet" href="/css/categorias.css">
+</head>
+
+<body>
+   <%- include("./users/login-lateral") %>
+   <%- include("./partials/header") %>
+   <%- include("./partials/carrito-lateral") %>
+
+   <main>
+      <div class="hero-categoria">
+
+         <% if ( categoria.id === 3) { %>
+
+         <img src="/assets/img/hero-fideos.webp" alt>
+
+      </div>
+      <div class="grid-principal">
+         <h1>Fideos y Cereales</h1>
+         <% } else if (categoria.id === 1) { %>
+         <img src="/assets/img/hero-frutos-secos.jpg" alt>
+
+      </div>
+      <div class="grid-principal">
+         <h1>Frutos secos</h1>
+         <% } else if (categoria.id === 4) { %>
+         <img src="/assets/img/hero-jugos.jpg" alt>
+
+      </div>
+      <div class="grid-principal">
+         <h1>Jugos y Bebidas</h1>
+         <% } else if (categoria.id === 2) { %>
+         <img src="/assets/img/hero-infusiones.jpg" alt>
+
+      </div>
+
+
+      <div class="grid-principal">
+         <h1>Infusiones</h1>
+         <% } %>
+
+
+         <% categoria.forEach(producto => { %>
+            
+         <article class="card">
+            <div class="card-header">
+               <img src="/imgs/products_images/<%= producto.imagenes[0].nombre %>" alt>
+               <div class="favorito"></div>
+            </div>
+            <div class="card-body">
+               <a href="/products/detalleProducto/<%= producto.id %>">
+                  <h3><%= producto.nombre %> </h3>
+                  <p class="precio-inicial">
+                     <% if (producto.descuento) { %>
+                     <span>$<%= producto.precio %></span>
+                     <span class="descuento">
+                        <%= producto.descuento %>%OFF!
+                     </span>
+                     <% } %>
+                  </p>
+                  <p class="precio-final">
+                     $ <%= producto.descuento ? 
+                        Math.trunc(+producto.precio - (+producto.precio * +producto.descuento / 100)) :
+                        Math.trunc(producto.precio) %>.00
+                  </p>
+                  <!-- <p class="precio-secundario">$ <%#= producto.precio %>.00 x 1Kg</p> -->
+               </a>
+               <div class="botones">
+                  <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+               </div>
+            </div>
+         </article>
+         <% }) %>
+      </div>
+   </main>
+
+   <%- include("./partials/footer") %>
+
+   <script src="/js/general.js"></script>
+</body>
+
+</html>

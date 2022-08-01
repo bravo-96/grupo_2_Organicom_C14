@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <%- include("./partials/head", {title: "Productos"}) %>
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/css/splide-core.min.css">
+   <link rel="stylesheet" href="/css/productos.css">
+</head>
+<body>
+    <%- include("./users/login-lateral") %>
+
+   <%- include("./partials/header") %>
+
+   <%- include("./partials/carrito-lateral") %>
+    <main>
+        <div class="lista-productos-general">
+             <% producto.forEach(productos => { %> 
+
+            <a class="a-general" href="/products/detalleProducto/<%= productos.id %> "><article class="card-general">
+                <div class="card-header-general">
+                    <!-- <img src="/assets/img/<%#= producto.imagen %>" alt> -->
+                    <img src="/imgs/products_images/<%= productos.imagenes[0].nombre%>" alt>
+                </div>
+                <div class="card-body-general">
+                    <h3><%= productos.nombre %></h3>
+                    <p class="precio-inicial-general">
+                        <% if (productos.descuento) { %>
+                        <span>$<%= productos.precio %></span>
+                        <span class="descuento-general">
+                            <%= productos.descuento %>%OFF!
+                        </span>
+                        <% } %>
+                    </p>
+                    <p class="precio-final-general">
+                        $ <%= productos.descuento ? 
+                            Math.trunc(+productos.precio - (+productos.precio * +productos.descuento / 100)) :
+                            Math.trunc(productos.precio) %>.00
+                    </p>
+                    <span class="categoria-general"><%= productos.categoria.nombre %></span>
+                    <!-- <div class="botones-general">
+                        <a href="/products/detalleProducto/<%= productos.id %> ">
+                            <button class="btn-editar-general" type="button">Ver mas <span class="icono-general"></span></button>
+                        </a>
+                    </div> -->
+                </div>
+            </article></a>
+             <% }); %> 
+
+
+
+        </div>
+    </main>
+    <%- include("./partials/footer") %>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/js/splide.min.js"></script>
+    <script src="/js/general.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+ 
+</html>

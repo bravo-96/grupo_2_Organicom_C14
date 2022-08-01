@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <%- include("./partials/head", {
+      title: "Detalle del producto"
+   }) %>
+
+   <link rel="stylesheet" href="/css/detalleProducto.css">
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/css/splide-core.min.css">
+</head>
+
+<body class="detalle">
+   <!-- PRESTAR ATENCION A LAS RUTAS DE INCLUDE EN GENERAL -->
+   <%- include("./users/login-lateral") %>
+   <%- include("./partials/header") %>
+   <%- include("./partials/carrito-lateral") %>
+   <!-- PRESTAR ATENCION A LAS RUTAS DE INCLUDE EN GENERAL -->
+
+   <!-- ------ Main ------ -->
+
+   <main class="grid-princpial">
+
+      <img src="/imgs/products_images/<%= producto.imagenes[0].nombre %> " alt=""
+         style="max-width: 300px; margin: 0 auto;display: block;">
+
+
+      <!-- <section class="slider-principal">
+
+         <section id="main-carousel" class="splide" aria-label="Galeria del producto">
+            <div class="splide__track">
+               <ul class="splide__list producto-imagen-portada">
+                  <li class="splide__slide"> 
+      <img src="/assets/img/producto-imagen-1.jpg" alt="" style="max-width: 400px;">-->
+      <!-- </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+               </ul>
+            </div>
+         </section> -->
+
+      <!-- <section id="thumbnail-carousel" class="splide" aria-label="Galeria del producto">
+            <div class="splide__track">
+               <ul class="splide__list lista-imgs">
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/default.png" alt="">
+                  </li>
+                  <li class="splide__slide">
+                     <img src="/assets/img/producto-imagen-1.jpg" alt="">
+                  </li>
+               </ul>
+            </div>
+         </section> -->
+      </section>
+      <!-- ------------- -->
+      <section class="detalle-producto">
+         <p class="categoria">Categoria: <a href=""><%= producto.categoria.nombre %> </a></p>
+         <p class="categoria">Marca: <%= producto.marca.nombre %></p>
+         <p class="categoria">Origen: <%= producto.origen.nombre %></p>
+         <h1 class="titulo-producto"><%= producto.nombre %></h1>
+         
+         <div class="favorito-contenedor">
+            <p class="estrellas"><span class="icono"></span>4.0</p>
+            <p class="favorito"><span>Agregar a favoritos</span><span class="icono"></span></p>
+         </div>
+         <div class="precio-contenedor">
+            <p class="precio-final">
+               $<%= producto.descuento ? 
+               Math.trunc(+producto.precio - (+producto.precio * +producto.descuento / 100)) :
+               Math.trunc(producto.precio) %>.00
+            </p>
+
+            <% if (producto.descuento) { %>
+            <p class="precio-inicial">
+               <span>$ <%= producto.precio %></span> <span class="descuento"><%= producto.descuento %>%
+                  OFF!</span>
+            </p>
+            <% } %>
+         </div>
+         <div class="cantidad">
+            <label for="input-cantidad">¿Cuantos queres llevar?</label>
+            <div class="cantidad-input-contenedor">
+               <button type="button" class="resta">-</button>
+               <input type="text" max="100" id="input-cantidad" name="input-cantidad" value="1">
+               <button type="button" class="suma">+</button>
+            </div>
+         </div>
+         <p>Métodos de pagos: </p>
+         <ul class="lista-metodos-pago">
+            <li><img title="Efectivo" src="/assets/img/efectivo.png" alt></li>
+            <li><img title="Mercado Pago" src="/assets/img/merc-pago.png" alt></li>
+            <li><img title="Visa" src="/assets/img/visa.png" alt></li>
+            <li><img title="Master Card" src="/assets/img/mast-card.png" alt></li>
+            <li><img title="American Express" src="/assets/img/amer-express.png" alt></li>
+         </ul>
+         <div class="btns-contenedor">
+            <button type="button" class="btn-agregar-carrito">Agregar <span class="icono"></span></button>
+            <% if(typeof session.user === "undefined") {%> 
+              <button class="btn-comprar-ahora"><a href="/users/login-lateral">Inicia sesion para continuar</a></button> 
+            <% }else{ %> 
+            <button type="button" class="btn-comprar-ahora">
+               <a href="/products/carrito">
+                  Comprar ahora
+               </a>
+            </button>
+            <% } %> 
+         </div>
+      </section>
+      <!-- ------------- -->
+      <section class="descripcion-texto">
+         <h2>Descripcion del producto</h2>
+         <ul>
+            <li>
+               <%= producto.descripcion %> 
+            </li>
+         </ul>
+      </section>
+      <section class="detalle-texto">
+         <h2>Beneficios del producto</h2>
+         <ul>
+            <li>
+               <%= producto.beneficios %> 
+            </li>
+         </ul>
+         <h2>Metodos de preparacion/uso</h2>
+         <ul>
+            <li>
+               <%= producto.preparacion %> 
+            </li>
+         </ul>
+      </section>
+      <!-- ------------- -->
+      
+      <!-- ------------- -->
+      <section class="comentarios">
+         <h2>Reseñas</h2>
+         <article class="comentario">
+            <div class="cabecera">
+               <p class="nombre-usuario">Usuario_2242</p>
+               <p class="estrellas"><span class="icono"></span>4.0</p>
+            </div>
+            <p class="comentario-texto">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit
+               praesentium! Culpa, quasi quod? Optio corporis voluptates in ea blanditiis eum a tempore recusanda.
+            </p>
+         </article>
+
+         <article class="comentario">
+            <div class="cabecera">
+               <p class="nombre-usuario">Usuario_1342</p>
+               <p class="estrellas"><span class="icono"></span>4.0</p>
+            </div>
+            <p class="comentario-texto">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit perspiciatis.
+            </p>
+         </article>
+         <article class="comentario">
+            <div class="cabecera">
+               <p class="nombre-usuario">Usuario_1342</p>
+               <p class="estrellas"><span class="icono"></span>4.0</p>
+            </div>
+            <p class="comentario-texto">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit perspiciatis.
+            </p>
+         </article>
+         <article class="comentario">
+            <div class="cabecera">
+               <p class="nombre-usuario">Usuario_1342</p>
+               <p class="estrellas"><span class="icono"></span>4.0</p>
+            </div>
+            <p class="comentario-texto">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, odit perspiciatis.
+            </p>
+         </article>
+         <button type="button">Mostrar más</button>
+      </section>
+      <!-- ------------- -->
+      <section class="recomendados">
+         <div class="sticky-contenedor">
+            <h2>Tambien te pueden interesar</h2>
+
+            <div class="slider splide" id="sliderRecomendados" aria-label="Productos Recomendados">
+
+               <div class="splide__track">
+                  <ul class="splide__list">
+                     <li class="splide__slide splide__page">
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                     </li>
+                     <li class="splide__slide splide__page">
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                     </li>
+                     <li class="splide__slide splide__page">
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                        <article class="card">
+                           <div class="card-header">
+                              <img src="/assets/img/producto-imagen-1.jpg" alt>
+                              <div class="favorito"></div>
+                           </div>
+                           <div class="card-body">
+                              <a href="/products/detalleProducto">
+                                 <h3>Palmitos Enteros Siete Lagos Bajo en sodio x 800g SIN-TACC</h3>
+                                 <p class="precio-inicial"><span>$ 716,00 </span><span class="descuento">20% OFF!</span>
+                                 </p>
+                                 <p class="precio-final">$ 895,00</p>
+                                 <p class="precio-secundario">$ 1.050,00 x 1Kg</p>
+                              </a>
+                              <div class="botones">
+                                 <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+                              </div>
+                           </div>
+                        </article>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <%- include("./partials/footer") %>
+
+   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/js/splide.min.js"></script>
+
+   <script src="/js/general.js"></script>
+   <script src="/js/detalleProducto.js"></script>
+</body>
+
+</html>

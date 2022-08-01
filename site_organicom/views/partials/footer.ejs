@@ -1,0 +1,46 @@
+<footer>
+   <div class="max-width-container">
+      <div class="suscripcion-contenedor">
+         <h4>¡Suscribite totalmente <br /> gratis!</h4>
+         <p>Y recibi nuestras ofertas y promociones todas las semanas</p>
+         <form action="/">
+            <input type="text" placeholder="Dejanos tu Email">
+            <button type="submit">Suscribirse</button>
+         </form>
+      </div>
+      <div class="contenido">
+         <ul class="lista-categorias">
+            <h4>Categorias</h4>
+            <li><a href="/products/categorias/fideos-cereales">Fideos / Cereales</a></li>
+            <li><a href="/products/categorias/frutos-secos">Frutos secos</a></li>
+            <li><a href="/products/categorias/jugos-bebidas">Jugos y bebidas</a></li>
+            <li><a href="/products/categorias/infusiones">Infusiones</a></li>
+         </ul>
+
+         <ul class="lista-mapa-sitio">
+            <h4>Explora</h4>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/users/register">Registrate</a></li>
+            <% if(typeof session.user === "undefined") {%> 
+            <% }else{ %> 
+            <li><a href="/products/carrito">Carrito</a></li>
+            <% } %> 
+         </ul>
+
+         <div class="logo-redes-contenedor">
+            <img class="logo" src="/assets/img/logo-amarillo.svg" alt>
+            <ul class="lista-redes">
+               <li><a href="/" class="facebook"></a></li>
+               <li><a href="/" class="instagram"></a></li>
+               <li><a href="/" class="twitter"></a></li>
+            </ul>
+         </div>
+      </div>
+
+      <p class="copyright">
+         Copyright 2022 | Todos los derechos reservados Organicom S.A. | Av. Calle Street 321 |
+         Capital Federal |
+         Argentina
+      </p>
+   </div>
+</footer>

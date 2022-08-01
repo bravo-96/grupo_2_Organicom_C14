@@ -1,0 +1,95 @@
+@import './general.css';
+
+.register .register-form {
+   padding: 3rem 1rem;
+   width: 100%;
+   margin: 0 auto;
+   max-width: 470px;
+   background-color: var(--fondo-pagina);
+}
+.register-form .titulo {
+   font-size: 1.5rem;
+   margin: 1rem 0;
+   text-align: center;
+}
+.register main form div.register-main {
+   padding-top: 1rem;
+}
+.register .register-form label {
+   display: block;
+   font-weight: bolder;
+   margin: 0 0 0.3rem 0.5rem;
+   font-size: 0.9rem;
+   color: var(--verde);
+}
+.register .register-form input:not([type='checkbox']) {
+   display: block;
+   width: 100%;
+   border: none;
+   border-radius: 0.3rem;
+   padding: 0.5rem;
+   font-size: 0.9rem;
+   background-color: var(--fondo-input);
+}
+.register .register-form input[type='checkbox'] {
+   display: inline;
+}
+.register .register-form label[for='terminos'],
+.register .register-form label[for='publicidad'] {
+   font-size: 0.8rem;
+   font-weight: normal;
+   color: var(--texto-gris);
+}
+
+.register .register-form input:focus-within {
+   outline-color: var(--verde);
+}
+
+.register .register-main .register_input-main {
+   width: 100%;
+   padding: 10px;
+   border-color: var(--colorGrisCB);
+   border-radius: 5px;
+}
+
+.register main .button-register button {
+   padding: 1rem 0;
+   width: 100%;
+   line-height: 1;
+   border: none;
+   border-radius: 0.3rem;
+   background-color: var(--amarillo);
+   color: var(--verde);
+   font-weight: bolder;
+}
+.register {
+   display: inline;
+}
+
+@media (min-width: 768px) {
+   main {
+      background: url('/assets/img/fondo-register.webp') no-repeat center;
+      background-size: cover;
+      padding: 0.1px;
+      position: relative;
+   }
+   main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.55);
+   }
+
+   .register .register-form {
+      position: relative;
+      z-index: 100;
+      padding: 1.5rem 1rem;
+      width: 100%;
+      margin: 2rem auto 2rem 10%;
+
+      max-width: 420px;
+      background-color: var(--fondo-pagina);
+      border-radius: 0.5rem;
+      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+   }
+}

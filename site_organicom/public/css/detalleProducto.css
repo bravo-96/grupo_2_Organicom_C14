@@ -1,0 +1,768 @@
+@import './general.css';
+
+/* ------- MAIN ------- */
+main.grid-princpial {
+   padding: 0 1rem;
+}
+
+/* ------- SLIDER PRODUCTO ------- */
+
+#thumbnail-carousel .splide__slide {
+   filter: brightness(0.7);
+}
+#thumbnail-carousel .splide__slide.is-active {
+   filter: brightness(1);
+}
+
+.slider-principal .splide__arrow {
+   position: absolute;
+   z-index: 200;
+   top: 50%;
+
+   border: none;
+   width: 3rem;
+   height: 3rem;
+   border-radius: 50%;
+
+   display: block;
+   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
+   background-size: 0.8rem;
+
+   background-position-x: 1.2rem;
+   background-color: var(--verde-fondo);
+   box-shadow: 0 0 0.5rem #777;
+}
+.slider-principal .splide__arrows *[disabled] {
+   filter: brightness(15) grayscale(1);
+}
+
+.slider-principal .splide__arrow.splide__arrow--prev {
+   transform: translateY(-50%) rotate(180deg);
+   left: -0.9rem;
+}
+.slider-principal .splide__arrow.splide__arrow--next {
+   right: -0.9rem;
+   transform: translateY(-50%);
+}
+
+.slider-principal {
+   position: relative;
+   max-width: 450px;
+   margin: 1rem auto;
+}
+
+.slider-principal .lista-imgs {
+   display: none;
+}
+
+/* .slider-principal .flecha-izq,
+.slider-principal .flecha-der {
+   position: absolute;
+   background-color: var(--verde);
+   width: 3rem;
+   height: 3rem;
+   border-radius: 50%;
+   box-shadow: 0 0 0.5rem #ccc;
+   cursor: pointer;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   top: 50%;
+   transform: translateY(-50%);
+}
+.slider-principal .flecha-izq {
+   left: -0.5rem;
+}
+.slider-principal .flecha-der {
+   right: -0.5rem;
+}
+
+.slider-principal .flecha-izq::before,
+.slider-principal .flecha-der::before {
+   content: '';
+   display: block;
+   width: 1.3rem;
+   height: 1.3rem;
+   background-color: transparent;
+   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
+   background-size: contain;
+   transform: rotate(180deg) translate(10%, 0%);
+}
+.slider-principal .flecha-der::before {
+   transform: translate(10%, 0%);
+} */
+
+.slider-principal .producto-imagen-portada img {
+   display: block;
+   margin: 0 auto;
+   padding: 1.3rem 0;
+   /* width: 70%; */
+   max-width: 300px;
+   object-fit: contain;
+   object-position: center;
+}
+
+/* ------- DETALLE DEL PRODUCTO ------- */
+.detalle-producto {
+   font-size: 0.9rem;
+   color: var(--texto-gris);
+   max-width: 500px;
+   margin: 0 auto 2rem;
+}
+
+.detalle-producto a {
+   text-decoration: none;
+}
+
+.detalle-producto a {
+}
+.detalle-producto .categoria {
+   font-size: 0.9rem;
+   margin: 0;
+}
+.detalle-producto h1 {
+   font-size: 1.3rem;
+   margin: 0.5rem 0;
+
+   color: #000;
+}
+.detalle-producto .favorito-contenedor {
+   display: flex;
+   justify-content: space-between;
+
+   font-size: 0.85rem;
+   letter-spacing: -0.4px;
+}
+
+.favorito-contenedor p.favorito,
+.favorito-contenedor p.estrellas {
+   display: flex;
+   align-items: center;
+   margin: 0;
+}
+
+.favorito-contenedor p.favorito {
+   cursor: pointer;
+}
+.favorito-contenedor p.favorito .icono {
+   margin-left: 0.3rem;
+   display: inline-block;
+   width: 1.3rem;
+   height: 1.2rem;
+
+   background: url(/assets/img/favorito-outline-icono.svg) no-repeat center;
+   background-size: contain;
+}
+.favorito-contenedor p.favorito .icono.active {
+   background-image: url(/assets/img/favorito-solid-icono.svg);
+}
+
+.favorito-contenedor p.estrellas .icono {
+   margin-right: 0.3rem;
+   display: block;
+   width: 5.5rem;
+   height: 1.1rem;
+
+   background: url(/assets/img/estrellas-4.svg) no-repeat center;
+   background-size: contain;
+}
+.detalle-producto .precio-contenedor {
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   margin: 1rem 0 0;
+}
+.precio-contenedor .precio-final {
+   font-size: 2.3rem;
+   color: var(--verde);
+   font-weight: bolder;
+   margin: 0;
+}
+.precio-contenedor .precio-inicial {
+   margin: 0;
+}
+.precio-contenedor .precio-inicial span:first-child {
+   color: var(--texto-gris);
+   font-size: 1rem;
+   text-decoration: line-through;
+}
+.precio-contenedor .precio-inicial .descuento {
+   font-size: 1.1rem;
+   font-weight: bolder;
+   line-height: 1;
+   background-color: var(--verde);
+   padding: 0.2rem;
+   color: var(--texto-blanco);
+}
+
+.precio-contenedor .cantidad {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   margin: 1rem 0 3rem;
+}
+
+.cantidad label {
+   font-size: 0.9rem;
+}
+.cantidad-input-contenedor {
+   display: flex;
+   align-items: center;
+
+   background-color: var(--fondo-input);
+   width: max-content;
+   border-radius: 0.2rem;
+   padding: 0.2rem;
+}
+.cantidad-input-contenedor button {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   font-size: 1.1rem;
+   font-weight: bolder;
+   color: var(--verde);
+   font-family: monospace;
+}
+.cantidad #input-cantidad {
+   /* font-size: 1.1rem; */
+   background-color: transparent;
+   border: none;
+   width: 2.5rem;
+   text-align: center;
+}
+.cantidad #input-cantidad:focus-within {
+   outline-color: var(--verde);
+}
+
+.detalle-producto > .lista-metodos-pago {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   max-width: 300px;
+}
+.lista-metodos-pago p {
+   width: 100%;
+   font-size: 0.9rem;
+   margin: 0 0 0.5rem;
+}
+.lista-metodos-pago img {
+   width: 3rem;
+   height: 1.5rem;
+   object-fit: contain;
+}
+.lista-metodos-pago li:nth-of-type(2) > img {
+   width: 4rem;
+}
+.detalle-producto .btns-contenedor {
+   display: flex;
+   gap: 0.5rem;
+
+   margin: 2rem 0 0;
+}
+.btns-contenedor button {
+   width: 50%;
+   padding: 0.9rem 0;
+   border: 0;
+   border-radius: 0.3rem;
+   color: white;
+   font-size: 0.8rem;
+   font-weight: bolder;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.2rem;
+
+   background-color: var(--verde-fondo);
+}
+.btns-contenedor button:last-of-type {
+   color: var(--verde);
+   background-color: var(--amarillo);
+}
+
+.btns-contenedor .btn-agregar-carrito .icono {
+   display: block;
+   background: url(/assets/img/carrito-icono.svg) no-repeat center;
+   background-size: contain;
+   width: 1.2rem;
+   height: 0.9rem;
+
+   filter: invert(89%) sepia(16%) saturate(2968%) hue-rotate(339deg)
+      brightness(104%) contrast(101%);
+}
+.btns-contenedor .btn-agregar-carrito {
+   /* color: var(--amarillo); */
+}
+
+/* ------- Detalle texto ------- */
+/* ------- Descripcion texto ------- */
+/* ------- Comentarios box, h2 ------- */
+/* ------- Recomendados box, h2 ------- */
+
+.detalle-texto,
+.descripcion-texto,
+.comentarios,
+.recomendados {
+   border-top: 1px solid var(--borde-gris-claro);
+   padding: 2rem 0;
+   font-size: 0.9rem;
+   color: var(--texto-gris);
+   max-width: 500px;
+   margin: 0 auto;
+}
+.detalle-texto h2,
+.descripcion-texto h2,
+.comentarios h2,
+.recomendados h2 {
+   font-size: 1rem;
+   margin: 0 0 0.5rem;
+   color: #000;
+}
+.detalle-texto ul,
+.descripcion-texto ul {
+   list-style: initial;
+   padding-left: 1rem;
+   margin: 1rem 0;
+}
+.detalle-texto li,
+.descripcion-texto li {
+   margin-bottom: 0.5rem;
+}
+.detalle-texto p:last-child,
+.descripcion-texto p:last-child {
+   margin-bottom: 0;
+}
+
+/* ------- COMENTARIOS ------- */
+
+.comentarios {
+   padding-bottom: 0;
+}
+
+.comentarios .comentario {
+   padding: 1rem 0;
+   border-bottom: 1px solid var(--borde-gris-claro);
+   font-size: 0.85rem;
+}
+.comentario p {
+   margin: 0;
+}
+.comentario .cabecera {
+   display: flex;
+   gap: 2rem;
+   margin-bottom: 0.5rem;
+}
+.comentario .nombre-usuario {
+   width: max-content;
+   font-weight: bolder;
+   color: #000;
+}
+
+.comentario .estrellas {
+   display: flex;
+}
+.comentario .estrellas .icono {
+   margin-right: 0.5rem;
+   display: inline-block;
+   width: 5rem;
+   height: 1rem;
+
+   background: url(/assets/img/estrellas-4.svg) no-repeat center;
+   background-size: contain;
+}
+.comentario .comentario-texto {
+   padding: 0 0 0 1rem;
+   max-width: 700px;
+}
+
+.comentarios > button {
+   width: 100%;
+   background-color: transparent;
+   border: none;
+   font-size: 0.9rem;
+   font-weight: bolder;
+   padding: 1rem 0 0;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+.comentarios > button::after {
+   content: '';
+   display: block;
+   width: 0;
+   margin: 0 auto;
+   background-color: transparent;
+   border-top: 1rem solid #000;
+   border-left: 1rem solid transparent;
+   border-right: 1rem solid transparent;
+   border-bottom: 1rem solid transparent;
+   transform: scaleY(0.5);
+}
+.comentarios > button:hover {
+   background-color: #eee;
+}
+
+/* ------- SLIDER RECOMENDADOS ------- */
+
+.recomendados .splide__slide img {
+   width: 100%;
+   height: auto;
+}
+
+.recomendados .splide__page {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   justify-content: center;
+   justify-items: center;
+
+   padding: 0.5rem 0;
+}
+
+.recomendados .splide__arrows [disabled] {
+   filter: brightness(15) grayscale(1);
+}
+.recomendados .splide__arrow {
+   position: absolute;
+   z-index: 200;
+   top: 50%;
+   border: none;
+   width: 2.5rem;
+   height: 2.5rem;
+   border-radius: 50%;
+   display: block;
+   background: url(/assets/img/flecha-blanco.svg) no-repeat center;
+   background-size: 0.7rem;
+   background-position-x: 1rem;
+   background-color: var(--verde-fondo);
+   box-shadow: 0 0 0.5rem #00000029;
+}
+
+.recomendados .splide__arrow.splide__arrow--prev {
+   transform: translateY(-50%) rotate(180deg);
+   left: -0.9rem;
+}
+.recomendados .splide__arrow.splide__arrow--next {
+   right: -0.9rem;
+   transform: translateY(-50%);
+}
+
+.recomendados .card h3 {
+   font-size: 0.75rem;
+   margin: 0 0 0.5rem;
+   letter-spacing: -0.3px;
+
+   line-height: 1.2;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   color: #000;
+}
+
+.recomendados .card {
+   box-shadow: 0 0 0.2rem var(--borde-gris-claro);
+   border-radius: 0.5rem;
+   color: var(--texto-gris);
+   max-width: 180px;
+}
+.recomendados .card-header {
+   position: relative;
+}
+.recomendados .card-header .favorito {
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   width: 1.5rem;
+   height: 1.5rem;
+   cursor: pointer;
+   background: url(/assets/img/favorito-outline-icono.svg) no-repeat center;
+   background-size: contain;
+}
+.recomendados .card-header .favorito.active {
+   background-image: url(/assets/img/favorito-solid-icono.svg);
+}
+.recomendados .card-header img {
+   display: block;
+   margin: 0 auto;
+   width: 50%;
+   padding: 1rem 0;
+}
+
+.recomendados .card-body {
+   padding: 0.5rem;
+   text-align: center;
+}
+.recomendados .card-body a {
+   font-weight: initial;
+   text-decoration: none;
+   color: var(--texto-gris);
+}
+
+.card-body .precio-inicial span:first-child {
+   font-size: 0.8rem;
+   margin-bottom: 0;
+
+   text-decoration: line-through;
+}
+.card-body .precio-inicial .descuento {
+   background-color: var(--verde-fondo);
+   padding: 0.1rem 0.2rem;
+   font-weight: bolder;
+   color: var(--texto-blanco);
+   font-size: 0.7rem;
+}
+.recomendados .card-body .precio-inicial {
+   margin: 0;
+}
+.recomendados .card-body .precio-final {
+   font-size: 1.1rem;
+   font-weight: bolder;
+   margin: 0.5rem 0;
+   color: var(--verde);
+   line-height: 1;
+}
+.recomendados .card-body .precio-secundario {
+   margin: 0 0 0.5rem;
+   font-size: 0.7rem;
+}
+
+.recomendados .card-body .btn-agregar {
+   background-color: var(--amarillo);
+   color: var(--verde);
+   font-weight: bolder;
+   padding: 0.6rem 0;
+   display: block;
+   margin: 0 auto;
+   border: none;
+   border-radius: 0.2rem;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   gap: 0.5rem;
+   cursor: pointer;
+}
+.card-body .btn-agregar .icono {
+   display: block;
+   background: url(/assets/img/carrito-icono.svg) no-repeat center;
+   background-size: contain;
+   width: 1rem;
+   height: 1rem;
+
+   filter: invert(28%) sepia(7%) saturate(5768%) hue-rotate(93deg)
+      brightness(98%) contrast(87%);
+}
+
+/* ------- MOBILE XL ------- */
+
+@media screen and (min-width: 480px) {
+   .recomendados .splide__page {
+      gap: 1.5rem 0.5rem;
+      padding: 0.5rem;
+   }
+
+   .slider-principal .lista-imgs {
+      display: flex;
+      /* justify-content: center; */
+   }
+
+   .slider-principal .lista-imgs li {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 0.2rem;
+      border: 1px solid var(--borde-gris-claro);
+      cursor: pointer;
+   }
+   .slider-principal .lista-imgs img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+   }
+
+   .recomendados .slider {
+      max-width: 320px;
+      display: flex;
+      margin: 0 auto;
+   }
+
+   .recomendados .card {
+      margin: 0;
+   }
+}
+
+/* ------- TABLET ------- */
+@media screen and (min-width: 768px) {
+   main.grid-princpial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 3rem;
+      row-gap: 3rem;
+      margin-top: 2rem;
+      padding: 0 2rem;
+   }
+   .grid-princpial > .slider-principal {
+      margin: 0 auto;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+   .slider-principal .producto-imagen-portada {
+      /* padding: 0; */
+   }
+
+   /* -------------- */
+   .detalle-producto {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+   .detalle-producto .btns-contenedor {
+      margin-bottom: 0.2rem;
+   }
+   .detalle-producto .btns-contenedor button {
+      transition: box-shadow 0.3s ease;
+      font-size: 0.95rem;
+   }
+   .detalle-producto .btns-contenedor button:hover {
+      box-shadow: 0 0 0.3rem #666;
+   }
+   .detalle-producto .precio-inicial span:first-child {
+      font-size: 1rem;
+   }
+
+   .detalle-texto,
+   .descripcion-texto,
+   .comentarios {
+      border: none;
+      padding: 0;
+      margin: 0;
+   }
+   .detalle-texto {
+      border-bottom: 1px solid var(--borde-gris-claro);
+   }
+   .detalle-texto {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      border: none;
+   }
+   .descripcion-texto {
+      grid-column: 1/2;
+      grid-row: 3/4;
+   }
+   .comentarios {
+      grid-column: 1/3;
+      grid-row: 4/5;
+      max-width: initial;
+   }
+   .recomendados {
+      grid-column: 2/3;
+      grid-row: 2/4;
+      border: none;
+      padding: 0;
+      margin: 0 auto;
+   }
+   .recomendados .sticky-contenedor {
+      position: sticky;
+      top: 20px;
+   }
+   .recomendados .slider {
+      display: flex;
+      margin: 1rem 0 0;
+      max-width: 300px;
+      justify-self: end;
+   }
+   .recomendados .card {
+      margin: 0;
+      max-width: 250px;
+      transition: box-shadow 0.3s ease;
+   }
+   .recomendados .card:hover {
+      box-shadow: 0 0 0.4rem rgba(34, 34, 34, 0.4);
+   }
+}
+
+/* ------- DESKTOP ------- */
+@media screen and (min-width: 1024px) {
+   main.grid-princpial {
+      max-width: 1100px;
+      margin: 3rem auto;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 4rem;
+   }
+
+   .recomendados {
+      margin: 0 0 1rem;
+      grid-row: 2/ 5;
+   }
+   .comentarios {
+      grid-column: 1/2;
+   }
+   .detalle-texto {
+      border: none;
+   }
+
+   .detalle-texto,
+   .descripcion-texto,
+   .comentarios .comentario-texto {
+      font-size: 0.9rem;
+      /* margin-inline-start: auto; */
+   }
+   .detalle-texto h2,
+   .descripcion-texto h2,
+   .comentarios h2,
+   .recomendados h2 {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+   }
+   .comentarios .comentario {
+      align-items: center;
+   }
+   .comentarios .comentario img {
+      width: 3.5rem;
+      margin-right: 2rem;
+   }
+   .favorito-contenedor p.favorito:hover {
+      color: #000;
+   }
+
+   .recomendados .slider {
+      max-width: 380px;
+   }
+   .recomendados .card-header .favorito::after {
+      content: 'Agregar favoritos';
+      position: absolute;
+      width: max-content;
+      right: 120%;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 0.3rem;
+      padding: 0.3rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      color: var(--verde);
+      font-weight: bolder;
+      transform: translateX(20%);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s ease;
+      z-index: 100;
+      transition-property: transform, visibility, opacity;
+   }
+   .recomendados .card-header .favorito.active::after {
+      content: 'Quitar favoritos';
+   }
+   .recomendados .card-header .favorito:hover::after {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      line-height: 1;
+   }
+}
+
+@media screen and (min-width: 1400px) {
+   .grid-princpial {
+      row-gap: 6rem;
+   }
+}

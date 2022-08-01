@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("../partials/head", {title: "Editar Producto"}) %>
+    <link rel="stylesheet" href="/css/admin/editarProductos.css">
+</head>
+
+<body>
+    <%- include("../users/login-lateral") %>
+    <%- include("../partials/header") %>
+    <%- include("../partials/carrito-lateral") %>
+
+    <main>
+        <form class="editar-form" action="/adminProducts/editarProducto/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+            <div class="input-contenedor">
+                <label for="imagenes">Subir imágen principal del producto (solo una)</label>
+                <input type="file" id="imagenes" name="imagenes" accept="image/*">
+            </div>
+            <div class="input-contenedor">
+                <label for="nombre">Título del producto</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre del producto"
+                    value="<%= producto.nombre %>">
+            </div>
+            <div class="input-contenedor precio">
+                <label for="numer">Precio</label>
+                <input type="number" id="precio" name="precio" placeholder="ej: 150"  min="1" value="<%= producto.precio %>" />
+            </div>
+            <div class="input-contenedor descuento">
+                <label for="numer">Descuento en %</label>
+                <input type="number" id="descuento" name="descuento" placeholder="ej.: 15" value="<%= producto.descuento %>">
+            </div>
+            <div class="input-contenedor categoria">
+                <label for="categoria">Seleccione la categoria</label>
+                <select name="categoriaId" id="categoriaId">
+                   <option value="" >seleccione la categoria</option>
+                   <% categorias.forEach(categoria => { %>
+                      <option  value="<%= categoria.id %>" <%= categoria.id === producto.categoriaId && 'selected'%>  ><%= categoria.nombre %> </option>
+                   <% }) %> 
+                </select>
+             </div>
+             <div class="input-contenedor categoria">
+                <label for="categoria">Seleccione el origen</label>
+                <select name="origenId" id="origenId">
+                   <option value="" >seleccione el origen</option>
+                   <% origenes.forEach(origen => { %>
+                      <option  value="<%= origen.id %>"  <%= origen.id === producto.origenId && 'selected'%>><%= origen.nombre %> </option>
+                   <% }) %> 
+                </select>
+             </div>
+             <div class="input-contenedor categoria">
+                <label for="categoria">Seleccione la marca</label>
+                <select name="marcaId" id="marcaId">
+                   <option value="" >seleccione la marca</option>
+                   <% marcas.forEach(marca => { %>
+                      <option  value="<%= marca.id %>"  <%= marca.id === producto.marcaId && 'selected'%>><%= marca.nombre %> </option>
+                   <% }) %> 
+                </select>
+             </div>
+            <div class="input-contenedor">
+                <label for="descripcion">Descripción</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10"
+                    placeholder="Escriba una descripcion del producto"><%= producto.descripcion %></textarea>
+            </div>
+            <div class="input-contenedor">
+                <label for="beneficios">Beneficios</label>
+                <textarea name="beneficios" id="beneficios" cols="30" rows="10"
+                   placeholder="Escriba beneficios del producto"><%= producto.beneficios %></textarea>
+             </div>
+             <div class="input-contenedor">
+                <label for="preparacion">preparacion</label>
+                <textarea name="preparacion" id="preparacion" cols="30" rows="10"
+                   placeholder="Escriba preparacion/uso del producto"><%= producto.preparacion %></textarea>
+             </div>
+            
+            <div class="input-contenedor button-agregar">
+                <button type="submit">Guardar Cambios</button>
+            </div>    
+        </form>
+        <form action="/adminProducts/delete/<%= producto.id %>?_method=DELETE" method="POST">
+            <div class="input-contenedor">
+                <button type="submit">Eliminar producto</button>
+            </div>
+        </form>
+    </main>
+    <%- include("../partials/footer") %>
+
+    <script src=" /js/general.js"></script>
+</body>
+
+</html>

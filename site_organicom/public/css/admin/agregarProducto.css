@@ -1,0 +1,84 @@
+@import '../general.css';
+
+main {
+   padding: 1rem;
+   max-width: 600px;
+   margin: 0 auto;
+}
+
+h1 .titulo {
+   font-size: 1.5rem;
+   margin: 1rem 0;
+   text-align: center;
+}
+
+.agregar-form {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 1rem;
+}
+.agregar-form * {
+   grid-column: 1 / 3;
+}
+.agregar-form .precio {
+   grid-column: 1 / 2;
+}
+.agregar-form .descuento {
+   grid-column: 2 / 3;
+}
+
+.input-contenedor {
+   margin: 0 0 1rem;
+}
+
+.agregar-form label {
+   display: block;
+   font-weight: bolder;
+   margin: 0 0 0.3rem 0.5rem;
+   font-size: 0.9rem;
+   color: var(--verde);
+}
+.agregar-form input,
+.agregar-form textarea {
+   display: block;
+   width: 100%;
+   border: none;
+   border-radius: 0.3rem;
+   padding: 0.5rem;
+   font-size: 0.9rem;
+   background-color: var(--fondo-input);
+   resize: none;
+}
+.agregar-form input:focus-within,
+.agregar-form textarea:focus-within {
+   outline-color: var(--verde);
+}
+.agregar-form .button-agregar button {
+   padding: 1rem 0;
+   width: 100%;
+   line-height: 1;
+   border: none;
+   border-radius: 0.3rem;
+   background-color: var(--amarillo);
+   color: var(--verde);
+   font-weight: bolder;
+}
+
+@media screen and (min-width: 596px) {
+   .agregar-form {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+
+   .agregar-form * {
+      grid-column: 1 / 4;
+   }
+   .agregar-form .precio {
+      grid-column: 1 / 2;
+   }
+   .agregar-form .descuento {
+      grid-column: 2 / 3;
+   }
+   .agregar-form .categoria {
+      grid-column: 3 / 4;
+   }
+}

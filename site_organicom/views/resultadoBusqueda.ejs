@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <%- include("./partials/head", {title: "Resultado de la búsqueda"}) %>
+
+   <link rel="stylesheet" href="/css/resultadoBusqueda.css">
+
+</head>
+
+<body>
+   <%- include("./users/login-lateral") %>
+   <%- include("./partials/header") %>
+   <%- include("./partials/carrito-lateral") %>
+
+   <main>
+
+      
+      <div class="grid-principal">
+
+         <% if (productos.length > 0) { %>
+
+         <% productos.forEach(({imagenes,nombre, descuento, precio, categoria, id} )=> { %>
+
+         <article class="card">
+            <div class="card-header">
+               <img src="/imgs/products_images/<%= imagenes[0].nombre %> " alt>
+               <div class="favorito"></div>
+            </div>
+            <div class="card-body">
+               <a href="/products/detalleProducto/<%= id %> ">
+                  <h3><%= nombre %> </h3>
+                  <p class="precio-inicial">
+                     <% if (descuento) { %>
+                     <span>$<%= precio %></span>
+                     <span class="descuento">
+                        <%= descuento %>%OFF!
+                     </span>
+                     <% } %>
+                  </p>
+                  <p class="precio-final">
+                     $ <%= descuento ? 
+                           Math.trunc(+precio - (+precio * +descuento / 100)) :
+                           Math.trunc(precio) %>.00
+                  </p>
+                  <!-- <p class="precio-secundario">$ <%#= producto.precio %>.00 x 1Kg</p> -->
+               </a>
+               <div class="botones">
+                  <button class="btn-agregar" type="button">Agregar <span class="icono"></span></button>
+               </div>
+            </div>
+         </article>
+         <% }); %>
+
+         <% }else{ %>
+         <div>
+            No se encontraron resultados
+         </div>
+         <% } %>
+
+      </div>
+   </main>
+
+   <%- include("./partials/footer") %>
+
+   <script src="/js/general.js"></script>
+</body>
+
+</html>
