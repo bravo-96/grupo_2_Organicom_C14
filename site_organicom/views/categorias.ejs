@@ -51,7 +51,7 @@
             
          <article class="card">
             <div class="card-header">
-               <img src="/imgs/products_images/<%= producto.imagenes[0].nombre %>" alt>
+               <img src="/imgs/products_images/<%= producto.imagenes ? producto.imagenes.name : 'default.png' %>" alt>
                <div class="favorito"></div>
             </div>
             <div class="card-body">
