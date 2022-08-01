@@ -12,7 +12,7 @@
    <% if(typeof session.user === "undefined") {%>
    <button type="button" class="btn-cuenta">
       <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
-      <span>Mi Cuenta</span>
+      <span>Login</span>
    </button>
    <% }else{ %>
    <button type="button" class="btn-cuenta">
@@ -58,6 +58,6 @@
    </nav>
    <form action="/resultadoBusqueda" method="GET" class="barra-busqueda">
       <input type="text" name="keyword" id="keyword" placeholder="Busca un producto ...">
-      <input type="submit">
+   
    </form>
 </header>

@@ -3,8 +3,7 @@ const router = express.Router();
 const multer = require("multer")
 let uploadFiles = require("../middleware/uploadFiles")
 let loginValidator = require("../validations/loginValidator")
-let registerValidator = require('../validations/registerValidator')
-
+let registerValidator = require("../validations/registerValidator")
 const {inSession} = require("../middleware/sessionCheck");
 const { userCreate, userEdit,userLogin,register , login} = require('../controllers/userController');
 

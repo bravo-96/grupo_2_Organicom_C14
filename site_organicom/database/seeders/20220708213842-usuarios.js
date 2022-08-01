@@ -14,12 +14,12 @@ const users = usuarios_db.map(User => {
 module.exports = {
   async up (queryInterface, Sequelize) {
   
-      await queryInterface.bulkInsert('Users', users, {});
+      await queryInterface.bulkInsert('Usuarios', users, {});
     
   },
 
   async down (queryInterface, Sequelize) {
    
-     await queryInterface.bulkDelete('Users', null, {});
+     await queryInterface.bulkDelete('Usuarios', null, {});
        }
 };
