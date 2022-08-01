@@ -6,22 +6,36 @@ const fs = require('fs');
 
 module.exports = {
   register: async (req, res, ) => {
-     db.User.findAll()
-    await res.render("users/register", { session: req.session });
+    return res.render("users/register", { session: req.session });
   },
-  userCreate:(req, res)=>{ 
-    const password = req.body.password;
+  userCreate:(req, res)=>{
 
-    db.User.create({
-     ...req.body,
-     password : bcrypt.hashSync(password,10),
-     rol: usuarios.rol = 'user',
-     avatar : usuarios.avatar = 'default.png'
-      })    
-    .then(function(){        
-       return res.redirect('/')
-    })
-  .catch(errors => console.log(errors))
+    let errors = validationResult(req);
+
+    if(errors.isEmpty()){
+      const {nombre, email, telefono, password, } = req.body;
+
+      db.User.create({
+       nombre : nombre.trim(),
+       email : email.trim(),
+       telefono,
+       password : bcrypt.hashSync(password,10),
+       rol: 'user',
+       avatar : 'default.png'
+        })    
+      .then(function(){        
+          return res.redirect('/')
+      })
+    .catch(errors => console.log(errors))
+    }else{
+      return res.render("users/register", { 
+        session: req.session,
+        errors : errors.mapped(),
+        old : req.body
+      });
+
+    }
+   
 },
 login: (req, res, ) => {  
   return res.render("/users/login-lateral");
@@ -40,8 +54,8 @@ login: (req, res, ) => {
                 avatar : user.avatar,
                 rol : user.rol
             }
-            if(req.body.recordar){
-                res.cookie('', req.session.user, {maxAge : 1000*60*10} )
+            if(req.body.recuerdame){
+              res.cookie('organicom',req.session.user,{maxAge:1000*60*2})
             }
             res.locals.user = req.session.user;
             res.redirect('/')

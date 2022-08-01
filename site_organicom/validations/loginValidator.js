@@ -6,24 +6,24 @@ const db = require("../database/models");
 
 
 module.exports= [
-    check("email")
-        .isEmail()
-        .withMessage("debes ingresar un email valido"),
-    
-    check("password")
-        .notEmpty()
-        .withMessage("debes ingresar una contraseña"),
 
-    body("password")
-        .custom((value, {req})=>{
-            
-            let user = usuarios.find(user => user.email === req.body.email)
-            if (user) {
-                return bcrypt.compareSync(value, user.password)
-            }else{
-                return false
-            }
-        })
-        .withMessage("credenciales invalidas")
+check('email')
+.notEmpty().withMessage('Debes ingresar tu email').bail()
+.isEmail().withMessage('Email no válido').bail()
+.custom((value, {req}) => {
+    return db.User.findOne({
+      where : {
+        email : value
+      }
+    }).then(user => {
+      if(!user || !bcrypt.compareSync(req.body.password, user.password)){
+        return Promise.reject()
+      }
+    }).catch(() => Promise.reject('Credenciales inválidas'))
+}),
+
+check ("password")
+    .notEmpty()
+    .withMessage("debes ingresar una contraseña"),
         
 ]
