@@ -18,7 +18,7 @@
  
     <main class="form_box">
        
-            <form class="profile-form" action="/users/register2" method="POST">
+            <form class="profile-form" action="/users/userUpdate?_method=PUT" method="POST">
                 <div class='img_profile-box'>
                     <img src="/assets/img/usuario-icono.svg" alt='' class="img_user-profile">
                 </div>
@@ -27,20 +27,17 @@
             
                 
                    <label for="nombre"  >Nombre</label>
-                   <input class="profile-main" type="text" id="nombre" name="nombre" value="" required>
+                   <input class="profile-main" type="text" id="nombre" name="nombre" value="<%= user.nombre %>">
                
               
                    <label for="email">Email</label>
-                   <input class="profile-main" type="email" id="email" name="email" value="" required>
+                   <input class="profile-main" type="email" id="email" name="email" value="<%= user.email %>" readonly>
           
               
-                   <label for="numer">Telefono/celular</label>
-                   <input class="profile-main" type="number" id="number" name="number"
-                      placeholder="Escriba su numero(opcional)." value=" ">
+                   <label for="telefono">Telefono/celular</label>
+                   <input class="profile-main" type="text" id="telefono" name="telefono"
+                      placeholder="Escriba su numero(opcional)." value="<%= user.telefono %>">
                 
-              
-                   <label for="password">Password</label>
-                   <input class="profile-main" type="password" id="profile-password" name="password">       
                       
                    <button type="submit" class="profile-main button-profile">
                       Guardar

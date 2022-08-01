@@ -7,7 +7,7 @@ const db = require("../database/models");
 module.exports=[
     check ("nombre")
         .notEmpty()
-        .withMessage("debes ingresar tu nombre de usuario"),
+        .withMessage("Debes ingresar tu nombre de usuario"),
 
     check ("email")
         .notEmpty().withMessage('Debes ingresar tu email').bail()

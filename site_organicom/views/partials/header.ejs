@@ -15,10 +15,12 @@
       <span>Login</span>
    </button>
    <% }else{ %>
-   <button type="button" class="btn-cuenta">
-      <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
-      <span> <%= session.user.nombre %> </span>
-   </button>
+   <a href="/users/userEdit" >
+      <button style="position:relative;">
+         <img src="/assets/img/usuario-icono.svg" class="usuario-icono" />
+         <span> <%= session.user.nombre %> </span>
+      </button>
+   </a>
    <% } %>
    <button type="button" class="btn-carrito">
       <img src="/assets/img/carrito-icono.svg" class="carrito-icono" />

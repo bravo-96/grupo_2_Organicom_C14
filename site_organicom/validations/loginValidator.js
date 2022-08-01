@@ -5,10 +5,6 @@ const db = require("../database/models");
 
 
 module.exports=[
-    check ("nombre")
-        .notEmpty()
-        .withMessage("debes ingresar tu nombre de usuario"),
-
     check ("email")
         .notEmpty().withMessage('Debes ingresar tu email').bail()
         .isEmail().withMessage('Email no es valido').bail()
